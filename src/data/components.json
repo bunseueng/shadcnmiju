@@ -1,0 +1,141 @@
+[
+  {
+    "id": "button-variants",
+    "title": "Button Variants",
+    "type": "Button",
+    "description": "A collection of button styles for different use cases. Includes default, secondary, outline, ghost, and destructive variants.",
+    "category": "buttons",
+    "slug": "button-variants",
+    "previewImage": "/previews/button-variants.png",
+    "dependencies": ["button"],
+    "tags": ["button", "action", "cta", "interactive"],
+    "installCommand": "npx shadcn@latest add button",
+    "variants": [
+      
+      {
+        "id": "standard",
+        "name": "Standard",
+        "description": "Primary action button with brand colors",
+        "code": "<Button>Click me</Button>"
+      },
+      {
+        "id": "secondary",
+        "name": "Secondary",
+        "description": "Less prominent secondary action",
+        "code": "<Button variant=\"secondary\">Click me</Button>"
+      },
+      {
+        "id": "outline",
+        "name": "Outline",
+        "description": "Transparent with border outline",
+        "code": "<Button variant=\"outline\">Click me</Button>"
+      },
+      {
+        "id": "ghost",
+        "name": "Ghost",
+        "description": "Minimal style with no background",
+        "code": "<Button variant=\"ghost\">Click me</Button>"
+      },
+      {
+        "id": "destructive",
+        "name": "Destructive",
+        "description": "Danger or delete actions",
+        "code": "<Button variant=\"destructive\">Delete</Button>"
+      },
+      {
+        "id": "upload-button",
+        "name": "Upload Button",
+        "description": "Primary action button with brand colors",
+        "code": "<Button>Click me</Button>"
+      }
+    ]
+  },
+  {
+    "id": "card-variants",
+    "title": "Card Variants",
+    "type": "Card",
+    "description": "Flexible card components with different visual styles. Perfect for content containers, product cards, and feature sections.",
+    "category": "cards",
+    "slug": "card-variants",
+    "previewImage": "/previews/card-variants.png",
+    "dependencies": ["card"],
+    "tags": ["card", "container", "layout"],
+    "installCommand": "npx shadcn@latest add card",
+    "variants": [
+      {
+        "id": "default",
+        "name": "Default",
+        "description": "Standard card with subtle border",
+        "code": "<Card>\n  <CardHeader>\n    <CardTitle>Card Title</CardTitle>\n    <CardDescription>Card description goes here</CardDescription>\n  </CardHeader>\n  <CardContent>\n    <p>Card content</p>\n  </CardContent>\n  <CardFooter>\n    <Button>Action</Button>\n  </CardFooter>\n</Card>"
+      },
+      {
+        "id": "bordered",
+        "name": "Bordered",
+        "description": "Card with prominent colored border",
+        "code": "<Card className=\"border-2 border-primary\">\n  <CardHeader>\n    <CardTitle>Bordered Card</CardTitle>\n  </CardHeader>\n  <CardContent>\n    <p>Content with thick border</p>\n  </CardContent>\n</Card>"
+      },
+      {
+        "id": "elevated",
+        "name": "Elevated",
+        "description": "Card with shadow for depth",
+        "code": "<Card className=\"shadow-lg\">\n  <CardHeader>\n    <CardTitle>Elevated Card</CardTitle>\n  </CardHeader>\n  <CardContent>\n    <p>Card with prominent shadow</p>\n  </CardContent>\n</Card>"
+      },
+      {
+        "id": "gradient",
+        "name": "Gradient",
+        "description": "Card with gradient background",
+        "code": "<Card className=\"bg-linear-to-br from-purple-600 to-blue-600 text-white border-0\">\n  <CardHeader>\n    <CardTitle>Gradient Card</CardTitle>\n  </CardHeader>\n  <CardContent>\n    <p>Beautiful gradient background</p>\n  </CardContent>\n</Card>"
+      }
+    ]
+  },
+  {
+    "id": "badge-variants",
+    "title": "Badge Variants",
+    "type": "Badge",
+    "description": "Small labels and tags for status, categories, and notifications. Multiple color options available.",
+    "category": "badges",
+    "slug": "badge-variants",
+    "previewImage": "/previews/badge-variants.png",
+    "dependencies": ["badge"],
+    "tags": ["badge", "tag", "label", "status"],
+    "installCommand": "npx shadcn@latest add badge",
+    "variants": [
+      {
+        "id": "default",
+        "name": "Default",
+        "description": "Primary badge style",
+        "code": "<Badge>New</Badge>"
+      },
+      {
+        "id": "secondary",
+        "name": "Secondary",
+        "description": "Muted gray badge",
+        "code": "<Badge variant=\"secondary\">Update</Badge>"
+      },
+      {
+        "id": "outline",
+        "name": "Outline",
+        "description": "Transparent with border",
+        "code": "<Badge variant=\"outline\">Draft</Badge>"
+      },
+      {
+        "id": "destructive",
+        "name": "Destructive",
+        "description": "Red error badge",
+        "code": "<Badge variant=\"destructive\">Error</Badge>"
+      },
+      {
+        "id": "success",
+        "name": "Success",
+        "description": "Green success badge",
+        "code": "<Badge className=\"bg-green-500 text-white\">Success</Badge>"
+      },
+      {
+        "id": "warning",
+        "name": "Warning",
+        "description": "Yellow warning badge",
+        "code": "<Badge className=\"bg-yellow-500 text-black\">Warning</Badge>"
+      }
+    ]
+  }
+]

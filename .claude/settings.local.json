@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --import-alias \"@/*\" --turbopack --eslint)",
+      "Bash(npx create-next-app@latest shadcnmiju --typescript --tailwind --app --src-dir --import-alias \"@/*\" --turbopack --eslint --no-git)",
+      "Bash(rm:*)",
+      "Bash(npx shadcn@latest init -y)",
+      "Bash(npx shadcn@latest init --defaults)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(npm install:*)",
+      "Bash(node -e:*)",
+      "Bash(node extract-themes.js:*)",
+      "Bash(node extract-themes-v2.js:*)",
+      "Bash(node scripts/extract-themes.js:*)",
+      "Bash(npm run export-themes:*)"
+    ]
+  }
+}
