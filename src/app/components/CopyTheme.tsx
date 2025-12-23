@@ -78,9 +78,9 @@ export function CopyTheme() {
           <span className="hidden sm:inline">Copy Theme</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-2xl">
+      <DialogContent className="sm:max-w-2xl z-100">
         <DialogHeader>
-          <DialogTitle className="text-2xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          <DialogTitle className="text-2xl bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             {currentThemeName} Theme
           </DialogTitle>
           <DialogDescription className="text-base">
@@ -99,7 +99,7 @@ export function CopyTheme() {
 
         <Tabs defaultValue="light" className="mt-4">
           <div className="flex items-center justify-between mb-4">
-            <TabsList className="grid w-[240px] grid-cols-2">
+            <TabsList className="grid w-60 grid-cols-2">
               <TabsTrigger value="light">Light Mode</TabsTrigger>
               <TabsTrigger value="dark">Dark Mode</TabsTrigger>
             </TabsList>
@@ -129,7 +129,7 @@ export function CopyTheme() {
                 )}
               </Button>
             </div>
-            <ScrollArea className="h-[400px] rounded-lg border bg-muted/30 p-4">
+            <ScrollArea className="h-100 rounded-lg border bg-muted/30 p-4">
               <div className="space-y-2 font-mono text-sm">
                 {themeData.light.map((theme, index) => {
                   const cssVar = theme.key
@@ -177,7 +177,7 @@ export function CopyTheme() {
                 )}
               </Button>
             </div>
-            <ScrollArea className="h-[400px] rounded-lg border bg-muted/30 p-4">
+            <ScrollArea className="h-100 rounded-lg border bg-muted/30 p-4">
               <div className="space-y-2 font-mono text-sm">
                 {themeData.dark.map((theme, index) => {
                   const cssVar = theme.key

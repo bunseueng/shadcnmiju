@@ -47,7 +47,7 @@ const StatsCard = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center text-green-400">
+          <div className="flex items-center text-red-400">
             <ArrowDown /> 1.06%
           </div>
           <span className="text-muted-foreground">Since yesturday</span>
@@ -87,7 +87,7 @@ const StatsCard = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center text-green-400">
+          <div className="flex items-center text-red-400">
             <ArrowDown /> 5.06%
           </div>
           <span className="text-muted-foreground">Since last month</span>

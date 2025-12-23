@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -23,16 +23,23 @@ import { useTheme } from "next-themes";
 
 export function SelectTheme() {
   const [open, setOpen] = React.useState(false);
-  const [selectedThemeId, setSelectedThemeId] = React.useState("default");
+  const [selectedThemeId, setSelectedThemeId] = React.useState("");
   const { theme } = useTheme();
+
+  React.useEffect(() => {
+    const localTheme = localStorage.getItem("theme-id");
+    React.startTransition(() => {
+      setSelectedThemeId(localTheme as string);
+    });
+  }, []);
 
   // Listen to theme changes and re-apply the custom theme
   React.useEffect(() => {
-    if (theme && (theme === "light" || theme === "dark")) {
+    if (theme && (theme === "light" || theme === "dark") && selectedThemeId) {
       applyTheme(selectedThemeId, theme);
       localStorage.setItem("theme-id", selectedThemeId);
     }
-  }, [theme, selectedThemeId]);
+  }, [selectedThemeId, theme]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

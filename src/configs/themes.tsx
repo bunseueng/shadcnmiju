@@ -4226,7 +4226,8 @@ export function getThemeById(id: string): Theme | undefined {
 
 // Helper function to export theme as JSON string (for copying)
 export function exportThemeAsJson(themeId: string): string | null {
-  const theme = getThemeById(themeId);
+  const localTheme = localStorage.getItem("theme-id");
+  const theme = getThemeById(localTheme ? localTheme || "darkmatter" : themeId);
   if (!theme) {
     console.error(`Theme "${themeId}" not found`);
     return null;
@@ -4236,7 +4237,10 @@ export function exportThemeAsJson(themeId: string): string | null {
 
 // Helper function to apply theme
 export function applyTheme(themeId: string, mode: "light" | "dark") {
-  const theme = getThemeById(themeId);
+  const localTheme = localStorage.getItem("theme-id");
+  const theme = getThemeById(
+    themeId === "" ? localTheme || "darkmatter" : themeId
+  );
   if (!theme) {
     console.error(`Theme "${themeId}" not found`);
     return;

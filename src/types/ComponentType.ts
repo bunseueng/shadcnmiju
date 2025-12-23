@@ -3,8 +3,8 @@ export interface ComponentVariant {
   id: string
   name: string
   description: string
-  preview: React.ReactNode
-  code?: string
+  preview?: React.ReactNode
+  code: string
   type: string
   filePath?: string
 }

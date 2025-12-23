@@ -2,39 +2,35 @@ import ComponentShowcase from "./ComponentShowcase";
 import { componentPreviews } from "@/data/componentPreviews";
 import { getFileContent } from "@/lib/getComponent";
 import { ComponentPreviewType } from "@/types/ComponentType";
-
-// Force dynamic rendering in development to always fetch fresh code
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+import { Suspense } from "react";
 
 const ComponentsPage = async () => {
-  // Read file content for each variant
+  // Dynamically import components and read their code
   const componentsWithCode: ComponentPreviewType[] = await Promise.all(
     componentPreviews.map(async (component) => {
       const variantsWithCode = await Promise.all(
         component.variants.map(async (variant) => {
-          // Try to read file content if it exists
-          let fileCode = variant.code;
-
-          // Check if this variant has a corresponding file
+          // Construct file path
           const componentName = component.type.toLowerCase();
           const variantName = variant.id.toLowerCase();
           const filePath = `@/components/showcase/${componentName}/${variantName}`;
 
+          let code = "";
+
           try {
+            // Read file content for code display
             const content = await getFileContent(filePath);
             if (!content.startsWith("// Error:")) {
-              fileCode = content;
+              code = content;
             }
           } catch {
-            // If file doesn't exist, use the inline code string
-            console.log(`No file found for ${filePath}, using inline code`);
+            console.log(`No file found for ${filePath}`);
           }
 
           return {
             ...variant,
-            code: fileCode,
-            filePath: filePath,
+            code,
+            filePath,
           };
         })
       );
@@ -65,7 +61,9 @@ const ComponentsPage = async () => {
           </div>
 
           {/* Search */}
-          <ComponentShowcase components={componentsWithCode} />
+          <Suspense>
+            <ComponentShowcase components={componentsWithCode} />
+          </Suspense>
         </div>
       </div>
     </section>

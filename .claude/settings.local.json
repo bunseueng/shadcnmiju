@@ -14,7 +14,8 @@
       "Bash(node extract-themes.js:*)",
       "Bash(node extract-themes-v2.js:*)",
       "Bash(node scripts/extract-themes.js:*)",
-      "Bash(npm run export-themes:*)"
+      "Bash(npm run export-themes:*)",
+      "Bash(npm run dev:*)"
     ]
   }
 }

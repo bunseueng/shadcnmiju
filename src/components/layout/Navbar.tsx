@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <nav className="border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-linear-to-br from-purple-600 to-blue-600" />
-            <span className="text-xl font-bold">shadcnmiju</span>
+            <img src="/assets/logo.png" alt="Logo" className="w-auto  h-auto" />
+            <span className="text-xl font-semibold text-black dark:text-white">
+              shadcnmiju
+            </span>
           </Link>
 
           {/* Navigation Links */}
@@ -27,17 +31,19 @@ export default function Navbar() {
               Components
             </Link>
             <Link
-              href="#"
+              href="/docs"
               className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
             >
-              About
+              Docs
             </Link>
           </div>
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
             <Button asChild>
-              <Link href="/components">Browse Components</Link>
+              <Link href="/components">
+                <Github />
+              </Link>
             </Button>
           </div>
         </div>
