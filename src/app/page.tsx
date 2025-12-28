@@ -30,7 +30,6 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-gsap.registerPlugin(useGSAP);
 export default function Home() {
   const heroRef = useRef(null);
   const statsRef = useRef(null);

@@ -27,7 +27,6 @@ import {
 } from "@/components/ui/popover";
 
 interface ComponentListsProps {
-  viewMode: "grid" | "list";
   components: ComponentPreviewType[];
   selectedComponent: ComponentPreviewType | undefined;
   onSearchChange: (value: string) => void;
@@ -35,7 +34,6 @@ interface ComponentListsProps {
 }
 
 const ComponentLists = ({
-  viewMode,
   components,
   selectedComponent,
   onSearchChange,
@@ -159,14 +157,7 @@ const ComponentLists = ({
               </div>
             )}
             <ScrollArea className="h-auto max-h-60 lg:h-full lg:max-h-none lg:flex-1 px-3 lg:px-4">
-              <div
-                className={cn(
-                  "py-3 lg:py-4",
-                  viewMode === "grid"
-                    ? "grid grid-cols-1 gap-3"
-                    : "flex flex-col gap-2"
-                )}
-              >
+              <div className="flex flex-col gap-2 py-3 lg:py-4">
                 <h1>Components</h1>
                 {components?.length > 0 ? (
                   components.map((component) => (

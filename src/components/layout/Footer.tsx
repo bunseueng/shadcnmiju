@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,11 +11,20 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-lg bg-linear-to-br from-purple-600 to-blue-600" />
-              <span className="text-lg font-bold">shadcnmiju</span>
+              <a href="/" className="flex items-center space-x-2">
+                <img
+                  src="/assets/logo.png"
+                  alt="Logo"
+                  className="w-auto  h-auto"
+                />
+                <span className="text-xl font-semibold text-black dark:text-white">
+                  shadcnmiju
+                </span>
+              </a>
             </div>
             <p className="text-sm text-muted-foreground">
-              Beautiful, reusable React components built with Tailwind CSS and shadcn/ui.
+              Beautiful, reusable React components built with Tailwind CSS and
+              shadcn/ui.
             </p>
           </div>
 
@@ -23,17 +33,26 @@ export default function Footer() {
             <h3 className="font-semibold mb-3">Product</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/components" className="hover:text-foreground transition-colors">
+                <Link
+                  href="/components"
+                  className="hover:text-foreground transition-colors"
+                >
                   Components
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   Templates
                 </Link>
               </li>
@@ -45,17 +64,26 @@ export default function Footer() {
             <h3 className="font-semibold mb-3">Resources</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   Getting Started
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   GitHub
                 </Link>
               </li>
@@ -67,17 +95,26 @@ export default function Footer() {
             <h3 className="font-semibold mb-3">Legal</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-foreground transition-colors">
+                <Link
+                  href="#"
+                  className="hover:text-foreground transition-colors"
+                >
                   License
                 </Link>
               </li>

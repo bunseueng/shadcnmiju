@@ -6,6 +6,15 @@ import { XIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+// Try to import the preview portal context, but don't fail if it's not available
+let PreviewPortalContext: React.Context<HTMLDivElement | null> | null = null;
+try {
+  const module = require("@/app/components/DynamicComponentPreview");
+  PreviewPortalContext = module.PreviewPortalContext;
+} catch (e) {
+  // Context not available, that's fine
+}
+
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
@@ -32,13 +41,17 @@ function DialogClose({
 
 function DialogOverlay({
   className,
+  isInPortal,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
+}: React.ComponentProps<typeof DialogPrimitive.Overlay> & {
+  isInPortal?: boolean
+}) {
   return (
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 inset-0 z-50 bg-black/50",
+        isInPortal ? "absolute" : "fixed",
         className
       )}
       {...props}
@@ -50,17 +63,31 @@ function DialogContent({
   className,
   children,
   showCloseButton = true,
+  container,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Content> & {
   showCloseButton?: boolean
+  container?: HTMLElement | null
 }) {
+  // Use preview portal container from context if available
+  const contextPortal = PreviewPortalContext ? React.useContext(PreviewPortalContext) : null;
+
+  // Determine which portal container to use
+  const portalContainer = container !== undefined ? container : contextPortal;
+
+  // Use absolute positioning when in a portal container, fixed otherwise
+  const isInPortal = !!portalContainer;
+
   return (
-    <DialogPortal data-slot="dialog-portal">
-      <DialogOverlay />
+    <DialogPortal data-slot="dialog-portal" container={portalContainer}>
+      <DialogOverlay isInPortal={isInPortal} />
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 outline-none sm:max-w-lg",
+          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 z-50 grid w-full max-w-[calc(100%-2rem)] gap-4 rounded-lg border p-6 shadow-lg duration-200 outline-none sm:max-w-lg",
+          isInPortal
+            ? "absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+            : "fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
           className
         )}
         {...props}

@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import ComponentLists from "./ComponentLists";
 import ComponentPreview from "./ComponentPreview";
 import { type ComponentPreviewType } from "@/types/ComponentType";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useAtom } from "jotai/react";
+import { viewModeAtom } from "@/stores/modeStorage";
 
 interface ComponentShowcaseProps {
   components: ComponentPreviewType[];
@@ -15,7 +16,7 @@ const ComponentShowcase = ({
   components,
   componentId,
 }: ComponentShowcaseProps) => {
-  const [viewMode, setViewMode] = useState<"grid" | "list">("list");
+  const [viewMode, setViewMode] = useAtom<"grid" | "list">(viewModeAtom);
   const router = useRouter();
   const searchParams = useSearchParams();
   const search = searchParams.get("search") || "";
@@ -48,7 +49,6 @@ const ComponentShowcase = ({
       {/* Main Content - Split View */}
       <div className="flex flex-col lg:flex-row">
         <ComponentLists
-          viewMode={viewMode}
           components={components}
           selectedComponent={selectedComponents}
           onSearchChange={handleSearch}
