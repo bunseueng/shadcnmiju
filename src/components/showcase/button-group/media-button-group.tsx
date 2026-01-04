@@ -12,8 +12,8 @@ const MediaButtonGroup = () => {
   const [volume, setVolume] = useState(75);
 
   const togglePlay = () => setIsPlaying(!isPlaying);
-  const skipBack = () => console.log("Skip back 10s");
-  const skipForward = () => console.log("Skip forward 10s");
+  const skipBack = () => { /* Skip back 10s */ };
+  const skipForward = () => { /* Skip forward 10s */ };
   const toggleMute = () => setVolume(volume > 0 ? 0 : 75);
 
   return (

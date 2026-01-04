@@ -12,7 +12,6 @@ const CalendarMonthYearPicker = () => {
         mode="single"
         selected={date}
         onSelect={setDate}
-        captionLayout="dropdown-buttons"
         fromYear={2000}
         toYear={2030}
         className="rounded-md border"

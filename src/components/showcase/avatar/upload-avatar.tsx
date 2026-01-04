@@ -1,7 +1,8 @@
+"use client";
+
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Camera } from "lucide-react";
-
 import { useState } from "react";
 
 const UploadAvatar = () => {

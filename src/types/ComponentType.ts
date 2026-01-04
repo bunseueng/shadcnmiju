@@ -7,6 +7,7 @@ export interface ComponentVariant {
   code: string
   type: string
   filePath?: string
+  installCommand: string
 }
 
 export interface ComponentPreviewType {
@@ -19,7 +20,6 @@ export interface ComponentPreviewType {
   previewImage: string
   dependencies: string[]
   tags: string[]
-  installCommand: string
   variants: ComponentVariant[]
 }
 

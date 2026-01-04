@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <ModeToggle />
             <Button asChild>
-              <a href="/components">
+              <a href="https://github.com/bunseueng/shadcnmiju" target="_blank">
                 <Github />
               </a>
             </Button>

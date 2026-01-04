@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Bookmark, BookmarkCheck, FolderPlus, Share } from "lucide-react";
 import { useState } from "react";

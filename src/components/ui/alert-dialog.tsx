@@ -5,9 +5,9 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { PreviewPortalContext } from "@/app/(main)/components/DynamicComponentPreview";
 
 // Import the preview portal context
-import { PreviewPortalContext } from "@/app/components/DynamicComponentPreview";
 
 function AlertDialog({
   ...props
@@ -47,7 +47,7 @@ function AlertDialogOverlay({
       data-slot="alert-dialog-overlay"
       className={cn(
         "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 inset-0 z-50 bg-black/50",
-        isInPortal ? "absolute" : "fixed",
+        isInPortal ? "absolute pointer-events-auto" : "fixed z-0",
         className
       )}
       {...props}
@@ -71,6 +71,78 @@ function AlertDialogContent({
   // Use absolute positioning when in a portal container, fixed otherwise
   const isInPortal = !!portalContainer;
 
+  // Remove scroll lock when inside a portal to allow scrolling outside the preview
+  React.useEffect(() => {
+    if (!isInPortal) return;
+
+    // Function to remove scroll lock styles
+    const removeScrollLock = () => {
+      document.body.style.removeProperty("overflow");
+      document.body.style.removeProperty("pointer-events");
+      document.body.style.removeProperty("padding-right");
+      document.body.style.removeProperty("margin-right");
+      document.body.removeAttribute("data-scroll-locked");
+      document.documentElement.style.removeProperty("overflow");
+      document.documentElement.removeAttribute("data-scroll-locked");
+    };
+
+    // Use MutationObserver to detect when Radix adds scroll lock
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          (mutation.attributeName === "data-scroll-locked" ||
+            mutation.attributeName === "style")
+        ) {
+          removeScrollLock();
+        }
+      });
+    });
+
+    // Observe both body and html
+    observer.observe(document.body, { attributes: true });
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Initial cleanup
+    removeScrollLock();
+
+    // Add wheel event handler to allow scrolling outside the preview tab
+    const handleWheel = (e: WheelEvent) => {
+      const target = e.target as HTMLElement;
+
+      // Check if target is inside the preview container
+      const isInsidePreview = target.closest('[data-preview-container="true"]');
+
+      // If wheel is outside the preview container, scroll the page
+      // Use deltaMode to properly calculate scroll amount
+      if (!isInsidePreview) {
+        let deltaY = e.deltaY;
+
+        // Normalize delta based on deltaMode
+        // 0 = pixels, 1 = lines, 2 = pages
+        if (e.deltaMode === 1) {
+          deltaY *= 10; // line height approximation
+        } else if (e.deltaMode === 2) {
+          deltaY *= window.innerHeight;
+        }
+
+        // Apply a smaller multiplier to prevent too fast scrolling
+        window.scrollBy({ top: deltaY * 0.1, behavior: "auto" });
+      }
+    };
+
+    // Use capture phase to intercept before react-remove-scroll blocks it
+    window.addEventListener("wheel", handleWheel, {
+      capture: true,
+      passive: true,
+    });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("wheel", handleWheel, { capture: true });
+    };
+  }, [isInPortal, portalContainer]);
+
   return (
     <AlertDialogPortal container={portalContainer}>
       <AlertDialogOverlay isInPortal={isInPortal} />
@@ -79,7 +151,7 @@ function AlertDialogContent({
         className={cn(
           "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 z-50 grid w-full max-w-[calc(100%-2rem)] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
           isInPortal
-            ? "absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+            ? "absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] pointer-events-auto"
             : "fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
           className
         )}

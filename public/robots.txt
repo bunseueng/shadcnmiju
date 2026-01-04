@@ -1,0 +1,9 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow crawling of API routes
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://shadcnmiju.vercel.app/sitemap.xml

@@ -9,7 +9,7 @@ const BorderBadge = () => {
       <Badge variant="outline" className="border-2 border-dotted">
         Dotted
       </Badge>
-      <Badge variant="outline" className="border-2 border-dashed">
+      <Badge variant="outline" className="border-2">
         Dashed
       </Badge>
       <Badge variant="outline" className="border-l-4 border-primary">

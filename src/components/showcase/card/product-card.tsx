@@ -4,19 +4,14 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 
 import { Heart, ShoppingCart } from "lucide-react";
 
-import Image from "next/image";
-
 const ProductCard = () => {
   return (
     <Card className="w-87.5 flex flex-col p-0 transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
       {/* replace with <img/> tag if not using next-js */}
       <div className="px-4 pt-4">
-        <Image
+        <img
           src="/assets/product-card.webp"
           alt="Image"
-          width={300}
-          height={300}
-          quality={80}
           className="w-full h-62.5 object-cover rounded-lg"
         />
       </div>

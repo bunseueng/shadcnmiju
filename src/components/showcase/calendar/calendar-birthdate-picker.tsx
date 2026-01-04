@@ -24,7 +24,6 @@ const CalendarBirthdatePicker = () => {
         disabled={(date) => date > today || date < minDate}
         defaultMonth={new Date(2000, 0)}
         className="rounded-md border"
-        captionLayout="dropdown-buttons"
         fromYear={1924}
         toYear={today.getFullYear()}
       />

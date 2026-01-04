@@ -14,7 +14,7 @@ const ExportButtonGroup = () => {
     // Simulate export process
     setTimeout(() => {
       setExporting(null);
-      console.log(`Exported as ${format}`);
+      // Export completed
     }, 2000);
   };
 

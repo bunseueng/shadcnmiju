@@ -182,5 +182,16 @@ body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
-
 }
+
+/* Override Radix modal scroll lock - restore pointer events and scroll */
+body[data-scroll-locked] {
+  pointer-events: auto !important;
+  overflow: auto !important;
+}
+
+html[data-scroll-locked] {
+  overflow: auto !important;
+}
+
+
