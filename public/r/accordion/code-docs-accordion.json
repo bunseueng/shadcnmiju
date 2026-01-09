@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-docs-accordion",
+  "type": "registry:block",
+  "title": "Code Docs Accordion",
+  "description": "Code Docs Accordion component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/accordion/code-docs-accordion.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\n\nexport function CodeDocsAccordion() {\n  return (\n    <Accordion\n      type=\"single\"\n      collapsible\n      className=\"w-full max-w-2xl text-start\"\n    >\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>\n          <code className=\"text-sm\">Button Component</code>\n        </AccordionTrigger>\n        <AccordionContent>\n          <div className=\"space-y-3\">\n            <p className=\"text-sm text-muted-foreground\">\n              Import the Button component:\n            </p>\n            <pre className=\"bg-muted p-3 rounded-md overflow-x-auto\">\n              <code className=\"text-xs\">\n                {`import { Button } from \"@/components/ui/button\"`}\n              </code>\n            </pre>\n            <p className=\"text-sm text-muted-foreground\">Usage example:</p>\n            <pre className=\"bg-muted p-3 rounded-md overflow-x-auto\">\n              <code className=\"text-xs\">\n                {`<Button variant=\"default\">Click me</Button>`}\n              </code>\n            </pre>\n          </div>\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>\n          <code className=\"text-sm\">Card Component</code>\n        </AccordionTrigger>\n        <AccordionContent>\n          <div className=\"space-y-3\">\n            <p className=\"text-sm text-muted-foreground\">\n              Import Card components:\n            </p>\n            <pre className=\"bg-muted p-3 rounded-md overflow-x-auto\">\n              <code className=\"text-xs\">\n                {`import { Card, CardHeader, CardTitle, CardContent } from \"@/components/ui/card\"`}\n              </code>\n            </pre>\n          </div>\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>\n          <code className=\"text-sm\">Input Component</code>\n        </AccordionTrigger>\n        <AccordionContent>\n          <div className=\"space-y-3\">\n            <p className=\"text-sm text-muted-foreground\">\n              Import and use Input:\n            </p>\n            <pre className=\"bg-muted p-3 rounded-md overflow-x-auto\">\n              <code className=\"text-xs\">\n                {`import { Input } from \"@/components/ui/input\"\n\n<Input type=\"email\" placeholder=\"Email\" />`}\n              </code>\n            </pre>\n          </div>\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/code-docs-accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion",
+    "accordion"
+  ],
+  "registryDependencies": [
+    "accordion",
+    "button",
+    "card",
+    "input"
+  ]
+}

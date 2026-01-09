@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-navigation-button-group",
+  "type": "registry:block",
+  "title": "Calendar Navigation Button Group",
+  "description": "Calendar Navigation Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/calendar-navigation-button-group.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { ButtonGroup } from \"@/components/ui/button-group\";\nimport { Calendar, ChevronLeft, ChevronRight } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarNavigationButtonGroup = () => {\n  const [currentDate, setCurrentDate] = useState(new Date());\n\n  const goToPreviousMonth = () => {\n    setCurrentDate(\n      new Date(currentDate.getFullYear(), currentDate.getMonth() - 1)\n    );\n  };\n\n  const goToNextMonth = () => {\n    setCurrentDate(\n      new Date(currentDate.getFullYear(), currentDate.getMonth() + 1)\n    );\n  };\n\n  const goToToday = () => {\n    setCurrentDate(new Date());\n  };\n\n  const monthYear = currentDate.toLocaleDateString(\"en-US\", {\n    month: \"long\",\n    year: \"numeric\",\n  });\n\n  return (\n    <div className=\"flex items-center gap-2\">\n      <ButtonGroup>\n        <Button variant=\"outline\" size=\"sm\" onClick={goToPreviousMonth}>\n          <ChevronLeft className=\"h-4 w-4\" />\n        </Button>\n        <Button variant=\"outline\" size=\"sm\" className=\"min-w-[140px]\" disabled>\n          {monthYear}\n        </Button>\n        <Button variant=\"outline\" size=\"sm\" onClick={goToNextMonth}>\n          <ChevronRight className=\"h-4 w-4\" />\n        </Button>\n      </ButtonGroup>\n      <Button variant=\"outline\" size=\"sm\" onClick={goToToday}>\n        <Calendar className=\"h-4 w-4\" />\n        Today\n      </Button>\n    </div>\n  );\n};\n\nexport { CalendarNavigationButtonGroup }",
+      "type": "registry:component",
+      "target": "components/calendar-navigation-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-with-badges",
+  "type": "registry:block",
+  "title": "Checkbox With Badges",
+  "description": "Checkbox With Badges component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/checkbox/checkbox-with-badges.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst CheckboxWithBadges = () => {\r\n  return (\r\n    <div className=\"space-y-2\">\r\n      <div className=\"flex items-center justify-between p-2 hover:bg-accent rounded\">\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"badge1\" defaultChecked />\r\n          <label htmlFor=\"badge1\" className=\"text-sm cursor-pointer\">\r\n            Premium feature\r\n          </label>\r\n        </div>\r\n        <span className=\"text-xs bg-primary text-primary-foreground px-2 py-1 rounded\">\r\n          Pro\r\n        </span>\r\n      </div>\r\n      <div className=\"flex items-center justify-between p-2 hover:bg-accent rounded\">\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"badge2\" />\r\n          <label htmlFor=\"badge2\" className=\"text-sm cursor-pointer\">\r\n            Advanced analytics\r\n          </label>\r\n        </div>\r\n        <span className=\"text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded\">\r\n          New\r\n        </span>\r\n      </div>\r\n      <div className=\"flex items-center justify-between p-2 hover:bg-accent rounded\">\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"badge3\" />\r\n          <label htmlFor=\"badge3\" className=\"text-sm cursor-pointer\">\r\n            API access\r\n          </label>\r\n        </div>\r\n        <span className=\"text-xs bg-accent text-accent-foreground px-2 py-1 rounded\">\r\n          Beta\r\n        </span>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CheckboxWithBadges }",
+      "type": "registry:component",
+      "target": "components/checkbox-with-badges.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ]
+}

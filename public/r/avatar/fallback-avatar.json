@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fallback-avatar",
+  "type": "registry:block",
+  "title": "Fallback Avatar",
+  "description": "Fallback Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/fallback-avatar.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nimport { User } from \"lucide-react\";\r\n\r\nconst FallbackAvatar = () => {\r\n  return (\r\n    <div className=\"flex items-center gap-4\">\r\n      <Avatar>\r\n        <AvatarImage src=\"/invalid-image.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar>\r\n        <AvatarImage src=\"/invalid-image.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback className=\"bg-blue-500 text-white\">CD</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar>\r\n        <AvatarImage src=\"\" />\r\n        <AvatarFallback className=\"bg-linear-to-r from-purple-400 to-pink-400 text-white\">\r\n          EF\r\n        </AvatarFallback>\r\n      </Avatar>\r\n      <Avatar>\r\n        <AvatarImage src=\"\" />\r\n        <AvatarFallback>\r\n          <User className=\"h-4 w-4\" />\r\n        </AvatarFallback>\r\n      </Avatar>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { FallbackAvatar }",
+      "type": "registry:component",
+      "target": "components/fallback-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-button-dialog-event",
+  "type": "registry:block",
+  "title": "Calendar Button Dialog Event",
+  "description": "Calendar Button Dialog Event component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-button-dialog-event.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { CalendarPlus } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarButtonDialogEvent = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n  const [eventTitle, setEventTitle] = useState(\"\");\n  const [open, setOpen] = useState(false);\n  const [events, setEvents] = useState<{ date: Date; title: string }[]>([]);\n\n  const handleAddEvent = () => {\n    if (date && eventTitle.trim()) {\n      setEvents([...events, { date, title: eventTitle }]);\n      setEventTitle(\"\");\n      setOpen(false);\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Dialog open={open} onOpenChange={setOpen}>\n        <DialogTrigger asChild>\n          <Button variant=\"default\" size=\"lg\" className=\"gap-2\">\n            <CalendarPlus className=\"h-5 w-5\" />\n            Add Event\n          </Button>\n        </DialogTrigger>\n        <DialogContent className=\"sm:max-w-[425px]\">\n          <DialogHeader>\n            <DialogTitle>Add New Event</DialogTitle>\n            <DialogDescription>\n              Select a date and enter event details.\n            </DialogDescription>\n          </DialogHeader>\n          <div className=\"grid gap-4 py-4\">\n            <div className=\"grid gap-2\">\n              <Label htmlFor=\"event-title\">Event Title</Label>\n              <Input\n                id=\"event-title\"\n                placeholder=\"Team meeting, Birthday party, etc.\"\n                value={eventTitle}\n                onChange={(e) => setEventTitle(e.target.value)}\n              />\n            </div>\n            <div className=\"grid gap-2\">\n              <Label>Event Date</Label>\n              <Calendar\n                mode=\"single\"\n                selected={date}\n                onSelect={setDate}\n                className=\"rounded-md border\"\n              />\n            </div>\n          </div>\n          <DialogFooter>\n            <Button variant=\"outline\" onClick={() => setOpen(false)}>\n              Cancel\n            </Button>\n            <Button onClick={handleAddEvent} disabled={!date || !eventTitle.trim()}>\n              Add Event\n            </Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n\n      {events.length > 0 && (\n        <div className=\"w-full max-w-md\">\n          <p className=\"text-xs text-slate-400 font-medium mb-2\">\n            Upcoming Events:\n          </p>\n          <div className=\"space-y-2\">\n            {events.map((event, idx) => (\n              <div\n                key={idx}\n                className=\"flex items-center justify-between p-3 bg-slate-900 rounded-md border border-slate-800\"\n              >\n                <div>\n                  <p className=\"text-sm text-slate-200 font-medium\">\n                    {event.title}\n                  </p>\n                  <p className=\"text-xs text-slate-400\">\n                    {event.date.toLocaleDateString(\"en-US\", {\n                      weekday: \"short\",\n                      month: \"short\",\n                      day: \"numeric\",\n                      year: \"numeric\",\n                    })}\n                  </p>\n                </div>\n              </div>\n            ))}\n          </div>\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarButtonDialogEvent }",
+      "type": "registry:component",
+      "target": "components/calendar-button-dialog-event.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "dialog",
+    "input",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

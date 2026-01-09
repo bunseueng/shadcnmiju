@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-badge",
+  "type": "registry:block",
+  "title": "Icon Badge",
+  "description": "Icon Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/icon-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nimport { AlertCircle, Check, Clock, Info, Shield, Star, X, Zap } from \"lucide-react\";\r\n\r\nconst IconBadge = () => {\r\n  return (\r\n      <div className=\"flex flex-wrap gap-3\">\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <Check className=\"h-3 w-3\" />\r\n              Verified\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <X className=\"h-3 w-3\" />\r\n              Rejected\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <AlertCircle className=\"h-3 w-3\" />\r\n              Warning\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <Info className=\"h-3 w-3\" />\r\n              Info\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <Clock className=\"h-3 w-3\" />\r\n              Scheduled\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <Star className=\"h-3 w-3\" />\r\n              Featured\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <Zap className=\"h-3 w-3\" />\r\n              Premium\r\n            </Badge>\r\n            <Badge variant=\"outline\" className=\"gap-1\">\r\n              <Shield className=\"h-3 w-3\" />\r\n              Secure\r\n            </Badge>\r\n          </div>\r\n  )\r\n};\r\n\r\nexport { IconBadge }",
+      "type": "registry:component",
+      "target": "components/icon-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

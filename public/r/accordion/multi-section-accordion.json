@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "multi-section-accordion",
+  "type": "registry:block",
+  "title": "Multi Section Accordion",
+  "description": "Multi Section Accordion component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/accordion/multi-section-accordion.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\n\nexport function MultiSectionAccordion() {\n  return (\n    <Accordion type=\"multiple\" className=\"w-full max-w-2xl text-start\">\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>Getting Started</AccordionTrigger>\n        <AccordionContent>\n          <div className=\"space-y-2\">\n            <p>Install the required dependencies:</p>\n            <code className=\"block bg-muted p-2 rounded\">\n              npm install shadcn-ui\n            </code>\n          </div>\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Components</AccordionTrigger>\n        <AccordionContent>\n          Browse our extensive library of 100+ production-ready components.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Theming</AccordionTrigger>\n        <AccordionContent>\n          Customize colors, fonts, and more with CSS variables.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/multi-section-accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion",
+    "accordion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ]
+}

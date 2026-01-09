@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-file",
+  "type": "registry:block",
+  "title": "Context Menu File",
+  "description": "Context Menu File component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/context-menu/context-menu-file.tsx",
+      "content": "\"use client\";\n\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n} from \"@/components/ui/context-menu\";\nimport {\n  File,\n  FolderOpen,\n  Download,\n  Upload,\n  FileEdit,\n  FilePlus,\n  FolderPlus,\n  Archive,\n  Trash2,\n  Info,\n} from \"lucide-react\";\n\nconst ContextMenuFile = () => {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-[150px] w-[300px] items-center justify-center rounded-md border border-border bg-card text-sm\">\n        <div className=\"flex flex-col items-center gap-2\">\n          <File className=\"h-10 w-10 text-primary\" />\n          <span className=\"text-foreground font-medium\">document.pdf</span>\n          <span className=\"text-xs text-muted-foreground\">2.4 MB</span>\n        </div>\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-64 animate-in fade-in-0 zoom-in-95 duration-200\">\n        <ContextMenuItem className=\"cursor-pointer\">\n          <FolderOpen className=\"mr-2 h-4 w-4\" />\n          Open\n          <ContextMenuShortcut>⌘O</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuItem className=\"cursor-pointer\">\n          <FileEdit className=\"mr-2 h-4 w-4\" />\n          Rename\n          <ContextMenuShortcut>F2</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuSub>\n          <ContextMenuSubTrigger className=\"cursor-pointer\">\n            <FilePlus className=\"mr-2 h-4 w-4\" />\n            New\n          </ContextMenuSubTrigger>\n          <ContextMenuSubContent className=\"w-48\">\n            <ContextMenuItem className=\"cursor-pointer\">\n              <File className=\"mr-2 h-4 w-4\" />\n              New File\n            </ContextMenuItem>\n            <ContextMenuItem className=\"cursor-pointer\">\n              <FolderPlus className=\"mr-2 h-4 w-4\" />\n              New Folder\n            </ContextMenuItem>\n          </ContextMenuSubContent>\n        </ContextMenuSub>\n        <ContextMenuSeparator />\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Download className=\"mr-2 h-4 w-4\" />\n          Download\n          <ContextMenuShortcut>⌘D</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Upload className=\"mr-2 h-4 w-4\" />\n          Upload\n        </ContextMenuItem>\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Archive className=\"mr-2 h-4 w-4\" />\n          Compress\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Info className=\"mr-2 h-4 w-4\" />\n          Properties\n          <ContextMenuShortcut>⌘I</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem className=\"cursor-pointer text-destructive focus:text-destructive\">\n          <Trash2 className=\"mr-2 h-4 w-4\" />\n          Move to Trash\n          <ContextMenuShortcut>⌘⌫</ContextMenuShortcut>\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n};\n\nexport { ContextMenuFile }",
+      "type": "registry:component",
+      "target": "components/context-menu-file.tsx"
+    }
+  ],
+  "categories": [
+    "context-menu",
+    "context-menu"
+  ],
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

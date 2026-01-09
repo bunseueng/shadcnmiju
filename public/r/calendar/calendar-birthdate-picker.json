@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-birthdate-picker",
+  "type": "registry:block",
+  "title": "Calendar Birthdate Picker",
+  "description": "Calendar Birthdate Picker component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-birthdate-picker.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarBirthdatePicker = () => {\n  const [date, setDate] = useState<Date | undefined>();\n\n  const today = new Date();\n  const minDate = new Date();\n  minDate.setFullYear(minDate.getFullYear() - 100); // 100 years ago\n\n  const calculateAge = (birthDate: Date) => {\n    const diff = today.getTime() - birthDate.getTime();\n    return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        disabled={(date) => date > today || date < minDate}\n        defaultMonth={new Date(2000, 0)}\n        className=\"rounded-md border\"\n        fromYear={1924}\n        toYear={today.getFullYear()}\n      />\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Age:{\" \"}\n          <span className=\"text-slate-200 font-medium\">\n            {calculateAge(date)} years old\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarBirthdatePicker }",
+      "type": "registry:component",
+      "target": "components/calendar-birthdate-picker.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

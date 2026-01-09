@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-basic",
+  "type": "registry:block",
+  "title": "Empty Basic",
+  "description": "Empty Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/empty/empty-basic.tsx",
+      "content": "\"use client\";\n\nimport { FileQuestion } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function EmptyBasic() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"flex flex-col items-center justify-center text-center space-y-4 max-w-md\">\n        <div className=\"rounded-full bg-muted p-4\">\n          <FileQuestion className=\"h-10 w-10 text-muted-foreground\" />\n        </div>\n        <div className=\"space-y-2\">\n          <h3 className=\"text-lg font-semibold\">No results found</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            We couldn't find any results matching your search.\n          </p>\n        </div>\n        <Button variant=\"outline\">Clear filters</Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/empty-basic.tsx"
+    }
+  ],
+  "categories": [
+    "empty",
+    "empty"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

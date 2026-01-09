@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-group",
+  "type": "registry:block",
+  "title": "Checkbox Group",
+  "description": "Checkbox Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/checkbox/checkbox-group.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst CheckboxGroup = () => {\r\n  return (\r\n    <div className=\"space-y-3\">\r\n      <h3 className=\"text-sm font-semibold\">Select your interests</h3>\r\n      <div className=\"space-y-2\">\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"design\" defaultChecked />\r\n          <label htmlFor=\"design\" className=\"text-sm cursor-pointer\">\r\n            Design\r\n          </label>\r\n        </div>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"development\" defaultChecked />\r\n          <label htmlFor=\"development\" className=\"text-sm cursor-pointer\">\r\n            Development\r\n          </label>\r\n        </div>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"marketing\" />\r\n          <label htmlFor=\"marketing\" className=\"text-sm cursor-pointer\">\r\n            Marketing\r\n          </label>\r\n        </div>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"sales\" />\r\n          <label htmlFor=\"sales\" className=\"text-sm cursor-pointer\">\r\n            Sales\r\n          </label>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CheckboxGroup }",
+      "type": "registry:component",
+      "target": "components/checkbox-group.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-form-4",
+  "type": "registry:block",
+  "title": "Alert Dialog Form 4",
+  "description": "Alert Dialog Form 4 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-form-4.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { CircleX, X } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nconst AlertDialogForm4 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">\r\n          <X /> Cancel Subscription\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle className=\"flex items-center gap-2 text-2xl\">\r\n            <CircleX size={28} className=\"text-blue-400\" />\r\n            Cancel Subscription\r\n          </AlertDialogTitle>\r\n          <AlertDialogDescription>\r\n            We&apos;re sorry to see you go! Your subscription will remain active\r\n            until the end of your current billing period.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <ul className=\"space-y-2 bg-blue-50 p-2 rounded\">\r\n          <li className=\"text-blue-800 font-bold\">\r\n            <strong>Current plan:</strong> Pro Monthly ($29/month)\r\n          </li>\r\n          <li className=\"text-blue-800 font-bold\">\r\n            <strong>Next billing:</strong> January 15, 2024\r\n          </li>\r\n          <li className=\"text-blue-800 font-bold\">\r\n            <strong>Access until:</strong> January 15, 2024\r\n          </li>\r\n        </ul>\r\n        <div className=\"space-y-2 my-2\">\r\n          <p>Help us improve (optional):</p>\r\n          <Textarea placeholder=\"Tell us why you're canceling...\" />\r\n        </div>\r\n        <AlertDialogFooter className=\"mt-5\">\r\n          <AlertDialogCancel>Keep Subscription</AlertDialogCancel>\r\n          <AlertDialogAction>Cancel Subscription</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogForm4 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-form-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button",
+    "textarea"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

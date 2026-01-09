@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-form",
+  "type": "registry:block",
+  "title": "Input Otp Form",
+  "description": "Input Otp Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-otp/input-otp-form.tsx",
+      "content": "\"use client\";\n\nimport {\n  InputOTP,\n  InputOTPGroup,\n  InputOTPSeparator,\n  InputOTPSlot,\n} from \"@/components/ui/input-otp\";\nimport { Button } from \"@/components/ui/button\";\nimport { useState } from \"react\";\nimport { Check, Loader2 } from \"lucide-react\";\n\nconst InputOTPForm = () => {\n  const [value, setValue] = useState(\"\");\n  const [isLoading, setIsLoading] = useState(false);\n  const [isSuccess, setIsSuccess] = useState(false);\n\n  const handleSubmit = () => {\n    if (value.length !== 6) return;\n    setIsLoading(true);\n    setTimeout(() => {\n      setIsLoading(false);\n      setIsSuccess(true);\n    }, 1500);\n  };\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <div className=\"text-center space-y-2\">\n        <h3 className=\"text-lg font-medium text-foreground\">Verification Code</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Enter the 6-digit code sent to your email\n        </p>\n      </div>\n      <InputOTP maxLength={6} value={value} onChange={setValue} disabled={isSuccess}>\n        <InputOTPGroup>\n          <InputOTPSlot index={0} />\n          <InputOTPSlot index={1} />\n          <InputOTPSlot index={2} />\n        </InputOTPGroup>\n        <InputOTPSeparator />\n        <InputOTPGroup>\n          <InputOTPSlot index={3} />\n          <InputOTPSlot index={4} />\n          <InputOTPSlot index={5} />\n        </InputOTPGroup>\n      </InputOTP>\n      <Button\n        className=\"w-full max-w-[200px]\"\n        onClick={handleSubmit}\n        disabled={value.length !== 6 || isLoading || isSuccess}\n      >\n        {isLoading ? (\n          <>\n            <Loader2 className=\"mr-2 h-4 w-4 animate-spin\" />\n            Verifying\n          </>\n        ) : isSuccess ? (\n          <>\n            <Check className=\"mr-2 h-4 w-4\" />\n            Verified\n          </>\n        ) : (\n          \"Verify\"\n        )}\n      </Button>\n      {!isSuccess && (\n        <button className=\"text-sm text-muted-foreground hover:text-foreground\">\n          Didn&apos;t receive code? Resend\n        </button>\n      )}\n    </div>\n  );\n};\n\nexport { InputOTPForm }",
+      "type": "registry:component",
+      "target": "components/input-otp-form.tsx"
+    }
+  ],
+  "categories": [
+    "input-otp",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

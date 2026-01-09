@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-inline-form",
+  "type": "registry:block",
+  "title": "Calendar Inline Form",
+  "description": "Calendar Inline Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-inline-form.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { Input } from \"@/components/ui/input\";\nimport { useState } from \"react\";\n\nconst CalendarInlineForm = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n  const [eventName, setEventName] = useState(\"\");\n  const [events, setEvents] = useState<{ date: Date; name: string }[]>([]);\n\n  const handleAddEvent = () => {\n    if (date && eventName.trim()) {\n      setEvents([...events, { date, name: eventName }]);\n      setEventName(\"\");\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-4\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-md border\"\n      />\n      <div className=\"flex flex-col gap-2 w-full max-w-sm\">\n        <Input\n          placeholder=\"Event name\"\n          value={eventName}\n          onChange={(e) => setEventName(e.target.value)}\n        />\n        <Button onClick={handleAddEvent} disabled={!date || !eventName.trim()}>\n          Add Event\n        </Button>\n      </div>\n      {events.length > 0 && (\n        <div className=\"text-xs text-slate-400 w-full max-w-sm\">\n          <p className=\"font-medium mb-2\">Events:</p>\n          {events.map((event, idx) => (\n            <div key={idx} className=\"text-slate-200\">\n              • {event.name} - {event.date.toLocaleDateString()}\n            </div>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarInlineForm }",
+      "type": "registry:component",
+      "target": "components/calendar-inline-form.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "input"
+  ]
+}

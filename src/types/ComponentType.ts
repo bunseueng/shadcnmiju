@@ -8,6 +8,7 @@ export interface ComponentVariant {
   type: string
   filePath?: string
   installCommand: string
+  addedAt?: number // Timestamp when the file was created/modified
 }
 
 export interface ComponentPreviewType {
@@ -21,6 +22,7 @@ export interface ComponentPreviewType {
   dependencies: string[]
   tags: string[]
   variants: ComponentVariant[]
+  latestAddedAt?: number // Most recent file modification in this category
 }
 
 export type Block = {

@@ -1,0 +1,23 @@
+<svg
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  class="w-5 h-5 text-white"
+>
+  <!-- Main star (center, largest) -->
+  <path
+    class="star-main"
+    d="M12 2l1.8 4.6L18 8l-4.2 1.4L12 14l-1.8-4.6L6 8l4.2-1.4L12 2z"
+  />
+
+  <!-- Small star bottom-left -->
+  <path
+    class="star-bottom-left"
+    d="M4 14l1 2.5L7.5 17l-2.5.8L4 20l-.8-2.2L1 17l2.2-.5L4 14z"
+  />
+
+  <!-- Small star bottom-right -->
+  <path
+    class="star-bottom-right"
+    d="M18 15l.8 2 2.2.5-2.2.7L18 20l-.7-1.8L15 18l2-.5.8-2z"
+  />
+</svg>

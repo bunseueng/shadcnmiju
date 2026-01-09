@@ -20,44 +20,37 @@ const carouselItems: CarouselItemType[] = [
   {
     id: 1,
     title: "image1",
-    image:
-      "https://images.unsplash.com/photo-1494253109108-2e30c049369b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel1.jpg",
   },
   {
     id: 2,
     title: "image2",
-    image:
-      "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?q=80&w=1539&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel2.jpg",
   },
   {
     id: 3,
     title: "image3",
-    image:
-      "https://images.unsplash.com/photo-1580553874067-be1d5ac6a94b?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel3.jpg",
   },
   {
     id: 4,
     title: "image4",
-    image:
-      "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel4.jpg",
   },
   {
     id: 5,
     title: "image5",
-    image:
-      "https://images.unsplash.com/photo-1622208489373-1fe93e2c6720?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel5.jpg",
   },
   {
     id: 6,
     title: "image6",
-    image:
-      "https://images.unsplash.com/photo-1610970881699-44a5587cabec?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel6.jpg",
   },
   {
     id: 7,
     title: "image7",
-    image:
-      "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/assets/carousel7.jpg",
   },
 ];
 
@@ -115,7 +108,8 @@ const ThreeDCarousel = () => {
 
     // Calculate which card we're closest to
     const normalizedRotation = ((dragRotation % 360) + 360) % 360;
-    const nearestIndex = Math.round(normalizedRotation / anglePerItem) % quantity;
+    const nearestIndex =
+      Math.round(normalizedRotation / anglePerItem) % quantity;
     const targetIndex = (quantity - nearestIndex) % quantity;
 
     api?.scrollTo(targetIndex);
@@ -169,7 +163,9 @@ const ThreeDCarousel = () => {
           onTouchEnd={handleTouchEnd}
         >
           <div
-            className={`relative w-52 h-72 ${isDragging ? "" : "transition-transform duration-500 ease-out"}`}
+            className={`relative w-52 h-72 ${
+              isDragging ? "" : "transition-transform duration-500 ease-out"
+            }`}
             style={{
               transformStyle: "preserve-3d",
               transform: `rotateY(${currentRotation}deg)`,

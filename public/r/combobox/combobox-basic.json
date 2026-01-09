@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-basic",
+  "type": "registry:block",
+  "title": "Combobox Basic",
+  "description": "Combobox Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/combobox/combobox-basic.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Check, ChevronsUpDown } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\n\nconst frameworks = [\n  { value: \"next.js\", label: \"Next.js\" },\n  { value: \"sveltekit\", label: \"SvelteKit\" },\n  { value: \"nuxt.js\", label: \"Nuxt.js\" },\n  { value: \"remix\", label: \"Remix\" },\n  { value: \"astro\", label: \"Astro\" },\n];\n\nexport function ComboboxBasic() {\n  const [open, setOpen] = React.useState(false);\n  const [value, setValue] = React.useState(\"\");\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <Popover open={open} onOpenChange={setOpen}>\n        <PopoverTrigger asChild>\n          <Button\n            variant=\"outline\"\n            role=\"combobox\"\n            aria-expanded={open}\n            className=\"w-[200px] justify-between\"\n          >\n            {value\n              ? frameworks.find((framework) => framework.value === value)?.label\n              : \"Select framework...\"}\n            <ChevronsUpDown className=\"ml-2 h-4 w-4 shrink-0 opacity-50\" />\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent className=\"w-[200px] p-0\">\n          <Command>\n            <CommandInput placeholder=\"Search framework...\" />\n            <CommandList>\n              <CommandEmpty>No framework found.</CommandEmpty>\n              <CommandGroup>\n                {frameworks.map((framework) => (\n                  <CommandItem\n                    key={framework.value}\n                    value={framework.value}\n                    onSelect={(currentValue) => {\n                      setValue(currentValue === value ? \"\" : currentValue);\n                      setOpen(false);\n                    }}\n                  >\n                    <Check\n                      className={cn(\n                        \"mr-2 h-4 w-4\",\n                        value === framework.value ? \"opacity-100\" : \"opacity-0\"\n                      )}\n                    />\n                    {framework.label}\n                  </CommandItem>\n                ))}\n              </CommandGroup>\n            </CommandList>\n          </Command>\n        </PopoverContent>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-basic.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "combobox"
+  ],
+  "registryDependencies": [
+    "button",
+    "command",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-checkbox",
+  "type": "registry:block",
+  "title": "Dropdown Menu Checkbox",
+  "description": "Dropdown Menu Checkbox component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/dropdown-menu/dropdown-menu-checkbox.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport { SlidersHorizontal } from \"lucide-react\";\n\nconst DropdownMenuCheckbox = () => {\n  const [showStatusBar, setShowStatusBar] = useState(true);\n  const [showActivityBar, setShowActivityBar] = useState(false);\n  const [showPanel, setShowPanel] = useState(false);\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button variant=\"outline\" className=\"gap-2\">\n          <SlidersHorizontal className=\"h-4 w-4\" />\n          View Options\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-56 animate-in slide-in-from-top-2 fade-in-0 duration-200\">\n        <DropdownMenuLabel>Appearance</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuCheckboxItem\n          checked={showStatusBar}\n          onCheckedChange={setShowStatusBar}\n          className=\"cursor-pointer\"\n        >\n          Status Bar\n        </DropdownMenuCheckboxItem>\n        <DropdownMenuCheckboxItem\n          checked={showActivityBar}\n          onCheckedChange={setShowActivityBar}\n          disabled\n          className=\"cursor-pointer\"\n        >\n          Activity Bar\n        </DropdownMenuCheckboxItem>\n        <DropdownMenuCheckboxItem\n          checked={showPanel}\n          onCheckedChange={setShowPanel}\n          className=\"cursor-pointer\"\n        >\n          Panel\n        </DropdownMenuCheckboxItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n};\n\nexport { DropdownMenuCheckbox }",
+      "type": "registry:component",
+      "target": "components/dropdown-menu-checkbox.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown-menu",
+    "dropdown-menu"
+  ],
+  "registryDependencies": [
+    "button",
+    "dropdown-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

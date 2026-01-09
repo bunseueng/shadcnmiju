@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-with-actions",
+  "type": "registry:block",
+  "title": "Item With Actions",
+  "description": "Item With Actions component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/item/item-with-actions.tsx",
+      "content": "\"use client\";\n\nimport { FileText, Image, Video } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Item,\n  ItemActions,\n  ItemContent,\n  ItemDescription,\n  ItemGroup,\n  ItemMedia,\n  ItemSeparator,\n  ItemTitle,\n} from \"@/components/ui/item\";\n\nexport function ItemWithActions() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-2xl\">\n        <ItemGroup>\n          <Item variant=\"outline\">\n            <ItemMedia variant=\"icon\">\n              <FileText />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Project Proposal.pdf</ItemTitle>\n              <ItemDescription>2.4 MB • Updated 2 hours ago</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"sm\">\n                View\n              </Button>\n              <Button variant=\"outline\" size=\"sm\">\n                Download\n              </Button>\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"outline\">\n            <ItemMedia variant=\"icon\">\n              <Image />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Screenshot_2024.png</ItemTitle>\n              <ItemDescription>1.8 MB • Updated yesterday</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"sm\">\n                View\n              </Button>\n              <Button variant=\"outline\" size=\"sm\">\n                Download\n              </Button>\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"outline\">\n            <ItemMedia variant=\"icon\">\n              <Video />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Product Demo.mp4</ItemTitle>\n              <ItemDescription>15.2 MB • Updated last week</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"sm\">\n                View\n              </Button>\n              <Button variant=\"outline\" size=\"sm\">\n                Download\n              </Button>\n            </ItemActions>\n          </Item>\n        </ItemGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/item-with-actions.tsx"
+    }
+  ],
+  "categories": [
+    "item",
+    "item"
+  ],
+  "registryDependencies": [
+    "button",
+    "item"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-footer",
+  "type": "registry:block",
+  "title": "Calendar With Footer",
+  "description": "Calendar With Footer component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-footer.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarWithFooter = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  const footer = (\n    <div className=\"flex items-center justify-between p-3 border-t\">\n      <Button\n        variant=\"outline\"\n        size=\"sm\"\n        onClick={() => setDate(new Date())}\n      >\n        Today\n      </Button>\n      <Button\n        variant=\"ghost\"\n        size=\"sm\"\n        onClick={() => setDate(undefined)}\n      >\n        Clear\n      </Button>\n    </div>\n  );\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <div className=\"rounded-md border\">\n        <Calendar\n          mode=\"single\"\n          selected={date}\n          onSelect={setDate}\n        />\n        {footer}\n      </div>\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Selected:{\" \"}\n          <span className=\"text-slate-200 font-medium\">\n            {date.toLocaleDateString()}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarWithFooter }",
+      "type": "registry:component",
+      "target": "components/calendar-with-footer.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar"
+  ]
+}

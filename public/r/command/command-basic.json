@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-basic",
+  "type": "registry:block",
+  "title": "Command Basic",
+  "description": "Command Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/command/command-basic.tsx",
+      "content": "\"use client\";\n\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\n\nconst CommandBasic = () => {\n  return (\n    <Command className=\"rounded-lg border shadow-md w-full max-w-sm\">\n      <CommandInput placeholder=\"Type a command or search...\" />\n      <CommandList>\n        <CommandEmpty>No results found.</CommandEmpty>\n        <CommandGroup heading=\"Suggestions\">\n          <CommandItem>Calendar</CommandItem>\n          <CommandItem>Search Emoji</CommandItem>\n          <CommandItem>Calculator</CommandItem>\n        </CommandGroup>\n      </CommandList>\n    </Command>\n  );\n};\n\nexport { CommandBasic }",
+      "type": "registry:component",
+      "target": "components/command-basic.tsx"
+    }
+  ],
+  "categories": [
+    "command",
+    "command"
+  ],
+  "registryDependencies": [
+    "command"
+  ]
+}

@@ -40,13 +40,13 @@ export function DraggableCardDemo() {
       className: "absolute top-20 right-[35%] rotate-[2deg]",
     },
     {
-      title: "Responsive",
-      image: "/assets/showcase/responsive.png",
+      title: "Sparkle Button",
+      image: "/assets/hero-section7.jpg",
       className: "absolute top-24 left-[45%] rotate-[-7deg]",
     },
     {
-      title: "Accessible",
-      image: "/assets/showcase/accessible.png",
+      title: "3D Parallax Card",
+      image: "/assets/hero-section8.jpg",
       className: "absolute top-8 left-[30%] rotate-[4deg]",
     },
   ];

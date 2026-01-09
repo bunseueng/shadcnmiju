@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-info-2",
+  "type": "registry:block",
+  "title": "Alert Info 2",
+  "description": "Alert Info 2 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-info-2.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Rocket } from \"lucide-react\";\r\n\r\nconst AlertInfo2 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start \">\r\n      <Alert>\r\n        <Rocket />\r\n        <AlertTitle>New Feature Available</AlertTitle>\r\n        <AlertDescription>\r\n          We&apos;ve just released a new dashboard feature. Check it out in your\r\n          settings panel.\r\n        </AlertDescription>\r\n        <div className=\"flex items-center gap-3 cols-2 w-auto mt-2\">\r\n          <Button variant=\"default\" size=\"sm\" className=\"col-start-2 w-auto\">\r\n            Explore Now\r\n          </Button>\r\n        </div>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertInfo2 }",
+      "type": "registry:component",
+      "target": "components/alert-info-2.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

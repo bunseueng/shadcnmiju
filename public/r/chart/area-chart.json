@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "area-chart",
+  "type": "registry:block",
+  "title": "Area Chart",
+  "description": "Area Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/area-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  Area,\n  AreaChart as RechartsAreaChart,\n  CartesianGrid,\n  Legend,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\n\nconst data = [\n  { name: \"Mon\", users: 4000, sessions: 2400 },\n  { name: \"Tue\", users: 3000, sessions: 1398 },\n  { name: \"Wed\", users: 2000, sessions: 9800 },\n  { name: \"Thu\", users: 2780, sessions: 3908 },\n  { name: \"Fri\", users: 1890, sessions: 4800 },\n  { name: \"Sat\", users: 2390, sessions: 3800 },\n  { name: \"Sun\", users: 3490, sessions: 4300 },\n];\n\nconst AreaChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Weekly User Activity</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RechartsAreaChart data={data}>\n            <defs>\n              <linearGradient id=\"colorUsers\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n                <stop offset=\"5%\" stopColor=\"hsl(var(--primary))\" stopOpacity={0.8} />\n                <stop offset=\"95%\" stopColor=\"hsl(var(--primary))\" stopOpacity={0} />\n              </linearGradient>\n              <linearGradient id=\"colorSessions\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n                <stop offset=\"5%\" stopColor=\"hsl(var(--chart-2))\" stopOpacity={0.8} />\n                <stop offset=\"95%\" stopColor=\"hsl(var(--chart-2))\" stopOpacity={0} />\n              </linearGradient>\n            </defs>\n            <CartesianGrid strokeDasharray=\"3 3\" className=\"stroke-muted\" />\n            <XAxis dataKey=\"name\" className=\"text-xs sm:text-sm\" />\n            <YAxis className=\"text-xs sm:text-sm\" />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n            <Area\n              type=\"monotone\"\n              dataKey=\"users\"\n              stroke=\"hsl(var(--primary))\"\n              fillOpacity={1}\n              fill=\"url(#colorUsers)\"\n            />\n            <Area\n              type=\"monotone\"\n              dataKey=\"sessions\"\n              stroke=\"hsl(var(--chart-2))\"\n              fillOpacity={1}\n              fill=\"url(#colorSessions)\"\n            />\n          </RechartsAreaChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { AreaChartComponent }",
+      "type": "registry:component",
+      "target": "components/area-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

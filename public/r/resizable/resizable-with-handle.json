@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-with-handle",
+  "type": "registry:block",
+  "title": "Resizable With Handle",
+  "description": "Resizable With Handle component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/resizable/resizable-with-handle.tsx",
+      "content": "\"use client\";\n\nimport {\n  ResizableHandle,\n  ResizablePanel,\n  ResizablePanelGroup,\n} from \"@/components/ui/resizable\";\n\nconst ResizableWithHandle = () => {\n  return (\n    <ResizablePanelGroup\n      direction=\"horizontal\"\n      className=\"min-h-[200px] max-w-md rounded-lg border\"\n    >\n      <ResizablePanel defaultSize={50}>\n        <div className=\"flex h-full items-center justify-center p-6\">\n          <span className=\"font-semibold text-foreground\">Left</span>\n        </div>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel defaultSize={50}>\n        <div className=\"flex h-full items-center justify-center p-6\">\n          <span className=\"font-semibold text-foreground\">Right</span>\n        </div>\n      </ResizablePanel>\n    </ResizablePanelGroup>\n  );\n};\n\nexport { ResizableWithHandle }",
+      "type": "registry:component",
+      "target": "components/resizable-with-handle.tsx"
+    }
+  ],
+  "categories": [
+    "resizable",
+    "resizable"
+  ],
+  "registryDependencies": [
+    "resizable"
+  ]
+}

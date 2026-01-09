@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bordered-accordion",
+  "type": "registry:block",
+  "title": "Bordered Accordion",
+  "description": "Bordered Accordion component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/accordion/bordered-accordion.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\n\nexport function BorderedAccordion() {\n  return (\n    <Accordion\n      type=\"single\"\n      collapsible\n      className=\"w-full max-w-2xl space-y-3 text-start\"\n    >\n      <AccordionItem\n        value=\"item-1\"\n        className=\"border rounded-lg px-4 shadow-sm\"\n      >\n        <AccordionTrigger className=\"hover:no-underline\">\n          What is shadcn/ui?\n        </AccordionTrigger>\n        <AccordionContent>\n          A collection of re-usable components built using Radix UI and Tailwind\n          CSS.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem\n        value=\"item-2\"\n        className=\"border rounded-lg px-4 shadow-sm\"\n      >\n        <AccordionTrigger className=\"hover:no-underline\">\n          How do I get started?\n        </AccordionTrigger>\n        <AccordionContent>\n          Install the CLI and add components to your project with a single\n          command.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem\n        value=\"item-3\"\n        className=\"border rounded-lg px-4 shadow-sm\"\n      >\n        <AccordionTrigger className=\"hover:no-underline\">\n          Is it production ready?\n        </AccordionTrigger>\n        <AccordionContent>\n          Yes! All components are tested and used in production applications.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/bordered-accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion",
+    "accordion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ]
+}

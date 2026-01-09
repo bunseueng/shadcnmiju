@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "simple-calendar",
+  "type": "registry:block",
+  "title": "Simple Calendar",
+  "description": "Simple Calendar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/simple-calendar.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst SimpleCalendar = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-md border\"\n      />\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Selected:{\" \"}\n          <span className=\"text-slate-200 font-medium\">\n            {date.toLocaleDateString(\"en-US\", {\n              month: \"long\",\n              day: \"numeric\",\n              year: \"numeric\",\n            })}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { SimpleCalendar }",
+      "type": "registry:component",
+      "target": "components/simple-calendar.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

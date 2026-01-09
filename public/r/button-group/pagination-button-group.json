@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-button-group",
+  "type": "registry:block",
+  "title": "Pagination Button Group",
+  "description": "Pagination Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/pagination-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup, ButtonGroupText } from \"@/components/ui/button-group\";\r\nimport {\r\n  ChevronLeft,\r\n  ChevronRight,\r\n  ChevronsLeft,\r\n  ChevronsRight,\r\n} from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst PaginationButtonGroup = () => {\r\n  const [currentPage, setCurrentPage] = useState(5);\r\n  const totalPages = 20;\r\n\r\n  const goToFirst = () => setCurrentPage(1);\r\n  const goToPrevious = () => setCurrentPage(Math.max(1, currentPage - 1));\r\n  const goToNext = () => setCurrentPage(Math.min(totalPages, currentPage + 1));\r\n  const goToLast = () => setCurrentPage(totalPages);\r\n\r\n  return (\r\n    <ButtonGroup>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"icon\"\r\n        onClick={goToFirst}\r\n        disabled={currentPage === 1}\r\n      >\r\n        <ChevronsLeft />\r\n      </Button>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"icon\"\r\n        onClick={goToPrevious}\r\n        disabled={currentPage === 1}\r\n      >\r\n        <ChevronLeft />\r\n      </Button>\r\n      <ButtonGroupText>\r\n        {currentPage} / {totalPages}\r\n      </ButtonGroupText>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"icon\"\r\n        onClick={goToNext}\r\n        disabled={currentPage === totalPages}\r\n      >\r\n        <ChevronRight />\r\n      </Button>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"icon\"\r\n        onClick={goToLast}\r\n        disabled={currentPage === totalPages}\r\n      >\r\n        <ChevronsRight />\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { PaginationButtonGroup }",
+      "type": "registry:component",
+      "target": "components/pagination-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

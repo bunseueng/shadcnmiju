@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-with-icons",
+  "type": "registry:block",
+  "title": "Command With Icons",
+  "description": "Command With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/command/command-with-icons.tsx",
+      "content": "\"use client\";\n\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport {\n  Calendar,\n  Smile,\n  Calculator,\n  User,\n  CreditCard,\n  Settings,\n} from \"lucide-react\";\n\nconst CommandWithIcons = () => {\n  return (\n    <Command className=\"rounded-lg border shadow-md w-full max-w-sm\">\n      <CommandInput placeholder=\"Type a command or search...\" />\n      <CommandList>\n        <CommandEmpty>No results found.</CommandEmpty>\n        <CommandGroup heading=\"Suggestions\">\n          <CommandItem>\n            <Calendar className=\"mr-2 h-4 w-4\" />\n            <span>Calendar</span>\n          </CommandItem>\n          <CommandItem>\n            <Smile className=\"mr-2 h-4 w-4\" />\n            <span>Search Emoji</span>\n          </CommandItem>\n          <CommandItem>\n            <Calculator className=\"mr-2 h-4 w-4\" />\n            <span>Calculator</span>\n          </CommandItem>\n        </CommandGroup>\n        <CommandGroup heading=\"Settings\">\n          <CommandItem>\n            <User className=\"mr-2 h-4 w-4\" />\n            <span>Profile</span>\n          </CommandItem>\n          <CommandItem>\n            <CreditCard className=\"mr-2 h-4 w-4\" />\n            <span>Billing</span>\n          </CommandItem>\n          <CommandItem>\n            <Settings className=\"mr-2 h-4 w-4\" />\n            <span>Settings</span>\n          </CommandItem>\n        </CommandGroup>\n      </CommandList>\n    </Command>\n  );\n};\n\nexport { CommandWithIcons }",
+      "type": "registry:component",
+      "target": "components/command-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "command",
+    "command"
+  ],
+  "registryDependencies": [
+    "command"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

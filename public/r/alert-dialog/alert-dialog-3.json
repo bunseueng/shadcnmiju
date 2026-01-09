@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-3",
+  "type": "registry:block",
+  "title": "Alert Dialog 3",
+  "description": "Alert Dialog 3 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-3.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Rocket } from \"lucide-react\";\r\n\r\nconst AlertDialogSuccess2 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">Deploy Repository</Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <div className=\"flex gap-2\">\r\n          <AlertDialogHeader>\r\n            <div className=\"flex items-center justify-center size-10 rounded-full bg-green-100 dark:bg-green-900\">\r\n              <Rocket className=\"size-6 text-green-500 dark:text-green-300\" />\r\n            </div>\r\n          </AlertDialogHeader>{\" \"}\r\n          <div className=\"space-y-1\">\r\n            <AlertDialogTitle>Deployment Initiated</AlertDialogTitle>\r\n            <AlertDialogDescription>\r\n              Your repository is being deployed to the production environment.\r\n              This process usually takes 2-3 minutes. We&apos;ll notify you when\r\n              it&apos;s live.\r\n            </AlertDialogDescription>\r\n          </div>\r\n        </div>\r\n        <AlertDialogFooter>\r\n          <AlertDialogCancel>Dismiss</AlertDialogCancel>\r\n          <AlertDialogAction>View Project</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogSuccess2 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-3.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

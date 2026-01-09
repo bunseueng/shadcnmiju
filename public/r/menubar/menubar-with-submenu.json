@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-with-submenu",
+  "type": "registry:block",
+  "title": "Menubar With Submenu",
+  "description": "Menubar With Submenu component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/menubar/menubar-with-submenu.tsx",
+      "content": "\"use client\";\n\nimport {\n  Menubar,\n  MenubarContent,\n  MenubarItem,\n  MenubarMenu,\n  MenubarSeparator,\n  MenubarShortcut,\n  MenubarSub,\n  MenubarSubContent,\n  MenubarSubTrigger,\n  MenubarTrigger,\n} from \"@/components/ui/menubar\";\n\nconst MenubarWithSubmenu = () => {\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>File</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>\n            New <MenubarShortcut>⌘N</MenubarShortcut>\n          </MenubarItem>\n          <MenubarSub>\n            <MenubarSubTrigger>New From Template</MenubarSubTrigger>\n            <MenubarSubContent>\n              <MenubarItem>Blank Document</MenubarItem>\n              <MenubarItem>Resume</MenubarItem>\n              <MenubarItem>Letter</MenubarItem>\n              <MenubarItem>Report</MenubarItem>\n            </MenubarSubContent>\n          </MenubarSub>\n          <MenubarSeparator />\n          <MenubarSub>\n            <MenubarSubTrigger>Export As</MenubarSubTrigger>\n            <MenubarSubContent>\n              <MenubarItem>PDF</MenubarItem>\n              <MenubarItem>Word Document</MenubarItem>\n              <MenubarItem>Plain Text</MenubarItem>\n              <MenubarItem>HTML</MenubarItem>\n            </MenubarSubContent>\n          </MenubarSub>\n          <MenubarSeparator />\n          <MenubarItem>\n            Save <MenubarShortcut>⌘S</MenubarShortcut>\n          </MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Help</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Documentation</MenubarItem>\n          <MenubarItem>Report Issue</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n};\n\nexport { MenubarWithSubmenu }",
+      "type": "registry:component",
+      "target": "components/menubar-with-submenu.tsx"
+    }
+  ],
+  "categories": [
+    "menubar",
+    "menubar"
+  ],
+  "registryDependencies": [
+    "menubar"
+  ]
+}

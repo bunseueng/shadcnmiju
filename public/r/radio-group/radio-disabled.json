@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-disabled",
+  "type": "registry:block",
+  "title": "Radio Disabled",
+  "description": "Radio Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/radio-group/radio-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\n\nconst RadioDisabled = () => {\n  return (\n    <RadioGroup defaultValue=\"option-one\">\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"option-one\" id=\"option-one\" />\n        <Label htmlFor=\"option-one\">Option One</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"option-two\" id=\"option-two\" />\n        <Label htmlFor=\"option-two\">Option Two</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"option-three\" id=\"option-three\" disabled />\n        <Label htmlFor=\"option-three\" className=\"text-muted-foreground\">\n          Option Three (Disabled)\n        </Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <RadioGroupItem value=\"option-four\" id=\"option-four\" disabled />\n        <Label htmlFor=\"option-four\" className=\"text-muted-foreground\">\n          Option Four (Disabled)\n        </Label>\n      </div>\n    </RadioGroup>\n  );\n};\n\nexport { RadioDisabled }",
+      "type": "registry:component",
+      "target": "components/radio-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "radio-group",
+    "radio-group"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ]
+}

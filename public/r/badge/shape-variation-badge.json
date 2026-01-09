@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shape-variation-badge",
+  "type": "registry:block",
+  "title": "Shape Variation Badge",
+  "description": "Shape Variation Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/shape-variation-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst ShapeVariationBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge variant=\"outline\" className=\"rounded-none\">\r\n        Square\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"rounded-sm\">\r\n        Small Rounded\r\n      </Badge>\r\n      <Badge variant=\"outline\">Default</Badge>\r\n      <Badge variant=\"outline\" className=\"rounded-full\">\r\n        Pill\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { ShapeVariationBadge }",
+      "type": "registry:component",
+      "target": "components/shape-variation-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

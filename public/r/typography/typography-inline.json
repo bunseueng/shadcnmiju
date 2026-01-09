@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-inline",
+  "type": "registry:block",
+  "title": "Typography Inline",
+  "description": "Typography Inline component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/typography/typography-inline.tsx",
+      "content": "\"use client\";\n\nexport function TypographyInline() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl space-y-6\">\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Inline Code\n          </h3>\n          <p className=\"leading-7\">\n            Install the package by running{\" \"}\n            <code className=\"relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold\">\n              npm install\n            </code>{\" \"}\n            in your terminal.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Text Formatting\n          </h3>\n          <p className=\"leading-7\">\n            This text contains <strong>bold words</strong>,{\" \"}\n            <em>italic words</em>, <u>underlined text</u>, and{\" \"}\n            <s>strikethrough text</s>.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Lead Text\n          </h3>\n          <p className=\"text-xl text-muted-foreground\">\n            A modal dialog that interrupts the user with important content and\n            expects a response.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Blockquote\n          </h3>\n          <blockquote className=\"mt-6 border-l-2 pl-6 italic\">\n            \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair\n            that they should pay for the privilege.\"\n          </blockquote>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Link\n          </h3>\n          <p className=\"leading-7\">\n            Visit our{\" \"}\n            <a\n              href=\"#\"\n              className=\"font-medium text-primary underline underline-offset-4\"\n            >\n              documentation\n            </a>{\" \"}\n            for more information.\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/typography-inline.tsx"
+    }
+  ],
+  "categories": [
+    "typography",
+    "typography"
+  ]
+}

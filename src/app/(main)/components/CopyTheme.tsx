@@ -14,7 +14,6 @@ import { useState } from "react";
 import ThemeData from "@/configs/themes.json";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Check, Copy, Palette } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 
 function getThemeData(themeId: string) {
@@ -53,19 +52,59 @@ export function CopyTheme() {
     }
   };
 
-  const handleCopy = (mode: "light" | "dark") => {
-    const data = mode === "light" ? themeData.light : themeData.dark;
+  const generateCssVariables = (
+    data: { key: string; value: string }[],
+    selector: string
+  ) => {
     const cssVariables = data
       .map((item) => {
         const cssVar = item.key.replace(/([A-Z])/g, "-$1").toLowerCase();
         return `  --${cssVar}: ${item.value};`;
       })
       .join("\n");
-    const fullCss = `${
-      mode === "light" ? ":root" : ".dark"
-    } {\n${cssVariables}\n}`;
+    return `${selector} {\n${cssVariables}\n}`;
+  };
 
-    navigator.clipboard.writeText(fullCss);
+  const generateThemeInline = (data: { key: string; value: string }[]) => {
+    const themeInlineVariables = data
+      .filter((item) => {
+        const key = item.key.toLowerCase();
+        return (
+          !key.includes("font") &&
+          !key.includes("radius") &&
+          !key.includes("shadow") &&
+          !key.includes("spacing") &&
+          !key.includes("tracking")
+        );
+      })
+      .map((item) => {
+        const cssVar = item.key.replace(/([A-Z])/g, "-$1").toLowerCase();
+        return `  --color-${cssVar}: var(--${cssVar});`;
+      })
+      .join("\n");
+
+    return `@theme inline {
+${themeInlineVariables}
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}`;
+  };
+
+  const handleCopyAll = () => {
+    const lightCss = generateCssVariables(themeData.light, ":root");
+    const darkCss = generateCssVariables(themeData.dark, ".dark");
+    const themeInline = generateThemeInline(themeData.light);
+
+    const fullCss = `${lightCss}\n\n${darkCss}\n\n${themeInline}`;
+
+    navigator.clipboard.writeText(fullCss.trim());
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -84,7 +123,7 @@ export function CopyTheme() {
             {currentThemeName} Theme
           </DialogTitle>
           <DialogDescription className="text-base">
-            Copy CSS variables for light or dark mode. All of these theme are
+            Copy CSS variables for light and dark mode. All of these themes are
             from{" "}
             <Link
               href="https://tweakcn.com/"
@@ -97,110 +136,90 @@ export function CopyTheme() {
           </DialogDescription>
         </DialogHeader>
 
-        <Tabs defaultValue="light" className="mt-4">
-          <div className="flex items-center justify-between mb-4">
-            <TabsList className="grid w-60 grid-cols-2">
-              <TabsTrigger value="light">Light Mode</TabsTrigger>
-              <TabsTrigger value="dark">Dark Mode</TabsTrigger>
-            </TabsList>
+        <div className="mt-4 space-y-4">
+          <div className="flex items-center justify-between">
+            <p className="text-sm text-muted-foreground">
+              {themeData.light.length + themeData.dark.length} variables (Light
+              + Dark)
+            </p>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleCopyAll}
+              className="gap-2"
+            >
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4 text-green-500" />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <Copy className="h-4 w-4" />
+                  Copy All
+                </>
+              )}
+            </Button>
           </div>
 
-          <TabsContent value="light" className="mt-0 space-y-4">
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-muted-foreground">
-                {themeData.light.length} variables
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => handleCopy("light")}
-                className="gap-2"
-              >
-                {copied ? (
-                  <>
-                    <Check className="h-4 w-4 text-green-500" />
-                    Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy className="h-4 w-4" />
-                    Copy All
-                  </>
-                )}
-              </Button>
-            </div>
-            <ScrollArea className="h-100 rounded-lg border bg-muted/30 p-4">
-              <div className="space-y-2 font-mono text-sm">
-                {themeData.light.map((theme, index) => {
-                  const cssVar = theme.key
-                    .replace(/([A-Z])/g, "-$1")
-                    .toLowerCase();
-                  return (
-                    <div
-                      key={index}
-                      className="flex items-start justify-between gap-4 rounded-md border border-border/40 bg-background px-3 py-2 hover:border-primary/40 hover:bg-accent/50 transition-colors"
-                    >
-                      <span className="font-semibold text-primary shrink-0">
-                        {`--${cssVar}`}
-                      </span>
-                      <span className="text-muted-foreground text-right break-all">
-                        {theme.value}
-                      </span>
-                    </div>
-                  );
-                })}
+          <ScrollArea className="h-100 rounded-lg border bg-muted/30 p-4">
+            <div className="space-y-4 font-mono text-sm">
+              {/* Light Mode Section */}
+              <div>
+                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2 sticky top-0 bg-muted/30 py-1">
+                  :root (Light Mode)
+                </h3>
+                <div className="space-y-2">
+                  {themeData.light.map((theme, index) => {
+                    const cssVar = theme.key
+                      .replace(/([A-Z])/g, "-$1")
+                      .toLowerCase();
+                    return (
+                      <div
+                        key={`light-${index}`}
+                        className="flex items-start justify-between gap-4 rounded-md border border-border/40 bg-background px-3 py-2 hover:border-primary/40 hover:bg-accent/50 transition-colors"
+                      >
+                        <span className="font-semibold text-primary shrink-0">
+                          {`--${cssVar}`}
+                        </span>
+                        <span className="text-muted-foreground text-right break-all">
+                          {theme.value}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </ScrollArea>
-          </TabsContent>
 
-          <TabsContent value="dark" className="mt-0 space-y-4">
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-muted-foreground">
-                {themeData.dark.length} variables
-              </p>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => handleCopy("dark")}
-                className="gap-2"
-              >
-                {copied ? (
-                  <>
-                    <Check className="h-4 w-4 text-green-500" />
-                    Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy className="h-4 w-4" />
-                    Copy All
-                  </>
-                )}
-              </Button>
-            </div>
-            <ScrollArea className="h-100 rounded-lg border bg-muted/30 p-4">
-              <div className="space-y-2 font-mono text-sm">
-                {themeData.dark.map((theme, index) => {
-                  const cssVar = theme.key
-                    .replace(/([A-Z])/g, "-$1")
-                    .toLowerCase();
-                  return (
-                    <div
-                      key={index}
-                      className="flex items-start justify-between gap-4 rounded-md border border-border/40 bg-background px-3 py-2 hover:border-primary/40 hover:bg-accent/50 transition-colors"
-                    >
-                      <span className="font-semibold text-primary shrink-0">
-                        {`--${cssVar}`}
-                      </span>
-                      <span className="text-muted-foreground text-right break-all">
-                        {theme.value}
-                      </span>
-                    </div>
-                  );
-                })}
+              {/* Dark Mode Section */}
+              <div>
+                <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2 sticky top-0 bg-muted/30 py-1">
+                  .dark (Dark Mode)
+                </h3>
+                <div className="space-y-2">
+                  {themeData.dark.map((theme, index) => {
+                    const cssVar = theme.key
+                      .replace(/([A-Z])/g, "-$1")
+                      .toLowerCase();
+                    return (
+                      <div
+                        key={`dark-${index}`}
+                        className="flex items-start justify-between gap-4 rounded-md border border-border/40 bg-background px-3 py-2 hover:border-primary/40 hover:bg-accent/50 transition-colors"
+                      >
+                        <span className="font-semibold text-primary shrink-0">
+                          {`--${cssVar}`}
+                        </span>
+                        <span className="text-muted-foreground text-right break-all">
+                          {theme.value}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </ScrollArea>
-          </TabsContent>
-        </Tabs>
+            </div>
+          </ScrollArea>
+        </div>
 
         <div className="flex justify-end mt-4">
           <DialogClose asChild>

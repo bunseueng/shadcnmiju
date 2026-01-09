@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-info-1",
+  "type": "registry:block",
+  "title": "Alert Info 1",
+  "description": "Alert Info 1 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-info-1.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { AlertCircle } from \"lucide-react\";\r\n\r\nconst AlertInfo1 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start\">\r\n      <Alert>\r\n        <AlertCircle />\r\n        <AlertTitle>Information</AlertTitle>\r\n        <AlertDescription>\r\n          This is a basic informational alert to notify users about general\r\n          information.\r\n        </AlertDescription>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertInfo1 }",
+      "type": "registry:component",
+      "target": "components/alert-info-1.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

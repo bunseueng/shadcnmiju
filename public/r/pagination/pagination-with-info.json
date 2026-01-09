@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-with-info",
+  "type": "registry:block",
+  "title": "Pagination With Info",
+  "description": "Pagination With Info component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/pagination/pagination-with-info.tsx",
+      "content": "\"use client\";\n\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/components/ui/pagination\";\n\nconst PaginationWithInfo = () => {\n  const itemsPerPage = 10;\n  const currentPage = 3;\n  const totalItems = 97;\n  const totalPages = Math.ceil(totalItems / itemsPerPage);\n  const startItem = (currentPage - 1) * itemsPerPage + 1;\n  const endItem = Math.min(currentPage * itemsPerPage, totalItems);\n\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-md\">\n      <div className=\"flex items-center justify-between text-sm text-muted-foreground\">\n        <span>\n          Showing {startItem}-{endItem} of {totalItems} items\n        </span>\n        <span>Page {currentPage} of {totalPages}</span>\n      </div>\n      <Pagination>\n        <PaginationContent>\n          <PaginationItem>\n            <PaginationPrevious href=\"#\" />\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\">2</PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\" isActive>\n              3\n            </PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationLink href=\"#\">4</PaginationLink>\n          </PaginationItem>\n          <PaginationItem>\n            <PaginationNext href=\"#\" />\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n    </div>\n  );\n};\n\nexport { PaginationWithInfo }",
+      "type": "registry:component",
+      "target": "components/pagination-with-info.tsx"
+    }
+  ],
+  "categories": [
+    "pagination",
+    "pagination"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-featured",
+  "type": "registry:block",
+  "title": "Navigation Menu Featured",
+  "description": "Navigation Menu Featured component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/navigation-menu/navigation-menu-featured.tsx",
+      "content": "\"use client\";\n\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n  navigationMenuTriggerStyle,\n} from \"@/components/ui/navigation-menu\";\n\nconst NavigationMenuFeatured = () => {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Components</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid gap-3 p-6 w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">\n              <li className=\"row-span-3\">\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md\">\n                    <div className=\"mb-2 mt-4 text-lg font-medium\">\n                      shadcn/ui\n                    </div>\n                    <p className=\"text-sm leading-tight text-muted-foreground\">\n                      Beautifully designed components built with Radix UI and\n                      Tailwind CSS.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                    <div className=\"text-sm font-medium leading-none\">\n                      Alert Dialog\n                    </div>\n                    <p className=\"line-clamp-2 text-sm leading-snug text-muted-foreground\">\n                      A modal dialog that interrupts the user.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                    <div className=\"text-sm font-medium leading-none\">\n                      Hover Card\n                    </div>\n                    <p className=\"line-clamp-2 text-sm leading-snug text-muted-foreground\">\n                      Preview content available behind a link.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                    <div className=\"text-sm font-medium leading-none\">\n                      Progress\n                    </div>\n                    <p className=\"line-clamp-2 text-sm leading-snug text-muted-foreground\">\n                      Displays an indicator showing completion.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            Docs\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n};\n\nexport { NavigationMenuFeatured }",
+      "type": "registry:component",
+      "target": "components/navigation-menu-featured.tsx"
+    }
+  ],
+  "categories": [
+    "navigation-menu",
+    "navigation-menu"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ]
+}

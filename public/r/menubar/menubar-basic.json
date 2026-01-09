@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-basic",
+  "type": "registry:block",
+  "title": "Menubar Basic",
+  "description": "Menubar Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/menubar/menubar-basic.tsx",
+      "content": "\"use client\";\n\nimport {\n  Menubar,\n  MenubarContent,\n  MenubarItem,\n  MenubarMenu,\n  MenubarSeparator,\n  MenubarShortcut,\n  MenubarTrigger,\n} from \"@/components/ui/menubar\";\n\nconst MenubarBasic = () => {\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>File</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>\n            New Tab <MenubarShortcut>⌘T</MenubarShortcut>\n          </MenubarItem>\n          <MenubarItem>\n            New Window <MenubarShortcut>⌘N</MenubarShortcut>\n          </MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>Share</MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>\n            Print <MenubarShortcut>⌘P</MenubarShortcut>\n          </MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Edit</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>\n            Undo <MenubarShortcut>⌘Z</MenubarShortcut>\n          </MenubarItem>\n          <MenubarItem>\n            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>\n          </MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>\n            Cut <MenubarShortcut>⌘X</MenubarShortcut>\n          </MenubarItem>\n          <MenubarItem>\n            Copy <MenubarShortcut>⌘C</MenubarShortcut>\n          </MenubarItem>\n          <MenubarItem>\n            Paste <MenubarShortcut>⌘V</MenubarShortcut>\n          </MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>View</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Zoom In</MenubarItem>\n          <MenubarItem>Zoom Out</MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>Full Screen</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n};\n\nexport { MenubarBasic }",
+      "type": "registry:component",
+      "target": "components/menubar-basic.tsx"
+    }
+  ],
+  "categories": [
+    "menubar",
+    "menubar"
+  ],
+  "registryDependencies": [
+    "menubar"
+  ]
+}

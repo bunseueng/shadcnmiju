@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-with-action",
+  "type": "registry:block",
+  "title": "Sonner With Action",
+  "description": "Sonner With Action component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sonner/sonner-with-action.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/components/ui/button\";\n\nconst SonnerWithAction = () => {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast(\"Message deleted\", {\n            action: {\n              label: \"Undo\",\n              onClick: () => toast.success(\"Undo successful\"),\n            },\n          })\n        }\n      >\n        With Undo\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast(\"New notification\", {\n            description: \"You have a new message\",\n            action: {\n              label: \"View\",\n              onClick: () => toast.info(\"Opening message...\"),\n            },\n          })\n        }\n      >\n        With View Action\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast.error(\"Connection lost\", {\n            description: \"Unable to connect to the server\",\n            action: {\n              label: \"Retry\",\n              onClick: () => toast.success(\"Reconnected\"),\n            },\n          })\n        }\n      >\n        With Retry\n      </Button>\n    </div>\n  );\n};\n\nexport { SonnerWithAction }",
+      "type": "registry:component",
+      "target": "components/sonner-with-action.tsx"
+    }
+  ],
+  "categories": [
+    "sonner",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "sonner"
+  ]
+}

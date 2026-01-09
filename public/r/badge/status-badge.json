@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-badge",
+  "type": "registry:block",
+  "title": "Status Badge",
+  "description": "Status Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/status-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst StatusBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"border-green-500/50 bg-green-500/10 text-green-700 dark:text-green-400\"\r\n      >\r\n        <span className=\"mr-1 text-green-500\">●</span>\r\n        Active\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"border-yellow-500/50 bg-yellow-500/10 text-yellow-700 dark:text-yellow-400\"\r\n      >\r\n        <span className=\"mr-1 text-yellow-500\">●</span>\r\n        Pending\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"border-gray-500/50 bg-gray-500/10 text-gray-700 dark:text-gray-400\"\r\n      >\r\n        <span className=\"mr-1 text-gray-500\">●</span>\r\n        Offline\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"border-red-500/50 bg-red-500/10 text-red-700 dark:text-red-400\"\r\n      >\r\n        <span className=\"mr-1 text-red-500\">●</span>\r\n        Error\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"border-blue-500/50 bg-blue-500/10 text-blue-700 dark:text-blue-400\"\r\n      >\r\n        <span className=\"mr-1 text-blue-500\">●</span>\r\n        In Progress\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { StatusBadge }",
+      "type": "registry:component",
+      "target": "components/status-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

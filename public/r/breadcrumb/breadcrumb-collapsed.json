@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-collapsed",
+  "type": "registry:block",
+  "title": "Breadcrumb Collapsed",
+  "description": "Breadcrumb Collapsed component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/breadcrumb/breadcrumb-collapsed.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\n\nconst BreadcrumbCollapsed = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <DropdownMenu>\n            <DropdownMenuTrigger className=\"flex items-center gap-1\">\n              <BreadcrumbEllipsis className=\"h-4 w-4\" />\n            </DropdownMenuTrigger>\n            <DropdownMenuContent align=\"start\">\n              <DropdownMenuItem>\n                <BreadcrumbLink href=\"/documentation\">Documentation</BreadcrumbLink>\n              </DropdownMenuItem>\n              <DropdownMenuItem>\n                <BreadcrumbLink href=\"/themes\">Themes</BreadcrumbLink>\n              </DropdownMenuItem>\n              <DropdownMenuItem>\n                <BreadcrumbLink href=\"/github\">GitHub</BreadcrumbLink>\n              </DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/components\">Components</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport { BreadcrumbCollapsed }",
+      "type": "registry:component",
+      "target": "components/breadcrumb-collapsed.tsx"
+    }
+  ],
+  "categories": [
+    "breadcrumb",
+    "breadcrumb"
+  ],
+  "registryDependencies": [
+    "breadcrumb",
+    "dropdown-menu"
+  ]
+}

@@ -16,7 +16,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Check, ChevronsUpDown } from "lucide-react";
@@ -34,14 +34,41 @@ interface ComponentListsProps {
   search: string;
 }
 
+// Custom hook for media query with SSR support
+const useIsDesktop = () => {
+  const subscribe = (callback: () => void) => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    mediaQuery.addEventListener("change", callback);
+    return () => mediaQuery.removeEventListener("change", callback);
+  };
+
+  const getSnapshot = () => {
+    return window.matchMedia("(min-width: 1024px)").matches;
+  };
+
+  const getServerSnapshot = () => false;
+
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+};
+
+// Hook to detect if component is mounted (client-side)
+const useMounted = () => {
+  const subscribe = () => () => {};
+  const getSnapshot = () => true;
+  const getServerSnapshot = () => false;
+
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+};
+
 const ComponentLists = ({
   components,
   selectedComponent,
   onSearchChange,
   search,
 }: ComponentListsProps) => {
-  const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const mounted = useMounted();
+  const isDesktop = useIsDesktop();
 
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -52,56 +79,56 @@ const ComponentLists = ({
 
   const onSelectComponent = (component: ComponentPreviewType) => {
     router.push(`/components/${component.id}`);
-    setOpen(false);
   };
 
   useEffect(() => {
+    // Only enable keyboard shortcuts on desktop
+    if (!isDesktop) return;
+
     const down = (e: KeyboardEvent) => {
       // Check for Cmd+K (Mac) or Ctrl+K (Windows/Linux)
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault(); // Prevents browser search bar from opening
-        setOpen((open) => !open);
+        e.preventDefault();
+        setSearchModalOpen((prev) => !prev);
       } else if (e.key === "Escape" || e.code === "Escape") {
         e.preventDefault();
-        setOpen((open) => !open);
+        setSearchModalOpen(false);
       }
     };
 
-    if (open) {
+    if (searchModalOpen) {
       inputRef.current?.focus();
     }
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, [open]);
+  }, [searchModalOpen, isDesktop]);
 
   const handleClick = (component: ComponentPreviewType) => {
     router.push(`/components/${component.id}`);
-    setOpen(false);
+    setSearchModalOpen(false);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setIsMobile(width <= 768);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
   return (
     <React.Fragment>
-      <aside className="w-full border border-dashed bg-background lg:sticky lg:top-18 lg:h-[calc(100vh-64px)] lg:overflow-hidden">
+      <aside className="w-full border border-dashed bg-background lg:w-[20%] lg:sticky lg:top-18 lg:h-[calc(100vh-64px)] lg:overflow-hidden">
         <div className="flex flex-col h-full">
-          {!isMobile ? (
+          {!mounted ? (
+            // Server-side / initial render placeholder
+            <div className="w-full p-4">
+              <Button
+                variant="outline"
+                className="w-full justify-between"
+                disabled
+              >
+                Select components...
+                <ChevronsUpDown className="opacity-50" />
+              </Button>
+            </div>
+          ) : isDesktop ? (
             <>
               <div className="flex w-full flex-col gap-4 lg:gap-6 py-3 lg:py-4 border-b border-dashed px-3 lg:px-4 shrink-0">
-                <InputGroup onClick={() => setOpen(!open)}>
+                <InputGroup onClick={() => setSearchModalOpen(true)}>
                   <InputGroupInput placeholder="Search..." />
                   <InputGroupAddon>
                     <SearchIcon />
@@ -144,16 +171,15 @@ const ComponentLists = ({
                 </div>
 
                 <div className="w-full pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-10 bg-linear-to-t from-background to-transparent" />
-              </ScrollArea>{" "}
+              </ScrollArea>
             </>
           ) : (
             <div className="w-full p-4">
-              <Popover open={open} onOpenChange={setOpen}>
+              <Popover>
                 <PopoverTrigger asChild>
                   <Button
                     variant="outline"
                     role="combobox"
-                    aria-expanded={open}
                     className="w-full justify-between"
                   >
                     {selectedComponent
@@ -165,14 +191,14 @@ const ComponentLists = ({
                     <ChevronsUpDown className="opacity-50" />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-full! p-0">
+                <PopoverContent className="w-(--radix-popover-trigger-width) p-0">
                   <Command>
                     <CommandInput
-                      placeholder="Search framework..."
+                      placeholder="Search component..."
                       className="h-9"
                     />
                     <CommandList>
-                      <CommandEmpty>No framework found.</CommandEmpty>
+                      <CommandEmpty>No component found.</CommandEmpty>
                       <CommandGroup>
                         {components.map((component) => (
                           <CommandItem
@@ -200,12 +226,12 @@ const ComponentLists = ({
           )}
         </div>
       </aside>
-      {open && (
+      {searchModalOpen && isDesktop && (
         <div className="fixed inset-0 z-999 bg-black/50 backdrop-blur-md">
           <div className="relative max-w-3xl mx-auto flex items-center justify-center h-full">
             <Button
               variant="outline"
-              onClick={() => setOpen(!open)}
+              onClick={() => setSearchModalOpen(false)}
               className="cursor-pointer absolute top-24 right-4 md:right-0 z-110 py-4"
             >
               <X />

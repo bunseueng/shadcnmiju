@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-inline-popover",
+  "type": "registry:block",
+  "title": "Calendar Inline Popover",
+  "description": "Calendar Inline Popover component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-inline-popover.tsx",
+      "content": "\"use client\";\n\nimport { Badge } from \"@/components/ui/badge\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarInlinePopover = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <div className=\"flex items-center gap-2\">\n        <span className=\"text-sm text-slate-400\">Event Date:</span>\n        <Popover>\n          <PopoverTrigger asChild>\n            <Badge\n              variant=\"outline\"\n              className=\"cursor-pointer hover:bg-slate-100 transition-colors\"\n            >\n              <CalendarIcon className=\"h-3 w-3 mr-1\" />\n              {date ? date.toLocaleDateString() : \"Select date\"}\n            </Badge>\n          </PopoverTrigger>\n          <PopoverContent className=\"w-auto p-0\">\n            <Calendar mode=\"single\" selected={date} onSelect={setDate} />\n          </PopoverContent>\n        </Popover>\n      </div>\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          <span className=\"text-slate-200 font-medium\">\n            {Math.ceil(\n              (date.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24)\n            )}{\" \"}\n            days {date.getTime() > new Date().getTime() ? \"from now\" : \"ago\"}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarInlinePopover }",
+      "type": "registry:component",
+      "target": "components/calendar-inline-popover.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "badge",
+    "calendar",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

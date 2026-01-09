@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-table",
+  "type": "registry:block",
+  "title": "Skeleton Table",
+  "description": "Skeleton Table component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/skeleton/skeleton-table.tsx",
+      "content": "\"use client\";\n\nimport { Skeleton } from \"@/components/ui/skeleton\";\n\nconst SkeletonTable = () => {\n  return (\n    <div className=\"w-full max-w-md space-y-4\">\n      <div className=\"flex items-center justify-between\">\n        <Skeleton className=\"h-8 w-[200px]\" />\n        <Skeleton className=\"h-8 w-[100px]\" />\n      </div>\n      <div className=\"rounded-lg border\">\n        <div className=\"border-b p-4 flex gap-4\">\n          <Skeleton className=\"h-4 w-1/4\" />\n          <Skeleton className=\"h-4 w-1/4\" />\n          <Skeleton className=\"h-4 w-1/4\" />\n          <Skeleton className=\"h-4 w-1/4\" />\n        </div>\n        {[1, 2, 3, 4].map((i) => (\n          <div key={i} className=\"p-4 flex gap-4 border-b last:border-0\">\n            <Skeleton className=\"h-4 w-1/4\" />\n            <Skeleton className=\"h-4 w-1/4\" />\n            <Skeleton className=\"h-4 w-1/4\" />\n            <Skeleton className=\"h-4 w-1/4\" />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport { SkeletonTable }",
+      "type": "registry:component",
+      "target": "components/skeleton-table.tsx"
+    }
+  ],
+  "categories": [
+    "skeleton",
+    "skeleton"
+  ],
+  "registryDependencies": [
+    "skeleton"
+  ]
+}

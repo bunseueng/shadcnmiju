@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-with-description",
+  "type": "registry:block",
+  "title": "Switch With Description",
+  "description": "Switch With Description component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/switch/switch-with-description.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Label } from \"@/components/ui/label\";\n\nconst SwitchWithDescription = () => {\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-md\">\n      <div className=\"flex items-center justify-between rounded-lg border p-4\">\n        <div className=\"space-y-0.5\">\n          <Label htmlFor=\"marketing\">Marketing emails</Label>\n          <p className=\"text-sm text-muted-foreground\">\n            Receive emails about new products and features.\n          </p>\n        </div>\n        <Switch id=\"marketing\" />\n      </div>\n      <div className=\"flex items-center justify-between rounded-lg border p-4\">\n        <div className=\"space-y-0.5\">\n          <Label htmlFor=\"security\">Security emails</Label>\n          <p className=\"text-sm text-muted-foreground\">\n            Receive alerts about your account security.\n          </p>\n        </div>\n        <Switch id=\"security\" defaultChecked />\n      </div>\n      <div className=\"flex items-center justify-between rounded-lg border p-4\">\n        <div className=\"space-y-0.5\">\n          <Label htmlFor=\"newsletter\">Newsletter</Label>\n          <p className=\"text-sm text-muted-foreground\">\n            Weekly digest of trending topics.\n          </p>\n        </div>\n        <Switch id=\"newsletter\" />\n      </div>\n    </div>\n  );\n};\n\nexport { SwitchWithDescription }",
+      "type": "registry:component",
+      "target": "components/switch-with-description.tsx"
+    }
+  ],
+  "categories": [
+    "switch",
+    "switch"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ]
+}

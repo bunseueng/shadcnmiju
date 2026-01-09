@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-scale-fade",
+  "type": "registry:block",
+  "title": "Dialog Scale Fade",
+  "description": "Dialog Scale Fade component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/dialog/dialog-scale-fade.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { Sparkles } from \"lucide-react\";\n\nconst DialogScaleFade = () => {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Dialog open={open} onOpenChange={setOpen}>\n      <DialogTrigger asChild>\n        <Button className=\"gap-2\">\n          <Sparkles className=\"h-4 w-4\" />\n          Scale & Fade Dialog\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px] animate-in fade-in-0 zoom-in-95 duration-300\">\n        <DialogHeader>\n          <DialogTitle className=\"text-foreground\">Scale & Fade Animation</DialogTitle>\n          <DialogDescription>\n            This dialog smoothly scales up while fading in for an elegant entrance effect.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"py-4\">\n          <p className=\"text-sm text-muted-foreground\">\n            The combination of scale and fade creates a polished, professional feel that draws\n            attention without being jarring.\n          </p>\n        </div>\n        <DialogFooter>\n          <Button variant=\"outline\" onClick={() => setOpen(false)}>\n            Cancel\n          </Button>\n          <Button onClick={() => setOpen(false)}>Continue</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n};\n\nexport { DialogScaleFade }",
+      "type": "registry:component",
+      "target": "components/dialog-scale-fade.tsx"
+    }
+  ],
+  "categories": [
+    "dialog",
+    "dialog"
+  ],
+  "registryDependencies": [
+    "button",
+    "dialog"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

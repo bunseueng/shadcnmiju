@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-with-search",
+  "type": "registry:block",
+  "title": "Sidebar With Search",
+  "description": "Sidebar With Search component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sidebar/sidebar-with-search.tsx",
+      "content": "\"use client\";\n\nimport {\n  Sidebar,\n  SidebarContent,\n  SidebarGroup,\n  SidebarGroupContent,\n  SidebarGroupLabel,\n  SidebarHeader,\n  SidebarMenu,\n  SidebarMenuItem,\n  SidebarMenuButton,\n  SidebarProvider,\n  SidebarTrigger,\n} from \"@/components/ui/sidebar\";\nimport { Home, Search, Settings, Users, FileText, BarChart, Bell, Mail } from \"lucide-react\";\nimport { Input } from \"@/components/ui/input\";\n\nconst SidebarWithSearch = () => {\n  return (\n    <div className=\"flex h-full w-full min-h-[600px]\">\n      <SidebarProvider defaultOpen={true}>\n        <Sidebar>\n          <SidebarHeader className=\"border-b p-4\">\n            <div className=\"relative\">\n              <Search className=\"absolute left-2 top-2.5 h-4 w-4 text-muted-foreground\" />\n              <Input\n                placeholder=\"Search...\"\n                className=\"pl-8 h-9\"\n              />\n            </div>\n          </SidebarHeader>\n          <SidebarContent>\n            <SidebarGroup>\n              <SidebarGroupLabel>Main Menu</SidebarGroupLabel>\n              <SidebarGroupContent>\n                <SidebarMenu>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <Home className=\"h-4 w-4\" />\n                      <span>Dashboard</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <Users className=\"h-4 w-4\" />\n                      <span>Team</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <FileText className=\"h-4 w-4\" />\n                      <span>Documents</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <BarChart className=\"h-4 w-4\" />\n                      <span>Analytics</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                </SidebarMenu>\n              </SidebarGroupContent>\n            </SidebarGroup>\n            <SidebarGroup>\n              <SidebarGroupLabel>Other</SidebarGroupLabel>\n              <SidebarGroupContent>\n                <SidebarMenu>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <Bell className=\"h-4 w-4\" />\n                      <span>Notifications</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <Mail className=\"h-4 w-4\" />\n                      <span>Messages</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                  <SidebarMenuItem>\n                    <SidebarMenuButton>\n                      <Settings className=\"h-4 w-4\" />\n                      <span>Settings</span>\n                    </SidebarMenuButton>\n                  </SidebarMenuItem>\n                </SidebarMenu>\n              </SidebarGroupContent>\n            </SidebarGroup>\n          </SidebarContent>\n        </Sidebar>\n        <main className=\"flex-1 overflow-auto\">\n          <header className=\"flex h-16 items-center gap-4 border-b px-6\">\n            <SidebarTrigger />\n            <h1 className=\"text-xl font-semibold\">Dashboard</h1>\n          </header>\n          <div className=\"p-6\">\n            <div className=\"grid gap-4 md:grid-cols-2 lg:grid-cols-3\">\n              <div className=\"rounded-lg border bg-card p-6\">\n                <h3 className=\"font-semibold mb-2\">Total Users</h3>\n                <p className=\"text-3xl font-bold\">2,543</p>\n              </div>\n              <div className=\"rounded-lg border bg-card p-6\">\n                <h3 className=\"font-semibold mb-2\">Revenue</h3>\n                <p className=\"text-3xl font-bold\">$45,231</p>\n              </div>\n              <div className=\"rounded-lg border bg-card p-6\">\n                <h3 className=\"font-semibold mb-2\">Active Projects</h3>\n                <p className=\"text-3xl font-bold\">12</p>\n              </div>\n            </div>\n          </div>\n        </main>\n      </SidebarProvider>\n    </div>\n  );\n};\n\nexport { SidebarWithSearch }",
+      "type": "registry:component",
+      "target": "components/sidebar-with-search.tsx"
+    }
+  ],
+  "categories": [
+    "sidebar",
+    "sidebar"
+  ],
+  "registryDependencies": [
+    "sidebar",
+    "input"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

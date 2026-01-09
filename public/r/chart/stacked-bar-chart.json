@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stacked-bar-chart",
+  "type": "registry:block",
+  "title": "Stacked Bar Chart",
+  "description": "Stacked Bar Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/stacked-bar-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  Bar,\n  BarChart,\n  CartesianGrid,\n  Legend,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\n\nconst data = [\n  { name: \"Q1\", desktop: 4000, mobile: 2400, tablet: 2400 },\n  { name: \"Q2\", desktop: 3000, mobile: 1398, tablet: 2210 },\n  { name: \"Q3\", desktop: 2000, mobile: 9800, tablet: 2290 },\n  { name: \"Q4\", desktop: 2780, mobile: 3908, tablet: 2000 },\n];\n\nconst StackedBarChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Quarterly Device Usage</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <BarChart data={data}>\n            <CartesianGrid strokeDasharray=\"3 3\" className=\"stroke-muted\" />\n            <XAxis dataKey=\"name\" className=\"text-xs sm:text-sm\" />\n            <YAxis className=\"text-xs sm:text-sm\" />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n            <Bar dataKey=\"desktop\" stackId=\"a\" fill=\"hsl(var(--chart-1))\" radius={[0, 0, 0, 0]} />\n            <Bar dataKey=\"mobile\" stackId=\"a\" fill=\"hsl(var(--chart-2))\" radius={[0, 0, 0, 0]} />\n            <Bar dataKey=\"tablet\" stackId=\"a\" fill=\"hsl(var(--chart-3))\" radius={[8, 8, 0, 0]} />\n          </BarChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { StackedBarChartComponent }",
+      "type": "registry:component",
+      "target": "components/stacked-bar-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

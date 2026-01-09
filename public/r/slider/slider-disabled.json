@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-disabled",
+  "type": "registry:block",
+  "title": "Slider Disabled",
+  "description": "Slider Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/slider/slider-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Slider } from \"@/components/ui/slider\";\nimport { Label } from \"@/components/ui/label\";\n\nconst SliderDisabled = () => {\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <Label>Enabled Slider</Label>\n        <Slider defaultValue={[50]} max={100} step={1} />\n      </div>\n      <div className=\"space-y-2\">\n        <Label className=\"text-muted-foreground\">Disabled Slider (Empty)</Label>\n        <Slider defaultValue={[0]} max={100} step={1} disabled />\n      </div>\n      <div className=\"space-y-2\">\n        <Label className=\"text-muted-foreground\">Disabled Slider (With Value)</Label>\n        <Slider defaultValue={[75]} max={100} step={1} disabled />\n      </div>\n      <div className=\"space-y-2\">\n        <Label className=\"text-muted-foreground\">Disabled Range Slider</Label>\n        <Slider defaultValue={[25, 75]} max={100} step={1} disabled />\n      </div>\n    </div>\n  );\n};\n\nexport { SliderDisabled }",
+      "type": "registry:component",
+      "target": "components/slider-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "slider"
+  ],
+  "registryDependencies": [
+    "slider",
+    "label"
+  ]
+}

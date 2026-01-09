@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-basic",
+  "type": "registry:block",
+  "title": "Item Basic",
+  "description": "Item Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/item/item-basic.tsx",
+      "content": "\"use client\";\n\nimport { Mail, Calendar, User } from \"lucide-react\";\nimport {\n  Item,\n  ItemContent,\n  ItemDescription,\n  ItemGroup,\n  ItemMedia,\n  ItemSeparator,\n  ItemTitle,\n} from \"@/components/ui/item\";\n\nexport function ItemBasic() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md\">\n        <ItemGroup>\n          <Item>\n            <ItemMedia variant=\"icon\">\n              <Mail />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>New Message</ItemTitle>\n              <ItemDescription>\n                You have a new message from John Doe\n              </ItemDescription>\n            </ItemContent>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item>\n            <ItemMedia variant=\"icon\">\n              <Calendar />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Meeting Reminder</ItemTitle>\n              <ItemDescription>\n                Team standup starts in 15 minutes\n              </ItemDescription>\n            </ItemContent>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item>\n            <ItemMedia variant=\"icon\">\n              <User />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Profile Update</ItemTitle>\n              <ItemDescription>\n                Your profile has been successfully updated\n              </ItemDescription>\n            </ItemContent>\n          </Item>\n        </ItemGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/item-basic.tsx"
+    }
+  ],
+  "categories": [
+    "item",
+    "item"
+  ],
+  "registryDependencies": [
+    "item"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

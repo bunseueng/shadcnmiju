@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-with-label",
+  "type": "registry:block",
+  "title": "Progress With Label",
+  "description": "Progress With Label component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/progress/progress-with-label.tsx",
+      "content": "\"use client\";\n\nimport { Progress } from \"@/components/ui/progress\";\n\nconst ProgressWithLabel = () => {\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between text-sm\">\n          <span className=\"text-foreground\">Storage Used</span>\n          <span className=\"text-muted-foreground\">45 GB / 100 GB</span>\n        </div>\n        <Progress value={45} />\n      </div>\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between text-sm\">\n          <span className=\"text-foreground\">Profile Completion</span>\n          <span className=\"text-muted-foreground\">7 / 10 steps</span>\n        </div>\n        <Progress value={70} />\n      </div>\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between text-sm\">\n          <span className=\"text-foreground\">Upload Progress</span>\n          <span className=\"text-muted-foreground\">3 / 5 files</span>\n        </div>\n        <Progress value={60} />\n      </div>\n    </div>\n  );\n};\n\nexport { ProgressWithLabel }",
+      "type": "registry:component",
+      "target": "components/progress-with-label.tsx"
+    }
+  ],
+  "categories": [
+    "progress",
+    "progress"
+  ],
+  "registryDependencies": [
+    "progress"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bookmark-button-group",
+  "type": "registry:block",
+  "title": "Bookmark Button Group",
+  "description": "Bookmark Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/bookmark-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Bookmark, BookmarkCheck, FolderPlus, Share } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst BookmarkButtonGroup = () => {\r\n  const [isBookmarked, setIsBookmarked] = useState(false);\r\n  const [isOrganizing, setIsOrganizing] = useState(false);\r\n\r\n  const toggleBookmark = () => {\r\n    setIsBookmarked(!isBookmarked);\r\n  };\r\n\r\n  const organizeBookmarks = () => {\r\n    setIsOrganizing(true);\r\n    setTimeout(() => {\r\n      setIsOrganizing(false);\r\n    }, 1500);\r\n  };\r\n\r\n  const shareBookmark = () => {\r\n    navigator.clipboard.writeText(window.location.href);\r\n  };\r\n\r\n  return (\r\n    <div className=\"inline-flex rounded-md shadow-sm\" role=\"group\">\r\n      <Button\r\n        variant={isBookmarked ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        className=\"rounded-r-none border-r-0\"\r\n        onClick={toggleBookmark}\r\n      >\r\n        {isBookmarked ? (\r\n          <BookmarkCheck className=\"h-4 w-4 mr-2\" />\r\n        ) : (\r\n          <Bookmark className=\"h-4 w-4 mr-2\" />\r\n        )}\r\n        {isBookmarked ? \"Saved\" : \"Save\"}\r\n      </Button>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"sm\"\r\n        className=\"rounded-none border-r-0\"\r\n        onClick={organizeBookmarks}\r\n        disabled={isOrganizing}\r\n      >\r\n        <FolderPlus className=\"h-4 w-4 mr-2\" />\r\n        {isOrganizing ? \"Organizing...\" : \"Organize\"}\r\n      </Button>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"sm\"\r\n        className=\"rounded-l-none\"\r\n        onClick={shareBookmark}\r\n      >\r\n        <Share className=\"h-4 w-4 mr-2\" />\r\n        Share\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { BookmarkButtonGroup }",
+      "type": "registry:component",
+      "target": "components/bookmark-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

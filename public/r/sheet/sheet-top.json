@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-top",
+  "type": "registry:block",
+  "title": "Sheet Top",
+  "description": "Sheet Top component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sheet/sheet-top.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\nimport {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/components/ui/sheet\";\nimport { Search, ChevronDown, Clock, TrendingUp } from \"lucide-react\";\n\nconst recentSearches = [\"React components\", \"Tailwind CSS\", \"Next.js\", \"TypeScript\"];\nconst trendingSearches = [\"shadcn/ui\", \"Radix UI\", \"Framer Motion\", \"Zustand\"];\n\nconst SheetTop = () => {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Sheet open={open} onOpenChange={setOpen}>\n      <SheetTrigger asChild>\n        <Button variant=\"secondary\" className=\"gap-2\">\n          <Search className=\"h-4 w-4\" />\n          Search\n          <ChevronDown className=\"h-4 w-4\" />\n        </Button>\n      </SheetTrigger>\n      <SheetContent side=\"top\" className=\"h-[400px]\">\n        <SheetHeader className=\"text-center\">\n          <SheetTitle className=\"text-foreground\">Search</SheetTitle>\n          <SheetDescription>Find anything in your workspace</SheetDescription>\n        </SheetHeader>\n        <div className=\"mt-6 max-w-2xl mx-auto\">\n          <div className=\"relative\">\n            <Search className=\"absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground\" />\n            <Input\n              placeholder=\"Type to search...\"\n              className=\"pl-10 h-12 text-lg\"\n              autoFocus\n            />\n          </div>\n          <div className=\"mt-6 grid md:grid-cols-2 gap-6\">\n            <div>\n              <h4 className=\"text-sm font-medium text-muted-foreground flex items-center gap-2 mb-3\">\n                <Clock className=\"h-4 w-4\" />\n                Recent Searches\n              </h4>\n              <div className=\"space-y-2\">\n                {recentSearches.map((search, i) => (\n                  <button\n                    key={i}\n                    className=\"w-full text-left px-3 py-2 rounded-lg hover:bg-accent text-foreground transition-colors\"\n                  >\n                    {search}\n                  </button>\n                ))}\n              </div>\n            </div>\n            <div>\n              <h4 className=\"text-sm font-medium text-muted-foreground flex items-center gap-2 mb-3\">\n                <TrendingUp className=\"h-4 w-4\" />\n                Trending\n              </h4>\n              <div className=\"space-y-2\">\n                {trendingSearches.map((search, i) => (\n                  <button\n                    key={i}\n                    className=\"w-full text-left px-3 py-2 rounded-lg hover:bg-accent text-foreground transition-colors\"\n                  >\n                    {search}\n                  </button>\n                ))}\n              </div>\n            </div>\n          </div>\n        </div>\n      </SheetContent>\n    </Sheet>\n  );\n};\n\nexport { SheetTop }",
+      "type": "registry:component",
+      "target": "components/sheet-top.tsx"
+    }
+  ],
+  "categories": [
+    "sheet",
+    "sheet"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "sheet"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

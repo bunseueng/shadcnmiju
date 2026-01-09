@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-form",
+  "type": "registry:block",
+  "title": "Switch Form",
+  "description": "Switch Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/switch/switch-form.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Label } from \"@/components/ui/label\";\nimport { Button } from \"@/components/ui/button\";\nimport { useState } from \"react\";\n\nconst SwitchForm = () => {\n  const [settings, setSettings] = useState({\n    publicProfile: true,\n    showEmail: false,\n    showActivity: true,\n    allowMessages: true,\n  });\n\n  const handleToggle = (key: keyof typeof settings) => {\n    setSettings(prev => ({ ...prev, [key]: !prev[key] }));\n  };\n\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-md\">\n      <div className=\"space-y-4 rounded-lg border p-4\">\n        <h3 className=\"text-lg font-medium text-foreground\">Privacy Settings</h3>\n\n        <div className=\"flex items-center justify-between\">\n          <Label htmlFor=\"public-profile\">Public Profile</Label>\n          <Switch\n            id=\"public-profile\"\n            checked={settings.publicProfile}\n            onCheckedChange={() => handleToggle('publicProfile')}\n          />\n        </div>\n\n        <div className=\"flex items-center justify-between\">\n          <Label htmlFor=\"show-email\">Show Email</Label>\n          <Switch\n            id=\"show-email\"\n            checked={settings.showEmail}\n            onCheckedChange={() => handleToggle('showEmail')}\n          />\n        </div>\n\n        <div className=\"flex items-center justify-between\">\n          <Label htmlFor=\"show-activity\">Show Activity Status</Label>\n          <Switch\n            id=\"show-activity\"\n            checked={settings.showActivity}\n            onCheckedChange={() => handleToggle('showActivity')}\n          />\n        </div>\n\n        <div className=\"flex items-center justify-between\">\n          <Label htmlFor=\"allow-messages\">Allow Direct Messages</Label>\n          <Switch\n            id=\"allow-messages\"\n            checked={settings.allowMessages}\n            onCheckedChange={() => handleToggle('allowMessages')}\n          />\n        </div>\n      </div>\n\n      <Button className=\"w-full\">Save Settings</Button>\n    </div>\n  );\n};\n\nexport { SwitchForm }",
+      "type": "registry:component",
+      "target": "components/switch-form.tsx"
+    }
+  ],
+  "categories": [
+    "switch",
+    "switch"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label",
+    "button"
+  ]
+}

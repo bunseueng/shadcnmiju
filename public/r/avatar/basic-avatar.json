@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-avatar",
+  "type": "registry:block",
+  "title": "Basic Avatar",
+  "description": "Basic Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/basic-avatar.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst BasicAvatar = () => {\r\n  return (\r\n    <Avatar>\r\n      <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n      <AvatarFallback>CN</AvatarFallback>\r\n    </Avatar>\r\n  );\r\n};\r\n\r\nexport { BasicAvatar }",
+      "type": "registry:component",
+      "target": "components/basic-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ]
+}

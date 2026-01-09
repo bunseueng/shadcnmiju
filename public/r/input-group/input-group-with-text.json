@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-with-text",
+  "type": "registry:block",
+  "title": "Input Group With Text",
+  "description": "Input Group With Text component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-group/input-group-with-text.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport function InputGroupWithText() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-4\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"website\">Website URL</Label>\n          <div className=\"flex\">\n            <span className=\"inline-flex items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-sm text-muted-foreground\">\n              https://\n            </span>\n            <Input\n              id=\"website\"\n              type=\"text\"\n              placeholder=\"example.com\"\n              className=\"rounded-l-none\"\n            />\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"username-addon\">Username</Label>\n          <div className=\"flex\">\n            <span className=\"inline-flex items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-sm text-muted-foreground\">\n              @\n            </span>\n            <Input\n              id=\"username-addon\"\n              type=\"text\"\n              placeholder=\"username\"\n              className=\"rounded-l-none\"\n            />\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"price\">Price</Label>\n          <div className=\"flex\">\n            <span className=\"inline-flex items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-sm text-muted-foreground\">\n              $\n            </span>\n            <Input\n              id=\"price\"\n              type=\"number\"\n              placeholder=\"0.00\"\n              className=\"rounded-l-none\"\n            />\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"domain\">Domain</Label>\n          <div className=\"flex\">\n            <Input\n              id=\"domain\"\n              type=\"text\"\n              placeholder=\"mysite\"\n              className=\"rounded-r-none\"\n            />\n            <span className=\"inline-flex items-center rounded-r-md border border-l-0 border-input bg-muted px-3 text-sm text-muted-foreground\">\n              .com\n            </span>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-with-text.tsx"
+    }
+  ],
+  "categories": [
+    "input-group",
+    "input-group"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ]
+}

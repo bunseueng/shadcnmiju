@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-time-picker",
+  "type": "registry:block",
+  "title": "Calendar With Time Picker",
+  "description": "Calendar With Time Picker component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-time-picker.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { Input } from \"@/components/ui/input\";\nimport { useState } from \"react\";\n\nconst CalendarWithTimePicker = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n  const [time, setTime] = useState(\"12:00\");\n\n  const handleTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    setTime(e.target.value);\n  };\n\n  const getFormattedDateTime = () => {\n    if (!date) return \"No date selected\";\n    return `${date.toLocaleDateString()} at ${time}`;\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-4\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-md border\"\n      />\n      <div className=\"flex items-center gap-2\">\n        <label className=\"text-sm text-slate-400\">Time:</label>\n        <Input\n          type=\"time\"\n          value={time}\n          onChange={handleTimeChange}\n          className=\"w-32\"\n        />\n      </div>\n      <p className=\"text-xs text-slate-400\">\n        Selected:{\" \"}\n        <span className=\"text-slate-200 font-medium\">\n          {getFormattedDateTime()}\n        </span>\n      </p>\n    </div>\n  );\n};\n\nexport { CalendarWithTimePicker }",
+      "type": "registry:component",
+      "target": "components/calendar-with-time-picker.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "input"
+  ]
+}

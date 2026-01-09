@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-custom-separator",
+  "type": "registry:block",
+  "title": "Breadcrumb Custom Separator",
+  "description": "Breadcrumb Custom Separator component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/breadcrumb/breadcrumb-custom-separator.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\nimport { ChevronRight } from \"lucide-react\";\n\nconst BreadcrumbCustomSeparator = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator>\n          <ChevronRight className=\"h-4 w-4\" />\n        </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/products\">Products</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator>\n          <ChevronRight className=\"h-4 w-4\" />\n        </BreadcrumbSeparator>\n        <BreadcrumbItem>\n          <BreadcrumbPage>Laptop</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport { BreadcrumbCustomSeparator }",
+      "type": "registry:component",
+      "target": "components/breadcrumb-custom-separator.tsx"
+    }
+  ],
+  "categories": [
+    "breadcrumb",
+    "breadcrumb"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

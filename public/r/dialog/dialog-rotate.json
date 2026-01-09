@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-rotate",
+  "type": "registry:block",
+  "title": "Dialog Rotate",
+  "description": "Dialog Rotate component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/dialog/dialog-rotate.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { RotateCw, Settings } from \"lucide-react\";\n\nconst DialogRotate = () => {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Dialog open={open} onOpenChange={setOpen}>\n      <DialogTrigger asChild>\n        <Button variant=\"secondary\" className=\"gap-2\">\n          <RotateCw className=\"h-4 w-4\" />\n          3D Rotate Dialog\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px] animate-in spin-in-2 zoom-in-75 fade-in-0 duration-500\">\n        <DialogHeader>\n          <DialogTitle className=\"text-foreground flex items-center gap-2\">\n            <Settings className=\"h-5 w-5 animate-spin\" style={{ animationDuration: \"3s\" }} />\n            3D Rotation Effect\n          </DialogTitle>\n          <DialogDescription>\n            A unique 3D rotation entrance that makes your dialog memorable and engaging.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"py-4\">\n          <div className=\"grid grid-cols-2 gap-4\">\n            {[\"Settings\", \"Profile\", \"Security\", \"Notifications\"].map((item, i) => (\n              <div\n                key={i}\n                className=\"p-3 rounded-lg border border-border hover:bg-accent cursor-pointer transition-colors text-foreground\"\n              >\n                {item}\n              </div>\n            ))}\n          </div>\n        </div>\n        <DialogFooter>\n          <Button variant=\"outline\" onClick={() => setOpen(false)}>\n            Close\n          </Button>\n          <Button onClick={() => setOpen(false)}>Save Changes</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n};\n\nexport { DialogRotate }",
+      "type": "registry:component",
+      "target": "components/dialog-rotate.tsx"
+    }
+  ],
+  "categories": [
+    "dialog",
+    "dialog"
+  ],
+  "registryDependencies": [
+    "button",
+    "dialog"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

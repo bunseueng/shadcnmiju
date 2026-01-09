@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-basic",
+  "type": "registry:block",
+  "title": "Progress Basic",
+  "description": "Progress Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/progress/progress-basic.tsx",
+      "content": "\"use client\";\n\nimport { Progress } from \"@/components/ui/progress\";\n\nconst ProgressBasic = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <Progress value={0} />\n      <Progress value={25} />\n      <Progress value={50} />\n      <Progress value={75} />\n      <Progress value={100} />\n    </div>\n  );\n};\n\nexport { ProgressBasic }",
+      "type": "registry:component",
+      "target": "components/progress-basic.tsx"
+    }
+  ],
+  "categories": [
+    "progress",
+    "progress"
+  ],
+  "registryDependencies": [
+    "progress"
+  ]
+}

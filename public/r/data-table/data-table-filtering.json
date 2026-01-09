@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table-filtering",
+  "type": "registry:block",
+  "title": "Data Table Filtering",
+  "description": "Data Table Filtering component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/data-table/data-table-filtering.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  ColumnDef,\n  ColumnFiltersState,\n  flexRender,\n  getCoreRowModel,\n  getFilteredRowModel,\n  useReactTable,\n} from \"@tanstack/react-table\";\nimport { Input } from \"@/components/ui/input\";\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/components/ui/table\";\n\ntype Product = {\n  id: string;\n  name: string;\n  category: string;\n  price: number;\n  stock: number;\n};\n\nconst data: Product[] = [\n  { id: \"1\", name: \"Laptop Pro\", category: \"Electronics\", price: 1299, stock: 15 },\n  { id: \"2\", name: \"Wireless Mouse\", category: \"Electronics\", price: 29, stock: 45 },\n  { id: \"3\", name: \"Office Chair\", category: \"Furniture\", price: 249, stock: 8 },\n  { id: \"4\", name: \"Desk Lamp\", category: \"Furniture\", price: 49, stock: 23 },\n  { id: \"5\", name: \"USB-C Cable\", category: \"Electronics\", price: 15, stock: 67 },\n  { id: \"6\", name: \"Standing Desk\", category: \"Furniture\", price: 599, stock: 5 },\n];\n\nconst columns: ColumnDef<Product>[] = [\n  {\n    accessorKey: \"name\",\n    header: \"Product Name\",\n  },\n  {\n    accessorKey: \"category\",\n    header: \"Category\",\n  },\n  {\n    accessorKey: \"price\",\n    header: \"Price\",\n    cell: ({ row }) => {\n      const price = parseFloat(row.getValue(\"price\"));\n      const formatted = new Intl.NumberFormat(\"en-US\", {\n        style: \"currency\",\n        currency: \"USD\",\n      }).format(price);\n      return <div>{formatted}</div>;\n    },\n  },\n  {\n    accessorKey: \"stock\",\n    header: \"Stock\",\n  },\n];\n\nexport function DataTableFiltering() {\n  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);\n\n  const table = useReactTable({\n    data,\n    columns,\n    getCoreRowModel: getCoreRowModel(),\n    getFilteredRowModel: getFilteredRowModel(),\n    onColumnFiltersChange: setColumnFilters,\n    state: {\n      columnFilters,\n    },\n  });\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl space-y-4\">\n        <Input\n          placeholder=\"Filter products...\"\n          value={(table.getColumn(\"name\")?.getFilterValue() as string) ?? \"\"}\n          onChange={(event) =>\n            table.getColumn(\"name\")?.setFilterValue(event.target.value)\n          }\n          className=\"max-w-sm\"\n        />\n        <div className=\"rounded-md border\">\n          <Table>\n            <TableHeader>\n              {table.getHeaderGroups().map((headerGroup) => (\n                <TableRow key={headerGroup.id}>\n                  {headerGroup.headers.map((header) => (\n                    <TableHead key={header.id}>\n                      {header.isPlaceholder\n                        ? null\n                        : flexRender(\n                            header.column.columnDef.header,\n                            header.getContext()\n                          )}\n                    </TableHead>\n                  ))}\n                </TableRow>\n              ))}\n            </TableHeader>\n            <TableBody>\n              {table.getRowModel().rows?.length ? (\n                table.getRowModel().rows.map((row) => (\n                  <TableRow key={row.id}>\n                    {row.getVisibleCells().map((cell) => (\n                      <TableCell key={cell.id}>\n                        {flexRender(\n                          cell.column.columnDef.cell,\n                          cell.getContext()\n                        )}\n                      </TableCell>\n                    ))}\n                  </TableRow>\n                ))\n              ) : (\n                <TableRow>\n                  <TableCell colSpan={columns.length} className=\"h-24 text-center\">\n                    No results.\n                  </TableCell>\n                </TableRow>\n              )}\n            </TableBody>\n          </Table>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/data-table-filtering.tsx"
+    }
+  ],
+  "categories": [
+    "data-table",
+    "data-table"
+  ],
+  "registryDependencies": [
+    "input",
+    "table"
+  ],
+  "dependencies": [
+    "@tanstack/react-table"
+  ]
+}

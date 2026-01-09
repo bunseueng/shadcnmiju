@@ -74,15 +74,17 @@ export default async function ComponentsLayout({
   const components = getAllVariants();
   return (
     <section className="py-10">
-      <div className="container mx-auto px-5">
+      <div className="relative container mx-auto px-5">
+        <div className="sticky z-50 top-0 w-full h-20 bg-background/95 backdrop-blur-md border-b border-border/40" />
+
         <div className="space-y-4">
           <div className="flex flex-col gap-3">
             <h1 className="text-2xl md:text-4xl font-semibold">
-              Shadcn Components - {components.flat().length}+ component patterns
+              Shadcn Components - {components.length}+ component patterns
               for Shadcn UI
             </h1>
             <p className="text-muted-foreground opacity-50 lg:max-w-5xl">
-              Discover a large collection of {components.flat().length}+ shadcn
+              Discover a large collection of {components.length}+ shadcn
               UI components and patterns built with shadcn/ui, Tailwind CSS, and
               React. All components are production-ready, fully responsive, and
               optimized for Next.js with TypeScript. Easily copy and paste the

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-colors",
+  "type": "registry:block",
+  "title": "Spinner Colors",
+  "description": "Spinner Colors component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/spinner/spinner-colors.tsx",
+      "content": "\"use client\";\n\nimport { Spinner } from \"@/components/ui/spinner\";\n\nconst SpinnerColors = () => {\n  return (\n    <div className=\"flex flex-wrap items-center justify-center gap-8 p-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <Spinner className=\"size-6 text-primary\" />\n        <span className=\"text-xs text-muted-foreground\">Primary</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <Spinner className=\"size-6 text-destructive\" />\n        <span className=\"text-xs text-muted-foreground\">Destructive</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <Spinner className=\"size-6 text-green-500\" />\n        <span className=\"text-xs text-muted-foreground\">Success</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <Spinner className=\"size-6 text-yellow-500\" />\n        <span className=\"text-xs text-muted-foreground\">Warning</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <Spinner className=\"size-6 text-blue-500\" />\n        <span className=\"text-xs text-muted-foreground\">Info</span>\n      </div>\n    </div>\n  );\n};\n\nexport { SpinnerColors }",
+      "type": "registry:component",
+      "target": "components/spinner-colors.tsx"
+    }
+  ],
+  "categories": [
+    "spinner",
+    "spinner"
+  ],
+  "registryDependencies": [
+    "spinner"
+  ]
+}

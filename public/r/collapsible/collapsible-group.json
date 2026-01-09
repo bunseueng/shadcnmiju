@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-group",
+  "type": "registry:block",
+  "title": "Collapsible Group",
+  "description": "Collapsible Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/collapsible/collapsible-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Collapsible,\r\n  CollapsibleTrigger,\r\n  CollapsibleContent,\r\n} from \"@/components/ui/collapsible\";\r\nimport { ChevronDown } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst items = [\r\n  {\r\n    title: \"Section One\",\r\n    content: \"This is the content for the first section\",\r\n  },\r\n  {\r\n    title: \"Section Two\",\r\n    content: \"This is the content for the second section\",\r\n  },\r\n  {\r\n    title: \"Section Three\",\r\n    content: \"This is the content for the third section\",\r\n  },\r\n];\r\n\r\nconst CollapsibleGroup = () => {\r\n  const [openItems, setOpenItems] = useState<string[]>([]);\r\n\r\n  const toggleItem = (title: string) => {\r\n    setOpenItems((prev) =>\r\n      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title]\r\n    );\r\n  };\r\n\r\n  return (\r\n    <div className=\"space-y-2 w-full max-w-lg mx-auto text-start\">\r\n      {items.map((item) => (\r\n        <Collapsible\r\n          key={item.title}\r\n          open={openItems.includes(item.title)}\r\n          onOpenChange={() => toggleItem(item.title)}\r\n        >\r\n          <CollapsibleTrigger className=\"w-full flex items-center gap-2 rounded-lg border border-border p-3 font-semibold text-foreground hover:bg-accent transition-colors\">\r\n            <ChevronDown\r\n              className={`h-4 w-4 transition-transform ${\r\n                openItems.includes(item.title) ? \"rotate-180\" : \"\"\r\n              }`}\r\n            />\r\n            {item.title}\r\n          </CollapsibleTrigger>\r\n          <CollapsibleContent className=\"mt-2 rounded-lg border border-border p-3 text-muted-foreground\">\r\n            {item.content}\r\n          </CollapsibleContent>\r\n        </Collapsible>\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CollapsibleGroup }",
+      "type": "registry:component",
+      "target": "components/collapsible-group.tsx"
+    }
+  ],
+  "categories": [
+    "collapsible",
+    "collapsible"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

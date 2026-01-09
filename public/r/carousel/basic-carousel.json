@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-carousel",
+  "type": "registry:block",
+  "title": "Basic Carousel",
+  "description": "Basic Carousel component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/carousel/basic-carousel.tsx",
+      "content": "import {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n} from \"@/components/ui/carousel\";\r\n\r\ntype CarouselItem = {\r\n  id: number;\r\n  image: string;\r\n  title?: string;\r\n};\r\n\r\nconst carouselItem: CarouselItem[] = [\r\n  {\r\n    id: 1,\r\n    title: \"image1\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1494253109108-2e30c049369b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n  },\r\n  {\r\n    id: 2,\r\n    title: \"image3\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1481349518771-20055b2a7b24?q=80&w=1539&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n  },\r\n  {\r\n    id: 3,\r\n    title: \"image3\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1580553874067-be1d5ac6a94b?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n  },\r\n  {\r\n    id: 4,\r\n    title: \"image4\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n  },\r\n  {\r\n    id: 5,\r\n    title: \"image5\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1622208489373-1fe93e2c6720?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\r\n  },\r\n];\r\n\r\nconst BasicCarousel = () => {\r\n  return (\r\n    <Carousel className=\"w-full max-w-2xl mx-auto\">\r\n      <CarouselContent>\r\n        {carouselItem.map((item) => (\r\n          <CarouselItem key={item.id}>\r\n            <div className=\"relative aspect-video sm:aspect-21/9 overflow-hidden rounded-lg\">\r\n              <img\r\n                src={item.image}\r\n                alt={item.title}\r\n                className=\"w-full h-full object-cover\"\r\n              />\r\n            </div>\r\n          </CarouselItem>\r\n        ))}\r\n      </CarouselContent>\r\n      <CarouselPrevious className=\"hidden sm:flex\" />\r\n      <CarouselNext className=\"hidden sm:flex\" />\r\n    </Carousel>\r\n  );\r\n};\r\n\r\nexport { BasicCarousel }",
+      "type": "registry:component",
+      "target": "components/basic-carousel.tsx"
+    }
+  ],
+  "categories": [
+    "carousel",
+    "carousel"
+  ],
+  "registryDependencies": [
+    "carousel"
+  ]
+}

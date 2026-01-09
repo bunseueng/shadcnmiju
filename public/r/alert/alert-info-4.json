@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-info-4",
+  "type": "registry:block",
+  "title": "Alert Info 4",
+  "description": "Alert Info 4 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-info-4.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { Lightbulb } from \"lucide-react\";\r\n\r\nconst AlertInfo4 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start \">\r\n      <Alert>\r\n        <Lightbulb />\r\n        <AlertTitle>Pro Tip</AlertTitle>\r\n        <AlertDescription>\r\n          Use keyboard shortcuts Ctrl+K to quickly access the command palette\r\n          and boost your productivity.\r\n        </AlertDescription>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertInfo4 }",
+      "type": "registry:component",
+      "target": "components/alert-info-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

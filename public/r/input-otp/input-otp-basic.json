@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-basic",
+  "type": "registry:block",
+  "title": "Input Otp Basic",
+  "description": "Input Otp Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-otp/input-otp-basic.tsx",
+      "content": "\"use client\";\n\nimport {\n  InputOTP,\n  InputOTPGroup,\n  InputOTPSlot,\n} from \"@/components/ui/input-otp\";\n\nconst InputOTPBasic = () => {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTPGroup>\n        <InputOTPSlot index={0} />\n        <InputOTPSlot index={1} />\n        <InputOTPSlot index={2} />\n        <InputOTPSlot index={3} />\n        <InputOTPSlot index={4} />\n        <InputOTPSlot index={5} />\n      </InputOTPGroup>\n    </InputOTP>\n  );\n};\n\nexport { InputOTPBasic }",
+      "type": "registry:component",
+      "target": "components/input-otp-basic.tsx"
+    }
+  ],
+  "categories": [
+    "input-otp",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp"
+  ]
+}

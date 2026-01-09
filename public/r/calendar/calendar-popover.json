@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-popover",
+  "type": "registry:block",
+  "title": "Calendar Popover",
+  "description": "Calendar Popover component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-popover.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { cn } from \"@/lib/utils\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarPopover = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Popover>\n        <PopoverTrigger asChild>\n          <Button\n            variant=\"outline\"\n            className={cn(\n              \"w-64 justify-start text-left font-normal\",\n              !date && \"text-muted-foreground\"\n            )}\n          >\n            <CalendarIcon className=\"h-4 w-4\" />\n            {date ? date.toLocaleDateString() : \"Pick a date\"}\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent className=\"w-auto p-0\" align=\"start\">\n          <Calendar mode=\"single\" selected={date} onSelect={setDate} />\n        </PopoverContent>\n      </Popover>\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Selected:{\" \"}\n          <span className=\"text-slate-200 font-medium\">\n            {date.toLocaleDateString(\"en-US\", {\n              month: \"long\",\n              day: \"numeric\",\n              year: \"numeric\",\n            })}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarPopover }",
+      "type": "registry:component",
+      "target": "components/calendar-popover.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

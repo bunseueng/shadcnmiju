@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-in-menu",
+  "type": "registry:block",
+  "title": "Kbd In Menu",
+  "description": "Kbd In Menu component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/kbd/kbd-in-menu.tsx",
+      "content": "\"use client\";\n\nimport { Kbd, KbdGroup } from \"@/components/ui/kbd\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport { Button } from \"@/components/ui/button\";\nimport { Settings } from \"lucide-react\";\n\nexport function KbdInMenu() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <DropdownMenu>\n        <DropdownMenuTrigger asChild>\n          <Button variant=\"outline\">\n            <Settings className=\"mr-2 h-4 w-4\" />\n            Actions\n          </Button>\n        </DropdownMenuTrigger>\n        <DropdownMenuContent className=\"w-56\">\n          <DropdownMenuLabel>Quick Actions</DropdownMenuLabel>\n          <DropdownMenuSeparator />\n          <DropdownMenuItem>\n            <span className=\"flex-1\">New File</span>\n            <KbdGroup>\n              <Kbd>Ctrl</Kbd>\n              <span>+</span>\n              <Kbd>N</Kbd>\n            </KbdGroup>\n          </DropdownMenuItem>\n          <DropdownMenuItem>\n            <span className=\"flex-1\">Open File</span>\n            <KbdGroup>\n              <Kbd>Ctrl</Kbd>\n              <span>+</span>\n              <Kbd>O</Kbd>\n            </KbdGroup>\n          </DropdownMenuItem>\n          <DropdownMenuItem>\n            <span className=\"flex-1\">Save</span>\n            <KbdGroup>\n              <Kbd>Ctrl</Kbd>\n              <span>+</span>\n              <Kbd>S</Kbd>\n            </KbdGroup>\n          </DropdownMenuItem>\n          <DropdownMenuSeparator />\n          <DropdownMenuItem>\n            <span className=\"flex-1\">Find</span>\n            <KbdGroup>\n              <Kbd>Ctrl</Kbd>\n              <span>+</span>\n              <Kbd>F</Kbd>\n            </KbdGroup>\n          </DropdownMenuItem>\n          <DropdownMenuItem>\n            <span className=\"flex-1\">Replace</span>\n            <KbdGroup>\n              <Kbd>Ctrl</Kbd>\n              <span>+</span>\n              <Kbd>H</Kbd>\n            </KbdGroup>\n          </DropdownMenuItem>\n          <DropdownMenuSeparator />\n          <DropdownMenuItem>\n            <span className=\"flex-1\">Settings</span>\n            <KbdGroup>\n              <Kbd>Ctrl</Kbd>\n              <span>+</span>\n              <Kbd>,</Kbd>\n            </KbdGroup>\n          </DropdownMenuItem>\n        </DropdownMenuContent>\n      </DropdownMenu>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/kbd-in-menu.tsx"
+    }
+  ],
+  "categories": [
+    "kbd",
+    "kbd"
+  ],
+  "registryDependencies": [
+    "kbd",
+    "dropdown-menu",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-full",
+  "type": "registry:block",
+  "title": "Menubar Full",
+  "description": "Menubar Full component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/menubar/menubar-full.tsx",
+      "content": "\"use client\";\n\nimport {\n  Menubar,\n  MenubarCheckboxItem,\n  MenubarContent,\n  MenubarItem,\n  MenubarMenu,\n  MenubarRadioGroup,\n  MenubarRadioItem,\n  MenubarSeparator,\n  MenubarShortcut,\n  MenubarSub,\n  MenubarSubContent,\n  MenubarSubTrigger,\n  MenubarTrigger,\n} from \"@/components/ui/menubar\";\nimport { useState } from \"react\";\n\nconst MenubarFull = () => {\n  const [statusBar, setStatusBar] = useState(true);\n  const [activityBar, setActivityBar] = useState(false);\n  const [panel, setPanel] = useState(\"bottom\");\n\n  return (\n    <Menubar className=\"w-fit\">\n      <MenubarMenu>\n        <MenubarTrigger>File</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>\n            New File <MenubarShortcut>⌘N</MenubarShortcut>\n          </MenubarItem>\n          <MenubarItem>\n            Open <MenubarShortcut>⌘O</MenubarShortcut>\n          </MenubarItem>\n          <MenubarSub>\n            <MenubarSubTrigger>Open Recent</MenubarSubTrigger>\n            <MenubarSubContent>\n              <MenubarItem>project-1</MenubarItem>\n              <MenubarItem>project-2</MenubarItem>\n              <MenubarItem>project-3</MenubarItem>\n            </MenubarSubContent>\n          </MenubarSub>\n          <MenubarSeparator />\n          <MenubarItem>\n            Save <MenubarShortcut>⌘S</MenubarShortcut>\n          </MenubarItem>\n          <MenubarItem>Save As...</MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>Exit</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>View</MenubarTrigger>\n        <MenubarContent>\n          <MenubarCheckboxItem\n            checked={statusBar}\n            onCheckedChange={setStatusBar}\n          >\n            Status Bar\n          </MenubarCheckboxItem>\n          <MenubarCheckboxItem\n            checked={activityBar}\n            onCheckedChange={setActivityBar}\n          >\n            Activity Bar\n          </MenubarCheckboxItem>\n          <MenubarSeparator />\n          <MenubarSub>\n            <MenubarSubTrigger>Panel Position</MenubarSubTrigger>\n            <MenubarSubContent>\n              <MenubarRadioGroup value={panel} onValueChange={setPanel}>\n                <MenubarRadioItem value=\"top\">Top</MenubarRadioItem>\n                <MenubarRadioItem value=\"bottom\">Bottom</MenubarRadioItem>\n                <MenubarRadioItem value=\"left\">Left</MenubarRadioItem>\n                <MenubarRadioItem value=\"right\">Right</MenubarRadioItem>\n              </MenubarRadioGroup>\n            </MenubarSubContent>\n          </MenubarSub>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n};\n\nexport { MenubarFull }",
+      "type": "registry:component",
+      "target": "components/menubar-full.tsx"
+    }
+  ],
+  "categories": [
+    "menubar",
+    "menubar"
+  ],
+  "registryDependencies": [
+    "menubar"
+  ]
+}

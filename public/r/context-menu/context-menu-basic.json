@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-basic",
+  "type": "registry:block",
+  "title": "Context Menu Basic",
+  "description": "Context Menu Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/context-menu/context-menu-basic.tsx",
+      "content": "\"use client\";\n\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuTrigger,\n} from \"@/components/ui/context-menu\";\nimport { Copy, Scissors, ClipboardPaste, Trash2 } from \"lucide-react\";\n\nconst ContextMenuBasic = () => {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground\">\n        Right click here\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-64 animate-in fade-in-0 zoom-in-95 duration-200\">\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Copy className=\"mr-2 h-4 w-4\" />\n          Copy\n          <ContextMenuShortcut>⌘C</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Scissors className=\"mr-2 h-4 w-4\" />\n          Cut\n          <ContextMenuShortcut>⌘X</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuItem className=\"cursor-pointer\">\n          <ClipboardPaste className=\"mr-2 h-4 w-4\" />\n          Paste\n          <ContextMenuShortcut>⌘V</ContextMenuShortcut>\n        </ContextMenuItem>\n        <ContextMenuSeparator />\n        <ContextMenuItem className=\"cursor-pointer text-destructive focus:text-destructive\">\n          <Trash2 className=\"mr-2 h-4 w-4\" />\n          Delete\n          <ContextMenuShortcut>⌫</ContextMenuShortcut>\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n};\n\nexport { ContextMenuBasic }",
+      "type": "registry:component",
+      "target": "components/context-menu-basic.tsx"
+    }
+  ],
+  "categories": [
+    "context-menu",
+    "context-menu"
+  ],
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

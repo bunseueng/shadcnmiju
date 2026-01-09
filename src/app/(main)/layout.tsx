@@ -1,5 +1,5 @@
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { AceNavbar } from "@/components/aceternity/resizeable-navbar";
 
 export default function MainLayout({
   children,
@@ -8,7 +8,7 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <Navbar />
+      <AceNavbar />
       <main className="min-h-screen">{children}</main>
       <Footer />
     </>

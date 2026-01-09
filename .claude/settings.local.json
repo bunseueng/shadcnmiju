@@ -41,7 +41,13 @@
       "Bash(for file in form/3d-form.tsx form/form-contact.tsx form/form-login.tsx form/form-profile.tsx form/form-register.tsx form/form-settings.tsx)",
       "Bash(do sed -i '1s/^/\\\\/\\\\/ @ts-nocheck\\\\n/' \"$file\")",
       "Bash(npm run build:*)",
-      "Bash(NODE_OPTIONS='--trace-warnings' npm run build:*)"
+      "Bash(NODE_OPTIONS='--trace-warnings' npm run build:*)",
+      "Bash(npm run registry:build:*)",
+      "Bash(npm run build:registry:internal:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm ls:*)",
+      "Bash(if exist .next rmdir /s /q .next)",
+      "Bash(npm run generate:components:*)"
     ]
   }
 }

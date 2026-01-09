@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-disabled",
+  "type": "registry:block",
+  "title": "Switch Disabled",
+  "description": "Switch Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/switch/switch-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Label } from \"@/components/ui/label\";\n\nconst SwitchDisabled = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex items-center space-x-2\">\n        <Switch id=\"enabled\" />\n        <Label htmlFor=\"enabled\">Enabled</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <Switch id=\"disabled-off\" disabled />\n        <Label htmlFor=\"disabled-off\" className=\"text-muted-foreground\">\n          Disabled (Off)\n        </Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <Switch id=\"disabled-on\" disabled defaultChecked />\n        <Label htmlFor=\"disabled-on\" className=\"text-muted-foreground\">\n          Disabled (On)\n        </Label>\n      </div>\n    </div>\n  );\n};\n\nexport { SwitchDisabled }",
+      "type": "registry:component",
+      "target": "components/switch-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "switch",
+    "switch"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-confirm-2",
+  "type": "registry:block",
+  "title": "Alert Dialog Confirm 2",
+  "description": "Alert Dialog Confirm 2 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-confirm-2.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { CircleAlert, LogOut } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogConfirm2 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"secondary\">\r\n          <LogOut /> Leave Page\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <div className=\"flex items-center gap-2\">\r\n            <CircleAlert className=\"h-5 w-5 text-yellow-400\" />\r\n            <AlertDialogTitle>Leave This Page?</AlertDialogTitle>\r\n          </div>\r\n          <AlertDialogDescription>\r\n            You&apos;re about to leave this page. Any unsaved progress will be\r\n            lost.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <div className=\"bg-secondary rounded-lg\">\r\n          <ul className=\"list-disc list-inside space-y-2 p-4\">\r\n            <li className=\"marker:text-yellow-400\">\r\n              Form data entered: 3 fields\r\n            </li>\r\n            <li className=\"marker:text-yellow-400\">Time spent: 5 minutes</li>\r\n          </ul>\r\n        </div>\r\n\r\n        <AlertDialogFooter className=\"mt-5\">\r\n          <AlertDialogCancel>Stay on page</AlertDialogCancel>\r\n          <AlertDialogAction>Leave anyway</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogConfirm2 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-confirm-2.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

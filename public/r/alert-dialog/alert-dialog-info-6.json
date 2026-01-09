@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-info-6",
+  "type": "registry:block",
+  "title": "Alert Dialog Info 6",
+  "description": "Alert Dialog Info 6 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-info-6.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { HelpCircle } from \"lucide-react\";\r\n\r\nconst AlertDialogInfo6 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">\r\n          <HelpCircle />\r\n          Show Tips\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <div className=\"flex items-center gap-2\">\r\n            <HelpCircle className=\"text-blue-500\" />\r\n            <AlertDialogTitle className=\"text-xl\">Pro Tips</AlertDialogTitle>\r\n          </div>\r\n          <AlertDialogDescription className=\"flex flex-col pt-2 space-y-2\">\r\n            <span>\r\n              💡 <strong>Keyboard shortcut:</strong> Press Ctrl+K to quickly\r\n              open the command palette.\r\n            </span>\r\n            <span>\r\n              🎯 <strong>Quick tip:</strong> Use drag and drop to reorder items\r\n              in your dashboard.\r\n            </span>\r\n            <span>\r\n              ⭐ <strong>Did you know?</strong> You can create custom templates\r\n              for faster workflow.\r\n            </span>\r\n          </AlertDialogDescription>{\" \"}\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogCancel>Skip tips</AlertDialogCancel>\r\n          <AlertDialogAction>Show more tips</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogInfo6 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-info-6.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

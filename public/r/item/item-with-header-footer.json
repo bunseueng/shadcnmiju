@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-with-header-footer",
+  "type": "registry:block",
+  "title": "Item With Header Footer",
+  "description": "Item With Header Footer component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/item/item-with-header-footer.tsx",
+      "content": "\"use client\";\n\nimport { Clock, Star, TrendingUp } from \"lucide-react\";\nimport { Badge } from \"@/components/ui/badge\";\nimport {\n  Item,\n  ItemContent,\n  ItemDescription,\n  ItemFooter,\n  ItemGroup,\n  ItemHeader,\n  ItemMedia,\n  ItemSeparator,\n  ItemTitle,\n} from \"@/components/ui/item\";\n\nexport function ItemWithHeaderFooter() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-2xl\">\n        <ItemGroup>\n          <Item variant=\"outline\">\n            <ItemHeader>\n              <div className=\"flex items-center gap-3\">\n                <ItemMedia variant=\"icon\">\n                  <TrendingUp />\n                </ItemMedia>\n                <ItemContent>\n                  <ItemTitle>Q4 Sales Report</ItemTitle>\n                  <ItemDescription>\n                    Quarterly performance analysis and insights\n                  </ItemDescription>\n                </ItemContent>\n              </div>\n              <Badge>New</Badge>\n            </ItemHeader>\n            <ItemFooter>\n              <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                <Clock className=\"h-3 w-3\" />\n                <span>Updated 2 hours ago</span>\n              </div>\n              <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                <Star className=\"h-3 w-3 fill-yellow-500 text-yellow-500\" />\n                <span>4.8 rating</span>\n              </div>\n            </ItemFooter>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"outline\">\n            <ItemHeader>\n              <div className=\"flex items-center gap-3\">\n                <ItemMedia variant=\"icon\">\n                  <TrendingUp />\n                </ItemMedia>\n                <ItemContent>\n                  <ItemTitle>Marketing Campaign Results</ItemTitle>\n                  <ItemDescription>\n                    ROI analysis and campaign performance metrics\n                  </ItemDescription>\n                </ItemContent>\n              </div>\n              <Badge variant=\"secondary\">Draft</Badge>\n            </ItemHeader>\n            <ItemFooter>\n              <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                <Clock className=\"h-3 w-3\" />\n                <span>Updated yesterday</span>\n              </div>\n              <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                <Star className=\"h-3 w-3 fill-yellow-500 text-yellow-500\" />\n                <span>4.5 rating</span>\n              </div>\n            </ItemFooter>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"outline\">\n            <ItemHeader>\n              <div className=\"flex items-center gap-3\">\n                <ItemMedia variant=\"icon\">\n                  <TrendingUp />\n                </ItemMedia>\n                <ItemContent>\n                  <ItemTitle>Annual Revenue Forecast</ItemTitle>\n                  <ItemDescription>\n                    Projected revenue and growth opportunities\n                  </ItemDescription>\n                </ItemContent>\n              </div>\n              <Badge variant=\"outline\">Archived</Badge>\n            </ItemHeader>\n            <ItemFooter>\n              <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                <Clock className=\"h-3 w-3\" />\n                <span>Updated last week</span>\n              </div>\n              <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                <Star className=\"h-3 w-3 fill-yellow-500 text-yellow-500\" />\n                <span>4.9 rating</span>\n              </div>\n            </ItemFooter>\n          </Item>\n        </ItemGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/item-with-header-footer.tsx"
+    }
+  ],
+  "categories": [
+    "item",
+    "item"
+  ],
+  "registryDependencies": [
+    "badge",
+    "item"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

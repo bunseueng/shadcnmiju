@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "next-button",
+  "type": "registry:block",
+  "title": "Next Button",
+  "description": "Next Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/next-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nimport { ArrowRight } from \"lucide-react\";\r\n\r\nconst NextButton = () => {\r\n  return (\r\n    <Button className=\"gap-2\" variant=\"outline\">\r\n      Next <ArrowRight className=\"h-4 w-4\" />\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { NextButton }",
+      "type": "registry:component",
+      "target": "components/next-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

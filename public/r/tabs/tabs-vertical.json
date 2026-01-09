@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-vertical",
+  "type": "registry:block",
+  "title": "Tabs Vertical",
+  "description": "Tabs Vertical component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tabs/tabs-vertical.tsx",
+      "content": "\"use client\";\n\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\nimport { Home, FileText, Image, Video, Music } from \"lucide-react\";\n\nconst TabsVertical = () => {\n  return (\n    <Tabs defaultValue=\"home\" orientation=\"vertical\" className=\"flex gap-4 w-full max-w-lg\">\n      <TabsList className=\"flex flex-col h-auto w-[180px] bg-muted/50 p-2\">\n        <TabsTrigger value=\"home\" className=\"w-full justify-start gap-2\">\n          <Home className=\"h-4 w-4\" />\n          Home\n        </TabsTrigger>\n        <TabsTrigger value=\"documents\" className=\"w-full justify-start gap-2\">\n          <FileText className=\"h-4 w-4\" />\n          Documents\n        </TabsTrigger>\n        <TabsTrigger value=\"images\" className=\"w-full justify-start gap-2\">\n          <Image className=\"h-4 w-4\" />\n          Images\n        </TabsTrigger>\n        <TabsTrigger value=\"videos\" className=\"w-full justify-start gap-2\">\n          <Video className=\"h-4 w-4\" />\n          Videos\n        </TabsTrigger>\n        <TabsTrigger value=\"music\" className=\"w-full justify-start gap-2\">\n          <Music className=\"h-4 w-4\" />\n          Music\n        </TabsTrigger>\n      </TabsList>\n      <div className=\"flex-1\">\n        <TabsContent value=\"home\" className=\"m-0 p-4 rounded-lg border border-border h-full\">\n          <h3 className=\"font-semibold text-foreground mb-2\">Welcome Home</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Your personal dashboard with all your content.\n          </p>\n        </TabsContent>\n        <TabsContent value=\"documents\" className=\"m-0 p-4 rounded-lg border border-border h-full\">\n          <h3 className=\"font-semibold text-foreground mb-2\">Documents</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Browse and manage your documents.\n          </p>\n        </TabsContent>\n        <TabsContent value=\"images\" className=\"m-0 p-4 rounded-lg border border-border h-full\">\n          <h3 className=\"font-semibold text-foreground mb-2\">Images</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Your photo library and galleries.\n          </p>\n        </TabsContent>\n        <TabsContent value=\"videos\" className=\"m-0 p-4 rounded-lg border border-border h-full\">\n          <h3 className=\"font-semibold text-foreground mb-2\">Videos</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Watch and organize your video content.\n          </p>\n        </TabsContent>\n        <TabsContent value=\"music\" className=\"m-0 p-4 rounded-lg border border-border h-full\">\n          <h3 className=\"font-semibold text-foreground mb-2\">Music</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Your music library and playlists.\n          </p>\n        </TabsContent>\n      </div>\n    </Tabs>\n  );\n};\n\nexport { TabsVertical }",
+      "type": "registry:component",
+      "target": "components/tabs-vertical.tsx"
+    }
+  ],
+  "categories": [
+    "tabs",
+    "tabs"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

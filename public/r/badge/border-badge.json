@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "border-badge",
+  "type": "registry:block",
+  "title": "Border Badge",
+  "description": "Border Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/border-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst BorderBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge variant=\"outline\" className=\"border-2\">\r\n        Thick Border\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"border-2 border-dotted\">\r\n        Dotted\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"border-2\">\r\n        Dashed\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"border-l-4 border-primary\">\r\n        Left Accent\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"border-b-4 border-primary rounded-sm rounded-b-sm\"\r\n      >\r\n        Bottom Accent\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { BorderBadge }",
+      "type": "registry:component",
+      "target": "components/border-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

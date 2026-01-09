@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-basic",
+  "type": "registry:block",
+  "title": "Skeleton Basic",
+  "description": "Skeleton Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/skeleton/skeleton-basic.tsx",
+      "content": "\"use client\";\n\nimport { Skeleton } from \"@/components/ui/skeleton\";\n\nconst SkeletonBasic = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <Skeleton className=\"h-4 w-full\" />\n      <Skeleton className=\"h-4 w-3/4\" />\n      <Skeleton className=\"h-4 w-1/2\" />\n    </div>\n  );\n};\n\nexport { SkeletonBasic }",
+      "type": "registry:component",
+      "target": "components/skeleton-basic.tsx"
+    }
+  ],
+  "categories": [
+    "skeleton",
+    "skeleton"
+  ],
+  "registryDependencies": [
+    "skeleton"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-validation",
+  "type": "registry:block",
+  "title": "Input Validation",
+  "description": "Input Validation component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input/input-validation.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { CheckCircle2, XCircle, AlertCircle } from \"lucide-react\";\n\nconst InputValidation = () => {\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"success\" className=\"text-green-600\">\n          Email (Valid)\n        </Label>\n        <div className=\"relative\">\n          <Input\n            id=\"success\"\n            type=\"email\"\n            defaultValue=\"user@example.com\"\n            className=\"border-green-500 focus-visible:ring-green-500 pr-10\"\n          />\n          <CheckCircle2 className=\"absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500\" />\n        </div>\n        <p className=\"text-sm text-green-600\">Email is valid!</p>\n      </div>\n\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"error\" className=\"text-red-600\">\n          Email (Invalid)\n        </Label>\n        <div className=\"relative\">\n          <Input\n            id=\"error\"\n            type=\"email\"\n            defaultValue=\"invalid-email\"\n            className=\"border-red-500 focus-visible:ring-red-500 pr-10\"\n          />\n          <XCircle className=\"absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-red-500\" />\n        </div>\n        <p className=\"text-sm text-red-600\">\n          Please enter a valid email address.\n        </p>\n      </div>\n\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"warning\" className=\"text-yellow-600\">\n          Username\n        </Label>\n        <div className=\"relative\">\n          <Input\n            id=\"warning\"\n            defaultValue=\"user123\"\n            className=\"border-yellow-500 focus-visible:ring-yellow-500 pr-10\"\n          />\n          <AlertCircle className=\"absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-yellow-500\" />\n        </div>\n        <p className=\"text-sm text-yellow-600\">\n          Username may already be taken.\n        </p>\n      </div>\n    </div>\n  );\n};\n\nexport { InputValidation }",
+      "type": "registry:component",
+      "target": "components/input-validation.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "input"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

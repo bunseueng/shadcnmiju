@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-basic",
+  "type": "registry:block",
+  "title": "Separator Basic",
+  "description": "Separator Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/separator/separator-basic.tsx",
+      "content": "\"use client\";\n\nimport { Separator } from \"@/components/ui/separator\";\n\nconst SeparatorBasic = () => {\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"space-y-1\">\n        <h4 className=\"text-sm font-medium leading-none text-foreground\">Radix Primitives</h4>\n        <p className=\"text-sm text-muted-foreground\">\n          An open-source UI component library.\n        </p>\n      </div>\n      <Separator className=\"my-4\" />\n      <div className=\"flex h-5 items-center space-x-4 text-sm\">\n        <div className=\"text-foreground\">Blog</div>\n        <Separator orientation=\"vertical\" />\n        <div className=\"text-foreground\">Docs</div>\n        <Separator orientation=\"vertical\" />\n        <div className=\"text-foreground\">Source</div>\n      </div>\n    </div>\n  );\n};\n\nexport { SeparatorBasic }",
+      "type": "registry:component",
+      "target": "components/separator-basic.tsx"
+    }
+  ],
+  "categories": [
+    "separator",
+    "separator"
+  ],
+  "registryDependencies": [
+    "separator"
+  ]
+}

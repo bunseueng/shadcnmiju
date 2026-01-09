@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-single",
+  "type": "registry:block",
+  "title": "Toggle Group Single",
+  "description": "Toggle Group Single component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle-group/toggle-group-single.tsx",
+      "content": "\"use client\";\n\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\nimport { AlignLeft, AlignCenter, AlignRight, AlignJustify } from \"lucide-react\";\n\nconst ToggleGroupSingle = () => {\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8\">\n      <ToggleGroup type=\"single\" defaultValue=\"left\">\n        <ToggleGroupItem value=\"left\" aria-label=\"Align left\">\n          <AlignLeft className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"center\" aria-label=\"Align center\">\n          <AlignCenter className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"right\" aria-label=\"Align right\">\n          <AlignRight className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"justify\" aria-label=\"Align justify\">\n          <AlignJustify className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n};\n\nexport { ToggleGroupSingle }",
+      "type": "registry:component",
+      "target": "components/toggle-group-single.tsx"
+    }
+  ],
+  "categories": [
+    "toggle-group",
+    "toggle-group"
+  ],
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

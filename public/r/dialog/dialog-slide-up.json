@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-slide-up",
+  "type": "registry:block",
+  "title": "Dialog Slide Up",
+  "description": "Dialog Slide Up component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/dialog/dialog-slide-up.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { ArrowUp } from \"lucide-react\";\n\nconst DialogSlideUp = () => {\n  const [open, setOpen] = useState(false);\n\n  return (\n    <Dialog open={open} onOpenChange={setOpen}>\n      <DialogTrigger asChild>\n        <Button className=\"gap-2\">\n          <ArrowUp className=\"h-4 w-4\" />\n          Slide Up Dialog\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px] animate-in slide-in-from-bottom-4 fade-in-0 duration-500\">\n        <DialogHeader>\n          <DialogTitle className=\"text-foreground\">Slide Up Animation</DialogTitle>\n          <DialogDescription>\n            This dialog slides up from the bottom with a smooth easing effect.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"py-4 space-y-4\">\n          <div className=\"h-2 bg-primary/20 rounded-full overflow-hidden\">\n            <div className=\"h-full w-3/4 bg-primary rounded-full animate-pulse\" />\n          </div>\n          <p className=\"text-sm text-muted-foreground\">\n            Perfect for mobile-first designs and action sheets that feel natural to touch\n            interfaces.\n          </p>\n        </div>\n        <DialogFooter>\n          <Button variant=\"outline\" onClick={() => setOpen(false)}>\n            Dismiss\n          </Button>\n          <Button onClick={() => setOpen(false)}>Got it</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n};\n\nexport { DialogSlideUp }",
+      "type": "registry:component",
+      "target": "components/dialog-slide-up.tsx"
+    }
+  ],
+  "categories": [
+    "dialog",
+    "dialog"
+  ],
+  "registryDependencies": [
+    "button",
+    "dialog"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

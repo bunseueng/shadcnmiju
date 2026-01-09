@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-with-icon",
+  "type": "registry:block",
+  "title": "Input Group With Icon",
+  "description": "Input Group With Icon component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-group/input-group-with-icon.tsx",
+      "content": "\"use client\";\n\nimport { Mail, Lock, User, Search } from \"lucide-react\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport function InputGroupWithIcon() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-4\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"email\">Email</Label>\n          <div className=\"relative\">\n            <Mail className=\"absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input\n              id=\"email\"\n              type=\"email\"\n              placeholder=\"Enter your email\"\n              className=\"pl-10\"\n            />\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"password\">Password</Label>\n          <div className=\"relative\">\n            <Lock className=\"absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input\n              id=\"password\"\n              type=\"password\"\n              placeholder=\"Enter your password\"\n              className=\"pl-10\"\n            />\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"username\">Username</Label>\n          <div className=\"relative\">\n            <User className=\"absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input\n              id=\"username\"\n              type=\"text\"\n              placeholder=\"Enter your username\"\n              className=\"pl-10\"\n            />\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"search\">Search</Label>\n          <div className=\"relative\">\n            <Search className=\"absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground\" />\n            <Input\n              id=\"search\"\n              type=\"text\"\n              placeholder=\"Search...\"\n              className=\"pl-10\"\n            />\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-with-icon.tsx"
+    }
+  ],
+  "categories": [
+    "input-group",
+    "input-group"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

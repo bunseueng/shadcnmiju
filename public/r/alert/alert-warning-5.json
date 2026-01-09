@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-warning-5",
+  "type": "registry:block",
+  "title": "Alert Warning 5",
+  "description": "Alert Warning 5 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-warning-5.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { Globe } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertWarning5 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start\">\r\n      <Alert className=\"border-yellow-200 bg-yellow-50 text-yellow-800 dark:border-yellow-800 dark:bg-yellow-950 dark:text-yellow-200\">\r\n        <Globe />\r\n        <AlertTitle>Browser Not Fully Supported</AlertTitle>\r\n        <AlertDescription>\r\n          Some features may not work properly in your current browser. Please\r\n          update to the latest version.\r\n        </AlertDescription>\r\n        <div className=\"flex items-center col-2 w-auto mt-3 gap-3 focus:scale-110!\">\r\n          <Button>Upgrade Browser</Button>\r\n        </div>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertWarning5 }",
+      "type": "registry:component",
+      "target": "components/alert-warning-5.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

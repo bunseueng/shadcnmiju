@@ -3,6 +3,7 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState, createContext } from "react";
+import { Spinner } from "@/components/ui/spinner";
 
 export const PreviewPortalContext = createContext<HTMLDivElement | null>(null);
 
@@ -69,36 +70,47 @@ export function DynamicComponentPreview({
   // For grid view, use a zoom approach to fit wide components
   if (isGridView) {
     return (
-      <div className="relative w-full h-48 overflow-hidden rounded-lg border border-border">
-        {/* Background layer */}
-        <div
-          className="absolute inset-0 bg-[url('/assets/preview-bg.png')] bg-cover bg-center opacity-20"
-          aria-hidden
-        />
+      <PreviewPortalContext.Provider value={portalContainer}>
+        <div className="relative w-full h-48 overflow-hidden rounded-lg border border-border">
+          {/* Loading state */}
+          {!Component && !error && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Spinner className="size-6" />
+            </div>
+          )}
 
-        {/* Scaled content container */}
-        <div
-          className="absolute inset-0 flex items-center justify-center transform"
-          style={{
-            transform: "scale(0.5)",
-            transformOrigin: "center center",
-          }}
-        >
-          <div className="w-[200%] flex items-center justify-center">
-            <div className="bg-background rounded-xl shadow-md p-4 w-full max-w-4xl">
-              <div
-                className={cn(
-                  "relative flex items-center justify-center w-full",
-                  componentPath.includes("sidebar") ? "py-0" : "py-4"
-                )}
-              >
-                {error && <div className="text-red-500">{error}</div>}
-                {Component && <Component />}
+          {/* Scaled content container */}
+          <div
+            className="absolute inset-0 flex items-center justify-center transform"
+            style={{
+              transform: "scale(0.5)",
+              transformOrigin: "center center",
+            }}
+          >
+            <div className="w-[200%] flex items-center justify-center">
+              <div className="bg-background rounded-xl shadow-md p-4 w-full max-w-4xl">
+                <div
+                  className={cn(
+                    "relative flex items-center justify-center w-full",
+                    componentPath.includes("sidebar") ? "py-0" : "py-4"
+                  )}
+                >
+                  {error && <div className="text-red-500">{error}</div>}
+                  {Component && <Component />}
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Portal container for dialogs/modals in grid view */}
+          <div
+            ref={portalContainerRef}
+            id={`portal-container-grid-${variantId}`}
+            className="absolute inset-0 rounded-lg overflow-hidden pointer-events-none"
+            style={{ zIndex: 50 }}
+          />
         </div>
-      </div>
+      </PreviewPortalContext.Provider>
     );
   }
 
@@ -113,11 +125,7 @@ export function DynamicComponentPreview({
         className="relative flex items-center justify-center rounded-lg border border-border w-full h-full p-2"
       >
         {/* Background layer */}
-        <div
-          className="absolute inset-0 bg-[url('/assets/preview-bg.png')] bg-cover bg-center opacity-20"
-          aria-hidden
-        />
-
+        <div className="absolute inset-0 bg-[url('/assets/preview-bg.png')] bg-cover bg-center opacity-20" />
         <div
           className="relative h-full mx-auto transition-[width] duration-300 ease-in-out"
           style={{
@@ -126,6 +134,12 @@ export function DynamicComponentPreview({
           }}
         >
           <ScrollArea className="bg-background shadow-md h-full flex items-center justify-center rounded-xl transition-all duration-300 relative">
+            {/* Loading state */}
+            {!Component && !error && (
+              <div className="flex items-center justify-center py-12">
+                <Spinner className="size-8" />
+              </div>
+            )}
             {/* Content layer */}
             <div
               className={cn(

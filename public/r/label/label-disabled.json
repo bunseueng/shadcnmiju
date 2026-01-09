@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-disabled",
+  "type": "registry:block",
+  "title": "Label Disabled",
+  "description": "Label Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/label/label-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\n\nexport function LabelDisabled() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"disabled-input\" className=\"text-muted-foreground\">\n            Disabled Input\n          </Label>\n          <Input\n            id=\"disabled-input\"\n            placeholder=\"This input is disabled\"\n            disabled\n          />\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"readonly-input\" className=\"text-muted-foreground\">\n            Read-only Input\n          </Label>\n          <Input\n            id=\"readonly-input\"\n            value=\"This value cannot be changed\"\n            readOnly\n            className=\"bg-muted\"\n          />\n        </div>\n\n        <div className=\"flex items-center space-x-2\">\n          <Checkbox id=\"disabled-checkbox\" disabled />\n          <Label\n            htmlFor=\"disabled-checkbox\"\n            className=\"text-muted-foreground cursor-not-allowed\"\n          >\n            Disabled checkbox\n          </Label>\n        </div>\n\n        <RadioGroup disabled>\n          <div className=\"flex items-center space-x-2\">\n            <RadioGroupItem value=\"option-1\" id=\"option-1\" />\n            <Label htmlFor=\"option-1\" className=\"text-muted-foreground cursor-not-allowed\">\n              Disabled option 1\n            </Label>\n          </div>\n          <div className=\"flex items-center space-x-2\">\n            <RadioGroupItem value=\"option-2\" id=\"option-2\" />\n            <Label htmlFor=\"option-2\" className=\"text-muted-foreground cursor-not-allowed\">\n              Disabled option 2\n            </Label>\n          </div>\n        </RadioGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/label-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "label",
+    "label"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "checkbox",
+    "radio-group"
+  ]
+}

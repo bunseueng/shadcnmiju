@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-bottom",
+  "type": "registry:block",
+  "title": "Sheet Bottom",
+  "description": "Sheet Bottom component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sheet/sheet-bottom.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Sheet,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/components/ui/sheet\";\nimport { Share2, Facebook, Twitter, Linkedin, Link2, Mail, MessageCircle, Check, Copy } from \"lucide-react\";\n\nconst shareOptions = [\n  { icon: Facebook, label: \"Facebook\", color: \"text-blue-600\" },\n  { icon: Twitter, label: \"Twitter\", color: \"text-sky-500\" },\n  { icon: Linkedin, label: \"LinkedIn\", color: \"text-blue-700\" },\n  { icon: Mail, label: \"Email\", color: \"text-orange-500\" },\n  { icon: MessageCircle, label: \"Message\", color: \"text-green-500\" },\n];\n\nconst SheetBottom = () => {\n  const [open, setOpen] = useState(false);\n  const [copied, setCopied] = useState(false);\n\n  const handleCopy = () => {\n    setCopied(true);\n    setTimeout(() => setCopied(false), 2000);\n  };\n\n  return (\n    <Sheet open={open} onOpenChange={setOpen}>\n      <SheetTrigger asChild>\n        <Button className=\"gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600\">\n          <Share2 className=\"h-4 w-4\" />\n          Share\n        </Button>\n      </SheetTrigger>\n      <SheetContent side=\"bottom\" className=\"h-[350px]\">\n        <SheetHeader className=\"text-center\">\n          <SheetTitle className=\"text-foreground\">Share this content</SheetTitle>\n          <SheetDescription>Choose how you want to share</SheetDescription>\n        </SheetHeader>\n        <div className=\"mt-6 max-w-md mx-auto\">\n          <div className=\"flex justify-center gap-4 mb-6\">\n            {shareOptions.map((option, i) => (\n              <button\n                key={i}\n                className=\"flex flex-col items-center gap-2 p-3 rounded-xl hover:bg-accent transition-colors group\"\n              >\n                <div className={`h-12 w-12 rounded-full bg-muted flex items-center justify-center group-hover:scale-110 transition-transform ${option.color}`}>\n                  <option.icon className=\"h-6 w-6\" />\n                </div>\n                <span className=\"text-xs text-muted-foreground\">{option.label}</span>\n              </button>\n            ))}\n          </div>\n          <div className=\"relative\">\n            <div className=\"flex items-center gap-2 p-3 rounded-lg bg-muted\">\n              <Link2 className=\"h-4 w-4 text-muted-foreground shrink-0\" />\n              <span className=\"text-sm text-muted-foreground truncate flex-1\">\n                https://example.com/share/abc123\n              </span>\n              <Button size=\"sm\" variant=\"secondary\" className=\"gap-1 shrink-0\" onClick={handleCopy}>\n                {copied ? (\n                  <>\n                    <Check className=\"h-3 w-3\" />\n                    Copied!\n                  </>\n                ) : (\n                  <>\n                    <Copy className=\"h-3 w-3\" />\n                    Copy\n                  </>\n                )}\n              </Button>\n            </div>\n          </div>\n        </div>\n        <SheetFooter className=\"mt-6 justify-center\">\n          <Button variant=\"outline\" onClick={() => setOpen(false)}>\n            Close\n          </Button>\n        </SheetFooter>\n      </SheetContent>\n    </Sheet>\n  );\n};\n\nexport { SheetBottom }",
+      "type": "registry:component",
+      "target": "components/sheet-bottom.tsx"
+    }
+  ],
+  "categories": [
+    "sheet",
+    "sheet"
+  ],
+  "registryDependencies": [
+    "button",
+    "sheet"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

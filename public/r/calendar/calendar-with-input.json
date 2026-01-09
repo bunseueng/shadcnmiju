@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-input",
+  "type": "registry:block",
+  "title": "Calendar With Input",
+  "description": "Calendar With Input component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-input.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { Input } from \"@/components/ui/input\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { CalendarIcon } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarWithInput = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n  const [inputValue, setInputValue] = useState(\n    new Date().toLocaleDateString(\"en-CA\")\n  );\n\n  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n    setInputValue(e.target.value);\n    const parsedDate = new Date(e.target.value);\n    if (!isNaN(parsedDate.getTime())) {\n      setDate(parsedDate);\n    }\n  };\n\n  const handleCalendarSelect = (selectedDate: Date | undefined) => {\n    setDate(selectedDate);\n    if (selectedDate) {\n      setInputValue(selectedDate.toLocaleDateString(\"en-CA\"));\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <div className=\"flex items-center gap-2 w-full max-w-sm\">\n        <Input\n          type=\"date\"\n          value={inputValue}\n          onChange={handleInputChange}\n          className=\"flex-1\"\n        />\n        <Popover>\n          <PopoverTrigger asChild>\n            <Button variant=\"outline\" size=\"icon\">\n              <CalendarIcon className=\"h-4 w-4\" />\n            </Button>\n          </PopoverTrigger>\n          <PopoverContent className=\"w-auto p-0\" align=\"end\">\n            <Calendar\n              mode=\"single\"\n              selected={date}\n              onSelect={handleCalendarSelect}\n            />\n          </PopoverContent>\n        </Popover>\n      </div>\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Selected:{\" \"}\n          <span className=\"text-slate-200 font-medium\">\n            {date.toLocaleDateString(\"en-US\", {\n              weekday: \"short\",\n              month: \"short\",\n              day: \"numeric\",\n              year: \"numeric\",\n            })}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarWithInput }",
+      "type": "registry:component",
+      "target": "components/calendar-with-input.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "input",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

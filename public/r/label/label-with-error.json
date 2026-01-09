@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-with-error",
+  "type": "registry:block",
+  "title": "Label With Error",
+  "description": "Label With Error component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/label/label-with-error.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { AlertCircle } from \"lucide-react\";\n\nexport function LabelWithError() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"email-error\">Email</Label>\n          <Input\n            id=\"email-error\"\n            type=\"email\"\n            placeholder=\"Enter your email\"\n            className=\"border-destructive focus-visible:ring-destructive\"\n            defaultValue=\"invalid-email\"\n          />\n          <div className=\"flex items-center gap-2 text-sm text-destructive\">\n            <AlertCircle className=\"h-4 w-4\" />\n            <span>Please enter a valid email address</span>\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"password-error\">Password</Label>\n          <Input\n            id=\"password-error\"\n            type=\"password\"\n            placeholder=\"Enter your password\"\n            className=\"border-destructive focus-visible:ring-destructive\"\n            defaultValue=\"123\"\n          />\n          <div className=\"flex items-center gap-2 text-sm text-destructive\">\n            <AlertCircle className=\"h-4 w-4\" />\n            <span>Password must be at least 8 characters</span>\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"username-error\">Username</Label>\n          <Input\n            id=\"username-error\"\n            type=\"text\"\n            placeholder=\"Choose a username\"\n            className=\"border-destructive focus-visible:ring-destructive\"\n            defaultValue=\"ab\"\n          />\n          <div className=\"flex items-center gap-2 text-sm text-destructive\">\n            <AlertCircle className=\"h-4 w-4\" />\n            <span>Username must be at least 3 characters</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/label-with-error.tsx"
+    }
+  ],
+  "categories": [
+    "label",
+    "label"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

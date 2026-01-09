@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-info-3",
+  "type": "registry:block",
+  "title": "Alert Info 3",
+  "description": "Alert Info 3 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-info-3.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { File } from \"lucide-react\";\r\n\r\nconst AlertInfo3 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start \">\r\n      <Alert>\r\n        <File />\r\n        <AlertTitle>Need Help?</AlertTitle>\r\n        <AlertDescription>\r\n          Check out our comprehensive documentation for detailed guides and\r\n          examples.\r\n        </AlertDescription>\r\n        <div className=\"flex items-center gap-3 col-2 w-auto mt-2\">\r\n          <Button variant=\"default\" size=\"sm\">\r\n            View Docs\r\n          </Button>\r\n          <Button variant=\"secondary\" size=\"sm\">\r\n            Contact Support\r\n          </Button>\r\n        </div>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertInfo3 }",
+      "type": "registry:component",
+      "target": "components/alert-info-3.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

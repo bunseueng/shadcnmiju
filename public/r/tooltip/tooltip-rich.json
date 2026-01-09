@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-rich",
+  "type": "registry:block",
+  "title": "Tooltip Rich",
+  "description": "Tooltip Rich component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tooltip/tooltip-rich.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { HelpCircle, CheckCircle2, Clock, Zap } from \"lucide-react\";\n\nconst TooltipRich = () => {\n  return (\n    <TooltipProvider>\n      <Tooltip delayDuration={200}>\n        <TooltipTrigger asChild>\n          <Button variant=\"outline\" className=\"gap-2\">\n            <HelpCircle className=\"h-4 w-4\" />\n            Pro Features\n          </Button>\n        </TooltipTrigger>\n        <TooltipContent className=\"w-64 p-0\">\n          <div className=\"p-3 border-b border-border\">\n            <h4 className=\"font-semibold text-foreground\">Pro Plan Benefits</h4>\n          </div>\n          <div className=\"p-3 space-y-2\">\n            <div className=\"flex items-center gap-2 text-sm\">\n              <CheckCircle2 className=\"h-4 w-4 text-green-500\" />\n              <span>Unlimited projects</span>\n            </div>\n            <div className=\"flex items-center gap-2 text-sm\">\n              <Zap className=\"h-4 w-4 text-yellow-500\" />\n              <span>Priority support</span>\n            </div>\n            <div className=\"flex items-center gap-2 text-sm\">\n              <Clock className=\"h-4 w-4 text-blue-500\" />\n              <span>24/7 availability</span>\n            </div>\n          </div>\n        </TooltipContent>\n      </Tooltip>\n    </TooltipProvider>\n  );\n};\n\nexport { TooltipRich }",
+      "type": "registry:component",
+      "target": "components/tooltip-rich.tsx"
+    }
+  ],
+  "categories": [
+    "tooltip",
+    "tooltip"
+  ],
+  "registryDependencies": [
+    "button",
+    "tooltip"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

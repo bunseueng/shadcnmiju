@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-indeterminate",
+  "type": "registry:block",
+  "title": "Checkbox Indeterminate",
+  "description": "Checkbox Indeterminate component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/checkbox/checkbox-indeterminate.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Checkbox } from \"@/components/ui/checkbox\";\r\nimport { useState } from \"react\";\r\n\r\nconst CheckBoxIndeterminate = () => {\r\n  const [all, setAll] = useState(false);\r\n  const [selected, setSelected] = useState({\r\n    item1: false,\r\n    item2: false,\r\n    item3: false,\r\n  });\r\n\r\n  const handleSelectAll = () => {\r\n    const newValue = !all;\r\n    setAll(newValue);\r\n    setSelected({ item1: newValue, item2: newValue, item3: newValue });\r\n  };\r\n\r\n  return (\r\n    <div className=\"space-y-3\">\r\n      <div className=\"flex items-center space-x-2 pb-2 border-b\">\r\n        <Checkbox\r\n          id=\"select-all\"\r\n          checked={all}\r\n          onCheckedChange={handleSelectAll}\r\n        />\r\n        <label\r\n          htmlFor=\"select-all\"\r\n          className=\"text-sm font-semibold cursor-pointer\"\r\n        >\r\n          Select all\r\n        </label>\r\n      </div>\r\n      <div className=\"space-y-2 pl-6\">\r\n        {[\"item1\", \"item2\", \"item3\"].map((item) => (\r\n          <div key={item} className=\"flex items-center space-x-2\">\r\n            <Checkbox\r\n              id={item}\r\n              checked={selected[item as keyof typeof selected]}\r\n              onCheckedChange={(checked) =>\r\n                setSelected((prev) => ({ ...prev, [item]: checked }))\r\n              }\r\n            />\r\n            <label htmlFor={item} className=\"text-sm cursor-pointer\">\r\n              Item {item.slice(-1)}\r\n            </label>\r\n          </div>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CheckBoxIndeterminate }",
+      "type": "registry:component",
+      "target": "components/checkbox-indeterminate.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ]
+}

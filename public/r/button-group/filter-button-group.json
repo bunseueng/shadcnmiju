@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "filter-button-group",
+  "type": "registry:block",
+  "title": "Filter Button Group",
+  "description": "Filter Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/filter-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { ArrowUpDown, Filter, Search, X } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst FilterButtonGroup = () => {\r\n  const [sortOrder, setSortOrder] = useState<\"asc\" | \"desc\" | null>(null);\r\n  const [isFiltered, setIsFiltered] = useState(false);\r\n  const [isSearching, setIsSearching] = useState(false);\r\n\r\n  const toggleSort = () => {\r\n    setSortOrder((prev) =>\r\n      prev === null ? \"asc\" : prev === \"asc\" ? \"desc\" : null\r\n    );\r\n  };\r\n\r\n  const toggleFilter = () => setIsFiltered(!isFiltered);\r\n  const toggleSearch = () => setIsSearching(!isSearching);\r\n  const clearAll = () => {\r\n    setSortOrder(null);\r\n    setIsFiltered(false);\r\n    setIsSearching(false);\r\n  };\r\n\r\n  const hasActiveFilters = sortOrder || isFiltered || isSearching;\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-2\">\r\n      <ButtonGroup>\r\n        <Button\r\n          variant={sortOrder ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={toggleSort}\r\n        >\r\n          <ArrowUpDown className=\"h-4 w-4\" />\r\n          Sort {sortOrder && `(${sortOrder})`}\r\n        </Button>\r\n        <Button\r\n          variant={isFiltered ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={toggleFilter}\r\n        >\r\n          <Filter className=\"h-4 w-4\" />\r\n          Filter\r\n        </Button>\r\n        <Button\r\n          variant={isSearching ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={toggleSearch}\r\n        >\r\n          <Search className=\"h-4 w-4\" />\r\n          Search\r\n        </Button>\r\n      </ButtonGroup>\r\n      {hasActiveFilters && (\r\n        <Button variant=\"ghost\" size=\"sm\" onClick={clearAll}>\r\n          <X className=\"h-4 w-4\" />\r\n          Clear\r\n        </Button>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { FilterButtonGroup }",
+      "type": "registry:component",
+      "target": "components/filter-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card-product",
+  "type": "registry:block",
+  "title": "Hover Card Product",
+  "description": "Hover Card Product component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/hover-card/hover-card-product.tsx",
+      "content": "\"use client\";\n\nimport {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from \"@/components/ui/hover-card\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Star, ShoppingCart } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nconst HoverCardProduct = () => {\n  return (\n    <HoverCard>\n      <HoverCardTrigger asChild>\n        <span className=\"cursor-pointer inline-flex items-center gap-2 text-primary hover:underline font-medium\">\n          🎧 Wireless Headphones\n        </span>\n      </HoverCardTrigger>\n      <HoverCardContent className=\"w-80 p-0 animate-in slide-in-from-left-2 fade-in-0 duration-300\">\n        <div className=\"relative h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-t-md flex items-center justify-center text-6xl\">\n          🎧\n          <Badge className=\"absolute top-2 left-2 bg-red-500\">-20%</Badge>\n        </div>\n        <div className=\"p-4 space-y-3\">\n          <div className=\"flex items-start justify-between\">\n            <div>\n              <h4 className=\"font-semibold text-foreground\">Premium Wireless Headphones</h4>\n              <div className=\"flex items-center gap-1 mt-1\">\n                {[1, 2, 3, 4, 5].map((i) => (\n                  <Star\n                    key={i}\n                    className={`h-3 w-3 ${i <= 4 ? \"text-yellow-400 fill-yellow-400\" : \"text-muted-foreground\"}`}\n                  />\n                ))}\n                <span className=\"text-xs text-muted-foreground ml-1\">(234)</span>\n              </div>\n            </div>\n            <div className=\"text-right\">\n              <div className=\"text-lg font-bold text-primary\">$79.99</div>\n              <div className=\"text-xs text-muted-foreground line-through\">$99.99</div>\n            </div>\n          </div>\n          <p className=\"text-sm text-muted-foreground\">\n            Active noise cancellation, 40h battery life, premium sound quality.\n          </p>\n          <Button className=\"w-full gap-2\" size=\"sm\">\n            <ShoppingCart className=\"h-4 w-4\" />\n            Add to Cart\n          </Button>\n        </div>\n      </HoverCardContent>\n    </HoverCard>\n  );\n};\n\nexport { HoverCardProduct }",
+      "type": "registry:component",
+      "target": "components/hover-card-product.tsx"
+    }
+  ],
+  "categories": [
+    "hover-card",
+    "hover-card"
+  ],
+  "registryDependencies": [
+    "hover-card",
+    "badge",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

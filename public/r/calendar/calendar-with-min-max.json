@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-min-max",
+  "type": "registry:block",
+  "title": "Calendar With Min Max",
+  "description": "Calendar With Min Max component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-min-max.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarWithMinMax = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  const today = new Date();\n  const maxDate = new Date();\n  maxDate.setMonth(maxDate.getMonth() + 3); // 3 months from now\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        disabled={(date) => date < today || date > maxDate}\n        className=\"rounded-md border\"\n      />\n      <p className=\"text-xs text-slate-400 text-center\">\n        <span className=\"text-slate-200 font-medium\">\n          Only dates within next 3 months are selectable\n        </span>\n      </p>\n    </div>\n  );\n};\n\nexport { CalendarWithMinMax }",
+      "type": "registry:component",
+      "target": "components/calendar-with-min-max.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

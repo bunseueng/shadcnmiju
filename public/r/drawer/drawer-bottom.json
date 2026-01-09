@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-bottom",
+  "type": "registry:block",
+  "title": "Drawer Bottom",
+  "description": "Drawer Bottom component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/drawer/drawer-bottom.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/components/ui/drawer\";\nimport { ChevronUp, Minus, Plus } from \"lucide-react\";\n\nconst DrawerBottom = () => {\n  const [open, setOpen] = useState(false);\n  const [goal, setGoal] = useState(350);\n\n  const adjustGoal = (adjustment: number) => {\n    setGoal(Math.max(200, Math.min(400, goal + adjustment)));\n  };\n\n  return (\n    <Drawer open={open} onOpenChange={setOpen}>\n      <DrawerTrigger asChild>\n        <Button className=\"gap-2\">\n          <ChevronUp className=\"h-4 w-4\" />\n          Bottom Drawer\n        </Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <div className=\"mx-auto w-full max-w-sm\">\n          <DrawerHeader>\n            <DrawerTitle className=\"text-foreground\">Move Goal</DrawerTitle>\n            <DrawerDescription>Set your daily activity goal.</DrawerDescription>\n          </DrawerHeader>\n          <div className=\"p-4 pb-0\">\n            <div className=\"flex items-center justify-center space-x-2\">\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                className=\"h-8 w-8 shrink-0 rounded-full\"\n                onClick={() => adjustGoal(-10)}\n                disabled={goal <= 200}\n              >\n                <Minus className=\"h-4 w-4\" />\n                <span className=\"sr-only\">Decrease</span>\n              </Button>\n              <div className=\"flex-1 text-center\">\n                <div className=\"text-7xl font-bold tracking-tighter text-foreground\">{goal}</div>\n                <div className=\"text-[0.70rem] uppercase text-muted-foreground\">Calories/day</div>\n              </div>\n              <Button\n                variant=\"outline\"\n                size=\"icon\"\n                className=\"h-8 w-8 shrink-0 rounded-full\"\n                onClick={() => adjustGoal(10)}\n                disabled={goal >= 400}\n              >\n                <Plus className=\"h-4 w-4\" />\n                <span className=\"sr-only\">Increase</span>\n              </Button>\n            </div>\n            <div className=\"mt-3 h-[120px]\">\n              <div className=\"flex h-full items-end gap-2\">\n                {[40, 60, 45, 80, 55, 70, 65].map((height, i) => (\n                  <div\n                    key={i}\n                    className=\"flex-1 bg-primary rounded-t-md transition-all duration-300\"\n                    style={{ height: `${height}%` }}\n                  />\n                ))}\n              </div>\n            </div>\n          </div>\n          <DrawerFooter>\n            <Button onClick={() => setOpen(false)}>Submit</Button>\n            <DrawerClose asChild>\n              <Button variant=\"outline\">Cancel</Button>\n            </DrawerClose>\n          </DrawerFooter>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  );\n};\n\nexport { DrawerBottom }",
+      "type": "registry:component",
+      "target": "components/drawer-bottom.tsx"
+    }
+  ],
+  "categories": [
+    "drawer",
+    "drawer"
+  ],
+  "registryDependencies": [
+    "button",
+    "drawer"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

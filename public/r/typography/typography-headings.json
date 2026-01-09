@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-headings",
+  "type": "registry:block",
+  "title": "Typography Headings",
+  "description": "Typography Headings component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/typography/typography-headings.tsx",
+      "content": "\"use client\";\n\nexport function TypographyHeadings() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl space-y-6\">\n        <h1 className=\"scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl\">\n          Heading 1\n        </h1>\n        <p className=\"text-muted-foreground\">\n          The largest heading, typically used for page titles.\n        </p>\n\n        <h2 className=\"scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0\">\n          Heading 2\n        </h2>\n        <p className=\"text-muted-foreground\">\n          Used for major section headings with a subtle border.\n        </p>\n\n        <h3 className=\"scroll-m-20 text-2xl font-semibold tracking-tight\">\n          Heading 3\n        </h3>\n        <p className=\"text-muted-foreground\">\n          Used for subsection headings.\n        </p>\n\n        <h4 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n          Heading 4\n        </h4>\n        <p className=\"text-muted-foreground\">\n          Smaller section headings.\n        </p>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/typography-headings.tsx"
+    }
+  ],
+  "categories": [
+    "typography",
+    "typography"
+  ]
+}

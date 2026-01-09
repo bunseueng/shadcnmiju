@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-with-icons",
+  "type": "registry:block",
+  "title": "Breadcrumb With Icons",
+  "description": "Breadcrumb With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/breadcrumb/breadcrumb-with-icons.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\nimport { Home, FolderOpen, FileText } from \"lucide-react\";\n\nconst BreadcrumbWithIcons = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\" className=\"flex items-center gap-2\">\n            <Home className=\"h-4 w-4\" />\n            Home\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/docs\" className=\"flex items-center gap-2\">\n            <FolderOpen className=\"h-4 w-4\" />\n            Documentation\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage className=\"flex items-center gap-2\">\n            <FileText className=\"h-4 w-4\" />\n            Introduction\n          </BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport { BreadcrumbWithIcons }",
+      "type": "registry:component",
+      "target": "components/breadcrumb-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "breadcrumb",
+    "breadcrumb"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

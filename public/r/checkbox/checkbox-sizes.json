@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-sizes",
+  "type": "registry:block",
+  "title": "Checkbox Sizes",
+  "description": "Checkbox Sizes component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/checkbox/checkbox-sizes.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst CheckboxSizes = () => {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex items-center space-x-2\">\r\n        <Checkbox id=\"small\" className=\"h-3 w-3\" />\r\n        <label htmlFor=\"small\" className=\"text-xs cursor-pointer\">\r\n          Small checkbox\r\n        </label>\r\n      </div>\r\n      <div className=\"flex items-center space-x-2\">\r\n        <Checkbox id=\"default\" defaultChecked />\r\n        <label htmlFor=\"default\" className=\"text-sm cursor-pointer\">\r\n          Default checkbox\r\n        </label>\r\n      </div>\r\n      <div className=\"flex items-center space-x-2\">\r\n        <Checkbox id=\"large\" className=\"h-6 w-6\" defaultChecked />\r\n        <label htmlFor=\"large\" className=\"text-lg cursor-pointer\">\r\n          Large checkbox\r\n        </label>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CheckboxSizes }",
+      "type": "registry:component",
+      "target": "components/checkbox-sizes.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ]
+}

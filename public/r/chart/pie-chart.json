@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pie-chart",
+  "type": "registry:block",
+  "title": "Pie Chart",
+  "description": "Pie Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/pie-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport { Cell, Legend, Pie, PieChart as RechartsPieChart, ResponsiveContainer, Tooltip } from \"recharts\";\n\nconst data = [\n  { name: \"Chrome\", value: 400 },\n  { name: \"Safari\", value: 300 },\n  { name: \"Firefox\", value: 200 },\n  { name: \"Edge\", value: 100 },\n  { name: \"Other\", value: 50 },\n];\n\nconst COLORS = [\n  \"hsl(var(--chart-1))\",\n  \"hsl(var(--chart-2))\",\n  \"hsl(var(--chart-3))\",\n  \"hsl(var(--chart-4))\",\n  \"hsl(var(--chart-5))\",\n];\n\nconst PieChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Browser Usage Distribution</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RechartsPieChart>\n            <Pie\n              data={data}\n              cx=\"50%\"\n              cy=\"50%\"\n              labelLine={false}\n              label={({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}\n              outerRadius={80}\n              fill=\"#8884d8\"\n              dataKey=\"value\"\n            >\n              {data.map((entry, index) => (\n                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />\n              ))}\n            </Pie>\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n          </RechartsPieChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { PieChartComponent }",
+      "type": "registry:component",
+      "target": "components/pie-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

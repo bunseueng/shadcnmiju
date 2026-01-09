@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-controlled",
+  "type": "registry:block",
+  "title": "Pagination Controlled",
+  "description": "Pagination Controlled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/pagination/pagination-controlled.tsx",
+      "content": "\"use client\";\n\nimport {\n  Pagination,\n  PaginationContent,\n  PaginationItem,\n  PaginationLink,\n  PaginationNext,\n  PaginationPrevious,\n} from \"@/components/ui/pagination\";\nimport { useState } from \"react\";\n\nconst PaginationControlled = () => {\n  const [currentPage, setCurrentPage] = useState(1);\n  const totalPages = 5;\n\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <p className=\"text-sm text-muted-foreground\">\n        Page {currentPage} of {totalPages}\n      </p>\n      <Pagination>\n        <PaginationContent>\n          <PaginationItem>\n            <PaginationPrevious\n              href=\"#\"\n              onClick={(e) => {\n                e.preventDefault();\n                if (currentPage > 1) setCurrentPage(currentPage - 1);\n              }}\n              className={currentPage === 1 ? \"pointer-events-none opacity-50\" : \"\"}\n            />\n          </PaginationItem>\n          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (\n            <PaginationItem key={page}>\n              <PaginationLink\n                href=\"#\"\n                isActive={currentPage === page}\n                onClick={(e) => {\n                  e.preventDefault();\n                  setCurrentPage(page);\n                }}\n              >\n                {page}\n              </PaginationLink>\n            </PaginationItem>\n          ))}\n          <PaginationItem>\n            <PaginationNext\n              href=\"#\"\n              onClick={(e) => {\n                e.preventDefault();\n                if (currentPage < totalPages) setCurrentPage(currentPage + 1);\n              }}\n              className={currentPage === totalPages ? \"pointer-events-none opacity-50\" : \"\"}\n            />\n          </PaginationItem>\n        </PaginationContent>\n      </Pagination>\n    </div>\n  );\n};\n\nexport { PaginationControlled }",
+      "type": "registry:component",
+      "target": "components/pagination-controlled.tsx"
+    }
+  ],
+  "categories": [
+    "pagination",
+    "pagination"
+  ],
+  "registryDependencies": [
+    "pagination"
+  ]
+}

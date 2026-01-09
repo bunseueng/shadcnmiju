@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-basic",
+  "type": "registry:block",
+  "title": "Textarea Basic",
+  "description": "Textarea Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/textarea/textarea-basic.tsx",
+      "content": "\"use client\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { Label } from \"@/components/ui/label\";\n\nconst TextareaBasic = () => {\n  return (\n    <div className=\"grid w-full max-w-sm gap-1.5\">\n      <Label htmlFor=\"message\">Your message</Label>\n      <Textarea placeholder=\"Type your message here.\" id=\"message\" />\n    </div>\n  );\n};\n\nexport { TextareaBasic }",
+      "type": "registry:component",
+      "target": "components/textarea-basic.tsx"
+    }
+  ],
+  "categories": [
+    "textarea",
+    "textarea"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ]
+}

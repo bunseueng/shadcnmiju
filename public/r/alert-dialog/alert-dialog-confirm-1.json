@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-confirm-1",
+  "type": "registry:block",
+  "title": "Alert Dialog Confirm 1",
+  "description": "Alert Dialog Confirm 1 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-confirm-1.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Check, File } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogConfirm1 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"secondary\">\r\n          <File /> Save Changes\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <div className=\"flex items-center gap-2 text-green-400\">\r\n            <File className=\"h-5 w-5\" />\r\n            <AlertDialogTitle>Save Changes</AlertDialogTitle>\r\n          </div>\r\n          <AlertDialogDescription>\r\n            You have made changes to the following settings.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <div className=\"bg-secondary rounded-lg\">\r\n          <ul className=\"space-y-2 p-4\">\r\n            <li className=\"flex items-center gap-2\">\r\n              <Check /> Profile information updated\r\n            </li>\r\n            <li className=\"flex items-center gap-2\">\r\n              <Check /> Notification preferences changed\r\n            </li>\r\n            <li className=\"flex items-center gap-2\">\r\n              <Check /> Privacy settings modified\r\n            </li>\r\n          </ul>\r\n        </div>\r\n        <AlertDialogDescription>\r\n          These changes will take effect immediately.\r\n        </AlertDialogDescription>\r\n        <AlertDialogFooter className=\"mt-5\">\r\n          <AlertDialogCancel>Discard changes</AlertDialogCancel>\r\n          <AlertDialogAction>Save all changes</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogConfirm1 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-confirm-1.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

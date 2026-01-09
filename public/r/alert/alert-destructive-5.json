@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-destructive-5",
+  "type": "registry:block",
+  "title": "Alert Destructive 5",
+  "description": "Alert Destructive 5 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-destructive-5.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Database } from \"lucide-react\";\r\n\r\nconst AlertDestructive1 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start\">\r\n      <Alert variant=\"destructive\">\r\n        <Database />\r\n        <AlertTitle>Data Corruption Detected</AlertTitle>\r\n        <AlertDescription>\r\n          Some of your data may be corrupted. Please contact support immediately\r\n          to prevent data loss.\r\n        </AlertDescription>\r\n        <div className=\"flex items-center col-2 w-auto gap-3 mt-3\">\r\n          <Button variant=\"destructive\">Contact Support</Button>\r\n          <Button variant=\"secondary\">Backup Data</Button>\r\n        </div>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertDestructive1 }",
+      "type": "registry:component",
+      "target": "components/alert-destructive-5.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

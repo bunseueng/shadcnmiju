@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ghost-icon-button",
+  "type": "registry:block",
+  "title": "Ghost Icon Button",
+  "description": "Ghost Icon Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/ghost-icon-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Settings, Share2, Heart, MoreVertical } from \"lucide-react\";\n\nconst GhostIconButton = () => {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2\">\n      <Button variant=\"ghost\" size=\"icon\">\n        <Settings className=\"h-4 w-4\" />\n      </Button>\n      <Button variant=\"ghost\" size=\"icon\">\n        <Share2 className=\"h-4 w-4\" />\n      </Button>\n      <Button variant=\"ghost\" size=\"icon\">\n        <Heart className=\"h-4 w-4\" />\n      </Button>\n      <Button variant=\"ghost\" size=\"icon\">\n        <MoreVertical className=\"h-4 w-4\" />\n      </Button>\n    </div>\n  );\n};\n\nexport { GhostIconButton }",
+      "type": "registry:component",
+      "target": "components/ghost-icon-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

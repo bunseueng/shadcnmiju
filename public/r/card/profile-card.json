@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-card",
+  "type": "registry:block",
+  "title": "Profile Card",
+  "description": "Profile Card component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/card/profile-card.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\n\r\nimport { Plus } from \"lucide-react\";\r\n\r\nimport Image from \"next/image\";\r\n\r\nconst categories = [\"Front-end\", \"Web Developer\", \"Web Designer\"];\r\n\r\nconst ProfileCard = () => {\r\n  return (\r\n    <Card className=\"w-87.5 shadow-lg hover:shadow-2xl hover:shadow-primary/20 rounded-xl transform duration-300 hover:scale-[1.02] hover:-translate-y-1 border-2 hover:border-primary/30 relative overflow-hidden group\">\r\n      <div className=\"absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500\" />\r\n\r\n      <div className=\"absolute top-0 right-0 w-24 h-24 bg-linear-to-bl from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300\" />\r\n\r\n      <CardHeader className=\"flex items-center justify-between px-6 pt-6 relative z-10\">\r\n        <div className=\"flex items-center gap-4\">\r\n          <div className=\"relative\">\r\n            <div className=\"absolute inset-0 rounded-full bg-linear-to-r from-primary to-primary/60 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300\" />\r\n            <Image\r\n              src=\"/assets/card1.jpg\"\r\n              alt=\"avatar\"\r\n              width={48}\r\n              height={48}\r\n              className=\"size-12 rounded-full object-cover ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300 relative z-10\"\r\n            />\r\n          </div>\r\n\r\n          <div className=\"block space-y-1\">\r\n            <CardTitle className=\"text-lg group-hover:bg-linear-to-r group-hover:from-primary group-hover:to-primary/70 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300\">\r\n              Your Name\r\n            </CardTitle>\r\n            <CardDescription className=\"text-sm\">@Username</CardDescription>\r\n          </div>\r\n        </div>\r\n\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"icon\"\r\n          className=\"hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 hover:rotate-90 hover:scale-110 bg-transparent\"\r\n        >\r\n          <Plus className=\"w-4 h-4\" />\r\n        </Button>\r\n      </CardHeader>\r\n\r\n      <CardContent className=\"text-start px-6 pb-6 space-y-4 relative z-10\">\r\n        <div className=\"flex flex-wrap gap-2\">\r\n          {categories.map((category, index) => (\r\n            <Badge\r\n              key={index}\r\n              className=\"bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 border border-primary/20 hover:border-primary shadow-sm\"\r\n            >\r\n              {category}\r\n            </Badge>\r\n          ))}\r\n        </div>\r\n\r\n        <p className=\"text-sm text-muted-foreground leading-relaxed\">\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus\r\n          dolore voluptas porro nisi deleniti obcaecati facilis dicta laudantium\r\n          ea exercitationem.\r\n        </p>\r\n      </CardContent>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport { ProfileCard }",
+      "type": "registry:component",
+      "target": "components/profile-card.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "card"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

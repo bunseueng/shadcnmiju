@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-responsive",
+  "type": "registry:block",
+  "title": "Breadcrumb Responsive",
+  "description": "Breadcrumb Responsive component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/breadcrumb/breadcrumb-responsive.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\n\nconst BreadcrumbResponsive = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem className=\"hidden md:block\">\n          <BreadcrumbLink href=\"/docs\">Documentation</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator className=\"hidden md:block\" />\n        <BreadcrumbItem>\n          <DropdownMenu>\n            <DropdownMenuTrigger className=\"flex items-center gap-1 md:hidden\">\n              <BreadcrumbEllipsis className=\"h-4 w-4\" />\n            </DropdownMenuTrigger>\n            <DropdownMenuContent align=\"start\" className=\"md:hidden\">\n              <DropdownMenuItem>\n                <BreadcrumbLink href=\"/docs\">Documentation</BreadcrumbLink>\n              </DropdownMenuItem>\n              <DropdownMenuItem>\n                <BreadcrumbLink href=\"/components\">Components</BreadcrumbLink>\n              </DropdownMenuItem>\n            </DropdownMenuContent>\n          </DropdownMenu>\n          <BreadcrumbLink href=\"/components\" className=\"hidden md:block\">\n            Components\n          </BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport { BreadcrumbResponsive }",
+      "type": "registry:component",
+      "target": "components/breadcrumb-responsive.tsx"
+    }
+  ],
+  "categories": [
+    "breadcrumb",
+    "breadcrumb"
+  ],
+  "registryDependencies": [
+    "breadcrumb",
+    "dropdown-menu"
+  ]
+}

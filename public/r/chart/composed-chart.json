@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "composed-chart",
+  "type": "registry:block",
+  "title": "Composed Chart",
+  "description": "Composed Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/composed-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  Area,\n  Bar,\n  CartesianGrid,\n  ComposedChart as RechartsComposedChart,\n  Legend,\n  Line,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\n\nconst data = [\n  { name: \"Jan\", revenue: 590, profit: 800, loss: 1400 },\n  { name: \"Feb\", revenue: 868, profit: 967, loss: 1506 },\n  { name: \"Mar\", revenue: 1397, profit: 1098, loss: 989 },\n  { name: \"Apr\", revenue: 1480, profit: 1200, loss: 1228 },\n  { name: \"May\", revenue: 1520, profit: 1108, loss: 1100 },\n  { name: \"Jun\", revenue: 1400, profit: 680, loss: 1700 },\n];\n\nconst ComposedChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Financial Overview</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RechartsComposedChart data={data}>\n            <CartesianGrid strokeDasharray=\"3 3\" className=\"stroke-muted\" />\n            <XAxis dataKey=\"name\" className=\"text-xs sm:text-sm\" />\n            <YAxis className=\"text-xs sm:text-sm\" />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n            <Area\n              type=\"monotone\"\n              dataKey=\"loss\"\n              fill=\"hsl(var(--chart-3))\"\n              stroke=\"hsl(var(--chart-3))\"\n              fillOpacity={0.3}\n            />\n            <Bar dataKey=\"revenue\" barSize={20} fill=\"hsl(var(--primary))\" radius={[8, 8, 0, 0]} />\n            <Line\n              type=\"monotone\"\n              dataKey=\"profit\"\n              stroke=\"hsl(var(--chart-2))\"\n              strokeWidth={2}\n              dot={{ fill: \"hsl(var(--chart-2))\" }}\n            />\n          </RechartsComposedChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { ComposedChartComponent }",
+      "type": "registry:component",
+      "target": "components/composed-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

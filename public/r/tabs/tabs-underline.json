@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-underline",
+  "type": "registry:block",
+  "title": "Tabs Underline",
+  "description": "Tabs Underline component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tabs/tabs-underline.tsx",
+      "content": "\"use client\";\n\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\nimport { Badge } from \"@/components/ui/badge\";\n\nconst TabsUnderline = () => {\n  return (\n    <Tabs defaultValue=\"all\" className=\"w-full max-w-lg\">\n      <TabsList className=\"h-auto p-0 bg-transparent border-b border-border rounded-none w-full justify-start gap-4\">\n        <TabsTrigger\n          value=\"all\"\n          className=\"relative rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none pb-3 px-0\"\n        >\n          All Items\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"active\"\n          className=\"relative rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none pb-3 px-0 gap-2\"\n        >\n          Active\n          <Badge variant=\"secondary\" className=\"h-5 px-1.5\">12</Badge>\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"completed\"\n          className=\"relative rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none pb-3 px-0 gap-2\"\n        >\n          Completed\n          <Badge variant=\"secondary\" className=\"h-5 px-1.5\">48</Badge>\n        </TabsTrigger>\n        <TabsTrigger\n          value=\"archived\"\n          className=\"relative rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none pb-3 px-0\"\n        >\n          Archived\n        </TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"all\" className=\"mt-4\">\n        <div className=\"p-4 rounded-lg bg-muted/30 text-foreground\">\n          Showing all 60 items in your collection.\n        </div>\n      </TabsContent>\n      <TabsContent value=\"active\" className=\"mt-4\">\n        <div className=\"p-4 rounded-lg bg-green-500/10 text-green-700 dark:text-green-400\">\n          12 active items that need your attention.\n        </div>\n      </TabsContent>\n      <TabsContent value=\"completed\" className=\"mt-4\">\n        <div className=\"p-4 rounded-lg bg-blue-500/10 text-blue-700 dark:text-blue-400\">\n          48 completed items. Great job!\n        </div>\n      </TabsContent>\n      <TabsContent value=\"archived\" className=\"mt-4\">\n        <div className=\"p-4 rounded-lg bg-muted/30 text-muted-foreground\">\n          No archived items yet.\n        </div>\n      </TabsContent>\n    </Tabs>\n  );\n};\n\nexport { TabsUnderline }",
+      "type": "registry:component",
+      "target": "components/tabs-underline.tsx"
+    }
+  ],
+  "categories": [
+    "tabs",
+    "tabs"
+  ],
+  "registryDependencies": [
+    "tabs",
+    "badge"
+  ]
+}

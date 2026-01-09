@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-with-text",
+  "type": "registry:block",
+  "title": "Toggle Group With Text",
+  "description": "Toggle Group With Text component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle-group/toggle-group-with-text.tsx",
+      "content": "\"use client\";\n\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\nimport { List, Grid3x3, Rows3 } from \"lucide-react\";\n\nconst ToggleGroupWithText = () => {\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8\">\n      <ToggleGroup type=\"single\" defaultValue=\"list\">\n        <ToggleGroupItem value=\"list\">\n          <List className=\"h-4 w-4 mr-2\" />\n          List\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"grid\">\n          <Grid3x3 className=\"h-4 w-4 mr-2\" />\n          Grid\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"table\">\n          <Rows3 className=\"h-4 w-4 mr-2\" />\n          Table\n        </ToggleGroupItem>\n      </ToggleGroup>\n    </div>\n  );\n};\n\nexport { ToggleGroupWithText }",
+      "type": "registry:component",
+      "target": "components/toggle-group-with-text.tsx"
+    }
+  ],
+  "categories": [
+    "toggle-group",
+    "toggle-group"
+  ],
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

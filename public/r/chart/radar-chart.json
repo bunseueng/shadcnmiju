@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radar-chart",
+  "type": "registry:block",
+  "title": "Radar Chart",
+  "description": "Radar Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/radar-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  Legend,\n  PolarAngleAxis,\n  PolarGrid,\n  PolarRadiusAxis,\n  Radar,\n  RadarChart as RechartsRadarChart,\n  ResponsiveContainer,\n  Tooltip,\n} from \"recharts\";\n\nconst data = [\n  { subject: \"Design\", A: 120, B: 110, fullMark: 150 },\n  { subject: \"Development\", A: 98, B: 130, fullMark: 150 },\n  { subject: \"Testing\", A: 86, B: 130, fullMark: 150 },\n  { subject: \"Marketing\", A: 99, B: 100, fullMark: 150 },\n  { subject: \"Sales\", A: 85, B: 90, fullMark: 150 },\n  { subject: \"Support\", A: 65, B: 85, fullMark: 150 },\n];\n\nconst RadarChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Team Performance Analysis</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RechartsRadarChart cx=\"50%\" cy=\"50%\" outerRadius=\"80%\" data={data}>\n            <PolarGrid className=\"stroke-muted\" />\n            <PolarAngleAxis dataKey=\"subject\" className=\"text-xs sm:text-sm\" />\n            <PolarRadiusAxis className=\"text-xs sm:text-sm\" />\n            <Radar\n              name=\"Team A\"\n              dataKey=\"A\"\n              stroke=\"hsl(var(--primary))\"\n              fill=\"hsl(var(--primary))\"\n              fillOpacity={0.6}\n            />\n            <Radar\n              name=\"Team B\"\n              dataKey=\"B\"\n              stroke=\"hsl(var(--chart-2))\"\n              fill=\"hsl(var(--chart-2))\"\n              fillOpacity={0.6}\n            />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n          </RechartsRadarChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { RadarChartComponent }",
+      "type": "registry:component",
+      "target": "components/radar-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

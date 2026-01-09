@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table-basic",
+  "type": "registry:block",
+  "title": "Data Table Basic",
+  "description": "Data Table Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/data-table/data-table-basic.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  ColumnDef,\n  flexRender,\n  getCoreRowModel,\n  useReactTable,\n} from \"@tanstack/react-table\";\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/components/ui/table\";\n\ntype User = {\n  id: string;\n  name: string;\n  email: string;\n  role: string;\n};\n\nconst data: User[] = [\n  { id: \"1\", name: \"John Doe\", email: \"john@example.com\", role: \"Admin\" },\n  { id: \"2\", name: \"Jane Smith\", email: \"jane@example.com\", role: \"User\" },\n  { id: \"3\", name: \"Bob Johnson\", email: \"bob@example.com\", role: \"Editor\" },\n  { id: \"4\", name: \"Alice Brown\", email: \"alice@example.com\", role: \"User\" },\n  { id: \"5\", name: \"Charlie Davis\", email: \"charlie@example.com\", role: \"Admin\" },\n];\n\nconst columns: ColumnDef<User>[] = [\n  {\n    accessorKey: \"name\",\n    header: \"Name\",\n  },\n  {\n    accessorKey: \"email\",\n    header: \"Email\",\n  },\n  {\n    accessorKey: \"role\",\n    header: \"Role\",\n  },\n];\n\nexport function DataTableBasic() {\n  const table = useReactTable({\n    data,\n    columns,\n    getCoreRowModel: getCoreRowModel(),\n  });\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl\">\n        <div className=\"rounded-md border\">\n          <Table>\n            <TableHeader>\n              {table.getHeaderGroups().map((headerGroup) => (\n                <TableRow key={headerGroup.id}>\n                  {headerGroup.headers.map((header) => (\n                    <TableHead key={header.id}>\n                      {header.isPlaceholder\n                        ? null\n                        : flexRender(\n                            header.column.columnDef.header,\n                            header.getContext()\n                          )}\n                    </TableHead>\n                  ))}\n                </TableRow>\n              ))}\n            </TableHeader>\n            <TableBody>\n              {table.getRowModel().rows?.length ? (\n                table.getRowModel().rows.map((row) => (\n                  <TableRow key={row.id}>\n                    {row.getVisibleCells().map((cell) => (\n                      <TableCell key={cell.id}>\n                        {flexRender(\n                          cell.column.columnDef.cell,\n                          cell.getContext()\n                        )}\n                      </TableCell>\n                    ))}\n                  </TableRow>\n                ))\n              ) : (\n                <TableRow>\n                  <TableCell colSpan={columns.length} className=\"h-24 text-center\">\n                    No results.\n                  </TableCell>\n                </TableRow>\n              )}\n            </TableBody>\n          </Table>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/data-table-basic.tsx"
+    }
+  ],
+  "categories": [
+    "data-table",
+    "data-table"
+  ],
+  "registryDependencies": [
+    "table"
+  ],
+  "dependencies": [
+    "@tanstack/react-table"
+  ]
+}

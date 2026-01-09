@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-chat",
+  "type": "registry:block",
+  "title": "Scroll Area Chat",
+  "description": "Scroll Area Chat component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/scroll-area/scroll-area-chat.tsx",
+      "content": "\"use client\";\n\nimport { ScrollArea } from \"@/components/ui/scroll-area\";\n\nconst messages = [\n  { id: 1, sender: \"John\", message: \"Hey, how are you?\", time: \"10:00 AM\", isMe: false },\n  { id: 2, sender: \"Me\", message: \"I'm good, thanks! How about you?\", time: \"10:01 AM\", isMe: true },\n  { id: 3, sender: \"John\", message: \"Great! Are you free today?\", time: \"10:02 AM\", isMe: false },\n  { id: 4, sender: \"Me\", message: \"Yeah, what's up?\", time: \"10:03 AM\", isMe: true },\n  { id: 5, sender: \"John\", message: \"Want to grab coffee?\", time: \"10:04 AM\", isMe: false },\n  { id: 6, sender: \"Me\", message: \"Sure! What time?\", time: \"10:05 AM\", isMe: true },\n  { id: 7, sender: \"John\", message: \"How about 2pm?\", time: \"10:06 AM\", isMe: false },\n  { id: 8, sender: \"Me\", message: \"Perfect, see you then!\", time: \"10:07 AM\", isMe: true },\n  { id: 9, sender: \"John\", message: \"Looking forward to it!\", time: \"10:08 AM\", isMe: false },\n];\n\nconst ScrollAreaChat = () => {\n  return (\n    <ScrollArea className=\"h-[300px] w-full max-w-sm rounded-md border p-4\">\n      <div className=\"space-y-4\">\n        {messages.map((msg) => (\n          <div\n            key={msg.id}\n            className={`flex ${msg.isMe ? \"justify-end\" : \"justify-start\"}`}\n          >\n            <div\n              className={`max-w-[80%] rounded-lg px-3 py-2 ${\n                msg.isMe\n                  ? \"bg-primary text-primary-foreground\"\n                  : \"bg-muted text-foreground\"\n              }`}\n            >\n              <p className=\"text-sm\">{msg.message}</p>\n              <p className={`text-xs mt-1 ${msg.isMe ? \"text-primary-foreground/70\" : \"text-muted-foreground\"}`}>\n                {msg.time}\n              </p>\n            </div>\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n};\n\nexport { ScrollAreaChat }",
+      "type": "registry:component",
+      "target": "components/scroll-area-chat.tsx"
+    }
+  ],
+  "categories": [
+    "scroll-area",
+    "scroll-area"
+  ],
+  "registryDependencies": [
+    "scroll-area"
+  ]
+}

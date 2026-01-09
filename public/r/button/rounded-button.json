@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "rounded-button",
+  "type": "registry:block",
+  "title": "Rounded Button",
+  "description": "Rounded Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/rounded-button.tsx",
+      "content": "import { ArrowUpIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonRounded = () => {\r\n  return (\r\n    <Button variant=\"outline\" size=\"icon\" className=\"rounded-full\">\r\n      <ArrowUpIcon className=\"h-4 w-4\" />\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { ButtonRounded }",
+      "type": "registry:component",
+      "target": "components/rounded-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-menu",
+  "type": "registry:block",
+  "title": "Separator Menu",
+  "description": "Separator Menu component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/separator/separator-menu.tsx",
+      "content": "\"use client\";\n\nimport { Separator } from \"@/components/ui/separator\";\nimport { User, Settings, CreditCard, LogOut, HelpCircle, MessageSquare } from \"lucide-react\";\n\nconst SeparatorMenu = () => {\n  const menuItems = [\n    { icon: User, label: \"Profile\", shortcut: \"⌘P\" },\n    { icon: Settings, label: \"Settings\", shortcut: \"⌘S\" },\n    { icon: CreditCard, label: \"Billing\", shortcut: \"⌘B\" },\n  ];\n\n  const supportItems = [\n    { icon: HelpCircle, label: \"Help Center\" },\n    { icon: MessageSquare, label: \"Feedback\" },\n  ];\n\n  return (\n    <div className=\"w-full max-w-[200px] rounded-lg border p-1\">\n      {menuItems.map((item, index) => (\n        <div\n          key={item.label}\n          className=\"flex items-center justify-between rounded-sm px-2 py-1.5 text-sm hover:bg-accent cursor-pointer\"\n        >\n          <div className=\"flex items-center gap-2\">\n            <item.icon className=\"h-4 w-4 text-muted-foreground\" />\n            <span className=\"text-foreground\">{item.label}</span>\n          </div>\n          <span className=\"text-xs text-muted-foreground\">{item.shortcut}</span>\n        </div>\n      ))}\n      <Separator className=\"my-1\" />\n      {supportItems.map((item) => (\n        <div\n          key={item.label}\n          className=\"flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent cursor-pointer\"\n        >\n          <item.icon className=\"h-4 w-4 text-muted-foreground\" />\n          <span className=\"text-foreground\">{item.label}</span>\n        </div>\n      ))}\n      <Separator className=\"my-1\" />\n      <div className=\"flex items-center gap-2 rounded-sm px-2 py-1.5 text-sm hover:bg-accent cursor-pointer text-red-500\">\n        <LogOut className=\"h-4 w-4\" />\n        <span>Log out</span>\n      </div>\n    </div>\n  );\n};\n\nexport { SeparatorMenu }",
+      "type": "registry:component",
+      "target": "components/separator-menu.tsx"
+    }
+  ],
+  "categories": [
+    "separator",
+    "separator"
+  ],
+  "registryDependencies": [
+    "separator"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

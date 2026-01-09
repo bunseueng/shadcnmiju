@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-destructive-1",
+  "type": "registry:block",
+  "title": "Alert Dialog Destructive 1",
+  "description": "Alert Dialog Destructive 1 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-destructive-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Trash, TriangleAlert } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogDistructive1 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"destructive\">\r\n          <Trash /> Pernament Delete\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <form onSubmit={(e) => e.preventDefault()}>\r\n          <AlertDialogHeader>\r\n            <div className=\"flex items-center gap-2 text-red-400\">\r\n              <TriangleAlert className=\"h-5 w-5\" />\r\n              <AlertDialogTitle>Pernament Delete</AlertDialogTitle>\r\n            </div>\r\n            <AlertDialogDescription className=\"bg-red-50 text-red-800 border rounded p-2 my-2\">\r\n              <span className=\"flex items-center gap-2\">\r\n                <TriangleAlert className=\"w-5 h-5\" />\r\n                <strong className=\"font-semibold\">\r\n                  Warning: This action cannot be undone!\r\n                </strong>\r\n              </span>\r\n            </AlertDialogDescription>\r\n          </AlertDialogHeader>\r\n          <div className=\"space-y-2 my-4\">\r\n            <p>You are about to permanently delete:</p>\r\n            <ul className=\"list-disc list-inside text-md mt-2 space-y-2 \">\r\n              <li>Project &quot;My Website&quot; and all files</li>\r\n              <li>3 connected databases</li>\r\n              <li>All deployment history</li>\r\n            </ul>\r\n            <p className=\"text-muted-foreground\">\r\n              This data cannot be recovered once deleted.\r\n            </p>\r\n          </div>\r\n          <AlertDialogFooter className=\"mt-5\">\r\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\r\n            <AlertDialogAction className=\"bg-red-500 hover:bg-red-300 text-white\">\r\n              I understand, delete everything\r\n            </AlertDialogAction>\r\n          </AlertDialogFooter>\r\n        </form>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogDistructive1 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-destructive-1.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

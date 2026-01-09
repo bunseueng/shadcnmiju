@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-horizontal",
+  "type": "registry:block",
+  "title": "Radio Horizontal",
+  "description": "Radio Horizontal component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/radio-group/radio-horizontal.tsx",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\n\nconst RadioHorizontal = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Label className=\"text-foreground\">Select size:</Label>\n      <RadioGroup defaultValue=\"m\" className=\"flex gap-4\">\n        <div className=\"flex items-center space-x-2\">\n          <RadioGroupItem value=\"xs\" id=\"xs\" />\n          <Label htmlFor=\"xs\">XS</Label>\n        </div>\n        <div className=\"flex items-center space-x-2\">\n          <RadioGroupItem value=\"s\" id=\"s\" />\n          <Label htmlFor=\"s\">S</Label>\n        </div>\n        <div className=\"flex items-center space-x-2\">\n          <RadioGroupItem value=\"m\" id=\"m\" />\n          <Label htmlFor=\"m\">M</Label>\n        </div>\n        <div className=\"flex items-center space-x-2\">\n          <RadioGroupItem value=\"l\" id=\"l\" />\n          <Label htmlFor=\"l\">L</Label>\n        </div>\n        <div className=\"flex items-center space-x-2\">\n          <RadioGroupItem value=\"xl\" id=\"xl\" />\n          <Label htmlFor=\"xl\">XL</Label>\n        </div>\n      </RadioGroup>\n    </div>\n  );\n};\n\nexport { RadioHorizontal }",
+      "type": "registry:component",
+      "target": "components/radio-horizontal.tsx"
+    }
+  ],
+  "categories": [
+    "radio-group",
+    "radio-group"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ]
+}

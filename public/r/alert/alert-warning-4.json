@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-warning-4",
+  "type": "registry:block",
+  "title": "Alert Warning 4",
+  "description": "Alert Warning 4 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-warning-4.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { Settings } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertWarning4 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start\">\r\n      <Alert className=\"border-yellow-200 bg-yellow-50 text-yellow-800 dark:border-yellow-800 dark:bg-yellow-950 dark:text-yellow-200\">\r\n        <Settings />\r\n        <AlertTitle>Scheduled Maintenance</AlertTitle>\r\n        <AlertDescription>\r\n          System maintenance is scheduled for tonight at 2:00 AM EST. Expected\r\n          downtime: 30 minutes.\r\n        </AlertDescription>\r\n        <div className=\"flex items-center col-2 w-auto mt-3 gap-3\">\r\n          <Button>Lern More</Button>\r\n        </div>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertWarning4 }",
+      "type": "registry:component",
+      "target": "components/alert-warning-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

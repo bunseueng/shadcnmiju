@@ -35,4 +35,15 @@ export const showcase_components = [
     src: "/assets/hero-section3.jpg",
     link: "/components/button-variants#magnetic-button"
   },
+  {
+    title: "Sparkle Button",
+    description: "A subtle magnetic hover interaction that follows the cursor for a polished, premium feel.",
+    src: "/assets/hero-section7.jpg",
+    link: "/components/button-variants#sparkle-button"
+  },{
+    title: "3D Parallax Card",
+    description: "A subtle magnetic hover interaction that follows the cursor for a polished, premium feel.",
+    src: "/assets/hero-section8.jpg",
+    link: "/components/card-variants#3d-parallax-card"
+  },
 ]

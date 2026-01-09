@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "donut-chart",
+  "type": "registry:block",
+  "title": "Donut Chart",
+  "description": "Donut Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/donut-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  Cell,\n  Legend,\n  Pie,\n  PieChart,\n  ResponsiveContainer,\n  Tooltip,\n} from \"recharts\";\n\nconst data = [\n  { name: \"Product A\", value: 2400 },\n  { name: \"Product B\", value: 4567 },\n  { name: \"Product C\", value: 1398 },\n  { name: \"Product D\", value: 9800 },\n];\n\nconst COLORS = [\n  \"hsl(var(--chart-1))\",\n  \"hsl(var(--chart-2))\",\n  \"hsl(var(--chart-3))\",\n  \"hsl(var(--chart-4))\",\n];\n\nconst DonutChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">\n          Product Sales Distribution\n        </CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <PieChart>\n            <Pie\n              data={data}\n              cx=\"50%\"\n              cy=\"50%\"\n              innerRadius={60}\n              outerRadius={90}\n              fill=\"#8884d8\"\n              paddingAngle={5}\n              dataKey=\"value\"\n              label={({ name, percent }) =>\n                `${name} ${((percent ?? 0) * 100).toFixed(0)}%`\n              }\n            >\n              {data.map((entry, index) => (\n                <Cell\n                  key={`cell-${index}`}\n                  fill={COLORS[index % COLORS.length]}\n                />\n              ))}\n            </Pie>\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n          </PieChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { DonutChartComponent }",
+      "type": "registry:component",
+      "target": "components/donut-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

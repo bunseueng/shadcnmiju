@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-destructive-2",
+  "type": "registry:block",
+  "title": "Alert Dialog Destructive 2",
+  "description": "Alert Dialog Destructive 2 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-destructive-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { TriangleAlert, X } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogDistructive2 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"destructive\">\r\n          <X /> Terminate Account\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <form onSubmit={(e) => e.preventDefault()}>\r\n          <AlertDialogHeader>\r\n            <div className=\"flex items-center gap-2 text-red-400\">\r\n              <X className=\"h-5 w-5\" />\r\n              <AlertDialogTitle>Terminate Account</AlertDialogTitle>\r\n            </div>\r\n            <AlertDialogDescription className=\"bg-red-50 text-red-800 border border-l-4 border-l-red-500 p-2 my-2\">\r\n              <span className=\"flex items-start gap-2 p-4\">\r\n                <TriangleAlert className=\"w-5 h-5\" />\r\n                <span>\r\n                  <strong className=\"font-semibold\">Critical Action:</strong>{\" \"}\r\n                  <span>\r\n                    Account termination is immediate and irreversible.\r\n                  </span>\r\n                </span>\r\n              </span>\r\n            </AlertDialogDescription>\r\n          </AlertDialogHeader>\r\n          <div className=\"space-y-2 my-4\">\r\n            <p>This will immediately:</p>\r\n            <ul className=\"list-disc list-inside text-md mt-2 space-y-2  text-muted-foreground\">\r\n              <li>Revoke all access permissions</li>\r\n              <li>Delete all user data</li>\r\n              <li>Cancel active services</li>\r\n              <li>Remove user from all teams</li>\r\n            </ul>\r\n          </div>\r\n          <AlertDialogFooter className=\"mt-5\">\r\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\r\n            <AlertDialogAction className=\"bg-red-500 hover:bg-red-300 text-white\">\r\n              Terminate Now\r\n            </AlertDialogAction>\r\n          </AlertDialogFooter>\r\n        </form>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogDistructive2 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-destructive-2.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

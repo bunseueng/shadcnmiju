@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-with-icon",
+  "type": "registry:block",
+  "title": "Input With Icon",
+  "description": "Input With Icon component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input/input-with-icon.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Search, Mail, Lock, User } from \"lucide-react\";\n\nconst InputWithIcon = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"relative\">\n        <Search className=\"absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground\" />\n        <Input className=\"pl-10\" placeholder=\"Search...\" />\n      </div>\n      <div className=\"relative\">\n        <Mail className=\"absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground\" />\n        <Input className=\"pl-10\" type=\"email\" placeholder=\"Email address\" />\n      </div>\n      <div className=\"relative\">\n        <Lock className=\"absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground\" />\n        <Input className=\"pl-10\" type=\"password\" placeholder=\"Password\" />\n      </div>\n      <div className=\"relative\">\n        <User className=\"absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground\" />\n        <Input className=\"pl-10\" placeholder=\"Username\" />\n      </div>\n    </div>\n  );\n};\n\nexport { InputWithIcon }",
+      "type": "registry:component",
+      "target": "components/input-with-icon.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "input"
+  ],
+  "registryDependencies": [
+    "input"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-week-picker",
+  "type": "registry:block",
+  "title": "Calendar Week Picker",
+  "description": "Calendar Week Picker component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-week-picker.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarWeekPicker = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  const getWeekNumber = (date: Date) => {\n    const firstDayOfYear = new Date(date.getFullYear(), 0, 1);\n    const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;\n    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);\n  };\n\n  const getWeekRange = (date: Date) => {\n    const day = date.getDay();\n    const diff = date.getDate() - day + (day === 0 ? -6 : 1);\n    const weekStart = new Date(date.setDate(diff));\n    const weekEnd = new Date(weekStart);\n    weekEnd.setDate(weekStart.getDate() + 6);\n    return { start: weekStart, end: weekEnd };\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        showWeekNumber\n        className=\"rounded-md border\"\n      />\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Week {getWeekNumber(date)}:{\" \"}\n          <span className=\"text-slate-200 font-medium\">\n            {getWeekRange(new Date(date)).start.toLocaleDateString()} -{\" \"}\n            {getWeekRange(new Date(date)).end.toLocaleDateString()}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarWeekPicker }",
+      "type": "registry:component",
+      "target": "components/calendar-week-picker.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-with-description",
+  "type": "registry:block",
+  "title": "Label With Description",
+  "description": "Label With Description component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/label/label-with-description.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nexport function LabelWithDescription() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"username\">Username</Label>\n          <Input id=\"username\" placeholder=\"johndoe\" />\n          <p className=\"text-sm text-muted-foreground\">\n            This is your public display name.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"bio\">Bio</Label>\n          <Input id=\"bio\" placeholder=\"Tell us about yourself\" />\n          <p className=\"text-sm text-muted-foreground\">\n            You can @mention other users and organizations.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"url\">URL</Label>\n          <Input id=\"url\" type=\"url\" placeholder=\"https://example.com\" />\n          <p className=\"text-sm text-muted-foreground\">\n            Add links to your website, blog, or social media profiles.\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/label-with-description.tsx"
+    }
+  ],
+  "categories": [
+    "label",
+    "label"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ]
+}

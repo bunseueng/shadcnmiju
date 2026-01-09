@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-toolbar",
+  "type": "registry:block",
+  "title": "Tooltip Toolbar",
+  "description": "Tooltip Toolbar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tooltip/tooltip-toolbar.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { Bold, Italic, Underline, Strikethrough, AlignLeft, AlignCenter, AlignRight, Link2 } from \"lucide-react\";\n\nconst tools = [\n  { icon: Bold, label: \"Bold\", shortcut: \"⌘B\" },\n  { icon: Italic, label: \"Italic\", shortcut: \"⌘I\" },\n  { icon: Underline, label: \"Underline\", shortcut: \"⌘U\" },\n  { icon: Strikethrough, label: \"Strikethrough\", shortcut: \"⌘⇧S\" },\n  { icon: AlignLeft, label: \"Align Left\", shortcut: \"⌘⇧L\" },\n  { icon: AlignCenter, label: \"Align Center\", shortcut: \"⌘⇧E\" },\n  { icon: AlignRight, label: \"Align Right\", shortcut: \"⌘⇧R\" },\n  { icon: Link2, label: \"Insert Link\", shortcut: \"⌘K\" },\n];\n\nconst TooltipToolbar = () => {\n  return (\n    <TooltipProvider delayDuration={100}>\n      <div className=\"flex items-center gap-1 p-2 rounded-lg border border-border bg-background\">\n        {tools.map((tool, i) => (\n          <Tooltip key={i}>\n            <TooltipTrigger asChild>\n              <Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\">\n                <tool.icon className=\"h-4 w-4\" />\n              </Button>\n            </TooltipTrigger>\n            <TooltipContent>\n              <div className=\"flex items-center gap-2\">\n                <span>{tool.label}</span>\n                <kbd className=\"text-xs bg-muted px-1.5 py-0.5 rounded\">{tool.shortcut}</kbd>\n              </div>\n            </TooltipContent>\n          </Tooltip>\n        ))}\n      </div>\n    </TooltipProvider>\n  );\n};\n\nexport { TooltipToolbar }",
+      "type": "registry:component",
+      "target": "components/tooltip-toolbar.tsx"
+    }
+  ],
+  "categories": [
+    "tooltip",
+    "tooltip"
+  ],
+  "registryDependencies": [
+    "button",
+    "tooltip"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

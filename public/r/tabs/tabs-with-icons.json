@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-with-icons",
+  "type": "registry:block",
+  "title": "Tabs With Icons",
+  "description": "Tabs With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tabs/tabs-with-icons.tsx",
+      "content": "\"use client\";\n\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\nimport { User, Settings, Bell, Shield } from \"lucide-react\";\n\nconst TabsWithIcons = () => {\n  return (\n    <Tabs defaultValue=\"profile\" className=\"w-full max-w-lg\">\n      <TabsList className=\"grid w-full grid-cols-4\">\n        <TabsTrigger value=\"profile\" className=\"gap-2\">\n          <User className=\"h-4 w-4\" />\n          <span className=\"hidden sm:inline\">Profile</span>\n        </TabsTrigger>\n        <TabsTrigger value=\"settings\" className=\"gap-2\">\n          <Settings className=\"h-4 w-4\" />\n          <span className=\"hidden sm:inline\">Settings</span>\n        </TabsTrigger>\n        <TabsTrigger value=\"notifications\" className=\"gap-2\">\n          <Bell className=\"h-4 w-4\" />\n          <span className=\"hidden sm:inline\">Alerts</span>\n        </TabsTrigger>\n        <TabsTrigger value=\"security\" className=\"gap-2\">\n          <Shield className=\"h-4 w-4\" />\n          <span className=\"hidden sm:inline\">Security</span>\n        </TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"profile\" className=\"mt-4 p-4 rounded-lg border border-border\">\n        <h3 className=\"font-semibold text-foreground mb-2\">Profile Settings</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Manage your public profile information and how others see you.\n        </p>\n      </TabsContent>\n      <TabsContent value=\"settings\" className=\"mt-4 p-4 rounded-lg border border-border\">\n        <h3 className=\"font-semibold text-foreground mb-2\">General Settings</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Configure your app preferences and display options.\n        </p>\n      </TabsContent>\n      <TabsContent value=\"notifications\" className=\"mt-4 p-4 rounded-lg border border-border\">\n        <h3 className=\"font-semibold text-foreground mb-2\">Notification Preferences</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Choose which notifications you want to receive.\n        </p>\n      </TabsContent>\n      <TabsContent value=\"security\" className=\"mt-4 p-4 rounded-lg border border-border\">\n        <h3 className=\"font-semibold text-foreground mb-2\">Security Settings</h3>\n        <p className=\"text-sm text-muted-foreground\">\n          Manage your password and two-factor authentication.\n        </p>\n      </TabsContent>\n    </Tabs>\n  );\n};\n\nexport { TabsWithIcons }",
+      "type": "registry:component",
+      "target": "components/tabs-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "tabs",
+    "tabs"
+  ],
+  "registryDependencies": [
+    "tabs"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-with-description",
+  "type": "registry:block",
+  "title": "Radio With Description",
+  "description": "Radio With Description component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/radio-group/radio-with-description.tsx",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\n\nconst RadioWithDescription = () => {\n  return (\n    <RadioGroup defaultValue=\"startup\" className=\"flex flex-col gap-4\">\n      <div className=\"flex items-start space-x-3 rounded-lg border p-4 cursor-pointer hover:bg-accent transition-colors\">\n        <RadioGroupItem value=\"startup\" id=\"startup\" className=\"mt-1\" />\n        <div className=\"space-y-1\">\n          <Label htmlFor=\"startup\" className=\"cursor-pointer\">Startup</Label>\n          <p className=\"text-sm text-muted-foreground\">\n            Perfect for small teams and early-stage projects.\n          </p>\n        </div>\n      </div>\n      <div className=\"flex items-start space-x-3 rounded-lg border p-4 cursor-pointer hover:bg-accent transition-colors\">\n        <RadioGroupItem value=\"business\" id=\"business\" className=\"mt-1\" />\n        <div className=\"space-y-1\">\n          <Label htmlFor=\"business\" className=\"cursor-pointer\">Business</Label>\n          <p className=\"text-sm text-muted-foreground\">\n            For growing teams that need more resources.\n          </p>\n        </div>\n      </div>\n      <div className=\"flex items-start space-x-3 rounded-lg border p-4 cursor-pointer hover:bg-accent transition-colors\">\n        <RadioGroupItem value=\"enterprise\" id=\"enterprise\" className=\"mt-1\" />\n        <div className=\"space-y-1\">\n          <Label htmlFor=\"enterprise\" className=\"cursor-pointer\">Enterprise</Label>\n          <p className=\"text-sm text-muted-foreground\">\n            Unlimited resources for large organizations.\n          </p>\n        </div>\n      </div>\n    </RadioGroup>\n  );\n};\n\nexport { RadioWithDescription }",
+      "type": "registry:component",
+      "target": "components/radio-with-description.tsx"
+    }
+  ],
+  "categories": [
+    "radio-group",
+    "radio-group"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ]
+}

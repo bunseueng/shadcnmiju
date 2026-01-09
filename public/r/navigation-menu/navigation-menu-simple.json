@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-simple",
+  "type": "registry:block",
+  "title": "Navigation Menu Simple",
+  "description": "Navigation Menu Simple component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/navigation-menu/navigation-menu-simple.tsx",
+      "content": "\"use client\";\n\nimport {\n  NavigationMenu,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  navigationMenuTriggerStyle,\n} from \"@/components/ui/navigation-menu\";\n\nconst NavigationMenuSimple = () => {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            Home\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            About\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            Services\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            Contact\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n};\n\nexport { NavigationMenuSimple }",
+      "type": "registry:component",
+      "target": "components/navigation-menu-simple.tsx"
+    }
+  ],
+  "categories": [
+    "navigation-menu",
+    "navigation-menu"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ]
+}

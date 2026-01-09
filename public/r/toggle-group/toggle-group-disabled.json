@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-disabled",
+  "type": "registry:block",
+  "title": "Toggle Group Disabled",
+  "description": "Toggle Group Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle-group/toggle-group-disabled.tsx",
+      "content": "\"use client\";\n\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\nimport { Bold, Italic, Underline, Strikethrough } from \"lucide-react\";\n\nconst ToggleGroupDisabled = () => {\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8\">\n      <ToggleGroup type=\"multiple\" disabled>\n        <ToggleGroupItem value=\"bold\">\n          <Bold className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"italic\">\n          <Italic className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"underline\">\n          <Underline className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n        <ToggleGroupItem value=\"strikethrough\">\n          <Strikethrough className=\"h-4 w-4\" />\n        </ToggleGroupItem>\n      </ToggleGroup>\n      <p className=\"text-sm text-muted-foreground\">All items disabled</p>\n    </div>\n  );\n};\n\nexport { ToggleGroupDisabled }",
+      "type": "registry:component",
+      "target": "components/toggle-group-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "toggle-group",
+    "toggle-group"
+  ],
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

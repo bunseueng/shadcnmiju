@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading-button",
+  "type": "registry:block",
+  "title": "Loading Button",
+  "description": "Loading Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/loading-button.tsx",
+      "content": "\"use client\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Spinner } from \"@/components/ui/spinner\";\r\n\r\nconst LoadingButton = () => {\r\n  const [isLoading, setIsLoading] = useState(false);\r\n\r\n  const handleClick = () => {\r\n    setIsLoading(true);\r\n    // Simulate async operation\r\n    setTimeout(() => setIsLoading(false), 2000);\r\n  };\r\n\r\n  return (\r\n    <Button onClick={handleClick} disabled={isLoading}>\r\n      {isLoading && <Spinner />}\r\n      {isLoading ? \"Loading...\" : \"Click me\"}\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { LoadingButton }",
+      "type": "registry:component",
+      "target": "components/loading-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button",
+    "spinner"
+  ]
+}

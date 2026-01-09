@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-required",
+  "type": "registry:block",
+  "title": "Label Required",
+  "description": "Label Required component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/label/label-required.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\n\nexport function LabelRequired() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"fullname\">\n            Full Name <span className=\"text-destructive\">*</span>\n          </Label>\n          <Input id=\"fullname\" placeholder=\"John Doe\" required />\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"email-required\">\n            Email Address <span className=\"text-destructive\">*</span>\n          </Label>\n          <Input\n            id=\"email-required\"\n            type=\"email\"\n            placeholder=\"john@example.com\"\n            required\n          />\n          <p className=\"text-xs text-muted-foreground\">\n            <span className=\"text-destructive\">*</span> Required field\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"phone-optional\">Phone Number (Optional)</Label>\n          <Input id=\"phone-optional\" type=\"tel\" placeholder=\"+1 (555) 000-0000\" />\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"notes\">\n            Additional Notes <span className=\"text-destructive\">*</span>\n          </Label>\n          <Textarea\n            id=\"notes\"\n            placeholder=\"Please provide additional details\"\n            required\n          />\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/label-required.tsx"
+    }
+  ],
+  "categories": [
+    "label",
+    "label"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "textarea"
+  ]
+}

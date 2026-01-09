@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-form-2",
+  "type": "registry:block",
+  "title": "Alert Dialog Form 2",
+  "description": "Alert Dialog Form 2 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-form-2.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Shield, TriangleAlert, X } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\n\r\nconst AlertDialogForm2 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"destructive\">\r\n          <X /> Delete Account\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <form onSubmit={(e) => e.preventDefault()}>\r\n          <AlertDialogHeader>\r\n            <AlertDialogTitle className=\"flex items-center gap-2 text-red-600 text-2xl\">\r\n              <Shield size={28} />\r\n              Delete Account\r\n            </AlertDialogTitle>\r\n            <AlertDialogDescription className=\"bg-red-50 border rounded p-2 my-2\">\r\n              <span className=\"flex items-center gap-4\">\r\n                <TriangleAlert className=\"w-5 h-5 text-yellow-800\" />\r\n                <span className=\"text-lg text-red-800 font-semibold\">\r\n                  This action is irreversible\r\n                </span>\r\n              </span>\r\n            </AlertDialogDescription>\r\n          </AlertDialogHeader>\r\n          <div className=\"flex flex-col\">\r\n            <p className=\"font-medium\">\r\n              Before deleting your account, please note:\r\n            </p>\r\n            <ul className=\"list-disc list-inside text-md mt-2 space-y-2 \">\r\n              <li>All your data will be permanently deleted</li>\r\n              <li>Active subscriptions will be cancelled</li>\r\n              <li>You&apos;ll lose access to all premium features</li>\r\n            </ul>\r\n          </div>\r\n          <div className=\"space-y-4 my-2\">\r\n            <h4 className=\"text-muted-foreground\">\r\n              Enter your email to confirm:\r\n            </h4>\r\n            <Input type=\"text\" placeholder=\"example@gmail.com\" />\r\n          </div>\r\n          <AlertDialogFooter className=\"mt-5\">\r\n            <AlertDialogCancel>Keep Account</AlertDialogCancel>\r\n            <AlertDialogAction className=\"bg-red-500 hover:bg-red-300 text-white\">\r\n              Delete Forever\r\n            </AlertDialogAction>\r\n          </AlertDialogFooter>\r\n        </form>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogForm2 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-form-2.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button",
+    "input"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

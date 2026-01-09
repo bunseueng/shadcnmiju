@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-types",
+  "type": "registry:block",
+  "title": "Sonner Types",
+  "description": "Sonner Types component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sonner/sonner-types.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/components/ui/button\";\n\nconst SonnerTypes = () => {\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Button\n        variant=\"outline\"\n        onClick={() => toast(\"Default toast message\")}\n      >\n        Default\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() => toast.success(\"Operation completed successfully!\")}\n      >\n        Success\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() => toast.error(\"An error occurred\")}\n      >\n        Error\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() => toast.warning(\"Please review your changes\")}\n      >\n        Warning\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() => toast.info(\"Here's some useful information\")}\n      >\n        Info\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() => toast.loading(\"Processing...\")}\n      >\n        Loading\n      </Button>\n    </div>\n  );\n};\n\nexport { SonnerTypes }",
+      "type": "registry:component",
+      "target": "components/sonner-types.tsx"
+    }
+  ],
+  "categories": [
+    "sonner",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "sonner"
+  ]
+}

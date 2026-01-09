@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "upload-avatar",
+  "type": "registry:block",
+  "title": "Upload Avatar",
+  "description": "Upload Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/upload-avatar.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Avatar, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Camera } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst UploadAvatar = () => {\r\n  const [isHovered, setIsHovered] = useState(false);\r\n\r\n  return (\r\n    <div\r\n      className=\"relative group cursor-pointer\"\r\n      onMouseEnter={() => setIsHovered(true)}\r\n      onMouseLeave={() => setIsHovered(false)}\r\n    >\r\n      <Avatar className=\"h-20 w-20\">\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n      </Avatar>\r\n      {isHovered && (\r\n        <div className=\"absolute inset-0 bg-black bg-opacity-50 rounded-full flex items-center justify-center\">\r\n          <Input\r\n            type=\"file\"\r\n            className=\"absolute opacity-0 cursor-pointer z-50 w-full h-full\"\r\n          />\r\n          <Camera className=\"h-6 w-6 text-white\" />\r\n        </div>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { UploadAvatar }",
+      "type": "registry:component",
+      "target": "components/upload-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "input"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

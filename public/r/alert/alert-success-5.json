@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-success-5",
+  "type": "registry:block",
+  "title": "Alert Success 5",
+  "description": "Alert Success 5 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-success-5.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\n\r\nimport { Settings } from \"lucide-react\";\r\n\r\nconst AlertSuccess5 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start\">\r\n      <Alert className=\"border-green-200 bg-green-50 text-green-800 dark:border-green-800 dark:bg-green-950 dark:text-green-200\">\r\n        <Settings />\r\n        <AlertTitle>Settings Updated</AlertTitle>\r\n        <AlertDescription>\r\n          Your notification preferences have been updated and will take effect\r\n          immediately.\r\n        </AlertDescription>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertSuccess5 }",
+      "type": "registry:component",
+      "target": "components/alert-success-5.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

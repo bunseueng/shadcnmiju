@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-basic",
+  "type": "registry:block",
+  "title": "Native Select Basic",
+  "description": "Native Select Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/native-select/native-select-basic.tsx",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOption,\n} from \"@/components/ui/native-select\";\n\nexport function NativeSelectBasic() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <label htmlFor=\"country\" className=\"text-sm font-medium\">\n            Country\n          </label>\n          <NativeSelect id=\"country\">\n            <NativeSelectOption value=\"\">Select a country</NativeSelectOption>\n            <NativeSelectOption value=\"us\">United States</NativeSelectOption>\n            <NativeSelectOption value=\"uk\">United Kingdom</NativeSelectOption>\n            <NativeSelectOption value=\"ca\">Canada</NativeSelectOption>\n            <NativeSelectOption value=\"au\">Australia</NativeSelectOption>\n            <NativeSelectOption value=\"de\">Germany</NativeSelectOption>\n          </NativeSelect>\n        </div>\n\n        <div className=\"space-y-2\">\n          <label htmlFor=\"language\" className=\"text-sm font-medium\">\n            Language\n          </label>\n          <NativeSelect id=\"language\" defaultValue=\"en\">\n            <NativeSelectOption value=\"en\">English</NativeSelectOption>\n            <NativeSelectOption value=\"es\">Spanish</NativeSelectOption>\n            <NativeSelectOption value=\"fr\">French</NativeSelectOption>\n            <NativeSelectOption value=\"de\">German</NativeSelectOption>\n            <NativeSelectOption value=\"ja\">Japanese</NativeSelectOption>\n          </NativeSelect>\n        </div>\n\n        <div className=\"space-y-2\">\n          <label htmlFor=\"timezone\" className=\"text-sm font-medium\">\n            Timezone\n          </label>\n          <NativeSelect id=\"timezone\">\n            <NativeSelectOption value=\"\">Select timezone</NativeSelectOption>\n            <NativeSelectOption value=\"pst\">Pacific Time (PST)</NativeSelectOption>\n            <NativeSelectOption value=\"mst\">Mountain Time (MST)</NativeSelectOption>\n            <NativeSelectOption value=\"cst\">Central Time (CST)</NativeSelectOption>\n            <NativeSelectOption value=\"est\">Eastern Time (EST)</NativeSelectOption>\n          </NativeSelect>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/native-select-basic.tsx"
+    }
+  ],
+  "categories": [
+    "native-select",
+    "native-select"
+  ],
+  "registryDependencies": [
+    "native-select"
+  ]
+}

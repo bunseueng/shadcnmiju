@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-basic",
+  "type": "registry:block",
+  "title": "Switch Basic",
+  "description": "Switch Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/switch/switch-basic.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Label } from \"@/components/ui/label\";\n\nconst SwitchBasic = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex items-center space-x-2\">\n        <Switch id=\"airplane-mode\" />\n        <Label htmlFor=\"airplane-mode\">Airplane Mode</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <Switch id=\"wifi\" defaultChecked />\n        <Label htmlFor=\"wifi\">WiFi</Label>\n      </div>\n      <div className=\"flex items-center space-x-2\">\n        <Switch id=\"bluetooth\" />\n        <Label htmlFor=\"bluetooth\">Bluetooth</Label>\n      </div>\n    </div>\n  );\n};\n\nexport { SwitchBasic }",
+      "type": "registry:component",
+      "target": "components/switch-basic.tsx"
+    }
+  ],
+  "categories": [
+    "switch",
+    "switch"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ]
+}

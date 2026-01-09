@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-toggle-button-group",
+  "type": "registry:block",
+  "title": "Theme Toggle Button Group",
+  "description": "Theme Toggle Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/theme-toggle-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { Monitor, Moon, Sun } from \"lucide-react\";\r\nimport { useTheme } from \"next-themes\";\r\n\r\nconst ThemeToggleButtonGroup = () => {\r\n  const { theme, setTheme } = useTheme();\r\n  return (\r\n    <ButtonGroup>\r\n      <Button\r\n        variant={theme === \"light\" ? \"default\" : \"outline\"}\r\n        size=\"icon\"\r\n        onClick={() => setTheme(\"light\")}\r\n      >\r\n        <Sun />\r\n      </Button>\r\n      <Button\r\n        variant={theme === \"dark\" ? \"default\" : \"outline\"}\r\n        size=\"icon\"\r\n        onClick={() => setTheme(\"dark\")}\r\n      >\r\n        <Moon />\r\n      </Button>\r\n      <Button\r\n        variant={theme === \"system\" ? \"default\" : \"outline\"}\r\n        size=\"icon\"\r\n        onClick={() => setTheme(\"system\")}\r\n      >\r\n        <Monitor />\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { ThemeToggleButtonGroup }",
+      "type": "registry:component",
+      "target": "components/theme-toggle-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

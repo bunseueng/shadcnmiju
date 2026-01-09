@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-info-7",
+  "type": "registry:block",
+  "title": "Alert Dialog Info 7",
+  "description": "Alert Dialog Info 7 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-info-7.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Download } from \"lucide-react\";\r\n\r\nconst AlertDialogInfo7 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">\r\n          <Download />\r\n          Update Available\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <div className=\"flex items-center gap-2\">\r\n            <Download className=\"text-green-400\" />\r\n            <AlertDialogTitle className=\"text-xl\">\r\n              Update Available - v2.1.0\r\n            </AlertDialogTitle>\r\n          </div>\r\n          <div className=\"flex flex-col\">\r\n            <p className=\"font-medium\">What&apos;s new:</p>\r\n            <ul className=\"list-disc list-inside text-md mt-2 space-y-2 \">\r\n              <li>Improved performance and bug fixes</li>\r\n              <li>New dashboard widgets</li>\r\n              <li>Enhanced security features</li>\r\n            </ul>\r\n          </div>\r\n          <Badge variant=\"outline\" className=\"text-green-600\">\r\n            Recommended\r\n          </Badge>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogCancel>Update Later</AlertDialogCancel>\r\n          <AlertDialogAction>Update Now</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogInfo7 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-info-7.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "badge",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-settings",
+  "type": "registry:block",
+  "title": "Form Settings",
+  "description": "Form Settings component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/form/form-settings.tsx",
+      "content": "// @ts-nocheck\n\"use client\";\n\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport { useForm } from \"react-hook-form\";\nimport * as z from \"zod\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport { Input } from \"@/components/ui/input\";\nimport { Switch } from \"@/components/ui/switch\";\nimport { toast } from \"sonner\";\n\nconst formSchema = z.object({\n  username: z.string().min(3, \"Username must be at least 3 characters\"),\n  email: z.string().email(\"Invalid email address\"),\n  marketing: z.boolean(),\n  notifications: z.boolean(),\n  security: z.boolean(),\n});\n\nconst FormSettings = () => {\n  const form = useForm<z.infer<typeof formSchema>>({\n    resolver: zodResolver(formSchema) as any,\n    defaultValues: {\n      username: \"johndoe\",\n      email: \"john@example.com\",\n      marketing: true,\n      notifications: false,\n      security: true,\n    },\n  });\n\n  function onSubmit(values: z.infer<typeof formSchema>) {\n    toast.success(\"Settings updated!\");\n  }\n\n  return (\n    <div className=\"w-full max-w-2xl mx-auto p-6 border rounded-lg bg-card\">\n      <div className=\"mb-6\">\n        <h2 className=\"text-2xl font-bold text-foreground\">Account Settings</h2>\n        <p className=\"text-sm text-muted-foreground\">\n          Manage your account preferences\n        </p>\n      </div>\n      <Form {...form}>\n        <form onSubmit={form.handleSubmit(onSubmit)} className=\"space-y-6\">\n          <FormField\n            control={form.control}\n            name=\"username\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Username</FormLabel>\n                <FormControl>\n                  <Input placeholder=\"johndoe\" {...field} />\n                </FormControl>\n                <FormDescription>\n                  This is your public display name\n                </FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"email\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Email</FormLabel>\n                <FormControl>\n                  <Input placeholder=\"you@example.com\" {...field} />\n                </FormControl>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <div className=\"space-y-4\">\n            <h3 className=\"text-lg font-medium\">Preferences</h3>\n            <FormField\n              control={form.control}\n              name=\"marketing\"\n              render={({ field }) => (\n                <FormItem className=\"flex flex-row items-center justify-between rounded-lg border p-4\">\n                  <div className=\"space-y-0.5\">\n                    <FormLabel className=\"text-base\">\n                      Marketing emails\n                    </FormLabel>\n                    <FormDescription>\n                      Receive emails about new products and features\n                    </FormDescription>\n                  </div>\n                  <FormControl>\n                    <Switch\n                      checked={field.value}\n                      onCheckedChange={field.onChange}\n                    />\n                  </FormControl>\n                </FormItem>\n              )}\n            />\n            <FormField\n              control={form.control}\n              name=\"notifications\"\n              render={({ field }) => (\n                <FormItem className=\"flex flex-row items-center justify-between rounded-lg border p-4\">\n                  <div className=\"space-y-0.5\">\n                    <FormLabel className=\"text-base\">Notifications</FormLabel>\n                    <FormDescription>\n                      Receive notifications about your activity\n                    </FormDescription>\n                  </div>\n                  <FormControl>\n                    <Switch\n                      checked={field.value}\n                      onCheckedChange={field.onChange}\n                    />\n                  </FormControl>\n                </FormItem>\n              )}\n            />\n            <FormField\n              control={form.control}\n              name=\"security\"\n              render={({ field }) => (\n                <FormItem className=\"flex flex-row items-center justify-between rounded-lg border p-4\">\n                  <div className=\"space-y-0.5\">\n                    <FormLabel className=\"text-base\">Security alerts</FormLabel>\n                    <FormDescription>\n                      Get notified of unusual account activity\n                    </FormDescription>\n                  </div>\n                  <FormControl>\n                    <Switch\n                      checked={field.value}\n                      onCheckedChange={field.onChange}\n                    />\n                  </FormControl>\n                </FormItem>\n              )}\n            />\n          </div>\n          <Button type=\"submit\">Save Changes</Button>\n        </form>\n      </Form>\n    </div>\n  );\n};\n\nexport { FormSettings }",
+      "type": "registry:component",
+      "target": "components/form-settings.tsx"
+    }
+  ],
+  "categories": [
+    "form",
+    "form"
+  ],
+  "registryDependencies": [
+    "button",
+    "form",
+    "input",
+    "switch"
+  ],
+  "dependencies": [
+    "sonner",
+    "react-hook-form",
+    "zod"
+  ]
+}

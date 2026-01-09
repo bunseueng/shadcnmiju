@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hoverable-card",
+  "type": "registry:block",
+  "title": "Hoverable Card",
+  "description": "Hoverable Card component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/card/hoverable-card.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\n\r\nimport { ArrowRight } from \"lucide-react\";\r\n\r\nimport Image from \"next/image\";\r\n\r\nconst HoverableCard = () => {\r\n  return (\r\n    <Card className=\"group relative w-87.5 overflow-hidden p-0 transform duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20 cursor-pointer border-2 hover:border-primary/50 transition-all\">\r\n      <div className=\"relative overflow-hidden\">\r\n        <Image\r\n          src=\"/assets/card1.jpg\"\r\n          alt=\"Image\"\r\n          width={350}\r\n          height={200}\r\n          quality={80}\r\n          className=\"w-full h-50 object-cover transition-transform duration-500 group-hover:scale-110\"\r\n        />\r\n        <div className=\"absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500\" />\r\n\r\n        <div className=\"absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-bl-full\" />\r\n      </div>\r\n\r\n      <div className=\"relative text-start space-y-3 bg-linear-to-b from-card to-background/50\">\r\n        <CardHeader className=\"pb-2\">\r\n          <CardTitle className=\"text-2xl font-bold group-hover:bg-linear-to-r group-hover:from-primary group-hover:to-primary/60 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300\">\r\n            Ju Jingyi\r\n          </CardTitle>\r\n          <CardDescription className=\"flex items-center gap-2 text-sm\">\r\n            <span className=\"w-1.5 h-1.5 rounded-full bg-primary/60\" />\r\n            18/06/1994\r\n          </CardDescription>\r\n        </CardHeader>\r\n\r\n        <CardContent className=\"pb-2\">\r\n          <p className=\"text-muted-foreground leading-relaxed text-sm\">\r\n            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis\r\n            cupiditate deserunt deleniti ut consequuntur veritatis neque\r\n            reiciendis dignissimos aspernatur at.\r\n          </p>\r\n        </CardContent>\r\n\r\n        <CardFooter className=\"px-6 pb-6\">\r\n          <Button\r\n            variant=\"link\"\r\n            className=\"pl-0 group/btn text-primary hover:text-primary/80 font-semibold transition-all duration-300 border border-border\"\r\n          >\r\n            Check Details\r\n            <ArrowRight className=\"ml-2 h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1\" />\r\n          </Button>\r\n        </CardFooter>\r\n\r\n        <div className=\"absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none\">\r\n          <div className=\"absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000\" />\r\n        </div>\r\n      </div>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport { HoverableCard }",
+      "type": "registry:component",
+      "target": "components/hoverable-card.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "card"
+  ],
+  "registryDependencies": [
+    "button",
+    "card"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

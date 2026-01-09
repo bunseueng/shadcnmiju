@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-icons",
+  "type": "registry:block",
+  "title": "Dropdown Menu Icons",
+  "description": "Dropdown Menu Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/dropdown-menu/dropdown-menu-icons.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuGroup,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport { Palette, Copy, Scissors, ClipboardPaste, Trash2, FileEdit, Download, Share2 } from \"lucide-react\";\n\nconst DropdownMenuIcons = () => {\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        <Button className=\"gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600\">\n          <Palette className=\"h-4 w-4\" />\n          Edit Actions\n        </Button>\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-56 animate-in slide-in-from-bottom-2 zoom-in-95 duration-200\">\n        <DropdownMenuLabel>Edit</DropdownMenuLabel>\n        <DropdownMenuSeparator />\n        <DropdownMenuGroup>\n          <DropdownMenuItem className=\"cursor-pointer\">\n            <Scissors className=\"mr-2 h-4 w-4 text-orange-500\" />\n            <span>Cut</span>\n            <DropdownMenuShortcut>⌘X</DropdownMenuShortcut>\n          </DropdownMenuItem>\n          <DropdownMenuItem className=\"cursor-pointer\">\n            <Copy className=\"mr-2 h-4 w-4 text-blue-500\" />\n            <span>Copy</span>\n            <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>\n          </DropdownMenuItem>\n          <DropdownMenuItem className=\"cursor-pointer\">\n            <ClipboardPaste className=\"mr-2 h-4 w-4 text-green-500\" />\n            <span>Paste</span>\n            <DropdownMenuShortcut>⌘V</DropdownMenuShortcut>\n          </DropdownMenuItem>\n        </DropdownMenuGroup>\n        <DropdownMenuSeparator />\n        <DropdownMenuGroup>\n          <DropdownMenuItem className=\"cursor-pointer\">\n            <FileEdit className=\"mr-2 h-4 w-4 text-purple-500\" />\n            <span>Rename</span>\n            <DropdownMenuShortcut>F2</DropdownMenuShortcut>\n          </DropdownMenuItem>\n          <DropdownMenuItem className=\"cursor-pointer\">\n            <Download className=\"mr-2 h-4 w-4 text-cyan-500\" />\n            <span>Download</span>\n            <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>\n          </DropdownMenuItem>\n          <DropdownMenuItem className=\"cursor-pointer\">\n            <Share2 className=\"mr-2 h-4 w-4 text-indigo-500\" />\n            <span>Share</span>\n            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>\n          </DropdownMenuItem>\n        </DropdownMenuGroup>\n        <DropdownMenuSeparator />\n        <DropdownMenuItem className=\"cursor-pointer text-destructive focus:text-destructive\">\n          <Trash2 className=\"mr-2 h-4 w-4\" />\n          <span>Delete</span>\n          <DropdownMenuShortcut>⌫</DropdownMenuShortcut>\n        </DropdownMenuItem>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  );\n};\n\nexport { DropdownMenuIcons }",
+      "type": "registry:component",
+      "target": "components/dropdown-menu-icons.tsx"
+    }
+  ],
+  "categories": [
+    "dropdown-menu",
+    "dropdown-menu"
+  ],
+  "registryDependencies": [
+    "button",
+    "dropdown-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

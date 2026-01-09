@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-multi-select",
+  "type": "registry:block",
+  "title": "Calendar Multi Select",
+  "description": "Calendar Multi Select component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-multi-select.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarMultiSelect = () => {\n  const [dates, setDates] = useState<Date[] | undefined>([]);\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"multiple\"\n        selected={dates}\n        onSelect={setDates}\n        className=\"rounded-md border\"\n      />\n      {dates && dates.length > 0 && (\n        <div className=\"text-xs text-slate-400\">\n          <p className=\"mb-2\">\n            Selected:{\" \"}\n            <span className=\"text-slate-200 font-medium\">\n              {dates.length} date{dates.length !== 1 ? \"s\" : \"\"}\n            </span>\n          </p>\n          <div className=\"max-h-24 overflow-y-auto\">\n            {dates.map((d, idx) => (\n              <div key={idx} className=\"text-slate-200\">\n                • {d.toLocaleDateString()}\n              </div>\n            ))}\n          </div>\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarMultiSelect }",
+      "type": "registry:component",
+      "target": "components/calendar-multi-select.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "interactive-badge",
+  "type": "registry:block",
+  "title": "Interactive Badge",
+  "description": "Interactive Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/interactive-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nimport { X } from \"lucide-react\";\r\n\r\nconst InteractiveBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"cursor-pointer transition-colors hover:bg-accent hover:text-accent-foreground\"\r\n      >\r\n        Hoverable\r\n      </Badge>\r\n      <Badge\r\n        variant=\"secondary\"\r\n        className=\"cursor-pointer transition-all hover:scale-105 hover:shadow-sm\"\r\n      >\r\n        Scalable\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"cursor-pointer transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground\"\r\n      >\r\n        Primary Hover\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"group cursor-pointer transition-all hover:pr-5\"\r\n      >\r\n        <span>Expandable</span>\r\n        <X className=\"ml-1 h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100\" />\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { InteractiveBadge }",
+      "type": "registry:component",
+      "target": "components/interactive-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-range",
+  "type": "registry:block",
+  "title": "Calendar With Range",
+  "description": "Calendar With Range component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-range.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\nimport { DateRange } from \"react-day-picker\";\n\nconst CalendarWithRange = () => {\n  const [range, setRange] = useState<DateRange | undefined>({\n    from: new Date(),\n    to: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),\n  });\n\n  const formatDateRange = () => {\n    if (!range?.from) return \"No dates selected\";\n    if (!range?.to) return range.from.toLocaleDateString();\n    return `${range.from.toLocaleDateString()} - ${range.to.toLocaleDateString()}`;\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"range\"\n        selected={range}\n        onSelect={setRange}\n        numberOfMonths={2}\n        className=\"rounded-md border\"\n      />\n      <p className=\"text-xs text-slate-400\">\n        Selected Range:{\" \"}\n        <span className=\"text-slate-200 font-medium\">{formatDateRange()}</span>\n      </p>\n    </div>\n  );\n};\n\nexport { CalendarWithRange }",
+      "type": "registry:component",
+      "target": "components/calendar-with-range.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ],
+  "dependencies": [
+    "react-day-picker"
+  ]
+}

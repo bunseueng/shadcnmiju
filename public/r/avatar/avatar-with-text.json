@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-with-text",
+  "type": "registry:block",
+  "title": "Avatar With Text",
+  "description": "Avatar With Text component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/avatar-with-text.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst AvatarWithText = () => {\r\n  return (\r\n    <div className=\"flex items-center gap-4\">\r\n      <Avatar>\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <div>\r\n        <p className=\"text-sm font-medium\">Alice Smith</p>\r\n        <p className=\"text-xs text-muted-foreground\">alice@example.com</p>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AvatarWithText }",
+      "type": "registry:component",
+      "target": "components/avatar-with-text.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ]
+}

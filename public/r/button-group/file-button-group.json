@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-button-group",
+  "type": "registry:block",
+  "title": "File Button Group",
+  "description": "File Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/file-button-group.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\n\r\nimport { Download, RefreshCcw, Upload } from \"lucide-react\";\r\n\r\nconst FileButtonGroup = () => {\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"outline\" size=\"sm\">\r\n        <Upload /> Upload\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"sm\">\r\n        <Download /> Download\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"sm\">\r\n        <RefreshCcw /> Sync\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { FileButtonGroup }",
+      "type": "registry:component",
+      "target": "components/file-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

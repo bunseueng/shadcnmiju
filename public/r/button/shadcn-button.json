@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shadcn-button",
+  "type": "registry:block",
+  "title": "Shadcn Button",
+  "description": "Shadcn Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/shadcn-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nconst ShadcnButton = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center justify-center gap-4\">\r\n      <Button>Standard</Button>\r\n      <Button variant=\"secondary\">Secondary</Button>\r\n      <Button variant=\"outline\">Outline</Button>\r\n      <Button variant=\"ghost\">Ghost</Button>\r\n      <Button variant=\"destructive\">Delete</Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { ShadcnButton }",
+      "type": "registry:component",
+      "target": "components/shadcn-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-no-data",
+  "type": "registry:block",
+  "title": "Empty No Data",
+  "description": "Empty No Data component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/empty/empty-no-data.tsx",
+      "content": "\"use client\";\n\nimport { Database } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function EmptyNoData() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"flex flex-col items-center justify-center text-center space-y-4 max-w-md\">\n        <div className=\"rounded-full bg-muted p-6\">\n          <Database className=\"h-12 w-12 text-muted-foreground\" />\n        </div>\n        <div className=\"space-y-2\">\n          <h3 className=\"text-xl font-semibold\">No data available</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Get started by adding your first item to the database.\n          </p>\n        </div>\n        <div className=\"flex gap-2\">\n          <Button>Add Item</Button>\n          <Button variant=\"outline\">Import Data</Button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/empty-no-data.tsx"
+    }
+  ],
+  "categories": [
+    "empty",
+    "empty"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

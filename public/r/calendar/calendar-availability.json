@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-availability",
+  "type": "registry:block",
+  "title": "Calendar Availability",
+  "description": "Calendar Availability component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-availability.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarAvailability = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  // Mock available and booked dates\n  const availableDates = [\n    new Date(2025, 0, 15),\n    new Date(2025, 0, 16),\n    new Date(2025, 0, 20),\n    new Date(2025, 0, 22),\n  ];\n\n  const bookedDates = [\n    new Date(2025, 0, 17),\n    new Date(2025, 0, 18),\n    new Date(2025, 0, 21),\n  ];\n\n  const isAvailable = (checkDate: Date) => {\n    return availableDates.some(\n      (d) =>\n        d.getDate() === checkDate.getDate() &&\n        d.getMonth() === checkDate.getMonth() &&\n        d.getFullYear() === checkDate.getFullYear()\n    );\n  };\n\n  const isBooked = (checkDate: Date) => {\n    return bookedDates.some(\n      (d) =>\n        d.getDate() === checkDate.getDate() &&\n        d.getMonth() === checkDate.getMonth() &&\n        d.getFullYear() === checkDate.getFullYear()\n    );\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        disabled={(date) => !isAvailable(date)}\n        className=\"rounded-md border\"\n        modifiers={{\n          available: availableDates,\n          booked: bookedDates,\n        }}\n        modifiersClassNames={{\n          available: \"bg-green-100 text-green-900\",\n          booked: \"bg-red-100 text-red-900 line-through\",\n        }}\n      />\n      <div className=\"flex gap-4 text-xs\">\n        <div className=\"flex items-center gap-1\">\n          <div className=\"w-3 h-3 bg-green-100 border border-green-200 rounded\"></div>\n          <span className=\"text-slate-400\">Available</span>\n        </div>\n        <div className=\"flex items-center gap-1\">\n          <div className=\"w-3 h-3 bg-red-100 border border-red-200 rounded\"></div>\n          <span className=\"text-slate-400\">Booked</span>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport { CalendarAvailability }",
+      "type": "registry:component",
+      "target": "components/calendar-availability.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-horizontal",
+  "type": "registry:block",
+  "title": "Field Horizontal",
+  "description": "Field Horizontal component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/field/field-horizontal.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Switch } from \"@/components/ui/switch\";\nimport { Field, FieldDescription, FieldLabel } from \"@/components/ui/field\";\n\nexport function FieldHorizontal() {\n  return (\n    <div className=\"flex items-center justify-center p-4 sm:p-6 md:p-8 w-full\">\n      <div className=\"w-full max-w-2xl space-y-4 sm:space-y-6 px-2 sm:px-0\">\n        <Field\n          orientation=\"horizontal\"\n          className=\"grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 items-center\"\n        >\n          <FieldLabel\n            htmlFor=\"name\"\n            className=\"text-sm sm:text-base sm:text-right\"\n          >\n            Full Name\n          </FieldLabel>\n          <Input\n            id=\"name\"\n            type=\"text\"\n            placeholder=\"John Doe\"\n            className=\"text-sm sm:text-base\"\n          />\n        </Field>\n\n        <Field\n          orientation=\"horizontal\"\n          className=\"grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 items-center\"\n        >\n          <FieldLabel\n            htmlFor=\"email\"\n            className=\"text-sm sm:text-base sm:text-right\"\n          >\n            Email Address\n          </FieldLabel>\n          <Input\n            id=\"email\"\n            type=\"email\"\n            placeholder=\"john@example.com\"\n            className=\"text-sm sm:text-base\"\n          />\n        </Field>\n\n        <Field\n          orientation=\"horizontal\"\n          className=\"grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 items-start\"\n        >\n          <FieldLabel\n            htmlFor=\"notifications\"\n            className=\"text-sm sm:text-base text-left sm:pt-1\"\n          >\n            Email Notifications\n          </FieldLabel>\n          <div className=\"flex flex-col gap-2\">\n            <Switch id=\"notifications\" />\n            <FieldDescription className=\"text-xs sm:text-sm\">\n              Receive email updates about your account activity.\n            </FieldDescription>\n          </div>\n        </Field>\n\n        <Field\n          orientation=\"horizontal\"\n          className=\"grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 items-start\"\n        >\n          <FieldLabel\n            htmlFor=\"marketing\"\n            className=\"text-sm sm:text-base text-left sm:pt-1\"\n          >\n            Marketing Emails\n          </FieldLabel>\n          <div className=\"flex flex-col gap-2\">\n            <Switch id=\"marketing\" />\n            <FieldDescription className=\"text-xs sm:text-sm\">\n              Receive promotional emails and product updates.\n            </FieldDescription>\n          </div>\n        </Field>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/field-horizontal.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "field"
+  ],
+  "registryDependencies": [
+    "input",
+    "switch",
+    "field"
+  ]
+}

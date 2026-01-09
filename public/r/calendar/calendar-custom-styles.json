@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-custom-styles",
+  "type": "registry:block",
+  "title": "Calendar Custom Styles",
+  "description": "Calendar Custom Styles component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-custom-styles.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarCustomStyles = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-lg border-2 border-purple-300 bg-gradient-to-br from-purple-50 to-pink-50 shadow-lg\"\n        classNames={{\n          months: \"space-y-4\",\n          month: \"space-y-4\",\n          caption: \"flex justify-center pt-2 relative items-center text-purple-700 font-bold\",\n          caption_label: \"text-base font-bold\",\n          nav: \"space-x-1 flex items-center\",\n          nav_button: \"h-7 w-7 bg-purple-100 hover:bg-purple-200 rounded-md transition-colors\",\n          table: \"w-full border-collapse space-y-1\",\n          head_row: \"flex\",\n          head_cell: \"text-purple-600 rounded-md w-9 font-semibold text-sm\",\n          row: \"flex w-full mt-2\",\n          cell: \"relative p-0 text-center text-sm focus-within:relative focus-within:z-20\",\n          day: \"h-9 w-9 p-0 font-normal hover:bg-purple-100 rounded-md transition-colors\",\n          day_selected: \"bg-purple-500 text-white hover:bg-purple-600 rounded-md\",\n          day_today: \"bg-pink-100 text-pink-900 font-bold rounded-md\",\n        }}\n      />\n      {date && (\n        <p className=\"text-xs text-slate-400\">\n          Selected:{\" \"}\n          <span className=\"text-purple-600 font-medium\">\n            {date.toLocaleDateString()}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarCustomStyles }",
+      "type": "registry:component",
+      "target": "components/calendar-custom-styles.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

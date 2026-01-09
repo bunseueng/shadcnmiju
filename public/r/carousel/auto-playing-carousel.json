@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "auto-playing-carousel",
+  "type": "registry:block",
+  "title": "Auto Playing Carousel",
+  "description": "Auto Playing Carousel component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/carousel/auto-playing-carousel.tsx",
+      "content": "\"use client\";\r\n\r\nimport Autoplay from \"embla-carousel-autoplay\";\r\n\r\nimport {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n} from \"@/components/ui/carousel\";\r\n\r\ntype CarouselItem = {\r\n  id: number;\r\n  image: string;\r\n  title?: string;\r\n};\r\n\r\nconst carouselItem: CarouselItem[] = [\r\n  {\r\n    id: 1,\r\n    title: \"image 1\",\r\n    image:\r\n      \"https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800\",\r\n  },\r\n  {\r\n    id: 2,\r\n    title: \"image 2\",\r\n    image:\r\n      \"https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=800\",\r\n  },\r\n  {\r\n    id: 3,\r\n    title: \"image 3\",\r\n    image:\r\n      \"https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=800\",\r\n  },\r\n  {\r\n    id: 4,\r\n    title: \"image 4\",\r\n    image:\r\n      \"https://images.pexels.com/photos/1552617/pexels-photo-1552617.jpeg?auto=compress&cs=tinysrgb&w=800\",\r\n  },\r\n  {\r\n    id: 5,\r\n    title: \"image 5\",\r\n    image:\r\n      \"https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=800\",\r\n  },\r\n];\r\n\r\nconst AutoPlayingCarousel = () => {\r\n  return (\r\n    <Carousel\r\n      plugins={[Autoplay({ delay: 2000 })]}\r\n      className=\"w-full max-w-2xl mx-auto\"\r\n    >\r\n      <CarouselContent>\r\n        {carouselItem.map((item) => (\r\n          <CarouselItem key={item.id}>\r\n            <div className=\"relative aspect-video sm:aspect-21/9 overflow-hidden rounded-lg\">\r\n              <img\r\n                src={item.image}\r\n                alt={item.title}\r\n                className=\"w-full h-full object-cover\"\r\n              />\r\n            </div>\r\n          </CarouselItem>\r\n        ))}\r\n      </CarouselContent>\r\n      <CarouselPrevious className=\"hidden sm:flex\" />\r\n      <CarouselNext className=\"hidden sm:flex\" />\r\n    </Carousel>\r\n  );\r\n};\r\n\r\nexport { AutoPlayingCarousel }",
+      "type": "registry:component",
+      "target": "components/auto-playing-carousel.tsx"
+    }
+  ],
+  "categories": [
+    "carousel",
+    "carousel"
+  ],
+  "registryDependencies": [
+    "carousel"
+  ],
+  "dependencies": [
+    "embla-carousel-autoplay"
+  ]
+}

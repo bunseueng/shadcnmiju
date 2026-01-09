@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-controlled",
+  "type": "registry:block",
+  "title": "Input Otp Controlled",
+  "description": "Input Otp Controlled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-otp/input-otp-controlled.tsx",
+      "content": "\"use client\";\n\nimport {\n  InputOTP,\n  InputOTPGroup,\n  InputOTPSlot,\n} from \"@/components/ui/input-otp\";\nimport { useState } from \"react\";\n\nconst InputOTPControlled = () => {\n  const [value, setValue] = useState(\"\");\n\n  return (\n    <div className=\"space-y-4\">\n      <InputOTP maxLength={6} value={value} onChange={setValue}>\n        <InputOTPGroup>\n          <InputOTPSlot index={0} />\n          <InputOTPSlot index={1} />\n          <InputOTPSlot index={2} />\n          <InputOTPSlot index={3} />\n          <InputOTPSlot index={4} />\n          <InputOTPSlot index={5} />\n        </InputOTPGroup>\n      </InputOTP>\n      <div className=\"text-center text-sm text-muted-foreground\">\n        {value === \"\" ? (\n          <>Enter your one-time password.</>\n        ) : (\n          <>You entered: <span className=\"font-medium text-foreground\">{value}</span></>\n        )}\n      </div>\n    </div>\n  );\n};\n\nexport { InputOTPControlled }",
+      "type": "registry:component",
+      "target": "components/input-otp-controlled.tsx"
+    }
+  ],
+  "categories": [
+    "input-otp",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp"
+  ]
+}

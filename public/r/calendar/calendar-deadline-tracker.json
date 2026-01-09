@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-deadline-tracker",
+  "type": "registry:block",
+  "title": "Calendar Deadline Tracker",
+  "description": "Calendar Deadline Tracker component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-deadline-tracker.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarDeadlineTracker = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  // Mock deadlines\n  const deadlines = [\n    { date: new Date(2025, 0, 15), task: \"Project proposal\", priority: \"high\" },\n    { date: new Date(2025, 0, 20), task: \"Design review\", priority: \"medium\" },\n    { date: new Date(2025, 0, 25), task: \"Final delivery\", priority: \"urgent\" },\n  ];\n\n  const urgentDates = deadlines\n    .filter((d) => d.priority === \"urgent\")\n    .map((d) => d.date);\n  const highDates = deadlines\n    .filter((d) => d.priority === \"high\")\n    .map((d) => d.date);\n  const mediumDates = deadlines\n    .filter((d) => d.priority === \"medium\")\n    .map((d) => d.date);\n\n  const getDeadline = (checkDate: Date) => {\n    return deadlines.find(\n      (d) =>\n        d.date.getDate() === checkDate.getDate() &&\n        d.date.getMonth() === checkDate.getMonth() &&\n        d.date.getFullYear() === checkDate.getFullYear()\n    );\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-md border\"\n        modifiers={{\n          urgent: urgentDates,\n          high: highDates,\n          medium: mediumDates,\n        }}\n        modifiersClassNames={{\n          urgent: \"bg-red-500 text-white font-bold hover:bg-red-600\",\n          high: \"bg-orange-400 text-white font-bold hover:bg-orange-500\",\n          medium: \"bg-yellow-300 text-yellow-900 font-bold hover:bg-yellow-400\",\n        }}\n      />\n      {date && getDeadline(date) && (\n        <div className=\"text-xs text-slate-400\">\n          <p className=\"font-medium mb-1\">Deadline:</p>\n          <p className=\"text-slate-200\">{getDeadline(date)?.task}</p>\n          <p\n            className={`font-medium ${\n              getDeadline(date)?.priority === \"urgent\"\n                ? \"text-red-500\"\n                : getDeadline(date)?.priority === \"high\"\n                  ? \"text-orange-500\"\n                  : \"text-yellow-500\"\n            }`}\n          >\n            Priority: {getDeadline(date)?.priority}\n          </p>\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarDeadlineTracker }",
+      "type": "registry:component",
+      "target": "components/calendar-deadline-tracker.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

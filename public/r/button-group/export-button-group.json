@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "export-button-group",
+  "type": "registry:block",
+  "title": "Export Button Group",
+  "description": "Export Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/export-button-group.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { ButtonGroup } from \"@/components/ui/button-group\";\nimport { Download, FileSpreadsheet, FileText, Mail } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst ExportButtonGroup = () => {\n  const [exporting, setExporting] = useState<string | null>(null);\n\n  const handleExport = (format: string) => {\n    setExporting(format);\n\n    // Simulate export process\n    setTimeout(() => {\n      setExporting(null);\n      // Export completed\n    }, 2000);\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <ButtonGroup>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          onClick={() => handleExport(\"pdf\")}\n          disabled={!!exporting}\n        >\n          <FileText className=\"h-4 w-4\" />\n          {exporting === \"pdf\" ? \"Exporting...\" : \"PDF\"}\n        </Button>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          onClick={() => handleExport(\"excel\")}\n          disabled={!!exporting}\n        >\n          <FileSpreadsheet className=\"h-4 w-4\" />\n          {exporting === \"excel\" ? \"Exporting...\" : \"Excel\"}\n        </Button>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          onClick={() => handleExport(\"csv\")}\n          disabled={!!exporting}\n        >\n          <Download className=\"h-4 w-4\" />\n          {exporting === \"csv\" ? \"Exporting...\" : \"CSV\"}\n        </Button>\n        <Button variant=\"outline\" size=\"sm\" onClick={() => handleExport(\"email\")}>\n          <Mail className=\"h-4 w-4\" />\n          Email\n        </Button>\n      </ButtonGroup>\n\n      {exporting && (\n        <p className=\"text-xs text-slate-400\">\n          Exporting as{\" \"}\n          <span className=\"text-slate-200 font-medium uppercase\">\n            {exporting}\n          </span>\n          ...\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { ExportButtonGroup }",
+      "type": "registry:component",
+      "target": "components/export-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

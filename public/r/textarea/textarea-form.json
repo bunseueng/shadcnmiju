@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-form",
+  "type": "registry:block",
+  "title": "Textarea Form",
+  "description": "Textarea Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/textarea/textarea-form.tsx",
+      "content": "\"use client\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { Label } from \"@/components/ui/label\";\nimport { Input } from \"@/components/ui/input\";\nimport { Button } from \"@/components/ui/button\";\n\nconst TextareaForm = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"subject\">Subject</Label>\n        <Input id=\"subject\" placeholder=\"Enter subject\" />\n      </div>\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"message\">Message</Label>\n        <Textarea\n          id=\"message\"\n          placeholder=\"Write your message...\"\n          className=\"min-h-[150px]\"\n        />\n        <p className=\"text-sm text-muted-foreground\">\n          Your message will be sent to our support team.\n        </p>\n      </div>\n      <div className=\"flex gap-2\">\n        <Button variant=\"outline\" className=\"flex-1\">\n          Cancel\n        </Button>\n        <Button className=\"flex-1\">Send</Button>\n      </div>\n    </div>\n  );\n};\n\nexport { TextareaForm }",
+      "type": "registry:component",
+      "target": "components/textarea-form.tsx"
+    }
+  ],
+  "categories": [
+    "textarea",
+    "textarea"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "label",
+    "input",
+    "button"
+  ]
+}

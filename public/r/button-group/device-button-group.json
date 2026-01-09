@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "device-button-group",
+  "type": "registry:block",
+  "title": "Device Button Group",
+  "description": "Device Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/device-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\n\r\nimport { Monitor, Smartphone, Tablet } from \"lucide-react\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nconst DeviceButtonGroup = () => {\r\n  const [device, setDevice] = useState<\"desktop\" | \"tablet\" | \"mobile\">(\r\n    \"desktop\"\r\n  );\r\n  return (\r\n    <ButtonGroup>\r\n      <Button\r\n        variant={device === \"desktop\" ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        onClick={() => setDevice(\"desktop\")}\r\n        className=\"flex-1\"\r\n      >\r\n        <Monitor className=\"h-4 w-4 mr-1\" /> Desktop\r\n      </Button>\r\n      <Button\r\n        variant={device === \"tablet\" ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        onClick={() => setDevice(\"tablet\")}\r\n        className=\"flex-1\"\r\n      >\r\n        <Tablet className=\"h-4 w-4 mr-1\" /> Tablet\r\n      </Button>\r\n      <Button\r\n        variant={device === \"mobile\" ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        onClick={() => setDevice(\"mobile\")}\r\n        className=\"flex-1\"\r\n      >\r\n        <Smartphone className=\"h-4 w-4 mr-1\" /> Mobile\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { DeviceButtonGroup }",
+      "type": "registry:component",
+      "target": "components/device-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

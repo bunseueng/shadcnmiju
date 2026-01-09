@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-animated",
+  "type": "registry:block",
+  "title": "Progress Animated",
+  "description": "Progress Animated component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/progress/progress-animated.tsx",
+      "content": "\"use client\";\n\nimport { Progress } from \"@/components/ui/progress\";\nimport { useEffect, useState } from \"react\";\n\nconst ProgressAnimated = () => {\n  const [progress, setProgress] = useState(0);\n\n  useEffect(() => {\n    const timer = setInterval(() => {\n      setProgress((prev) => {\n        if (prev >= 100) return 0;\n        return prev + 1;\n      });\n    }, 50);\n\n    return () => clearInterval(timer);\n  }, []);\n\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between text-sm\">\n          <span className=\"text-foreground\">Downloading...</span>\n          <span className=\"text-muted-foreground\">{progress}%</span>\n        </div>\n        <Progress value={progress} />\n      </div>\n    </div>\n  );\n};\n\nexport { ProgressAnimated }",
+      "type": "registry:component",
+      "target": "components/progress-animated.tsx"
+    }
+  ],
+  "categories": [
+    "progress",
+    "progress"
+  ],
+  "registryDependencies": [
+    "progress"
+  ]
+}

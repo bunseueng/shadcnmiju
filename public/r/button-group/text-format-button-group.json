@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-format-button-group",
+  "type": "registry:block",
+  "title": "Text Format Button Group",
+  "description": "Text Format Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/text-format-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\n\r\nimport { Bold, Italic, Underline, Strikethrough } from \"lucide-react\";\r\n\r\nimport { useState } from \"react\";\r\n\r\nconst TextFormattingButtonGroup = () => {\r\n  const [formats, setFormats] = useState<string[]>([]);\r\n\r\n  const toggleFormat = (format: string) => {\r\n    setFormats((prev) =>\r\n      prev.includes(format)\r\n        ? prev.filter((f) => f !== format)\r\n        : [...prev, format]\r\n    );\r\n  };\r\n\r\n  return (\r\n    <ButtonGroup>\r\n      <Button\r\n        variant={formats.includes(\"bold\") ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        className=\"rounded-r-none border-r-0\"\r\n        onClick={() => toggleFormat(\"bold\")}\r\n      >\r\n        <Bold className=\"h-4 w-4\" />\r\n      </Button>\r\n      <Button\r\n        variant={formats.includes(\"italic\") ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        className=\"rounded-none border-r-0\"\r\n        onClick={() => toggleFormat(\"italic\")}\r\n      >\r\n        <Italic className=\"h-4 w-4\" />\r\n      </Button>\r\n      <Button\r\n        variant={formats.includes(\"underline\") ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        className=\"rounded-none border-r-0\"\r\n        onClick={() => toggleFormat(\"underline\")}\r\n      >\r\n        <Underline className=\"h-4 w-4\" />\r\n      </Button>\r\n      <Button\r\n        variant={formats.includes(\"strikethrough\") ? \"default\" : \"outline\"}\r\n        size=\"sm\"\r\n        className=\"rounded-l-none\"\r\n        onClick={() => toggleFormat(\"strikethrough\")}\r\n      >\r\n        <Strikethrough className=\"h-4 w-4\" />\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { TextFormattingButtonGroup }",
+      "type": "registry:component",
+      "target": "components/text-format-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

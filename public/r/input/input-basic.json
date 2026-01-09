@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-basic",
+  "type": "registry:block",
+  "title": "Input Basic",
+  "description": "Input Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input/input-basic.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nconst InputBasic = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"email\">Email</Label>\n        <Input type=\"email\" id=\"email\" placeholder=\"Email\" />\n      </div>\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"password\">Password</Label>\n        <Input type=\"password\" id=\"password\" placeholder=\"Password\" />\n      </div>\n    </div>\n  );\n};\n\nexport { InputBasic }",
+      "type": "registry:component",
+      "target": "components/input-basic.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "input"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-basic",
+  "type": "registry:block",
+  "title": "Toggle Basic",
+  "description": "Toggle Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle/toggle-basic.tsx",
+      "content": "\"use client\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\nimport { Bold, Italic, Underline } from \"lucide-react\";\n\nconst ToggleBasic = () => {\n  return (\n    <div className=\"flex items-center gap-1\">\n      <Toggle aria-label=\"Toggle bold\">\n        <Bold className=\"h-4 w-4\" />\n      </Toggle>\n      <Toggle aria-label=\"Toggle italic\">\n        <Italic className=\"h-4 w-4\" />\n      </Toggle>\n      <Toggle aria-label=\"Toggle underline\">\n        <Underline className=\"h-4 w-4\" />\n      </Toggle>\n    </div>\n  );\n};\n\nexport { ToggleBasic }",
+      "type": "registry:component",
+      "target": "components/toggle-basic.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-info-2",
+  "type": "registry:block",
+  "title": "Alert Dialog Info 2",
+  "description": "Alert Dialog Info 2 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-info-2.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Info } from \"lucide-react\";\r\n\r\nconst AlertDialogInfo2 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">View Details</Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <div className=\"absolute right-4 top-4 opacity-10\">\r\n          <Info className=\"h-24 w-24\" />\r\n        </div>\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle>New Documentation Available</AlertDialogTitle>\r\n          <AlertDialogDescription>\r\n            We just released the v2.0 docs! They include 50+ new examples,\r\n            improved accessibility guides, and a dedicated section for\r\n            server-side implementation.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter className=\"sm:justify-start\">\r\n          <AlertDialogAction className=\"bg-primary\">\r\n            Take me there\r\n          </AlertDialogAction>\r\n          {/* Use a Cancel button as a 'Dismiss' button here */}\r\n          <AlertDialogCancel>Maybe later</AlertDialogCancel>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogInfo2 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-info-2.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

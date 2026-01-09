@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-compact",
+  "type": "registry:block",
+  "title": "Pagination Compact",
+  "description": "Pagination Compact component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/pagination/pagination-compact.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { ChevronLeft, ChevronRight } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst PaginationCompact = () => {\n  const [currentPage, setCurrentPage] = useState(1);\n  const totalPages = 10;\n\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}\n        disabled={currentPage === 1}\n      >\n        <ChevronLeft className=\"h-4 w-4\" />\n      </Button>\n      <div className=\"flex items-center gap-1 min-w-[100px] justify-center\">\n        <span className=\"text-sm font-medium text-foreground\">{currentPage}</span>\n        <span className=\"text-sm text-muted-foreground\">/</span>\n        <span className=\"text-sm text-muted-foreground\">{totalPages}</span>\n      </div>\n      <Button\n        variant=\"outline\"\n        size=\"icon\"\n        onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}\n        disabled={currentPage === totalPages}\n      >\n        <ChevronRight className=\"h-4 w-4\" />\n      </Button>\n    </div>\n  );\n};\n\nexport { PaginationCompact }",
+      "type": "registry:component",
+      "target": "components/pagination-compact.tsx"
+    }
+  ],
+  "categories": [
+    "pagination",
+    "pagination"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

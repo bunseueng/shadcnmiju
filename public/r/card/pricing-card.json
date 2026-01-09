@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pricing-card",
+  "type": "registry:block",
+  "title": "Pricing Card",
+  "description": "Pricing Card component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/card/pricing-card.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Check, X } from \"lucide-react\";\r\n\r\nconst pricingData = [\r\n  {\r\n    plan: \"Starter\",\r\n    price: 0,\r\n    description: \"Perfect for individuals jsut getting started.\",\r\n    features: [\r\n      {\r\n        feature: \"Basic analytics\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"1 Team member\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Community support\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Basic support\",\r\n        supported: false,\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    plan: \"Pro\",\r\n    price: 9,\r\n    description: \"For growing teams that need more power.\",\r\n    features: [\r\n      {\r\n        feature: \"Advanced analytics\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Unlimited team members\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Priority email support\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Custom Domains\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"API Access\",\r\n        supported: true,\r\n      },\r\n    ],\r\n  },\r\n  {\r\n    plan: \"Enterprise\",\r\n    price: 49,\r\n    description: \"Advanced security and control for large orgs.\",\r\n    features: [\r\n      {\r\n        feature: \"Dedicated infrastructure\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"SSO & SAML\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Dedicated account manager\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"24/7 Phone support\",\r\n        supported: true,\r\n      },\r\n      {\r\n        feature: \"Audit logs\",\r\n        supported: true,\r\n      },\r\n    ],\r\n  },\r\n];\r\n\r\nconst PricingCard = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center justify-center gap-5\">\r\n      {pricingData.map((data, index) => (\r\n        <Card key={index} className=\"w-87.5 h-120 border-ring text-start\">\r\n          <CardContent className=\"space-y-4\">\r\n            <h3>{data.plan}</h3>\r\n            <p className=\"text-xl md:text-2xl text-muted-foreground\">\r\n              <strong className=\"text-primary\">${data.price}</strong>/mo\r\n            </p>\r\n            <p>{data.description}</p>\r\n            <Button className=\"bg-ring text-foreground w-full\">\r\n              Getting Start\r\n            </Button>\r\n            <div className=\"border border-muted-foreground\" />\r\n\r\n            {/* Features Lists */}\r\n            <ul className=\"space-y-4\">\r\n              {data.features.map((feature, index) => (\r\n                <li key={index} className=\"flex items-center\">\r\n                  <span>\r\n                    {feature.supported ? (\r\n                      <Check className=\"text-ring\" />\r\n                    ) : (\r\n                      <X className=\"text-muted-foreground\" />\r\n                    )}\r\n                  </span>\r\n                  <span\r\n                    className={cn(\r\n                      \"ml-2\",\r\n                      feature.supported\r\n                        ? \"text-foreground\"\r\n                        : \"text-muted-foreground\"\r\n                    )}\r\n                  >\r\n                    {feature.feature}\r\n                  </span>\r\n                </li>\r\n              ))}\r\n            </ul>\r\n          </CardContent>\r\n        </Card>\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { PricingCard }",
+      "type": "registry:component",
+      "target": "components/pricing-card.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "card"
+  ],
+  "registryDependencies": [
+    "button",
+    "card"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

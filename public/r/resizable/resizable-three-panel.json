@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-three-panel",
+  "type": "registry:block",
+  "title": "Resizable Three Panel",
+  "description": "Resizable Three Panel component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/resizable/resizable-three-panel.tsx",
+      "content": "\"use client\";\n\nimport {\n  ResizableHandle,\n  ResizablePanel,\n  ResizablePanelGroup,\n} from \"@/components/ui/resizable\";\nimport { Folder, File, Code } from \"lucide-react\";\n\nconst ResizableThreePanel = () => {\n  return (\n    <ResizablePanelGroup\n      direction=\"horizontal\"\n      className=\"min-h-[300px] max-w-xl rounded-lg border\"\n    >\n      <ResizablePanel defaultSize={20} minSize={15}>\n        <div className=\"flex h-full flex-col p-2\">\n          <h4 className=\"text-sm font-medium mb-2 px-2 text-foreground\">Explorer</h4>\n          <div className=\"space-y-1\">\n            <div className=\"flex items-center gap-2 px-2 py-1 text-sm rounded hover:bg-accent cursor-pointer\">\n              <Folder className=\"h-4 w-4 text-muted-foreground\" />\n              <span className=\"text-foreground\">src</span>\n            </div>\n            <div className=\"flex items-center gap-2 px-2 py-1 text-sm rounded hover:bg-accent cursor-pointer ml-2\">\n              <File className=\"h-4 w-4 text-muted-foreground\" />\n              <span className=\"text-foreground\">index.ts</span>\n            </div>\n            <div className=\"flex items-center gap-2 px-2 py-1 text-sm rounded hover:bg-accent cursor-pointer ml-2\">\n              <File className=\"h-4 w-4 text-muted-foreground\" />\n              <span className=\"text-foreground\">app.tsx</span>\n            </div>\n          </div>\n        </div>\n      </ResizablePanel>\n      <ResizableHandle />\n      <ResizablePanel defaultSize={50}>\n        <div className=\"flex h-full flex-col p-2\">\n          <div className=\"flex items-center gap-2 px-2 py-1 border-b mb-2\">\n            <Code className=\"h-4 w-4 text-muted-foreground\" />\n            <span className=\"text-sm text-foreground\">app.tsx</span>\n          </div>\n          <div className=\"flex-1 p-2 text-sm text-muted-foreground font-mono\">\n            <div>export function App() {\"{\"}</div>\n            <div className=\"ml-4\">return &lt;div&gt;Hello&lt;/div&gt;</div>\n            <div>{\"}\"}</div>\n          </div>\n        </div>\n      </ResizablePanel>\n      <ResizableHandle />\n      <ResizablePanel defaultSize={30} minSize={20}>\n        <div className=\"flex h-full flex-col p-2\">\n          <h4 className=\"text-sm font-medium mb-2 px-2 text-foreground\">Preview</h4>\n          <div className=\"flex-1 flex items-center justify-center bg-muted/30 rounded\">\n            <span className=\"text-muted-foreground\">Preview Area</span>\n          </div>\n        </div>\n      </ResizablePanel>\n    </ResizablePanelGroup>\n  );\n};\n\nexport { ResizableThreePanel }",
+      "type": "registry:component",
+      "target": "components/resizable-three-panel.tsx"
+    }
+  ],
+  "categories": [
+    "resizable",
+    "resizable"
+  ],
+  "registryDependencies": [
+    "resizable"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

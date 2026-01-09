@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-sizes",
+  "type": "registry:block",
+  "title": "Toggle Group Sizes",
+  "description": "Toggle Group Sizes component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle-group/toggle-group-sizes.tsx",
+      "content": "\"use client\";\n\nimport { ToggleGroup, ToggleGroupItem } from \"@/components/ui/toggle-group\";\nimport { Bold, Italic, Underline } from \"lucide-react\";\n\nconst ToggleGroupSizes = () => {\n  return (\n    <div className=\"flex flex-col items-center gap-6 p-8\">\n      <div className=\"flex flex-col items-center gap-2\">\n        <ToggleGroup type=\"multiple\" size=\"sm\">\n          <ToggleGroupItem value=\"bold\">\n            <Bold className=\"h-3 w-3\" />\n          </ToggleGroupItem>\n          <ToggleGroupItem value=\"italic\">\n            <Italic className=\"h-3 w-3\" />\n          </ToggleGroupItem>\n          <ToggleGroupItem value=\"underline\">\n            <Underline className=\"h-3 w-3\" />\n          </ToggleGroupItem>\n        </ToggleGroup>\n        <span className=\"text-xs text-muted-foreground\">Small</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <ToggleGroup type=\"multiple\">\n          <ToggleGroupItem value=\"bold\">\n            <Bold className=\"h-4 w-4\" />\n          </ToggleGroupItem>\n          <ToggleGroupItem value=\"italic\">\n            <Italic className=\"h-4 w-4\" />\n          </ToggleGroupItem>\n          <ToggleGroupItem value=\"underline\">\n            <Underline className=\"h-4 w-4\" />\n          </ToggleGroupItem>\n        </ToggleGroup>\n        <span className=\"text-xs text-muted-foreground\">Default</span>\n      </div>\n      <div className=\"flex flex-col items-center gap-2\">\n        <ToggleGroup type=\"multiple\" size=\"lg\">\n          <ToggleGroupItem value=\"bold\">\n            <Bold className=\"h-5 w-5\" />\n          </ToggleGroupItem>\n          <ToggleGroupItem value=\"italic\">\n            <Italic className=\"h-5 w-5\" />\n          </ToggleGroupItem>\n          <ToggleGroupItem value=\"underline\">\n            <Underline className=\"h-5 w-5\" />\n          </ToggleGroupItem>\n        </ToggleGroup>\n        <span className=\"text-xs text-muted-foreground\">Large</span>\n      </div>\n    </div>\n  );\n};\n\nexport { ToggleGroupSizes }",
+      "type": "registry:component",
+      "target": "components/toggle-group-sizes.tsx"
+    }
+  ],
+  "categories": [
+    "toggle-group",
+    "toggle-group"
+  ],
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

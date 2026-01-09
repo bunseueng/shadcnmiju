@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-semantic",
+  "type": "registry:block",
+  "title": "Typography Semantic",
+  "description": "Typography Semantic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/typography/typography-semantic.tsx",
+      "content": "\"use client\";\n\nexport function TypographySemantic() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl space-y-8\">\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Article Layout\n          </h3>\n          <article className=\"space-y-4\">\n            <header>\n              <h1 className=\"scroll-m-20 text-3xl font-bold tracking-tight\">\n                Understanding Typography\n              </h1>\n              <p className=\"text-sm text-muted-foreground\">\n                Published on January 1, 2024\n              </p>\n            </header>\n            <p className=\"leading-7\">\n              Typography is the art and technique of arranging type to make\n              written language legible, readable, and appealing when displayed.\n            </p>\n            <footer className=\"border-t pt-4\">\n              <p className=\"text-sm text-muted-foreground\">\n                Author: John Doe\n              </p>\n            </footer>\n          </article>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Figure with Caption\n          </h3>\n          <figure className=\"space-y-2\">\n            <div className=\"rounded-md border bg-muted p-8 text-center\">\n              <p className=\"text-muted-foreground\">[Image placeholder]</p>\n            </div>\n            <figcaption className=\"text-sm text-muted-foreground\">\n              Figure 1: An example of proper spacing and alignment\n            </figcaption>\n          </figure>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Definition List\n          </h3>\n          <dl className=\"space-y-3\">\n            <div>\n              <dt className=\"font-semibold\">Typography</dt>\n              <dd className=\"text-muted-foreground ml-4\">\n                The style and appearance of printed matter\n              </dd>\n            </div>\n            <div>\n              <dt className=\"font-semibold\">Kerning</dt>\n              <dd className=\"text-muted-foreground ml-4\">\n                The spacing between individual letters or characters\n              </dd>\n            </div>\n            <div>\n              <dt className=\"font-semibold\">Leading</dt>\n              <dd className=\"text-muted-foreground ml-4\">\n                The vertical distance between lines of text\n              </dd>\n            </div>\n          </dl>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/typography-semantic.tsx"
+    }
+  ],
+  "categories": [
+    "typography",
+    "typography"
+  ]
+}

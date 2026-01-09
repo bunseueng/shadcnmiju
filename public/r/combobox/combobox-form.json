@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-form",
+  "type": "registry:block",
+  "title": "Combobox Form",
+  "description": "Combobox Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/combobox/combobox-form.tsx",
+      "content": "// @ts-nocheck\n\"use client\";\n\nimport * as React from \"react\";\nimport { Check, ChevronsUpDown } from \"lucide-react\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport { useForm } from \"react-hook-form\";\nimport * as z from \"zod\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { toast } from \"sonner\";\n\nconst countries = [\n  { value: \"us\", label: \"United States\" },\n  { value: \"uk\", label: \"United Kingdom\" },\n  { value: \"ca\", label: \"Canada\" },\n  { value: \"au\", label: \"Australia\" },\n  { value: \"de\", label: \"Germany\" },\n  { value: \"fr\", label: \"France\" },\n];\n\nconst formSchema = z.object({\n  country: z.string().min(1, \"Please select a country.\"),\n});\n\nexport function ComboboxForm() {\n  const form = useForm<z.infer<typeof formSchema>>({\n    resolver: zodResolver(formSchema) as any,\n  });\n\n  function onSubmit(data: z.infer<typeof formSchema>) {\n    toast(\"Form submitted!\", {\n      description: `Selected country: ${\n        countries.find((c) => c.value === data.country)?.label\n      }`,\n    });\n  }\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <Form {...form}>\n        <form onSubmit={form.handleSubmit(onSubmit)} className=\"w-[300px] space-y-6\">\n          <FormField\n            control={form.control}\n            name=\"country\"\n            render={({ field }) => (\n              <FormItem className=\"flex flex-col\">\n                <FormLabel>Country</FormLabel>\n                <Popover>\n                  <PopoverTrigger asChild>\n                    <FormControl>\n                      <Button\n                        variant=\"outline\"\n                        role=\"combobox\"\n                        className={cn(\n                          \"w-full justify-between\",\n                          !field.value && \"text-muted-foreground\"\n                        )}\n                      >\n                        {field.value\n                          ? countries.find(\n                              (country) => country.value === field.value\n                            )?.label\n                          : \"Select country\"}\n                        <ChevronsUpDown className=\"ml-2 h-4 w-4 shrink-0 opacity-50\" />\n                      </Button>\n                    </FormControl>\n                  </PopoverTrigger>\n                  <PopoverContent className=\"w-[300px] p-0\">\n                    <Command>\n                      <CommandInput placeholder=\"Search country...\" />\n                      <CommandList>\n                        <CommandEmpty>No country found.</CommandEmpty>\n                        <CommandGroup>\n                          {countries.map((country) => (\n                            <CommandItem\n                              value={country.label}\n                              key={country.value}\n                              onSelect={() => {\n                                form.setValue(\"country\", country.value);\n                              }}\n                            >\n                              <Check\n                                className={cn(\n                                  \"mr-2 h-4 w-4\",\n                                  country.value === field.value\n                                    ? \"opacity-100\"\n                                    : \"opacity-0\"\n                                )}\n                              />\n                              {country.label}\n                            </CommandItem>\n                          ))}\n                        </CommandGroup>\n                      </CommandList>\n                    </Command>\n                  </PopoverContent>\n                </Popover>\n                <FormDescription>\n                  Select your country from the list.\n                </FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <Button type=\"submit\" className=\"w-full\">Submit</Button>\n        </form>\n      </Form>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-form.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "combobox"
+  ],
+  "registryDependencies": [
+    "button",
+    "command",
+    "form",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "sonner",
+    "react-hook-form",
+    "zod"
+  ]
+}

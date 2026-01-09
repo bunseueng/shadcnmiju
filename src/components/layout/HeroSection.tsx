@@ -34,7 +34,7 @@ if (typeof window !== "undefined") {
 }
 
 interface Props {
-  components: ComponentVariant[][];
+  components: ComponentVariant[];
   category: string[];
 }
 
@@ -201,7 +201,7 @@ const HeroSection = ({ components, category }: Props) => {
             <div className="flex flex-col gap-6 max-w-2xl">
               <Badge className="hero-badge w-fit bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">
                 <Sparkles className="w-3 h-3 mr-2" />
-                {components.flat().length}+ Components & 41+ Themes
+                {components.flat().length}+ Components & 43+ Themes
               </Badge>
 
               <div className="space-y-4">
@@ -219,7 +219,7 @@ const HeroSection = ({ components, category }: Props) => {
 
               <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
                 Copy, paste, and customize beautifully crafted components.
-                Production-ready, accessible, and fully responsive with 41+
+                Production-ready, accessible, and fully responsive with 43+
                 stunning themes.
               </p>
 
@@ -240,7 +240,7 @@ const HeroSection = ({ components, category }: Props) => {
                   className="hero-buttons"
                   asChild
                 >
-                  <Link href="/docs">
+                  <Link href={`${process.env.NEXT_PUBLIC_DOC_URL}`}>
                     <Code2 className="mr-2 h-4 w-4" />
                     Documentation
                   </Link>
@@ -362,9 +362,9 @@ const HeroSection = ({ components, category }: Props) => {
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-500/50 flex items-center justify-center">
                 <Palette className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold">100+ Themes</h3>
+              <h3 className="text-xl font-semibold">43+ Themes</h3>
               <p className="text-muted-foreground">
-                Choose from over 100 beautiful pre-built themes or create your
+                Choose from over 43 beautiful themes from tweakcn or create your
                 own custom design system.
               </p>
             </CardContent>

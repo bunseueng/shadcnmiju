@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible-settings",
+  "type": "registry:block",
+  "title": "Collapsible Settings",
+  "description": "Collapsible Settings component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/collapsible/collapsible-settings.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Collapsible,\r\n  CollapsibleTrigger,\r\n  CollapsibleContent,\r\n} from \"@/components/ui/collapsible\";\r\nimport { ChevronDown } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst CollapsibleSettings = () => {\r\n  const [isOpen, setIsOpen] = useState(false);\r\n\r\n  return (\r\n    <Collapsible open={isOpen} onOpenChange={setIsOpen}>\r\n      <CollapsibleTrigger className=\"flex w-full flex-col items-start gap-1 rounded-lg border border-border p-4 hover:bg-accent/5 transition-colors\">\r\n        <div className=\"flex items-center gap-2\">\r\n          <ChevronDown\r\n            className={`h-4 w-4 transition-transform ${\r\n              isOpen ? \"rotate-180\" : \"\"\r\n            }`}\r\n          />\r\n          <h3 className=\"font-semibold text-foreground\">Advanced Settings</h3>\r\n        </div>\r\n        <p className=\"text-sm text-muted-foreground ml-6\">\r\n          Configure your preferences\r\n        </p>\r\n      </CollapsibleTrigger>\r\n      <CollapsibleContent className=\"mt-3 space-y-2 text-sm text-muted-foreground\">\r\n        <div className=\"rounded-lg border border-border p-3\">\r\n          Setting 1: Option A\r\n        </div>\r\n        <div className=\"rounded-lg border border-border p-3\">\r\n          Setting 2: Option B\r\n        </div>\r\n        <div className=\"rounded-lg border border-border p-3\">\r\n          Setting 3: Option C\r\n        </div>\r\n      </CollapsibleContent>\r\n    </Collapsible>\r\n  );\r\n};\r\n\r\nexport { CollapsibleSettings }",
+      "type": "registry:component",
+      "target": "components/collapsible-settings.tsx"
+    }
+  ],
+  "categories": [
+    "collapsible",
+    "collapsible"
+  ],
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

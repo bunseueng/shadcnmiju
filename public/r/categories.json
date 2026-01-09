@@ -1,0 +1,2113 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "shadcnmiju",
+  "homepage": "https://shadcnmiju.vercel.app",
+  "totalComponents": 410,
+  "totalCategories": 58,
+  "categories": [
+    {
+      "name": "accordion",
+      "title": "Accordion",
+      "description": "accordion component variants",
+      "count": 6,
+      "components": [
+        {
+          "name": "bordered-accordion",
+          "title": "Bordered Accordion"
+        },
+        {
+          "name": "code-docs-accordion",
+          "title": "Code Docs Accordion"
+        },
+        {
+          "name": "faq-accordion",
+          "title": "Faq Accordion"
+        },
+        {
+          "name": "gradient-accordion",
+          "title": "Gradient Accordion"
+        },
+        {
+          "name": "icon-accordion",
+          "title": "Icon Accordion"
+        },
+        {
+          "name": "multi-section-accordion",
+          "title": "Multi Section Accordion"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "title": "Alert",
+      "description": "alert component variants",
+      "count": 21,
+      "components": [
+        {
+          "name": "alert-destructive-1",
+          "title": "Alert Destructive 1"
+        },
+        {
+          "name": "alert-destructive-2",
+          "title": "Alert Destructive 2"
+        },
+        {
+          "name": "alert-destructive-3",
+          "title": "Alert Destructive 3"
+        },
+        {
+          "name": "alert-destructive-4",
+          "title": "Alert Destructive 4"
+        },
+        {
+          "name": "alert-destructive-5",
+          "title": "Alert Destructive 5"
+        },
+        {
+          "name": "alert-info-1",
+          "title": "Alert Info 1"
+        },
+        {
+          "name": "alert-info-2",
+          "title": "Alert Info 2"
+        },
+        {
+          "name": "alert-info-3",
+          "title": "Alert Info 3"
+        },
+        {
+          "name": "alert-info-4",
+          "title": "Alert Info 4"
+        },
+        {
+          "name": "alert-info-5",
+          "title": "Alert Info 5"
+        },
+        {
+          "name": "alert-success-1",
+          "title": "Alert Success 1"
+        },
+        {
+          "name": "alert-success-2",
+          "title": "Alert Success 2"
+        },
+        {
+          "name": "alert-success-3",
+          "title": "Alert Success 3"
+        },
+        {
+          "name": "alert-success-4",
+          "title": "Alert Success 4"
+        },
+        {
+          "name": "alert-success-5",
+          "title": "Alert Success 5"
+        },
+        {
+          "name": "alert-warning-1",
+          "title": "Alert Warning 1"
+        },
+        {
+          "name": "alert-warning-2",
+          "title": "Alert Warning 2"
+        },
+        {
+          "name": "alert-warning-3",
+          "title": "Alert Warning 3"
+        },
+        {
+          "name": "alert-warning-4",
+          "title": "Alert Warning 4"
+        },
+        {
+          "name": "alert-warning-5",
+          "title": "Alert Warning 5"
+        },
+        {
+          "name": "shadcn-alert",
+          "title": "Shadcn Alert"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "title": "Alert dialog",
+      "description": "alert-dialog component variants",
+      "count": 22,
+      "components": [
+        {
+          "name": "alert-dialog-1",
+          "title": "Alert Dialog 1"
+        },
+        {
+          "name": "alert-dialog-2",
+          "title": "Alert Dialog 2"
+        },
+        {
+          "name": "alert-dialog-3",
+          "title": "Alert Dialog 3"
+        },
+        {
+          "name": "alert-dialog-confirm-1",
+          "title": "Alert Dialog Confirm 1"
+        },
+        {
+          "name": "alert-dialog-confirm-2",
+          "title": "Alert Dialog Confirm 2"
+        },
+        {
+          "name": "alert-dialog-confirm-3",
+          "title": "Alert Dialog Confirm 3"
+        },
+        {
+          "name": "alert-dialog-confirm-4",
+          "title": "Alert Dialog Confirm 4"
+        },
+        {
+          "name": "alert-dialog-destructive-1",
+          "title": "Alert Dialog Destructive 1"
+        },
+        {
+          "name": "alert-dialog-destructive-2",
+          "title": "Alert Dialog Destructive 2"
+        },
+        {
+          "name": "alert-dialog-destructive-3",
+          "title": "Alert Dialog Destructive 3"
+        },
+        {
+          "name": "alert-dialog-destructive-4",
+          "title": "Alert Dialog Destructive 4"
+        },
+        {
+          "name": "alert-dialog-form-1",
+          "title": "Alert Dialog Form 1"
+        },
+        {
+          "name": "alert-dialog-form-2",
+          "title": "Alert Dialog Form 2"
+        },
+        {
+          "name": "alert-dialog-form-3",
+          "title": "Alert Dialog Form 3"
+        },
+        {
+          "name": "alert-dialog-form-4",
+          "title": "Alert Dialog Form 4"
+        },
+        {
+          "name": "alert-dialog-info-1",
+          "title": "Alert Dialog Info 1"
+        },
+        {
+          "name": "alert-dialog-info-2",
+          "title": "Alert Dialog Info 2"
+        },
+        {
+          "name": "alert-dialog-info-3",
+          "title": "Alert Dialog Info 3"
+        },
+        {
+          "name": "alert-dialog-info-4",
+          "title": "Alert Dialog Info 4"
+        },
+        {
+          "name": "alert-dialog-info-5",
+          "title": "Alert Dialog Info 5"
+        },
+        {
+          "name": "alert-dialog-info-6",
+          "title": "Alert Dialog Info 6"
+        },
+        {
+          "name": "alert-dialog-info-7",
+          "title": "Alert Dialog Info 7"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "title": "Aspect ratio",
+      "description": "aspect-ratio component variants",
+      "count": 11,
+      "components": [
+        {
+          "name": "cinema-ratio",
+          "title": "Cinema Ratio"
+        },
+        {
+          "name": "cinematic-ratio",
+          "title": "Cinematic Ratio"
+        },
+        {
+          "name": "classic-film-ratio",
+          "title": "Classic Film Ratio"
+        },
+        {
+          "name": "facebook-cover-ratio",
+          "title": "Facebook Cover Ratio"
+        },
+        {
+          "name": "golden-ratio",
+          "title": "Golden Ratio"
+        },
+        {
+          "name": "instagram-ratio",
+          "title": "Instagram Ratio"
+        },
+        {
+          "name": "panoramic-ratio",
+          "title": "Panoramic Ratio"
+        },
+        {
+          "name": "square-ratio",
+          "title": "Square Ratio"
+        },
+        {
+          "name": "tv-ratio",
+          "title": "Tv Ratio"
+        },
+        {
+          "name": "widescreen-ratio",
+          "title": "Widescreen Ratio"
+        },
+        {
+          "name": "youtube-short-ratio",
+          "title": "Youtube Short Ratio"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "title": "Avatar",
+      "description": "avatar component variants",
+      "count": 9,
+      "components": [
+        {
+          "name": "avatar-size",
+          "title": "Avatar Size"
+        },
+        {
+          "name": "avatar-with-text",
+          "title": "Avatar With Text"
+        },
+        {
+          "name": "basic-avatar",
+          "title": "Basic Avatar"
+        },
+        {
+          "name": "dropdown-menu-avatar",
+          "title": "Dropdown Menu Avatar"
+        },
+        {
+          "name": "fallback-avatar",
+          "title": "Fallback Avatar"
+        },
+        {
+          "name": "loading-avatar",
+          "title": "Loading Avatar"
+        },
+        {
+          "name": "notification-avatar",
+          "title": "Notification Avatar"
+        },
+        {
+          "name": "online-avatar",
+          "title": "Online Avatar"
+        },
+        {
+          "name": "upload-avatar",
+          "title": "Upload Avatar"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "title": "Badge",
+      "description": "badge component variants",
+      "count": 12,
+      "components": [
+        {
+          "name": "border-badge",
+          "title": "Border Badge"
+        },
+        {
+          "name": "category-badge",
+          "title": "Category Badge"
+        },
+        {
+          "name": "floating-badge",
+          "title": "Floating Badge"
+        },
+        {
+          "name": "gradient-badge",
+          "title": "Gradient Badge"
+        },
+        {
+          "name": "icon-badge",
+          "title": "Icon Badge"
+        },
+        {
+          "name": "interactive-badge",
+          "title": "Interactive Badge"
+        },
+        {
+          "name": "notification-badge",
+          "title": "Notification Badge"
+        },
+        {
+          "name": "semantic-badge",
+          "title": "Semantic Badge"
+        },
+        {
+          "name": "shape-variation-badge",
+          "title": "Shape Variation Badge"
+        },
+        {
+          "name": "size-variation-badge",
+          "title": "Size Variation Badge"
+        },
+        {
+          "name": "standard-badge",
+          "title": "Standard Badge"
+        },
+        {
+          "name": "status-badge",
+          "title": "Status Badge"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "title": "Breadcrumb",
+      "description": "breadcrumb component variants",
+      "count": 6,
+      "components": [
+        {
+          "name": "basic-breadcrumb",
+          "title": "Basic Breadcrumb"
+        },
+        {
+          "name": "breadcrumb-collapsed",
+          "title": "Breadcrumb Collapsed"
+        },
+        {
+          "name": "breadcrumb-custom-separator",
+          "title": "Breadcrumb Custom Separator"
+        },
+        {
+          "name": "breadcrumb-responsive",
+          "title": "Breadcrumb Responsive"
+        },
+        {
+          "name": "breadcrumb-with-dropdown",
+          "title": "Breadcrumb With Dropdown"
+        },
+        {
+          "name": "breadcrumb-with-icons",
+          "title": "Breadcrumb With Icons"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "title": "Button",
+      "description": "button component variants",
+      "count": 16,
+      "components": [
+        {
+          "name": "button-group",
+          "title": "Button Group"
+        },
+        {
+          "name": "button-size",
+          "title": "Button Size"
+        },
+        {
+          "name": "delete-button",
+          "title": "Delete Button"
+        },
+        {
+          "name": "disabled-button",
+          "title": "Disabled Button"
+        },
+        {
+          "name": "ghost-icon-button",
+          "title": "Ghost Icon Button"
+        },
+        {
+          "name": "icon-button",
+          "title": "Icon Button"
+        },
+        {
+          "name": "link-button",
+          "title": "Link Button"
+        },
+        {
+          "name": "loading-button",
+          "title": "Loading Button"
+        },
+        {
+          "name": "magnetic-button",
+          "title": "Magnetic Button"
+        },
+        {
+          "name": "next-button",
+          "title": "Next Button"
+        },
+        {
+          "name": "prev-button",
+          "title": "Prev Button"
+        },
+        {
+          "name": "rounded-button",
+          "title": "Rounded Button"
+        },
+        {
+          "name": "shadcn-button",
+          "title": "Shadcn Button"
+        },
+        {
+          "name": "sparkle-button",
+          "title": "Sparkle Button"
+        },
+        {
+          "name": "standard",
+          "title": "Standard"
+        },
+        {
+          "name": "upload-button",
+          "title": "Upload Button"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "title": "Button group",
+      "description": "button-group component variants",
+      "count": 22,
+      "components": [
+        {
+          "name": "bookmark-button-group",
+          "title": "Bookmark Button Group"
+        },
+        {
+          "name": "calendar-navigation-button-group",
+          "title": "Calendar Navigation Button Group"
+        },
+        {
+          "name": "cart-button-group",
+          "title": "Cart Button Group"
+        },
+        {
+          "name": "device-button-group",
+          "title": "Device Button Group"
+        },
+        {
+          "name": "dialog-button-group",
+          "title": "Dialog Button Group"
+        },
+        {
+          "name": "export-button-group",
+          "title": "Export Button Group"
+        },
+        {
+          "name": "file-button-group",
+          "title": "File Button Group"
+        },
+        {
+          "name": "filter-button-group",
+          "title": "Filter Button Group"
+        },
+        {
+          "name": "icon-text-button-group",
+          "title": "Icon Text Button Group"
+        },
+        {
+          "name": "media-button-group",
+          "title": "Media Button Group"
+        },
+        {
+          "name": "notification-button-group",
+          "title": "Notification Button Group"
+        },
+        {
+          "name": "pagination-button-group",
+          "title": "Pagination Button Group"
+        },
+        {
+          "name": "priority-selector-button-group",
+          "title": "Priority Selector Button Group"
+        },
+        {
+          "name": "security-button-group",
+          "title": "Security Button Group"
+        },
+        {
+          "name": "shadcn-button-group",
+          "title": "Shadcn Button Group"
+        },
+        {
+          "name": "social-button-group",
+          "title": "Social Button Group"
+        },
+        {
+          "name": "text-format-button-group",
+          "title": "Text Format Button Group"
+        },
+        {
+          "name": "theme-toggle-button-group",
+          "title": "Theme Toggle Button Group"
+        },
+        {
+          "name": "verticle-button-group",
+          "title": "Verticle Button Group"
+        },
+        {
+          "name": "view-mode-button-group",
+          "title": "View Mode Button Group"
+        },
+        {
+          "name": "visibility-button-group",
+          "title": "Visibility Button Group"
+        },
+        {
+          "name": "zoom-button-group",
+          "title": "Zoom Button Group"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "title": "Calendar",
+      "description": "calendar component variants",
+      "count": 31,
+      "components": [
+        {
+          "name": "calendar-availability",
+          "title": "Calendar Availability"
+        },
+        {
+          "name": "calendar-birthdate-picker",
+          "title": "Calendar Birthdate Picker"
+        },
+        {
+          "name": "calendar-booking-system",
+          "title": "Calendar Booking System"
+        },
+        {
+          "name": "calendar-button-dialog-event",
+          "title": "Calendar Button Dialog Event"
+        },
+        {
+          "name": "calendar-button-dialog-multi",
+          "title": "Calendar Button Dialog Multi"
+        },
+        {
+          "name": "calendar-button-dialog-preset",
+          "title": "Calendar Button Dialog Preset"
+        },
+        {
+          "name": "calendar-button-dialog-range",
+          "title": "Calendar Button Dialog Range"
+        },
+        {
+          "name": "calendar-button-dialog-time",
+          "title": "Calendar Button Dialog Time"
+        },
+        {
+          "name": "calendar-button-trigger",
+          "title": "Calendar Button Trigger"
+        },
+        {
+          "name": "calendar-comparison",
+          "title": "Calendar Comparison"
+        },
+        {
+          "name": "calendar-custom-styles",
+          "title": "Calendar Custom Styles"
+        },
+        {
+          "name": "calendar-deadline-tracker",
+          "title": "Calendar Deadline Tracker"
+        },
+        {
+          "name": "calendar-dialog",
+          "title": "Calendar Dialog"
+        },
+        {
+          "name": "calendar-holiday-highlight",
+          "title": "Calendar Holiday Highlight"
+        },
+        {
+          "name": "calendar-inline-form",
+          "title": "Calendar Inline Form"
+        },
+        {
+          "name": "calendar-inline-popover",
+          "title": "Calendar Inline Popover"
+        },
+        {
+          "name": "calendar-month-year-picker",
+          "title": "Calendar Month Year Picker"
+        },
+        {
+          "name": "calendar-multi-select",
+          "title": "Calendar Multi Select"
+        },
+        {
+          "name": "calendar-multiple-months",
+          "title": "Calendar Multiple Months"
+        },
+        {
+          "name": "calendar-popover",
+          "title": "Calendar Popover"
+        },
+        {
+          "name": "calendar-range-dialog",
+          "title": "Calendar Range Dialog"
+        },
+        {
+          "name": "calendar-week-picker",
+          "title": "Calendar Week Picker"
+        },
+        {
+          "name": "calendar-with-disabled-dates",
+          "title": "Calendar With Disabled Dates"
+        },
+        {
+          "name": "calendar-with-events",
+          "title": "Calendar With Events"
+        },
+        {
+          "name": "calendar-with-footer",
+          "title": "Calendar With Footer"
+        },
+        {
+          "name": "calendar-with-input",
+          "title": "Calendar With Input"
+        },
+        {
+          "name": "calendar-with-min-max",
+          "title": "Calendar With Min Max"
+        },
+        {
+          "name": "calendar-with-presets",
+          "title": "Calendar With Presets"
+        },
+        {
+          "name": "calendar-with-range",
+          "title": "Calendar With Range"
+        },
+        {
+          "name": "calendar-with-time-picker",
+          "title": "Calendar With Time Picker"
+        },
+        {
+          "name": "simple-calendar",
+          "title": "Simple Calendar"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "title": "Card",
+      "description": "card component variants",
+      "count": 9,
+      "components": [
+        {
+          "name": "3d-card",
+          "title": "3d Card"
+        },
+        {
+          "name": "3d-parallax-cards",
+          "title": "3d Parallax Cards"
+        },
+        {
+          "name": "hoverable-card",
+          "title": "Hoverable Card"
+        },
+        {
+          "name": "login-card",
+          "title": "Login Card"
+        },
+        {
+          "name": "perspective-card",
+          "title": "Perspective Card"
+        },
+        {
+          "name": "pricing-card",
+          "title": "Pricing Card"
+        },
+        {
+          "name": "product-card",
+          "title": "Product Card"
+        },
+        {
+          "name": "profile-card",
+          "title": "Profile Card"
+        },
+        {
+          "name": "stats-card",
+          "title": "Stats Card"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "title": "Carousel",
+      "description": "carousel component variants",
+      "count": 7,
+      "components": [
+        {
+          "name": "3d-carousel",
+          "title": "3d Carousel"
+        },
+        {
+          "name": "auto-playing-carousel",
+          "title": "Auto Playing Carousel"
+        },
+        {
+          "name": "basic-carousel",
+          "title": "Basic Carousel"
+        },
+        {
+          "name": "card-carousel",
+          "title": "Card Carousel"
+        },
+        {
+          "name": "product-carousel",
+          "title": "Product Carousel"
+        },
+        {
+          "name": "testimonial-carousel",
+          "title": "Testimonial Carousel"
+        },
+        {
+          "name": "vertical-carousel",
+          "title": "Vertical Carousel"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "title": "Chart",
+      "description": "chart component variants",
+      "count": 10,
+      "components": [
+        {
+          "name": "area-chart",
+          "title": "Area Chart"
+        },
+        {
+          "name": "bar-chart",
+          "title": "Bar Chart"
+        },
+        {
+          "name": "composed-chart",
+          "title": "Composed Chart"
+        },
+        {
+          "name": "donut-chart",
+          "title": "Donut Chart"
+        },
+        {
+          "name": "line-chart",
+          "title": "Line Chart"
+        },
+        {
+          "name": "pie-chart",
+          "title": "Pie Chart"
+        },
+        {
+          "name": "radar-chart",
+          "title": "Radar Chart"
+        },
+        {
+          "name": "radial-chart",
+          "title": "Radial Chart"
+        },
+        {
+          "name": "scatter-chart",
+          "title": "Scatter Chart"
+        },
+        {
+          "name": "stacked-bar-chart",
+          "title": "Stacked Bar Chart"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "title": "Checkbox",
+      "description": "checkbox component variants",
+      "count": 8,
+      "components": [
+        {
+          "name": "checkbox-form",
+          "title": "Checkbox Form"
+        },
+        {
+          "name": "checkbox-group",
+          "title": "Checkbox Group"
+        },
+        {
+          "name": "checkbox-indeterminate",
+          "title": "Checkbox Indeterminate"
+        },
+        {
+          "name": "checkbox-nested",
+          "title": "Checkbox Nested"
+        },
+        {
+          "name": "checkbox-sizes",
+          "title": "Checkbox Sizes"
+        },
+        {
+          "name": "checkbox-states",
+          "title": "Checkbox States"
+        },
+        {
+          "name": "checkbox-with-badges",
+          "title": "Checkbox With Badges"
+        },
+        {
+          "name": "checkbox-with-label",
+          "title": "Checkbox With Label"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "title": "Collapsible",
+      "description": "collapsible component variants",
+      "count": 3,
+      "components": [
+        {
+          "name": "basic-collapsible",
+          "title": "Basic Collapsible"
+        },
+        {
+          "name": "collapsible-group",
+          "title": "Collapsible Group"
+        },
+        {
+          "name": "collapsible-settings",
+          "title": "Collapsible Settings"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "title": "Combobox",
+      "description": "combobox component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "combobox-basic",
+          "title": "Combobox Basic"
+        },
+        {
+          "name": "combobox-form",
+          "title": "Combobox Form"
+        },
+        {
+          "name": "combobox-multi-select",
+          "title": "Combobox Multi Select"
+        },
+        {
+          "name": "combobox-with-groups",
+          "title": "Combobox With Groups"
+        },
+        {
+          "name": "combobox-with-icons",
+          "title": "Combobox With Icons"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "title": "Command",
+      "description": "command component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "command-basic",
+          "title": "Command Basic"
+        },
+        {
+          "name": "command-search",
+          "title": "Command Search"
+        },
+        {
+          "name": "command-separator",
+          "title": "Command Separator"
+        },
+        {
+          "name": "command-with-icons",
+          "title": "Command With Icons"
+        },
+        {
+          "name": "command-with-shortcuts",
+          "title": "Command With Shortcuts"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "title": "Context menu",
+      "description": "context-menu component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "context-menu-basic",
+          "title": "Context Menu Basic"
+        },
+        {
+          "name": "context-menu-checkbox",
+          "title": "Context Menu Checkbox"
+        },
+        {
+          "name": "context-menu-file",
+          "title": "Context Menu File"
+        },
+        {
+          "name": "context-menu-radio",
+          "title": "Context Menu Radio"
+        },
+        {
+          "name": "context-menu-submenu",
+          "title": "Context Menu Submenu"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "title": "Data table",
+      "description": "data-table component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "data-table-basic",
+          "title": "Data Table Basic"
+        },
+        {
+          "name": "data-table-filtering",
+          "title": "Data Table Filtering"
+        },
+        {
+          "name": "data-table-pagination",
+          "title": "Data Table Pagination"
+        },
+        {
+          "name": "data-table-row-selection",
+          "title": "Data Table Row Selection"
+        },
+        {
+          "name": "data-table-sorting",
+          "title": "Data Table Sorting"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "title": "Date picker",
+      "description": "date-picker component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "date-picker-basic",
+          "title": "Date Picker Basic"
+        },
+        {
+          "name": "date-picker-form",
+          "title": "Date Picker Form"
+        },
+        {
+          "name": "date-picker-range",
+          "title": "Date Picker Range"
+        },
+        {
+          "name": "date-picker-with-presets",
+          "title": "Date Picker With Presets"
+        },
+        {
+          "name": "date-picker-with-time",
+          "title": "Date Picker With Time"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "title": "Dialog",
+      "description": "dialog component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "dialog-blur",
+          "title": "Dialog Blur"
+        },
+        {
+          "name": "dialog-bounce",
+          "title": "Dialog Bounce"
+        },
+        {
+          "name": "dialog-rotate",
+          "title": "Dialog Rotate"
+        },
+        {
+          "name": "dialog-scale-fade",
+          "title": "Dialog Scale Fade"
+        },
+        {
+          "name": "dialog-slide-up",
+          "title": "Dialog Slide Up"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "title": "Drawer",
+      "description": "drawer component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "drawer-bottom",
+          "title": "Drawer Bottom"
+        },
+        {
+          "name": "drawer-cart",
+          "title": "Drawer Cart"
+        },
+        {
+          "name": "drawer-nested",
+          "title": "Drawer Nested"
+        },
+        {
+          "name": "drawer-responsive",
+          "title": "Drawer Responsive"
+        },
+        {
+          "name": "drawer-with-form",
+          "title": "Drawer With Form"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "title": "Dropdown menu",
+      "description": "dropdown-menu component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "dropdown-menu-basic",
+          "title": "Dropdown Menu Basic"
+        },
+        {
+          "name": "dropdown-menu-checkbox",
+          "title": "Dropdown Menu Checkbox"
+        },
+        {
+          "name": "dropdown-menu-icons",
+          "title": "Dropdown Menu Icons"
+        },
+        {
+          "name": "dropdown-menu-radio",
+          "title": "Dropdown Menu Radio"
+        },
+        {
+          "name": "dropdown-menu-submenu",
+          "title": "Dropdown Menu Submenu"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "title": "Empty",
+      "description": "empty component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "empty-basic",
+          "title": "Empty Basic"
+        },
+        {
+          "name": "empty-error",
+          "title": "Empty Error"
+        },
+        {
+          "name": "empty-no-data",
+          "title": "Empty No Data"
+        },
+        {
+          "name": "empty-no-messages",
+          "title": "Empty No Messages"
+        },
+        {
+          "name": "empty-no-notifications",
+          "title": "Empty No Notifications"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "title": "Field",
+      "description": "field component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "field-basic",
+          "title": "Field Basic"
+        },
+        {
+          "name": "field-group",
+          "title": "Field Group"
+        },
+        {
+          "name": "field-horizontal",
+          "title": "Field Horizontal"
+        },
+        {
+          "name": "field-responsive",
+          "title": "Field Responsive"
+        },
+        {
+          "name": "field-with-validation",
+          "title": "Field With Validation"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "title": "Form",
+      "description": "form component variants",
+      "count": 6,
+      "components": [
+        {
+          "name": "3d-form",
+          "title": "3d Form"
+        },
+        {
+          "name": "form-contact",
+          "title": "Form Contact"
+        },
+        {
+          "name": "form-login",
+          "title": "Form Login"
+        },
+        {
+          "name": "form-profile",
+          "title": "Form Profile"
+        },
+        {
+          "name": "form-register",
+          "title": "Form Register"
+        },
+        {
+          "name": "form-settings",
+          "title": "Form Settings"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "title": "Hover card",
+      "description": "hover-card component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "hover-card-preview",
+          "title": "Hover Card Preview"
+        },
+        {
+          "name": "hover-card-product",
+          "title": "Hover Card Product"
+        },
+        {
+          "name": "hover-card-profile",
+          "title": "Hover Card Profile"
+        },
+        {
+          "name": "hover-card-stats",
+          "title": "Hover Card Stats"
+        },
+        {
+          "name": "hover-card-tooltip",
+          "title": "Hover Card Tooltip"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "title": "Input",
+      "description": "input component variants",
+      "count": 6,
+      "components": [
+        {
+          "name": "3d-input",
+          "title": "3d Input"
+        },
+        {
+          "name": "input-basic",
+          "title": "Input Basic"
+        },
+        {
+          "name": "input-disabled",
+          "title": "Input Disabled"
+        },
+        {
+          "name": "input-validation",
+          "title": "Input Validation"
+        },
+        {
+          "name": "input-with-button",
+          "title": "Input With Button"
+        },
+        {
+          "name": "input-with-icon",
+          "title": "Input With Icon"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "title": "Input group",
+      "description": "input-group component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "input-group-combined",
+          "title": "Input Group Combined"
+        },
+        {
+          "name": "input-group-with-button",
+          "title": "Input Group With Button"
+        },
+        {
+          "name": "input-group-with-icon",
+          "title": "Input Group With Icon"
+        },
+        {
+          "name": "input-group-with-select",
+          "title": "Input Group With Select"
+        },
+        {
+          "name": "input-group-with-text",
+          "title": "Input Group With Text"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "title": "Input otp",
+      "description": "input-otp component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "input-otp-basic",
+          "title": "Input Otp Basic"
+        },
+        {
+          "name": "input-otp-controlled",
+          "title": "Input Otp Controlled"
+        },
+        {
+          "name": "input-otp-form",
+          "title": "Input Otp Form"
+        },
+        {
+          "name": "input-otp-pattern",
+          "title": "Input Otp Pattern"
+        },
+        {
+          "name": "input-otp-separated",
+          "title": "Input Otp Separated"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "title": "Item",
+      "description": "item component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "item-basic",
+          "title": "Item Basic"
+        },
+        {
+          "name": "item-muted",
+          "title": "Item Muted"
+        },
+        {
+          "name": "item-with-actions",
+          "title": "Item With Actions"
+        },
+        {
+          "name": "item-with-header-footer",
+          "title": "Item With Header Footer"
+        },
+        {
+          "name": "item-with-image",
+          "title": "Item With Image"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "title": "Kbd",
+      "description": "kbd component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "kbd-basic",
+          "title": "Kbd Basic"
+        },
+        {
+          "name": "kbd-combinations",
+          "title": "Kbd Combinations"
+        },
+        {
+          "name": "kbd-in-card",
+          "title": "Kbd In Card"
+        },
+        {
+          "name": "kbd-in-menu",
+          "title": "Kbd In Menu"
+        },
+        {
+          "name": "kbd-with-icons",
+          "title": "Kbd With Icons"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "title": "Label",
+      "description": "label component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "label-basic",
+          "title": "Label Basic"
+        },
+        {
+          "name": "label-disabled",
+          "title": "Label Disabled"
+        },
+        {
+          "name": "label-required",
+          "title": "Label Required"
+        },
+        {
+          "name": "label-with-description",
+          "title": "Label With Description"
+        },
+        {
+          "name": "label-with-error",
+          "title": "Label With Error"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "title": "Menubar",
+      "description": "menubar component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "menubar-basic",
+          "title": "Menubar Basic"
+        },
+        {
+          "name": "menubar-full",
+          "title": "Menubar Full"
+        },
+        {
+          "name": "menubar-with-checkbox",
+          "title": "Menubar With Checkbox"
+        },
+        {
+          "name": "menubar-with-radio",
+          "title": "Menubar With Radio"
+        },
+        {
+          "name": "menubar-with-submenu",
+          "title": "Menubar With Submenu"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "title": "Native select",
+      "description": "native-select component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "native-select-basic",
+          "title": "Native Select Basic"
+        },
+        {
+          "name": "native-select-disabled",
+          "title": "Native Select Disabled"
+        },
+        {
+          "name": "native-select-grouped",
+          "title": "Native Select Grouped"
+        },
+        {
+          "name": "native-select-sizes",
+          "title": "Native Select Sizes"
+        },
+        {
+          "name": "native-select-validation",
+          "title": "Native Select Validation"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "title": "Navigation menu",
+      "description": "navigation-menu component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "navigation-menu-basic",
+          "title": "Navigation Menu Basic"
+        },
+        {
+          "name": "navigation-menu-featured",
+          "title": "Navigation Menu Featured"
+        },
+        {
+          "name": "navigation-menu-grid",
+          "title": "Navigation Menu Grid"
+        },
+        {
+          "name": "navigation-menu-simple",
+          "title": "Navigation Menu Simple"
+        },
+        {
+          "name": "navigation-menu-with-icons",
+          "title": "Navigation Menu With Icons"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "title": "Pagination",
+      "description": "pagination component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "pagination-basic",
+          "title": "Pagination Basic"
+        },
+        {
+          "name": "pagination-compact",
+          "title": "Pagination Compact"
+        },
+        {
+          "name": "pagination-controlled",
+          "title": "Pagination Controlled"
+        },
+        {
+          "name": "pagination-with-ellipsis",
+          "title": "Pagination With Ellipsis"
+        },
+        {
+          "name": "pagination-with-info",
+          "title": "Pagination With Info"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "title": "Popover",
+      "description": "popover component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "popover-basic",
+          "title": "Popover Basic"
+        },
+        {
+          "name": "popover-color-picker",
+          "title": "Popover Color Picker"
+        },
+        {
+          "name": "popover-notifications",
+          "title": "Popover Notifications"
+        },
+        {
+          "name": "popover-profile",
+          "title": "Popover Profile"
+        },
+        {
+          "name": "popover-share",
+          "title": "Popover Share"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "title": "Progress",
+      "description": "progress component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "progress-animated",
+          "title": "Progress Animated"
+        },
+        {
+          "name": "progress-basic",
+          "title": "Progress Basic"
+        },
+        {
+          "name": "progress-sizes",
+          "title": "Progress Sizes"
+        },
+        {
+          "name": "progress-steps",
+          "title": "Progress Steps"
+        },
+        {
+          "name": "progress-with-label",
+          "title": "Progress With Label"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "title": "Radio group",
+      "description": "radio-group component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "radio-basic",
+          "title": "Radio Basic"
+        },
+        {
+          "name": "radio-cards",
+          "title": "Radio Cards"
+        },
+        {
+          "name": "radio-disabled",
+          "title": "Radio Disabled"
+        },
+        {
+          "name": "radio-horizontal",
+          "title": "Radio Horizontal"
+        },
+        {
+          "name": "radio-with-description",
+          "title": "Radio With Description"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "title": "Resizable",
+      "description": "resizable component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "resizable-basic",
+          "title": "Resizable Basic"
+        },
+        {
+          "name": "resizable-nested",
+          "title": "Resizable Nested"
+        },
+        {
+          "name": "resizable-three-panel",
+          "title": "Resizable Three Panel"
+        },
+        {
+          "name": "resizable-vertical",
+          "title": "Resizable Vertical"
+        },
+        {
+          "name": "resizable-with-handle",
+          "title": "Resizable With Handle"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "title": "Scroll area",
+      "description": "scroll-area component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "scroll-area-basic",
+          "title": "Scroll Area Basic"
+        },
+        {
+          "name": "scroll-area-both",
+          "title": "Scroll Area Both"
+        },
+        {
+          "name": "scroll-area-cards",
+          "title": "Scroll Area Cards"
+        },
+        {
+          "name": "scroll-area-chat",
+          "title": "Scroll Area Chat"
+        },
+        {
+          "name": "scroll-area-horizontal",
+          "title": "Scroll Area Horizontal"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "title": "Select",
+      "description": "select component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "select-basic",
+          "title": "Select Basic"
+        },
+        {
+          "name": "select-disabled",
+          "title": "Select Disabled"
+        },
+        {
+          "name": "select-form",
+          "title": "Select Form"
+        },
+        {
+          "name": "select-with-groups",
+          "title": "Select With Groups"
+        },
+        {
+          "name": "select-with-icons",
+          "title": "Select With Icons"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "title": "Separator",
+      "description": "separator component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "separator-basic",
+          "title": "Separator Basic"
+        },
+        {
+          "name": "separator-list",
+          "title": "Separator List"
+        },
+        {
+          "name": "separator-menu",
+          "title": "Separator Menu"
+        },
+        {
+          "name": "separator-vertical",
+          "title": "Separator Vertical"
+        },
+        {
+          "name": "separator-with-text",
+          "title": "Separator With Text"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "title": "Sheet",
+      "description": "sheet component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "sheet-bottom",
+          "title": "Sheet Bottom"
+        },
+        {
+          "name": "sheet-filter",
+          "title": "Sheet Filter"
+        },
+        {
+          "name": "sheet-left",
+          "title": "Sheet Left"
+        },
+        {
+          "name": "sheet-side",
+          "title": "Sheet Side"
+        },
+        {
+          "name": "sheet-top",
+          "title": "Sheet Top"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "title": "Sidebar",
+      "description": "sidebar component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "sidebar-minimal",
+          "title": "Sidebar Minimal"
+        },
+        {
+          "name": "sidebar-with-icons",
+          "title": "Sidebar With Icons"
+        },
+        {
+          "name": "sidebar-with-search",
+          "title": "Sidebar With Search"
+        },
+        {
+          "name": "sidebar-with-sections",
+          "title": "Sidebar With Sections"
+        },
+        {
+          "name": "sidebar-with-teams",
+          "title": "Sidebar With Teams"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "title": "Skeleton",
+      "description": "skeleton component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "skeleton-basic",
+          "title": "Skeleton Basic"
+        },
+        {
+          "name": "skeleton-card",
+          "title": "Skeleton Card"
+        },
+        {
+          "name": "skeleton-list",
+          "title": "Skeleton List"
+        },
+        {
+          "name": "skeleton-profile",
+          "title": "Skeleton Profile"
+        },
+        {
+          "name": "skeleton-table",
+          "title": "Skeleton Table"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "title": "Slider",
+      "description": "slider component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "slider-basic",
+          "title": "Slider Basic"
+        },
+        {
+          "name": "slider-disabled",
+          "title": "Slider Disabled"
+        },
+        {
+          "name": "slider-range",
+          "title": "Slider Range"
+        },
+        {
+          "name": "slider-steps",
+          "title": "Slider Steps"
+        },
+        {
+          "name": "slider-with-value",
+          "title": "Slider With Value"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "title": "Sonner",
+      "description": "sonner component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "sonner-basic",
+          "title": "Sonner Basic"
+        },
+        {
+          "name": "sonner-promise",
+          "title": "Sonner Promise"
+        },
+        {
+          "name": "sonner-types",
+          "title": "Sonner Types"
+        },
+        {
+          "name": "sonner-with-action",
+          "title": "Sonner With Action"
+        },
+        {
+          "name": "sonner-with-description",
+          "title": "Sonner With Description"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "title": "Spinner",
+      "description": "spinner component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "spinner-basic",
+          "title": "Spinner Basic"
+        },
+        {
+          "name": "spinner-button",
+          "title": "Spinner Button"
+        },
+        {
+          "name": "spinner-colors",
+          "title": "Spinner Colors"
+        },
+        {
+          "name": "spinner-overlay",
+          "title": "Spinner Overlay"
+        },
+        {
+          "name": "spinner-page",
+          "title": "Spinner Page"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "title": "Switch",
+      "description": "switch component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "switch-basic",
+          "title": "Switch Basic"
+        },
+        {
+          "name": "switch-disabled",
+          "title": "Switch Disabled"
+        },
+        {
+          "name": "switch-form",
+          "title": "Switch Form"
+        },
+        {
+          "name": "switch-with-description",
+          "title": "Switch With Description"
+        },
+        {
+          "name": "switch-with-icons",
+          "title": "Switch With Icons"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "title": "Table",
+      "description": "table component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "table-basic",
+          "title": "Table Basic"
+        },
+        {
+          "name": "table-striped",
+          "title": "Table Striped"
+        },
+        {
+          "name": "table-with-actions",
+          "title": "Table With Actions"
+        },
+        {
+          "name": "table-with-avatar",
+          "title": "Table With Avatar"
+        },
+        {
+          "name": "table-with-badges",
+          "title": "Table With Badges"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "title": "Tabs",
+      "description": "tabs component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "tabs-basic",
+          "title": "Tabs Basic"
+        },
+        {
+          "name": "tabs-pills",
+          "title": "Tabs Pills"
+        },
+        {
+          "name": "tabs-underline",
+          "title": "Tabs Underline"
+        },
+        {
+          "name": "tabs-vertical",
+          "title": "Tabs Vertical"
+        },
+        {
+          "name": "tabs-with-icons",
+          "title": "Tabs With Icons"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "title": "Textarea",
+      "description": "textarea component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "textarea-basic",
+          "title": "Textarea Basic"
+        },
+        {
+          "name": "textarea-disabled",
+          "title": "Textarea Disabled"
+        },
+        {
+          "name": "textarea-form",
+          "title": "Textarea Form"
+        },
+        {
+          "name": "textarea-with-button",
+          "title": "Textarea With Button"
+        },
+        {
+          "name": "textarea-with-counter",
+          "title": "Textarea With Counter"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "title": "Toggle",
+      "description": "toggle component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "toggle-basic",
+          "title": "Toggle Basic"
+        },
+        {
+          "name": "toggle-disabled",
+          "title": "Toggle Disabled"
+        },
+        {
+          "name": "toggle-group",
+          "title": "Toggle Group"
+        },
+        {
+          "name": "toggle-variants",
+          "title": "Toggle Variants"
+        },
+        {
+          "name": "toggle-with-text",
+          "title": "Toggle With Text"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "title": "Toggle group",
+      "description": "toggle-group component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "toggle-group-basic",
+          "title": "Toggle Group Basic"
+        },
+        {
+          "name": "toggle-group-disabled",
+          "title": "Toggle Group Disabled"
+        },
+        {
+          "name": "toggle-group-single",
+          "title": "Toggle Group Single"
+        },
+        {
+          "name": "toggle-group-sizes",
+          "title": "Toggle Group Sizes"
+        },
+        {
+          "name": "toggle-group-with-text",
+          "title": "Toggle Group With Text"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "title": "Tooltip",
+      "description": "tooltip component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "tooltip-basic",
+          "title": "Tooltip Basic"
+        },
+        {
+          "name": "tooltip-positions",
+          "title": "Tooltip Positions"
+        },
+        {
+          "name": "tooltip-rich",
+          "title": "Tooltip Rich"
+        },
+        {
+          "name": "tooltip-status",
+          "title": "Tooltip Status"
+        },
+        {
+          "name": "tooltip-toolbar",
+          "title": "Tooltip Toolbar"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "title": "Typography",
+      "description": "typography component variants",
+      "count": 5,
+      "components": [
+        {
+          "name": "typography-headings",
+          "title": "Typography Headings"
+        },
+        {
+          "name": "typography-inline",
+          "title": "Typography Inline"
+        },
+        {
+          "name": "typography-lists",
+          "title": "Typography Lists"
+        },
+        {
+          "name": "typography-paragraphs",
+          "title": "Typography Paragraphs"
+        },
+        {
+          "name": "typography-semantic",
+          "title": "Typography Semantic"
+        }
+      ]
+    }
+  ]
+}

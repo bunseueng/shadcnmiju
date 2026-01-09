@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-combined",
+  "type": "registry:block",
+  "title": "Input Group Combined",
+  "description": "Input Group Combined component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-group/input-group-combined.tsx",
+      "content": "\"use client\";\n\nimport { Copy, Send } from \"lucide-react\";\nimport { Input } from \"@/components/ui/input\";\nimport { Button } from \"@/components/ui/button\";\nimport { Label } from \"@/components/ui/label\";\nimport { toast } from \"sonner\";\n\nexport function InputGroupCombined() {\n  const handleCopy = () => {\n    navigator.clipboard.writeText(\"https://example.com/invite/abc123\");\n    toast(\"Link copied to clipboard\");\n  };\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-4\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"invite-link\">Invite Link</Label>\n          <div className=\"flex\">\n            <Input\n              id=\"invite-link\"\n              type=\"text\"\n              value=\"https://example.com/invite/abc123\"\n              readOnly\n              className=\"rounded-r-none\"\n            />\n            <Button\n              type=\"button\"\n              variant=\"secondary\"\n              className=\"rounded-l-none\"\n              onClick={handleCopy}\n            >\n              <Copy className=\"h-4 w-4\" />\n            </Button>\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"message\">Send Message</Label>\n          <div className=\"flex gap-2\">\n            <Input\n              id=\"message\"\n              type=\"text\"\n              placeholder=\"Type your message...\"\n            />\n            <Button type=\"submit\">\n              <Send className=\"h-4 w-4\" />\n            </Button>\n          </div>\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"api-key\">API Key</Label>\n          <div className=\"flex\">\n            <span className=\"inline-flex items-center rounded-l-md border border-r-0 border-input bg-muted px-3 text-sm text-muted-foreground\">\n              sk_\n            </span>\n            <Input\n              id=\"api-key\"\n              type=\"password\"\n              value=\"live_1234567890abcdef\"\n              readOnly\n              className=\"rounded-none border-r-0\"\n            />\n            <Button\n              type=\"button\"\n              variant=\"outline\"\n              className=\"rounded-l-none\"\n              onClick={handleCopy}\n            >\n              Copy\n            </Button>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/input-group-combined.tsx"
+    }
+  ],
+  "categories": [
+    "input-group",
+    "input-group"
+  ],
+  "registryDependencies": [
+    "input",
+    "button",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "sonner"
+  ]
+}

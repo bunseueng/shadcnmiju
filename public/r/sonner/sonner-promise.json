@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-promise",
+  "type": "registry:block",
+  "title": "Sonner Promise",
+  "description": "Sonner Promise component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sonner/sonner-promise.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"@/components/ui/button\";\n\nconst SonnerPromise = () => {\n  const simulatePromise = () => {\n    return new Promise((resolve) => setTimeout(resolve, 2000));\n  };\n\n  const simulateError = () => {\n    return new Promise((_, reject) => setTimeout(reject, 2000));\n  };\n\n  return (\n    <div className=\"flex flex-wrap gap-2\">\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast.promise(simulatePromise(), {\n            loading: \"Loading...\",\n            success: \"Data loaded successfully!\",\n            error: \"Error loading data\",\n          })\n        }\n      >\n        Promise (Success)\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast.promise(simulateError(), {\n            loading: \"Uploading file...\",\n            success: \"File uploaded!\",\n            error: \"Upload failed. Please try again.\",\n          })\n        }\n      >\n        Promise (Error)\n      </Button>\n      <Button\n        variant=\"outline\"\n        onClick={() =>\n          toast.promise(simulatePromise(), {\n            loading: \"Sending email...\",\n            success: (data) => \"Email sent successfully!\",\n            error: \"Failed to send email\",\n          })\n        }\n      >\n        Send Email\n      </Button>\n    </div>\n  );\n};\n\nexport { SonnerPromise }",
+      "type": "registry:component",
+      "target": "components/sonner-promise.tsx"
+    }
+  ],
+  "categories": [
+    "sonner",
+    "sonner"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "sonner"
+  ]
+}

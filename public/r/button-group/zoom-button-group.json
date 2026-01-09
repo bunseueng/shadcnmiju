@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "zoom-button-group",
+  "type": "registry:block",
+  "title": "Zoom Button Group",
+  "description": "Zoom Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/zoom-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup, ButtonGroupText } from \"@/components/ui/button-group\";\r\nimport { RotateCcw, ZoomIn, ZoomOut } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst ZoomButtonGroup = () => {\r\n  const [zoom, setZoom] = useState(100);\r\n  return (\r\n    <ButtonGroup>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"sm\"\r\n        onClick={() => setZoom(Math.max(50, zoom - 10))}\r\n        className=\"flex-1\"\r\n      >\r\n        <ZoomOut /> Out\r\n      </Button>\r\n      <ButtonGroupText className=\"flex items-center justify-center text-sm font-medium text-slate-300\">\r\n        {zoom}%\r\n      </ButtonGroupText>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"sm\"\r\n        onClick={() => setZoom(Math.max(50, zoom + 10))}\r\n        className=\"flex-1\"\r\n      >\r\n        <ZoomIn /> In\r\n      </Button>\r\n      <Button\r\n        variant=\"outline\"\r\n        size=\"sm\"\r\n        onClick={() => setZoom(100)}\r\n        className=\"flex-1\"\r\n      >\r\n        <RotateCcw /> Reset\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { ZoomButtonGroup }",
+      "type": "registry:component",
+      "target": "components/zoom-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

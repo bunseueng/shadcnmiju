@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-variants",
+  "type": "registry:block",
+  "title": "Toggle Variants",
+  "description": "Toggle Variants component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle/toggle-variants.tsx",
+      "content": "\"use client\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\nimport { Star, Heart, Bookmark, Pin } from \"lucide-react\";\n\nconst ToggleVariants = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex items-center gap-2\">\n        <Toggle variant=\"default\" aria-label=\"Toggle star\">\n          <Star className=\"h-4 w-4\" />\n        </Toggle>\n        <span className=\"text-sm text-muted-foreground\">Default</span>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Toggle variant=\"outline\" aria-label=\"Toggle heart\">\n          <Heart className=\"h-4 w-4\" />\n        </Toggle>\n        <span className=\"text-sm text-muted-foreground\">Outline</span>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Toggle size=\"sm\" aria-label=\"Toggle bookmark\">\n          <Bookmark className=\"h-3 w-3\" />\n        </Toggle>\n        <span className=\"text-sm text-muted-foreground\">Small</span>\n      </div>\n      <div className=\"flex items-center gap-2\">\n        <Toggle size=\"lg\" aria-label=\"Toggle pin\">\n          <Pin className=\"h-5 w-5\" />\n        </Toggle>\n        <span className=\"text-sm text-muted-foreground\">Large</span>\n      </div>\n    </div>\n  );\n};\n\nexport { ToggleVariants }",
+      "type": "registry:component",
+      "target": "components/toggle-variants.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

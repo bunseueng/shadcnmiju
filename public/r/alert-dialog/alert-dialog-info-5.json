@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-info-5",
+  "type": "registry:block",
+  "title": "Alert Dialog Info 5",
+  "description": "Alert Dialog Info 5 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-info-5.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { AlertCircle } from \"lucide-react\";\r\n\r\nconst AlertDialogInfo5 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">\r\n          <AlertCircle />\r\n          Maintenance Notice\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <div className=\"flex items-center gap-2\">\r\n            <AlertCircle className=\"text-orange-500\" />\r\n            <AlertDialogTitle className=\"text-xl\">\r\n              Scheduled Maintenance\r\n            </AlertDialogTitle>\r\n          </div>\r\n          <AlertDialogDescription className=\"pt-2\">\r\n            Our services will be temporarily unavailable on Sunday, Dec 15th\r\n            from 2:00 AM to 4:00 AM EST for routine maintenance.\r\n          </AlertDialogDescription>{\" \"}\r\n          <p className=\"text-sm text-muted-foreground\">\r\n            We apologize for any inconvenience.\r\n          </p>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogAction>Understood</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogInfo5 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-info-5.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

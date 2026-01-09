@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-range",
+  "type": "registry:block",
+  "title": "Slider Range",
+  "description": "Slider Range component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/slider/slider-range.tsx",
+      "content": "\"use client\";\n\nimport { Slider } from \"@/components/ui/slider\";\nimport { Label } from \"@/components/ui/label\";\nimport { useState } from \"react\";\n\nconst SliderRange = () => {\n  const [priceRange, setPriceRange] = useState([100, 500]);\n  const [ageRange, setAgeRange] = useState([18, 65]);\n\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Price Range</Label>\n          <span className=\"text-sm text-muted-foreground\">\n            ${priceRange[0]} - ${priceRange[1]}\n          </span>\n        </div>\n        <Slider\n          value={priceRange}\n          onValueChange={setPriceRange}\n          max={1000}\n          step={10}\n        />\n      </div>\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Age Range</Label>\n          <span className=\"text-sm text-muted-foreground\">\n            {ageRange[0]} - {ageRange[1]} years\n          </span>\n        </div>\n        <Slider\n          value={ageRange}\n          onValueChange={setAgeRange}\n          min={0}\n          max={100}\n          step={1}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport { SliderRange }",
+      "type": "registry:component",
+      "target": "components/slider-range.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "slider"
+  ],
+  "registryDependencies": [
+    "slider",
+    "label"
+  ]
+}

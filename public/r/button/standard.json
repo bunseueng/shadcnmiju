@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "standard",
+  "type": "registry:block",
+  "title": "Standard",
+  "description": "Standard component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/standard.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nexport const Standard = () => {\n  return <Button>Standard</Button>;\n};\n\nexport { Standard }",
+      "type": "registry:component",
+      "target": "components/standard.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ]
+}

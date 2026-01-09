@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-with-text",
+  "type": "registry:block",
+  "title": "Toggle With Text",
+  "description": "Toggle With Text component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle/toggle-with-text.tsx",
+      "content": "\"use client\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\nimport { Wifi, WifiOff, Bell, BellOff, Eye, EyeOff } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst ToggleWithText = () => {\n  const [wifi, setWifi] = useState(true);\n  const [notifications, setNotifications] = useState(true);\n  const [visibility, setVisibility] = useState(false);\n\n  return (\n    <div className=\"flex flex-col gap-3\">\n      <Toggle\n        pressed={wifi}\n        onPressedChange={setWifi}\n        className=\"justify-start gap-2 w-full max-w-[200px]\"\n        aria-label=\"Toggle wifi\"\n      >\n        {wifi ? <Wifi className=\"h-4 w-4\" /> : <WifiOff className=\"h-4 w-4\" />}\n        <span>WiFi {wifi ? \"On\" : \"Off\"}</span>\n      </Toggle>\n      <Toggle\n        pressed={notifications}\n        onPressedChange={setNotifications}\n        className=\"justify-start gap-2 w-full max-w-[200px]\"\n        aria-label=\"Toggle notifications\"\n      >\n        {notifications ? <Bell className=\"h-4 w-4\" /> : <BellOff className=\"h-4 w-4\" />}\n        <span>Notifications {notifications ? \"On\" : \"Off\"}</span>\n      </Toggle>\n      <Toggle\n        pressed={visibility}\n        onPressedChange={setVisibility}\n        className=\"justify-start gap-2 w-full max-w-[200px]\"\n        aria-label=\"Toggle visibility\"\n      >\n        {visibility ? <Eye className=\"h-4 w-4\" /> : <EyeOff className=\"h-4 w-4\" />}\n        <span>{visibility ? \"Visible\" : \"Hidden\"}</span>\n      </Toggle>\n    </div>\n  );\n};\n\nexport { ToggleWithText }",
+      "type": "registry:component",
+      "target": "components/toggle-with-text.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

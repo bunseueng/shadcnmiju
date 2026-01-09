@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-profile",
+  "type": "registry:block",
+  "title": "Form Profile",
+  "description": "Form Profile component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/form/form-profile.tsx",
+      "content": "// @ts-nocheck\n\"use client\";\n\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport { useForm } from \"react-hook-form\";\nimport * as z from \"zod\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport { Input } from \"@/components/ui/input\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { toast } from \"sonner\";\n\nconst formSchema = z.object({\n  username: z.string().min(3, \"Username must be at least 3 characters\"),\n  email: z.string().email(\"Invalid email address\"),\n  bio: z.string().max(160, \"Bio must be 160 characters or less\").optional(),\n  role: z.string().min(1, \"Please select a role\"),\n  website: z.string().url(\"Invalid URL\").optional().or(z.literal(\"\")),\n});\n\nconst FormProfile = () => {\n  const form = useForm<z.infer<typeof formSchema>>({\n    resolver: zodResolver(formSchema) as any,\n    defaultValues: {\n      username: \"\",\n      email: \"\",\n      bio: \"\",\n      role: \"\",\n      website: \"\",\n    },\n  });\n\n  function onSubmit(values: z.infer<typeof formSchema>) {\n    toast.success(\"Profile updated!\");\n  }\n\n  return (\n    <div className=\"w-full max-w-2xl mx-auto p-6 border rounded-lg bg-card\">\n      <div className=\"mb-6\">\n        <h2 className=\"text-2xl font-bold text-foreground\">Edit Profile</h2>\n        <p className=\"text-sm text-muted-foreground\">\n          Update your profile information\n        </p>\n      </div>\n      <Form {...form}>\n        <form onSubmit={form.handleSubmit(onSubmit)} className=\"space-y-6\">\n          <FormField\n            control={form.control}\n            name=\"username\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Username</FormLabel>\n                <FormControl>\n                  <Input placeholder=\"johndoe\" {...field} />\n                </FormControl>\n                <FormDescription>\n                  This is your public display name\n                </FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"email\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Email</FormLabel>\n                <FormControl>\n                  <Input\n                    placeholder=\"you@example.com\"\n                    type=\"email\"\n                    {...field}\n                  />\n                </FormControl>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"role\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Role</FormLabel>\n                <Select\n                  onValueChange={field.onChange}\n                  defaultValue={field.value}\n                >\n                  <FormControl>\n                    <SelectTrigger>\n                      <SelectValue placeholder=\"Select your role\" />\n                    </SelectTrigger>\n                  </FormControl>\n                  <SelectContent>\n                    <SelectItem value=\"developer\">Developer</SelectItem>\n                    <SelectItem value=\"designer\">Designer</SelectItem>\n                    <SelectItem value=\"manager\">Manager</SelectItem>\n                    <SelectItem value=\"other\">Other</SelectItem>\n                  </SelectContent>\n                </Select>\n                <FormDescription>Select your primary role</FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"bio\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Bio</FormLabel>\n                <FormControl>\n                  <Textarea\n                    placeholder=\"Tell us about yourself\"\n                    className=\"resize-none\"\n                    {...field}\n                  />\n                </FormControl>\n                <FormDescription>\n                  Brief description for your profile. Max 160 characters.\n                </FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <FormField\n            control={form.control}\n            name=\"website\"\n            render={({ field }) => (\n              <FormItem>\n                <FormLabel>Website</FormLabel>\n                <FormControl>\n                  <Input placeholder=\"https://example.com\" {...field} />\n                </FormControl>\n                <FormDescription>\n                  Your personal or professional website\n                </FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <div className=\"flex gap-2\">\n            <Button type=\"submit\">Update Profile</Button>\n            <Button\n              type=\"button\"\n              variant=\"outline\"\n              onClick={() => form.reset()}\n            >\n              Cancel\n            </Button>\n          </div>\n        </form>\n      </Form>\n    </div>\n  );\n};\n\nexport { FormProfile }",
+      "type": "registry:component",
+      "target": "components/form-profile.tsx"
+    }
+  ],
+  "categories": [
+    "form",
+    "form"
+  ],
+  "registryDependencies": [
+    "button",
+    "form",
+    "input",
+    "textarea",
+    "select"
+  ],
+  "dependencies": [
+    "sonner",
+    "react-hook-form",
+    "zod"
+  ]
+}

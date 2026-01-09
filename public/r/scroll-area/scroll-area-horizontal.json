@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-horizontal",
+  "type": "registry:block",
+  "title": "Scroll Area Horizontal",
+  "description": "Scroll Area Horizontal component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/scroll-area/scroll-area-horizontal.tsx",
+      "content": "\"use client\";\n\nimport { ScrollArea, ScrollBar } from \"@/components/ui/scroll-area\";\n\nconst artworks = [\n  { title: \"Abstract\", artist: \"John Doe\", image: \"🎨\" },\n  { title: \"Landscape\", artist: \"Jane Smith\", image: \"🏞️\" },\n  { title: \"Portrait\", artist: \"Bob Johnson\", image: \"👤\" },\n  { title: \"Still Life\", artist: \"Alice Brown\", image: \"🍎\" },\n  { title: \"Modern\", artist: \"Charlie Wilson\", image: \"🔷\" },\n  { title: \"Classic\", artist: \"Diana Lee\", image: \"🖼️\" },\n  { title: \"Surreal\", artist: \"Eve Martin\", image: \"🌀\" },\n  { title: \"Minimal\", artist: \"Frank White\", image: \"⬜\" },\n];\n\nconst ScrollAreaHorizontal = () => {\n  return (\n    <ScrollArea className=\"w-full max-w-md whitespace-nowrap rounded-md border\">\n      <div className=\"flex w-max space-x-4 p-4\">\n        {artworks.map((artwork) => (\n          <div\n            key={artwork.title}\n            className=\"shrink-0 w-[150px] rounded-md border p-4\"\n          >\n            <div className=\"text-4xl mb-2 text-center\">{artwork.image}</div>\n            <div className=\"text-sm font-medium text-foreground\">{artwork.title}</div>\n            <div className=\"text-xs text-muted-foreground\">{artwork.artist}</div>\n          </div>\n        ))}\n      </div>\n      <ScrollBar orientation=\"horizontal\" />\n    </ScrollArea>\n  );\n};\n\nexport { ScrollAreaHorizontal }",
+      "type": "registry:component",
+      "target": "components/scroll-area-horizontal.tsx"
+    }
+  ],
+  "categories": [
+    "scroll-area",
+    "scroll-area"
+  ],
+  "registryDependencies": [
+    "scroll-area"
+  ]
+}

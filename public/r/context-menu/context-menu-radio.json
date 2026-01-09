@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-radio",
+  "type": "registry:block",
+  "title": "Context Menu Radio",
+  "description": "Context Menu Radio component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/context-menu/context-menu-radio.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuLabel,\n  ContextMenuRadioGroup,\n  ContextMenuRadioItem,\n  ContextMenuSeparator,\n  ContextMenuTrigger,\n} from \"@/components/ui/context-menu\";\n\nconst ContextMenuRadio = () => {\n  const [theme, setTheme] = useState(\"system\");\n\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground bg-gradient-to-br from-primary/5 to-primary/10\">\n        Right click for theme options\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-48 animate-in zoom-in-90 fade-in-0 duration-200\">\n        <ContextMenuLabel>Theme</ContextMenuLabel>\n        <ContextMenuSeparator />\n        <ContextMenuRadioGroup value={theme} onValueChange={setTheme}>\n          <ContextMenuRadioItem value=\"light\" className=\"cursor-pointer\">\n            Light\n          </ContextMenuRadioItem>\n          <ContextMenuRadioItem value=\"dark\" className=\"cursor-pointer\">\n            Dark\n          </ContextMenuRadioItem>\n          <ContextMenuRadioItem value=\"system\" className=\"cursor-pointer\">\n            System\n          </ContextMenuRadioItem>\n        </ContextMenuRadioGroup>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n};\n\nexport { ContextMenuRadio }",
+      "type": "registry:component",
+      "target": "components/context-menu-radio.tsx"
+    }
+  ],
+  "categories": [
+    "context-menu",
+    "context-menu"
+  ],
+  "registryDependencies": [
+    "context-menu"
+  ]
+}

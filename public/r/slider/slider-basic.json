@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-basic",
+  "type": "registry:block",
+  "title": "Slider Basic",
+  "description": "Slider Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/slider/slider-basic.tsx",
+      "content": "\"use client\";\n\nimport { Slider } from \"@/components/ui/slider\";\nimport { Label } from \"@/components/ui/label\";\n\nconst SliderBasic = () => {\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <Label>Volume</Label>\n        <Slider defaultValue={[50]} max={100} step={1} />\n      </div>\n      <div className=\"space-y-2\">\n        <Label>Brightness</Label>\n        <Slider defaultValue={[75]} max={100} step={1} />\n      </div>\n      <div className=\"space-y-2\">\n        <Label>Opacity</Label>\n        <Slider defaultValue={[100]} max={100} step={1} />\n      </div>\n    </div>\n  );\n};\n\nexport { SliderBasic }",
+      "type": "registry:component",
+      "target": "components/slider-basic.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "slider"
+  ],
+  "registryDependencies": [
+    "slider",
+    "label"
+  ]
+}

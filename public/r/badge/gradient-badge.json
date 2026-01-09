@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "gradient-badge",
+  "type": "registry:block",
+  "title": "Gradient Badge",
+  "description": "Gradient Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/gradient-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst GradientBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge className=\"bg-gradient-to-r from-blue-500 to-cyan-500 border-0 text-white\">\r\n        Blue Gradient\r\n      </Badge>\r\n      <Badge className=\"bg-gradient-to-r from-purple-500 to-pink-500 border-0 text-white\">\r\n        Purple Gradient\r\n      </Badge>\r\n      <Badge className=\"bg-gradient-to-r from-orange-500 to-red-500 border-0 text-white\">\r\n        Orange Gradient\r\n      </Badge>\r\n      <Badge className=\"bg-gradient-to-r from-green-500 to-emerald-500 border-0 text-white\">\r\n        Green Gradient\r\n      </Badge>\r\n      <Badge className=\"bg-gradient-to-r from-gray-800 to-gray-900 border-0 text-white\">\r\n        Dark Gradient\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { GradientBadge }",
+      "type": "registry:component",
+      "target": "components/gradient-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

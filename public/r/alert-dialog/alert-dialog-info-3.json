@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-info-3",
+  "type": "registry:block",
+  "title": "Alert Dialog Info 3",
+  "description": "Alert Dialog Info 3 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-info-3.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogInfo3 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">View Details</Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle className=\"text-xl\">Did you know?</AlertDialogTitle>\r\n          <AlertDialogDescription className=\"pt-2\">\r\n            You can now use{\" \"}\r\n            <kbd className=\"rounded bg-muted px-1\">Ctrl + K</kbd> to search\r\n            through your entire project library instantly.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <AlertDialogFooter>\r\n          <AlertDialogAction className=\"w-full\">\r\n            Got it, thanks!\r\n          </AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogInfo3 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-info-3.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-group",
+  "type": "registry:block",
+  "title": "Field Group",
+  "description": "Field Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/field/field-group.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport {\n  Field,\n  FieldDescription,\n  FieldGroup,\n  FieldLabel,\n  FieldLegend,\n  FieldSeparator,\n  FieldSet,\n} from \"@/components/ui/field\";\n\nexport function FieldGroupExample() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-2xl\">\n        <FieldSet>\n          <FieldLegend>Personal Information</FieldLegend>\n          <FieldDescription>\n            Update your personal details and contact information.\n          </FieldDescription>\n\n          <FieldGroup>\n            <Field>\n              <FieldLabel htmlFor=\"firstName\">First Name</FieldLabel>\n              <Input id=\"firstName\" type=\"text\" placeholder=\"John\" />\n            </Field>\n\n            <Field>\n              <FieldLabel htmlFor=\"lastName\">Last Name</FieldLabel>\n              <Input id=\"lastName\" type=\"text\" placeholder=\"Doe\" />\n            </Field>\n\n            <Field>\n              <FieldLabel htmlFor=\"email\">Email</FieldLabel>\n              <Input id=\"email\" type=\"email\" placeholder=\"john@example.com\" />\n            </Field>\n          </FieldGroup>\n\n          <FieldSeparator>Preferences</FieldSeparator>\n\n          <FieldGroup>\n            <Field orientation=\"horizontal\">\n              <FieldLabel htmlFor=\"newsletter\" className=\"flex items-center gap-2\">\n                <Checkbox id=\"newsletter\" />\n                <div>\n                  <div className=\"font-medium\">Newsletter Subscription</div>\n                  <FieldDescription>\n                    Receive our weekly newsletter with updates and tips.\n                  </FieldDescription>\n                </div>\n              </FieldLabel>\n            </Field>\n\n            <Field orientation=\"horizontal\">\n              <FieldLabel htmlFor=\"updates\" className=\"flex items-center gap-2\">\n                <Checkbox id=\"updates\" />\n                <div>\n                  <div className=\"font-medium\">Product Updates</div>\n                  <FieldDescription>\n                    Get notified when we ship new features.\n                  </FieldDescription>\n                </div>\n              </FieldLabel>\n            </Field>\n          </FieldGroup>\n        </FieldSet>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/field-group.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "field"
+  ],
+  "registryDependencies": [
+    "input",
+    "checkbox",
+    "field"
+  ]
+}

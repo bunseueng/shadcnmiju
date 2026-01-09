@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-with-label",
+  "type": "registry:block",
+  "title": "Checkbox With Label",
+  "description": "Checkbox With Label component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/checkbox/checkbox-with-label.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst CheckboxWithLabelExample = () => {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div className=\"flex items-start space-x-3\">\r\n        <Checkbox id=\"terms\" className=\"mt-1\" />\r\n        <div className=\"space-y-1\">\r\n          <label htmlFor=\"terms\" className=\"text-sm font-medium cursor-pointer\">\r\n            Accept terms and conditions\r\n          </label>\r\n          <p className=\"text-xs text-muted-foreground\">\r\n            You agree to our terms of service and privacy policy.\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <div className=\"flex items-start space-x-3\">\r\n        <Checkbox id=\"newsletter\" className=\"mt-1\" defaultChecked />\r\n        <div className=\"space-y-1\">\r\n          <label\r\n            htmlFor=\"newsletter\"\r\n            className=\"text-sm font-medium cursor-pointer\"\r\n          >\r\n            Subscribe to newsletter\r\n          </label>\r\n          <p className=\"text-xs text-muted-foreground\">\r\n            Get updates about new features and improvements.\r\n          </p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CheckboxWithLabelExample }",
+      "type": "registry:component",
+      "target": "components/checkbox-with-label.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ]
+}

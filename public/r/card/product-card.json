@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "product-card",
+  "type": "registry:block",
+  "title": "Product Card",
+  "description": "Product Card component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/card/product-card.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Card, CardContent, CardFooter, CardTitle } from \"@/components/ui/card\";\r\n\r\nimport { Heart, ShoppingCart } from \"lucide-react\";\r\n\r\nconst ProductCard = () => {\r\n  return (\r\n    <Card className=\"w-87.5 flex flex-col p-0 transform duration-300 hover:scale-105 hover:shadow-lg cursor-pointer\">\r\n      {/* replace with <img/> tag if not using next-js */}\r\n      <div className=\"px-4 pt-4\">\r\n        <img\r\n          src=\"/assets/product-card.webp\"\r\n          alt=\"Image\"\r\n          className=\"w-full h-62.5 object-cover rounded-lg\"\r\n        />\r\n      </div>\r\n      <div className=\"text-start flex-1 px-4 pb-4 space-y-2\">\r\n        <div className=\"flex items-start justify-between\">\r\n          <div className=\"space-y-2\">\r\n            <CardTitle>Sky Edition - Orange – Bathu</CardTitle>\r\n            <Badge>New</Badge>\r\n          </div>\r\n          <Button variant=\"ghost\" size=\"icon\">\r\n            <Heart size={18} />\r\n          </Button>\r\n        </div>\r\n        <CardContent className=\"p-0\">\r\n          <p>\r\n            Sky Edition – Orange blends bold citrus energy with a sleek, modern\r\n            silhouette.\r\n          </p>\r\n        </CardContent>\r\n        <CardFooter className=\"flex items-center justify-between p-0\">\r\n          <div className=\"block\">\r\n            <p className=\"text-sm text-muted-foreground\">Price</p>\r\n            <span className=\"text-xl font-bold\">$94.99</span>\r\n          </div>\r\n          <Button className=\"gap-2\">\r\n            <ShoppingCart className=\"h-4 w-4\" />\r\n            Add to cart\r\n          </Button>\r\n        </CardFooter>\r\n      </div>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport { ProductCard }",
+      "type": "registry:component",
+      "target": "components/product-card.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "card"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

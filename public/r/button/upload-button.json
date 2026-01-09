@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "upload-button",
+  "type": "registry:block",
+  "title": "Upload Button",
+  "description": "Upload Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/upload-button.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Spinner } from \"@/components/ui/spinner\";\r\n\r\nimport { UploadCloud } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst UploadButton = () => {\r\n  const [isUploading, setIsUploading] = useState(false);\r\n\r\n  const handleClick = () => {\r\n    setIsUploading(true);\r\n    // Simulate async operation\r\n    setTimeout(() => setIsUploading(false), 2000);\r\n  };\r\n\r\n  return (\r\n    <Button disabled={isUploading} onClick={handleClick} className=\"gap-2\">\r\n      {isUploading ? <Spinner /> : <UploadCloud className=\"h-4 w-4\" />}\r\n      {isUploading ? \"Uploading...\" : \"Upload\"}\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { UploadButton }",
+      "type": "registry:component",
+      "target": "components/upload-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button",
+    "spinner"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

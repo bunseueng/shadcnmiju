@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-cards",
+  "type": "registry:block",
+  "title": "Scroll Area Cards",
+  "description": "Scroll Area Cards component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/scroll-area/scroll-area-cards.tsx",
+      "content": "\"use client\";\n\nimport { ScrollArea } from \"@/components/ui/scroll-area\";\nimport { Badge } from \"@/components/ui/badge\";\n\nconst projects = [\n  { name: \"Project Alpha\", status: \"Active\", progress: 75 },\n  { name: \"Project Beta\", status: \"Completed\", progress: 100 },\n  { name: \"Project Gamma\", status: \"On Hold\", progress: 30 },\n  { name: \"Project Delta\", status: \"Active\", progress: 50 },\n  { name: \"Project Epsilon\", status: \"Active\", progress: 90 },\n  { name: \"Project Zeta\", status: \"Pending\", progress: 0 },\n  { name: \"Project Eta\", status: \"Active\", progress: 45 },\n  { name: \"Project Theta\", status: \"Completed\", progress: 100 },\n];\n\nconst ScrollAreaCards = () => {\n  return (\n    <ScrollArea className=\"h-[300px] w-full max-w-sm rounded-md border\">\n      <div className=\"p-4 space-y-3\">\n        {projects.map((project) => (\n          <div\n            key={project.name}\n            className=\"rounded-lg border p-3 hover:bg-accent transition-colors\"\n          >\n            <div className=\"flex items-center justify-between mb-2\">\n              <h4 className=\"text-sm font-medium text-foreground\">{project.name}</h4>\n              <Badge\n                variant={\n                  project.status === \"Completed\"\n                    ? \"default\"\n                    : project.status === \"Active\"\n                    ? \"secondary\"\n                    : \"outline\"\n                }\n              >\n                {project.status}\n              </Badge>\n            </div>\n            <div className=\"w-full bg-secondary rounded-full h-2\">\n              <div\n                className=\"bg-primary h-2 rounded-full transition-all\"\n                style={{ width: `${project.progress}%` }}\n              />\n            </div>\n            <p className=\"text-xs text-muted-foreground mt-1\">\n              {project.progress}% complete\n            </p>\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n};\n\nexport { ScrollAreaCards }",
+      "type": "registry:component",
+      "target": "components/scroll-area-cards.tsx"
+    }
+  ],
+  "categories": [
+    "scroll-area",
+    "scroll-area"
+  ],
+  "registryDependencies": [
+    "scroll-area",
+    "badge"
+  ]
+}

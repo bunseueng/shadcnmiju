@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "prev-button",
+  "type": "registry:block",
+  "title": "Prev Button",
+  "description": "Prev Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/prev-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nimport { ArrowLeft } from \"lucide-react\";\r\n\r\nconst PreviousButton = () => {\r\n  return (\r\n    <Button className=\"gap-2\" variant=\"outline\">\r\n      <ArrowLeft className=\"h-4 w-4\" /> Previous\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { PreviousButton }",
+      "type": "registry:component",
+      "target": "components/prev-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

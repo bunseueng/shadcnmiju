@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-share",
+  "type": "registry:block",
+  "title": "Popover Share",
+  "description": "Popover Share component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/popover/popover-share.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Input } from \"@/components/ui/input\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { Share2, Copy, Check, Twitter, Facebook, Linkedin, Mail } from \"lucide-react\";\n\nconst PopoverShare = () => {\n  const [copied, setCopied] = useState(false);\n  const link = \"https://example.com/share/abc123\";\n\n  const handleCopy = () => {\n    navigator.clipboard.writeText(link);\n    setCopied(true);\n    setTimeout(() => setCopied(false), 2000);\n  };\n\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button className=\"gap-2\">\n          <Share2 className=\"h-4 w-4\" />\n          Share\n        </Button>\n      </PopoverTrigger>\n      <PopoverContent className=\"w-80\">\n        <div className=\"space-y-4\">\n          <h4 className=\"font-medium text-foreground\">Share this link</h4>\n          <div className=\"flex items-center gap-2\">\n            <Input value={link} readOnly className=\"text-sm\" />\n            <Button size=\"icon\" variant=\"outline\" onClick={handleCopy}>\n              {copied ? (\n                <Check className=\"h-4 w-4 text-green-500\" />\n              ) : (\n                <Copy className=\"h-4 w-4\" />\n              )}\n            </Button>\n          </div>\n          <div className=\"flex items-center justify-center gap-2\">\n            <Button variant=\"outline\" size=\"icon\" className=\"rounded-full hover:text-sky-500 hover:border-sky-500\">\n              <Twitter className=\"h-4 w-4\" />\n            </Button>\n            <Button variant=\"outline\" size=\"icon\" className=\"rounded-full hover:text-blue-600 hover:border-blue-600\">\n              <Facebook className=\"h-4 w-4\" />\n            </Button>\n            <Button variant=\"outline\" size=\"icon\" className=\"rounded-full hover:text-blue-700 hover:border-blue-700\">\n              <Linkedin className=\"h-4 w-4\" />\n            </Button>\n            <Button variant=\"outline\" size=\"icon\" className=\"rounded-full hover:text-orange-500 hover:border-orange-500\">\n              <Mail className=\"h-4 w-4\" />\n            </Button>\n          </div>\n        </div>\n      </PopoverContent>\n    </Popover>\n  );\n};\n\nexport { PopoverShare }",
+      "type": "registry:component",
+      "target": "components/popover-share.tsx"
+    }
+  ],
+  "categories": [
+    "popover",
+    "popover"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "floating-badge",
+  "type": "registry:block",
+  "title": "Floating Badge",
+  "description": "Floating Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/floating-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst BadgeItem = [\"React\", \"TypeScript\", \"Tailwind\", \"Radix UI\"];\r\n\r\nconst FloatingBadge = () => {\r\n  return (\r\n    <div className=\"mt-16 flex items-center gap-8 justify-center flex-wrap\">\r\n      {BadgeItem.map((tech, index) => (\r\n        <Badge\r\n          key={index}\r\n          className=\"px-4 py-2 text-sm font-medium text-foreground/70 transition-all duration-300 animate-bounce\"\r\n          style={{ animationDelay: `${index * 0.1}s` }}\r\n        >\r\n          {tech}\r\n        </Badge>\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { FloatingBadge }",
+      "type": "registry:component",
+      "target": "components/floating-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

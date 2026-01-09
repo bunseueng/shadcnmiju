@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-filter",
+  "type": "registry:block",
+  "title": "Sheet Filter",
+  "description": "Sheet Filter component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/sheet/sheet-filter.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Label } from \"@/components/ui/label\";\nimport { Slider } from \"@/components/ui/slider\";\nimport {\n  Sheet,\n  SheetClose,\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetTitle,\n  SheetTrigger,\n} from \"@/components/ui/sheet\";\nimport { Filter, RotateCcw } from \"lucide-react\";\nimport { Badge } from \"@/components/ui/badge\";\n\nconst categories = [\"Electronics\", \"Clothing\", \"Books\", \"Home & Garden\", \"Sports\"];\nconst brands = [\"Apple\", \"Samsung\", \"Nike\", \"Adidas\", \"Sony\"];\n\nconst SheetFilter = () => {\n  const [open, setOpen] = useState(false);\n  const [priceRange, setPriceRange] = useState([20, 80]);\n  const [selectedCategories, setSelectedCategories] = useState<string[]>([\"Electronics\"]);\n  const [selectedBrands, setSelectedBrands] = useState<string[]>([\"Apple\"]);\n\n  const filterCount = selectedCategories.length + selectedBrands.length;\n\n  const resetFilters = () => {\n    setPriceRange([20, 80]);\n    setSelectedCategories([]);\n    setSelectedBrands([]);\n  };\n\n  const toggleCategory = (category: string) => {\n    setSelectedCategories((prev) =>\n      prev.includes(category) ? prev.filter((c) => c !== category) : [...prev, category]\n    );\n  };\n\n  const toggleBrand = (brand: string) => {\n    setSelectedBrands((prev) =>\n      prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand]\n    );\n  };\n\n  return (\n    <Sheet open={open} onOpenChange={setOpen}>\n      <SheetTrigger asChild>\n        <Button variant=\"outline\" className=\"gap-2 relative\">\n          <Filter className=\"h-4 w-4\" />\n          Filters\n          {filterCount > 0 && (\n            <Badge className=\"absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs\">\n              {filterCount}\n            </Badge>\n          )}\n        </Button>\n      </SheetTrigger>\n      <SheetContent className=\"w-[350px] sm:w-[400px]\">\n        <SheetHeader>\n          <SheetTitle className=\"text-foreground flex items-center justify-between\">\n            Filters\n            <Button variant=\"ghost\" size=\"sm\" className=\"gap-1 text-muted-foreground\" onClick={resetFilters}>\n              <RotateCcw className=\"h-3 w-3\" />\n              Reset\n            </Button>\n          </SheetTitle>\n          <SheetDescription>Refine your search results</SheetDescription>\n        </SheetHeader>\n        <div className=\"mt-6 space-y-6\">\n          <div className=\"space-y-4\">\n            <h4 className=\"font-medium text-foreground\">Price Range</h4>\n            <Slider\n              value={priceRange}\n              onValueChange={setPriceRange}\n              max={100}\n              step={1}\n              className=\"w-full\"\n            />\n            <div className=\"flex justify-between text-sm text-muted-foreground\">\n              <span>${priceRange[0]}</span>\n              <span>${priceRange[1]}</span>\n            </div>\n          </div>\n          <div className=\"space-y-3\">\n            <h4 className=\"font-medium text-foreground\">Categories</h4>\n            <div className=\"space-y-2\">\n              {categories.map((category) => (\n                <div key={category} className=\"flex items-center space-x-2\">\n                  <Checkbox\n                    id={category}\n                    checked={selectedCategories.includes(category)}\n                    onCheckedChange={() => toggleCategory(category)}\n                  />\n                  <Label htmlFor={category} className=\"cursor-pointer\">\n                    {category}\n                  </Label>\n                </div>\n              ))}\n            </div>\n          </div>\n          <div className=\"space-y-3\">\n            <h4 className=\"font-medium text-foreground\">Brands</h4>\n            <div className=\"space-y-2\">\n              {brands.map((brand) => (\n                <div key={brand} className=\"flex items-center space-x-2\">\n                  <Checkbox\n                    id={brand}\n                    checked={selectedBrands.includes(brand)}\n                    onCheckedChange={() => toggleBrand(brand)}\n                  />\n                  <Label htmlFor={brand} className=\"cursor-pointer\">\n                    {brand}\n                  </Label>\n                </div>\n              ))}\n            </div>\n          </div>\n        </div>\n        <SheetFooter className=\"mt-6\">\n          <SheetClose asChild>\n            <Button variant=\"outline\">Cancel</Button>\n          </SheetClose>\n          <Button onClick={() => setOpen(false)}>\n            Apply Filters ({filterCount})\n          </Button>\n        </SheetFooter>\n      </SheetContent>\n    </Sheet>\n  );\n};\n\nexport { SheetFilter }",
+      "type": "registry:component",
+      "target": "components/sheet-filter.tsx"
+    }
+  ],
+  "categories": [
+    "sheet",
+    "sheet"
+  ],
+  "registryDependencies": [
+    "button",
+    "checkbox",
+    "label",
+    "slider",
+    "sheet",
+    "badge"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

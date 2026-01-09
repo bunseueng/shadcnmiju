@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "size-variation-badge",
+  "type": "registry:block",
+  "title": "Size Variation Badge",
+  "description": "Size Variation Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/size-variation-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst SizeVariationBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-3\">\r\n      <Badge variant=\"outline\" className=\"h-5 px-1.5 text-xs\">\r\n        Extra Small\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"h-6 px-2 text-xs\">\r\n        Small\r\n      </Badge>\r\n      <Badge variant=\"outline\">Default</Badge>\r\n      <Badge variant=\"outline\" className=\"h-8 px-3 text-sm\">\r\n        Large\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"h-10 px-4 text-base\">\r\n        Extra Large\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { SizeVariationBadge }",
+      "type": "registry:component",
+      "target": "components/size-variation-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

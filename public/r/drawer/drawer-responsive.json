@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-responsive",
+  "type": "registry:block",
+  "title": "Drawer Responsive",
+  "description": "Drawer Responsive component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/drawer/drawer-responsive.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/components/ui/drawer\";\nimport { Smartphone, MapPin, Clock, Star } from \"lucide-react\";\n\nconst DrawerResponsive = () => {\n  const [open, setOpen] = useState(false);\n\n  const locations = [\n    { name: \"New York Office\", address: \"123 Broadway, NY 10001\", rating: 4.8, time: \"9AM - 6PM\" },\n    { name: \"San Francisco HQ\", address: \"456 Market St, SF 94103\", rating: 4.9, time: \"8AM - 7PM\" },\n    { name: \"London Branch\", address: \"789 Oxford St, W1D 2HG\", rating: 4.7, time: \"9AM - 5PM\" },\n  ];\n\n  return (\n    <Drawer open={open} onOpenChange={setOpen}>\n      <DrawerTrigger asChild>\n        <Button variant=\"secondary\" className=\"gap-2\">\n          <Smartphone className=\"h-4 w-4\" />\n          Responsive Drawer\n        </Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <div className=\"mx-auto w-full max-w-lg\">\n          <DrawerHeader>\n            <DrawerTitle className=\"text-foreground\">Our Locations</DrawerTitle>\n            <DrawerDescription>Find an office near you.</DrawerDescription>\n          </DrawerHeader>\n          <div className=\"p-4 space-y-3 max-h-[50vh] overflow-y-auto\">\n            {locations.map((location, i) => (\n              <div\n                key={i}\n                className=\"p-4 rounded-xl border border-border hover:border-primary/50 transition-all cursor-pointer group\"\n              >\n                <div className=\"flex items-start justify-between\">\n                  <div className=\"space-y-1\">\n                    <h3 className=\"font-semibold text-foreground group-hover:text-primary transition-colors\">\n                      {location.name}\n                    </h3>\n                    <div className=\"flex items-center gap-1 text-sm text-muted-foreground\">\n                      <MapPin className=\"h-3 w-3\" />\n                      {location.address}\n                    </div>\n                  </div>\n                  <div className=\"flex items-center gap-1 text-amber-500\">\n                    <Star className=\"h-4 w-4 fill-current\" />\n                    <span className=\"text-sm font-medium\">{location.rating}</span>\n                  </div>\n                </div>\n                <div className=\"flex items-center gap-1 mt-2 text-sm text-muted-foreground\">\n                  <Clock className=\"h-3 w-3\" />\n                  {location.time}\n                </div>\n              </div>\n            ))}\n          </div>\n          <DrawerFooter>\n            <Button onClick={() => setOpen(false)}>View All Locations</Button>\n            <DrawerClose asChild>\n              <Button variant=\"outline\">Close</Button>\n            </DrawerClose>\n          </DrawerFooter>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  );\n};\n\nexport { DrawerResponsive }",
+      "type": "registry:component",
+      "target": "components/drawer-responsive.tsx"
+    }
+  ],
+  "categories": [
+    "drawer",
+    "drawer"
+  ],
+  "registryDependencies": [
+    "button",
+    "drawer"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

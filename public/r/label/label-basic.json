@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-basic",
+  "type": "registry:block",
+  "title": "Label Basic",
+  "description": "Label Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/label/label-basic.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\n\nexport function LabelBasic() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"name\">Name</Label>\n          <Input id=\"name\" placeholder=\"Enter your name\" />\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"email\">Email</Label>\n          <Input id=\"email\" type=\"email\" placeholder=\"Enter your email\" />\n        </div>\n\n        <div className=\"space-y-2\">\n          <Label htmlFor=\"message\">Message</Label>\n          <Textarea id=\"message\" placeholder=\"Type your message here\" />\n        </div>\n\n        <div className=\"flex items-center space-x-2\">\n          <Checkbox id=\"terms\" />\n          <Label\n            htmlFor=\"terms\"\n            className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"\n          >\n            Accept terms and conditions\n          </Label>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/label-basic.tsx"
+    }
+  ],
+  "categories": [
+    "label",
+    "label"
+  ],
+  "registryDependencies": [
+    "input",
+    "label",
+    "textarea",
+    "checkbox"
+  ]
+}

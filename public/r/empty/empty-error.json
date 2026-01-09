@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-error",
+  "type": "registry:block",
+  "title": "Empty Error",
+  "description": "Empty Error component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/empty/empty-error.tsx",
+      "content": "\"use client\";\n\nimport { AlertCircle } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function EmptyError() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"flex flex-col items-center justify-center text-center space-y-4 max-w-md\">\n        <div className=\"rounded-full bg-destructive/10 p-6\">\n          <AlertCircle className=\"h-12 w-12 text-destructive\" />\n        </div>\n        <div className=\"space-y-2\">\n          <h3 className=\"text-xl font-semibold\">Something went wrong</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            We encountered an error while loading your data. Please try again.\n          </p>\n        </div>\n        <div className=\"flex gap-2\">\n          <Button>Retry</Button>\n          <Button variant=\"outline\">Go Back</Button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/empty-error.tsx"
+    }
+  ],
+  "categories": [
+    "empty",
+    "empty"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

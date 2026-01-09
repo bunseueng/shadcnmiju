@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "type": "registry:block",
+  "title": "Button Group",
+  "description": "Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/button-group.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\n\nconst ButtonGroup = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex gap-2\">\n        <Button>Save</Button>\n        <Button variant=\"outline\">Cancel</Button>\n      </div>\n      <div className=\"flex gap-2\">\n        <Button variant=\"outline\">Previous</Button>\n        <Button>Next</Button>\n      </div>\n      <div className=\"inline-flex rounded-md shadow-sm\" role=\"group\">\n        <Button variant=\"outline\" className=\"rounded-r-none\">\n          Left\n        </Button>\n        <Button variant=\"outline\" className=\"rounded-none border-l-0\">\n          Middle\n        </Button>\n        <Button variant=\"outline\" className=\"rounded-l-none border-l-0\">\n          Right\n        </Button>\n      </div>\n    </div>\n  );\n};\n\nexport { ButtonGroup }",
+      "type": "registry:component",
+      "target": "components/button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ]
+}

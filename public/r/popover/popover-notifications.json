@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-notifications",
+  "type": "registry:block",
+  "title": "Popover Notifications",
+  "description": "Popover Notifications component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/popover/popover-notifications.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Bell, MessageSquare, UserPlus, Heart, Settings } from \"lucide-react\";\n\nconst notifications = [\n  { icon: MessageSquare, title: \"New message\", desc: \"John sent you a message\", time: \"2m ago\", color: \"text-blue-500\" },\n  { icon: UserPlus, title: \"New follower\", desc: \"Sarah started following you\", time: \"1h ago\", color: \"text-green-500\" },\n  { icon: Heart, title: \"New like\", desc: \"Your post received 50 likes\", time: \"3h ago\", color: \"text-red-500\" },\n];\n\nconst PopoverNotifications = () => {\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <Button variant=\"outline\" size=\"icon\" className=\"relative\">\n          <Bell className=\"h-4 w-4\" />\n          <Badge className=\"absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center text-xs\">\n            3\n          </Badge>\n        </Button>\n      </PopoverTrigger>\n      <PopoverContent className=\"w-80 p-0\">\n        <div className=\"flex items-center justify-between p-4 border-b border-border\">\n          <h4 className=\"font-semibold text-foreground\">Notifications</h4>\n          <Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\">\n            <Settings className=\"h-4 w-4\" />\n          </Button>\n        </div>\n        <div className=\"max-h-[300px] overflow-y-auto\">\n          {notifications.map((notif, i) => (\n            <div\n              key={i}\n              className=\"flex items-start gap-3 p-4 hover:bg-accent cursor-pointer transition-colors border-b border-border last:border-0\"\n            >\n              <div className={`p-2 rounded-full bg-muted ${notif.color}`}>\n                <notif.icon className=\"h-4 w-4\" />\n              </div>\n              <div className=\"flex-1 min-w-0\">\n                <p className=\"text-sm font-medium text-foreground\">{notif.title}</p>\n                <p className=\"text-sm text-muted-foreground truncate\">{notif.desc}</p>\n              </div>\n              <span className=\"text-xs text-muted-foreground shrink-0\">{notif.time}</span>\n            </div>\n          ))}\n        </div>\n        <div className=\"p-3 border-t border-border\">\n          <Button variant=\"ghost\" className=\"w-full text-primary\">\n            View all notifications\n          </Button>\n        </div>\n      </PopoverContent>\n    </Popover>\n  );\n};\n\nexport { PopoverNotifications }",
+      "type": "registry:component",
+      "target": "components/popover-notifications.tsx"
+    }
+  ],
+  "categories": [
+    "popover",
+    "popover"
+  ],
+  "registryDependencies": [
+    "button",
+    "popover",
+    "badge"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

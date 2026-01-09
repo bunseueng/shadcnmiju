@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-destructive-4",
+  "type": "registry:block",
+  "title": "Alert Dialog Destructive 4",
+  "description": "Alert Dialog Destructive 4 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-destructive-4.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Shield, TriangleAlert } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogDistructive4 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"destructive\">\r\n          <Shield /> Nuclear Option\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <form onSubmit={(e) => e.preventDefault()}>\r\n          <AlertDialogHeader>\r\n            <div className=\"flex items-center gap-2 text-red-400\">\r\n              <Shield className=\"h-5 w-5\" />\r\n              <AlertDialogTitle>Critical System Action</AlertDialogTitle>\r\n            </div>\r\n            <AlertDialogDescription className=\"bg-red-50 text-red-800 border rounded p-3 space-y-2 my-2\">\r\n              <span className=\"flex items-start gap-2\">\r\n                <TriangleAlert className=\"w-5 h-5\" />\r\n                <strong className=\"font-semibold\">\r\n                  CRITICAL SYSTEM OPERATION\r\n                </strong>\r\n              </span>\r\n              <span>\r\n                This action will perform irreversible system-level changes that\r\n                affect all users.\r\n              </span>\r\n            </AlertDialogDescription>\r\n          </AlertDialogHeader>\r\n          <div className=\"space-y-2 my-4\">\r\n            <ul className=\"list-disc list-inside text-md mt-2 space-y-2 \">\r\n              <li className=\"marker:text-red-500\">\r\n                Immediate effect on production environment\r\n              </li>\r\n              <li className=\"marker:text-red-500\">\r\n                Cannot be rolled back or undone\r\n              </li>\r\n              <li className=\"marker:text-red-500\">\r\n                Requires system administrator approval\r\n              </li>\r\n            </ul>\r\n            <AlertDialogDescription className=\"bg-yellow-50 text-yellow-800 border rounded p-3 space-y-2 my-2\">\r\n              <span className=\"flex items-start gap-2\">\r\n                <TriangleAlert className=\"w-5 h-5\" />\r\n                <strong className=\"font-semibold\">\r\n                  Only proceed if you have explicit authorization and understand\r\n                  the consequences.\r\n                </strong>\r\n              </span>\r\n            </AlertDialogDescription>\r\n          </div>\r\n          <AlertDialogFooter className=\"mt-5\">\r\n            <AlertDialogCancel>Abort Operation</AlertDialogCancel>\r\n            <AlertDialogAction className=\"bg-red-500 hover:bg-red-300 text-white\">\r\n              Execute Critical Action\r\n            </AlertDialogAction>\r\n          </AlertDialogFooter>\r\n        </form>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogDistructive4 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-destructive-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

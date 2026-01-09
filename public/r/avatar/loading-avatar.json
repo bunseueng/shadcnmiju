@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading-avatar",
+  "type": "registry:block",
+  "title": "Loading Avatar",
+  "description": "Loading Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/loading-avatar.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nimport { Skeleton } from \"@/components/ui/skeleton\";\r\n\r\nimport { useState, useEffect } from \"react\";\r\n\r\nconst LoadingAvatar = () => {\r\n  const [isLoading, setIsLoading] = useState(true);\r\n\r\n  useEffect(() => {\r\n    const timer = setTimeout(() => setIsLoading(false), 2000);\r\n    return () => clearTimeout(timer);\r\n  }, []);\r\n\r\n  if (isLoading) {\r\n    return <Skeleton className=\"h-10 w-10 rounded-full\" />;\r\n  }\r\n\r\n  return (\r\n    <Avatar>\r\n      <AvatarImage src=\"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face\" />\r\n      <AvatarFallback>MJ</AvatarFallback>\r\n    </Avatar>\r\n  );\r\n};\r\nexport { LoadingAvatar }",
+      "type": "registry:component",
+      "target": "components/loading-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "skeleton"
+  ]
+}

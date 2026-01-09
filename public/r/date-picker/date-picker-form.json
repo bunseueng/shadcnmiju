@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-form",
+  "type": "registry:block",
+  "title": "Date Picker Form",
+  "description": "Date Picker Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/date-picker/date-picker-form.tsx",
+      "content": "// @ts-nocheck\n\"use client\";\n\nimport * as React from \"react\";\nimport { format } from \"date-fns\";\nimport { Calendar as CalendarIcon } from \"lucide-react\";\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport { useForm } from \"react-hook-form\";\nimport * as z from \"zod\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage,\n} from \"@/components/ui/form\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\nimport { toast } from \"sonner\";\n\nconst formSchema = z.object({\n  dob: z.date({ message: \"A date of birth is required.\" }),\n});\n\nexport function DatePickerForm() {\n  const form = useForm<z.infer<typeof formSchema>>({\n    resolver: zodResolver(formSchema) as any,\n  });\n\n  function onSubmit(data: z.infer<typeof formSchema>) {\n    toast(\"Form submitted!\", {\n      description: `Date of birth: ${format(data.dob, \"PPP\")}`,\n    });\n  }\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <Form {...form}>\n        <form onSubmit={form.handleSubmit(onSubmit)} className=\"w-[350px] space-y-6\">\n          <FormField\n            control={form.control}\n            name=\"dob\"\n            render={({ field }) => (\n              <FormItem className=\"flex flex-col\">\n                <FormLabel>Date of birth</FormLabel>\n                <Popover>\n                  <PopoverTrigger asChild>\n                    <FormControl>\n                      <Button\n                        variant={\"outline\"}\n                        className={cn(\n                          \"w-full pl-3 text-left font-normal\",\n                          !field.value && \"text-muted-foreground\"\n                        )}\n                      >\n                        {field.value ? (\n                          format(field.value, \"PPP\")\n                        ) : (\n                          <span>Pick a date</span>\n                        )}\n                        <CalendarIcon className=\"ml-auto h-4 w-4 opacity-50\" />\n                      </Button>\n                    </FormControl>\n                  </PopoverTrigger>\n                  <PopoverContent className=\"w-auto p-0\" align=\"start\">\n                    <Calendar\n                      mode=\"single\"\n                      selected={field.value}\n                      onSelect={field.onChange}\n                      disabled={(date) =>\n                        date > new Date() || date < new Date(\"1900-01-01\")\n                      }\n                      initialFocus\n                    />\n                  </PopoverContent>\n                </Popover>\n                <FormDescription>\n                  Your date of birth is used to calculate your age.\n                </FormDescription>\n                <FormMessage />\n              </FormItem>\n            )}\n          />\n          <Button type=\"submit\" className=\"w-full\">Submit</Button>\n        </form>\n      </Form>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/date-picker-form.tsx"
+    }
+  ],
+  "categories": [
+    "date-picker",
+    "date-picker"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "form",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "date-fns",
+    "sonner",
+    "react-hook-form",
+    "zod"
+  ]
+}

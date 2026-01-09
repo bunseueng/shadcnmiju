@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-states",
+  "type": "registry:block",
+  "title": "Checkbox States",
+  "description": "Checkbox States component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/checkbox/checkbox-states.tsx",
+      "content": "import { Checkbox } from \"@/components/ui/checkbox\";\r\n\r\nconst CheckboxStates = () => {\r\n  return (\r\n    <div className=\"space-y-4\">\r\n      <div>\r\n        <h4 className=\"text-sm font-medium mb-2\">Default State</h4>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"state1\" />\r\n          <label htmlFor=\"state1\" className=\"text-sm cursor-pointer\">\r\n            Default unchecked\r\n          </label>\r\n        </div>\r\n      </div>\r\n      <div>\r\n        <h4 className=\"text-sm font-medium mb-2\">Checked State</h4>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"state2\" defaultChecked />\r\n          <label htmlFor=\"state2\" className=\"text-sm cursor-pointer\">\r\n            Default checked\r\n          </label>\r\n        </div>\r\n      </div>\r\n      <div>\r\n        <h4 className=\"text-sm font-medium mb-2\">Disabled State</h4>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"state3\" disabled />\r\n          <label htmlFor=\"state3\" className=\"text-sm cursor-pointer opacity-50\">\r\n            Disabled unchecked\r\n          </label>\r\n        </div>\r\n      </div>\r\n      <div>\r\n        <h4 className=\"text-sm font-medium mb-2\">Disabled Checked State</h4>\r\n        <div className=\"flex items-center space-x-2\">\r\n          <Checkbox id=\"state4\" disabled defaultChecked />\r\n          <label htmlFor=\"state4\" className=\"text-sm cursor-pointer opacity-50\">\r\n            Disabled checked\r\n          </label>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CheckboxStates }",
+      "type": "registry:component",
+      "target": "components/checkbox-states.tsx"
+    }
+  ],
+  "categories": [
+    "checkbox",
+    "checkbox"
+  ],
+  "registryDependencies": [
+    "checkbox"
+  ]
+}

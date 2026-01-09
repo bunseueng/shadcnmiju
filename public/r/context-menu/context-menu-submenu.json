@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-submenu",
+  "type": "registry:block",
+  "title": "Context Menu Submenu",
+  "description": "Context Menu Submenu component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/context-menu/context-menu-submenu.tsx",
+      "content": "\"use client\";\n\nimport {\n  ContextMenu,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuSeparator,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n} from \"@/components/ui/context-menu\";\nimport {\n  Share2,\n  Mail,\n  MessageCircle,\n  Twitter,\n  Facebook,\n  Linkedin,\n  Link2,\n} from \"lucide-react\";\n\nconst ContextMenuSubmenu = () => {\n  return (\n    <ContextMenu>\n      <ContextMenuTrigger className=\"flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground\">\n        Right click to share\n      </ContextMenuTrigger>\n      <ContextMenuContent className=\"w-56 animate-in fade-in-0 slide-in-from-left-2 duration-200\">\n        <ContextMenuSub>\n          <ContextMenuSubTrigger className=\"cursor-pointer\">\n            <Share2 className=\"mr-2 h-4 w-4\" />\n            Share via\n          </ContextMenuSubTrigger>\n          <ContextMenuSubContent className=\"w-48 animate-in slide-in-from-left-1 fade-in-0 duration-150\">\n            <ContextMenuItem className=\"cursor-pointer\">\n              <Mail className=\"mr-2 h-4 w-4 text-orange-500\" />\n              Email\n            </ContextMenuItem>\n            <ContextMenuItem className=\"cursor-pointer\">\n              <MessageCircle className=\"mr-2 h-4 w-4 text-green-500\" />\n              Messages\n            </ContextMenuItem>\n            <ContextMenuSeparator />\n            <ContextMenuItem className=\"cursor-pointer\">\n              <Twitter className=\"mr-2 h-4 w-4 text-sky-500\" />\n              Twitter\n            </ContextMenuItem>\n            <ContextMenuItem className=\"cursor-pointer\">\n              <Facebook className=\"mr-2 h-4 w-4 text-blue-600\" />\n              Facebook\n            </ContextMenuItem>\n            <ContextMenuItem className=\"cursor-pointer\">\n              <Linkedin className=\"mr-2 h-4 w-4 text-blue-700\" />\n              LinkedIn\n            </ContextMenuItem>\n          </ContextMenuSubContent>\n        </ContextMenuSub>\n        <ContextMenuSeparator />\n        <ContextMenuItem className=\"cursor-pointer\">\n          <Link2 className=\"mr-2 h-4 w-4\" />\n          Copy Link\n        </ContextMenuItem>\n      </ContextMenuContent>\n    </ContextMenu>\n  );\n};\n\nexport { ContextMenuSubmenu }",
+      "type": "registry:component",
+      "target": "components/context-menu-submenu.tsx"
+    }
+  ],
+  "categories": [
+    "context-menu",
+    "context-menu"
+  ],
+  "registryDependencies": [
+    "context-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

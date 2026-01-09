@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-basic",
+  "type": "registry:block",
+  "title": "Navigation Menu Basic",
+  "description": "Navigation Menu Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/navigation-menu/navigation-menu-basic.tsx",
+      "content": "\"use client\";\n\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n  navigationMenuTriggerStyle,\n} from \"@/components/ui/navigation-menu\";\nimport Link from \"next/link\";\n\nconst NavigationMenuBasic = () => {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid gap-3 p-4 w-[400px]\">\n              <li>\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                    <div className=\"text-sm font-medium leading-none\">\n                      Introduction\n                    </div>\n                    <p className=\"line-clamp-2 text-sm leading-snug text-muted-foreground\">\n                      Learn the basics and get started quickly.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n              <li>\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                    <div className=\"text-sm font-medium leading-none\">\n                      Installation\n                    </div>\n                    <p className=\"line-clamp-2 text-sm leading-snug text-muted-foreground\">\n                      Step-by-step installation guide.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuLink href=\"#\" className={navigationMenuTriggerStyle()}>\n            Documentation\n          </NavigationMenuLink>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n};\n\nexport { NavigationMenuBasic }",
+      "type": "registry:component",
+      "target": "components/navigation-menu-basic.tsx"
+    }
+  ],
+  "categories": [
+    "navigation-menu",
+    "navigation-menu"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ]
+}

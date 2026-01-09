@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-basic",
+  "type": "registry:block",
+  "title": "Kbd Basic",
+  "description": "Kbd Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/kbd/kbd-basic.tsx",
+      "content": "\"use client\";\n\nimport { Kbd, KbdGroup } from \"@/components/ui/kbd\";\n\nexport function KbdBasic() {\n  return (\n    <div className=\"flex flex-col items-center justify-center p-8 gap-6\">\n      <div className=\"space-y-4 text-center\">\n        <div className=\"text-sm text-muted-foreground\">Single Keys</div>\n        <div className=\"flex items-center gap-3 flex-wrap justify-center\">\n          <Kbd>A</Kbd>\n          <Kbd>Ctrl</Kbd>\n          <Kbd>Shift</Kbd>\n          <Kbd>Alt</Kbd>\n          <Kbd>Enter</Kbd>\n          <Kbd>Esc</Kbd>\n          <Kbd>Tab</Kbd>\n          <Kbd>Space</Kbd>\n        </div>\n      </div>\n\n      <div className=\"space-y-4 text-center\">\n        <div className=\"text-sm text-muted-foreground\">Arrow Keys</div>\n        <div className=\"flex items-center gap-3 flex-wrap justify-center\">\n          <Kbd>↑</Kbd>\n          <Kbd>↓</Kbd>\n          <Kbd>←</Kbd>\n          <Kbd>→</Kbd>\n        </div>\n      </div>\n\n      <div className=\"space-y-4 text-center\">\n        <div className=\"text-sm text-muted-foreground\">Function Keys</div>\n        <div className=\"flex items-center gap-3 flex-wrap justify-center\">\n          <Kbd>F1</Kbd>\n          <Kbd>F2</Kbd>\n          <Kbd>F5</Kbd>\n          <Kbd>F12</Kbd>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/kbd-basic.tsx"
+    }
+  ],
+  "categories": [
+    "kbd",
+    "kbd"
+  ],
+  "registryDependencies": [
+    "kbd"
+  ]
+}

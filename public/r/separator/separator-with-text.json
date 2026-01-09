@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-with-text",
+  "type": "registry:block",
+  "title": "Separator With Text",
+  "description": "Separator With Text component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/separator/separator-with-text.tsx",
+      "content": "\"use client\";\n\nimport { Separator } from \"@/components/ui/separator\";\n\nconst SeparatorWithText = () => {\n  return (\n    <div className=\"w-full max-w-sm space-y-6\">\n      <div className=\"relative\">\n        <div className=\"absolute inset-0 flex items-center\">\n          <Separator className=\"w-full\" />\n        </div>\n        <div className=\"relative flex justify-center text-xs uppercase\">\n          <span className=\"bg-background px-2 text-muted-foreground\">\n            Or continue with\n          </span>\n        </div>\n      </div>\n\n      <div className=\"relative\">\n        <div className=\"absolute inset-0 flex items-center\">\n          <Separator className=\"w-full\" />\n        </div>\n        <div className=\"relative flex justify-center text-xs uppercase\">\n          <span className=\"bg-background px-2 text-muted-foreground\">\n            New section\n          </span>\n        </div>\n      </div>\n\n      <div className=\"relative\">\n        <div className=\"absolute inset-0 flex items-center\">\n          <Separator className=\"w-full\" />\n        </div>\n        <div className=\"relative flex justify-center\">\n          <span className=\"bg-background px-2 text-sm text-foreground\">\n            January 2024\n          </span>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport { SeparatorWithText }",
+      "type": "registry:component",
+      "target": "components/separator-with-text.tsx"
+    }
+  ],
+  "categories": [
+    "separator",
+    "separator"
+  ],
+  "registryDependencies": [
+    "separator"
+  ]
+}

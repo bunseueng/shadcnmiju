@@ -6,6 +6,8 @@ import { type ComponentPreviewType } from "@/types/ComponentType";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useAtom } from "jotai/react";
 import { viewModeAtom } from "@/stores/modeStorage";
+import { useEffect, useState } from "react";
+import { Spinner } from "@/components/ui/spinner";
 
 interface ComponentShowcaseProps {
   components: ComponentPreviewType[];
@@ -17,11 +19,17 @@ const ComponentShowcase = ({
   componentId,
 }: ComponentShowcaseProps) => {
   const [viewMode, setViewMode] = useAtom<"grid" | "list">(viewModeAtom);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
   const searchParams = useSearchParams();
   const search = searchParams.get("search") || "";
   const pathname = usePathname();
   const pathSegments = pathname.split("/");
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   const secondSegment = pathSegments[2];
 
@@ -44,8 +52,26 @@ const ComponentShowcase = ({
   const selectedComponents = components.find(
     (component) => component.id === selectedId
   );
+
+  // Show loading state until hydrated to prevent layout shift
+  if (!mounted) {
+    return (
+      <div className="rounded-md flex flex-col lg:flex-row">
+        <ComponentLists
+          components={components}
+          selectedComponent={selectedComponents}
+          onSearchChange={handleSearch}
+          search={search}
+        />
+        <div className="flex-1 w-full border border-dashed flex items-center justify-center min-h-96">
+          <Spinner className="size-8" />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="rounded-md lg:grid lg:grid-cols-[300px_1fr]">
+    <div className="rounded-md flex flex-col lg:flex-row">
       <ComponentLists
         components={components}
         selectedComponent={selectedComponents}

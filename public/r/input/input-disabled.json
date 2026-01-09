@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-disabled",
+  "type": "registry:block",
+  "title": "Input Disabled",
+  "description": "Input Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input/input-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\n\nconst InputDisabled = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"disabled-empty\">Disabled (Empty)</Label>\n        <Input id=\"disabled-empty\" disabled placeholder=\"Cannot type here\" />\n      </div>\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"disabled-value\">Disabled (With Value)</Label>\n        <Input id=\"disabled-value\" disabled defaultValue=\"Read-only content\" />\n      </div>\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"readonly\">Read Only</Label>\n        <Input id=\"readonly\" readOnly defaultValue=\"This is read-only text\" />\n      </div>\n      <div className=\"grid w-full items-center gap-1.5\">\n        <Label htmlFor=\"enabled\">Enabled</Label>\n        <Input id=\"enabled\" placeholder=\"You can type here\" />\n      </div>\n    </div>\n  );\n};\n\nexport { InputDisabled }",
+      "type": "registry:component",
+      "target": "components/input-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "input",
+    "input"
+  ],
+  "registryDependencies": [
+    "input",
+    "label"
+  ]
+}

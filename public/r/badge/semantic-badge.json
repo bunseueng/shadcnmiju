@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "semantic-badge",
+  "type": "registry:block",
+  "title": "Semantic Badge",
+  "description": "Semantic Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/semantic-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst SemanticBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge className=\"bg-green-500 hover:bg-green-600 border-0 text-white\">\r\n        Success\r\n      </Badge>\r\n      <Badge className=\"bg-blue-500 hover:bg-blue-600 border-0 text-white\">\r\n        Info\r\n      </Badge>\r\n      <Badge className=\"bg-yellow-500 hover:bg-yellow-600 border-0 text-white\">\r\n        Warning\r\n      </Badge>\r\n      <Badge className=\"bg-red-500 hover:bg-red-600 border-0 text-white\">\r\n        Error\r\n      </Badge>\r\n      <Badge className=\"bg-purple-500 hover:bg-purple-600 border-0 text-white\">\r\n        Premium\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { SemanticBadge }",
+      "type": "registry:component",
+      "target": "components/semantic-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

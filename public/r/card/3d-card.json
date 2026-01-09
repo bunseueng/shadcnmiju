@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "3d-card",
+  "type": "registry:block",
+  "title": "3d Card",
+  "description": "3d Card component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/card/3d-card.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\nimport { useRef, useState } from \"react\";\r\n\r\nconst ThreeDCard = () => {\r\n  const [rotateX, setRotateX] = useState(0);\r\n  const [rotateY, setRotateY] = useState(0);\r\n  const cardRef = useRef<HTMLDivElement>(null);\r\n\r\n  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {\r\n    if (!cardRef.current) return;\r\n\r\n    const rect = cardRef.current.getBoundingClientRect();\r\n    const x = e.clientX - rect.left;\r\n    const y = e.clientY - rect.top;\r\n\r\n    const centerX = rect.width / 2;\r\n    const centerY = rect.height / 2;\r\n\r\n    const rotX = ((y - centerY) / centerY) * 10;\r\n    const rotY = ((x - centerX) / centerX) * -10;\r\n\r\n    setRotateX(rotX);\r\n    setRotateY(rotY);\r\n  };\r\n\r\n  const handleMouseLeave = () => {\r\n    setRotateX(0);\r\n    setRotateY(0);\r\n  };\r\n  return (\r\n    <Card className=\"w-87.5 border-0 shadow-none cursor-grab bg-transparent\">\r\n      <div\r\n        ref={cardRef}\r\n        onMouseMove={handleMouseMove}\r\n        onMouseLeave={handleMouseLeave}\r\n        style={{\r\n          perspective: \"1000px\",\r\n        }}\r\n        className=\"w-full\"\r\n      >\r\n        <div\r\n          style={{\r\n            transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,\r\n            transition: \"transform 0.1s ease-out\",\r\n            transformStyle: \"preserve-3d\",\r\n          }}\r\n        >\r\n          <CardContent>\r\n            <img\r\n              src=\"/assets/card2.jpg\"\r\n              alt=\"image\"\r\n              className=\"w-full h-[450px] object-cover rounded-lg shadow-lg\"\r\n            />\r\n          </CardContent>\r\n        </div>\r\n      </div>\r\n    </Card>\r\n  );\r\n};\r\n\r\nexport { ThreeDCard }",
+      "type": "registry:component",
+      "target": "components/3d-card.tsx"
+    }
+  ],
+  "categories": [
+    "card",
+    "card"
+  ],
+  "registryDependencies": [
+    "card"
+  ]
+}

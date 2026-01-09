@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "online-avatar",
+  "type": "registry:block",
+  "title": "Online Avatar",
+  "description": "Online Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/online-avatar.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst OnlineAvatar = () => {\r\n  return (\r\n    <div className=\"relative\">\r\n      <Avatar>\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <span className=\"absolute bottom-0 right-0 block h-2 w-2 rounded-full bg-green-400 ring-2 ring-white\" />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { OnlineAvatar }",
+      "type": "registry:component",
+      "target": "components/online-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ]
+}

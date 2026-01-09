@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-disabled",
+  "type": "registry:block",
+  "title": "Textarea Disabled",
+  "description": "Textarea Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/textarea/textarea-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { Label } from \"@/components/ui/label\";\n\nconst TextareaDisabled = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"enabled\">Enabled</Label>\n        <Textarea id=\"enabled\" placeholder=\"You can type here...\" />\n      </div>\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"disabled\" className=\"text-muted-foreground\">\n          Disabled\n        </Label>\n        <Textarea id=\"disabled\" placeholder=\"Cannot type here\" disabled />\n      </div>\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"readonly\">Read Only</Label>\n        <Textarea\n          id=\"readonly\"\n          readOnly\n          defaultValue=\"This content is read-only and cannot be modified by the user.\"\n        />\n      </div>\n    </div>\n  );\n};\n\nexport { TextareaDisabled }",
+      "type": "registry:component",
+      "target": "components/textarea-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "textarea",
+    "textarea"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ]
+}

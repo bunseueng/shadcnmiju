@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "data-table-sorting",
+  "type": "registry:block",
+  "title": "Data Table Sorting",
+  "description": "Data Table Sorting component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/data-table/data-table-sorting.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  ColumnDef,\n  SortingState,\n  flexRender,\n  getCoreRowModel,\n  getSortedRowModel,\n  useReactTable,\n} from \"@tanstack/react-table\";\nimport { ArrowUpDown } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/components/ui/table\";\n\ntype Payment = {\n  id: string;\n  amount: number;\n  status: \"pending\" | \"processing\" | \"success\" | \"failed\";\n  email: string;\n};\n\nconst data: Payment[] = [\n  { id: \"1\", amount: 316, status: \"success\", email: \"ken99@yahoo.com\" },\n  { id: \"2\", amount: 242, status: \"success\", email: \"Abe45@gmail.com\" },\n  { id: \"3\", amount: 837, status: \"processing\", email: \"Monserrat44@gmail.com\" },\n  { id: \"4\", amount: 874, status: \"success\", email: \"Silas22@gmail.com\" },\n  { id: \"5\", amount: 721, status: \"failed\", email: \"carmella@hotmail.com\" },\n];\n\nconst columns: ColumnDef<Payment>[] = [\n  {\n    accessorKey: \"email\",\n    header: ({ column }) => {\n      return (\n        <Button\n          variant=\"ghost\"\n          onClick={() => column.toggleSorting(column.getIsSorted() === \"asc\")}\n        >\n          Email\n          <ArrowUpDown className=\"ml-2 h-4 w-4\" />\n        </Button>\n      );\n    },\n  },\n  {\n    accessorKey: \"amount\",\n    header: ({ column }) => {\n      return (\n        <Button\n          variant=\"ghost\"\n          onClick={() => column.toggleSorting(column.getIsSorted() === \"asc\")}\n        >\n          Amount\n          <ArrowUpDown className=\"ml-2 h-4 w-4\" />\n        </Button>\n      );\n    },\n    cell: ({ row }) => {\n      const amount = parseFloat(row.getValue(\"amount\"));\n      const formatted = new Intl.NumberFormat(\"en-US\", {\n        style: \"currency\",\n        currency: \"USD\",\n      }).format(amount);\n      return <div className=\"font-medium\">{formatted}</div>;\n    },\n  },\n  {\n    accessorKey: \"status\",\n    header: \"Status\",\n    cell: ({ row }) => {\n      const status = row.getValue(\"status\") as string;\n      return (\n        <div className=\"capitalize\">\n          {status}\n        </div>\n      );\n    },\n  },\n];\n\nexport function DataTableSorting() {\n  const [sorting, setSorting] = React.useState<SortingState>([]);\n\n  const table = useReactTable({\n    data,\n    columns,\n    getCoreRowModel: getCoreRowModel(),\n    getSortedRowModel: getSortedRowModel(),\n    onSortingChange: setSorting,\n    state: {\n      sorting,\n    },\n  });\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl\">\n        <div className=\"rounded-md border\">\n          <Table>\n            <TableHeader>\n              {table.getHeaderGroups().map((headerGroup) => (\n                <TableRow key={headerGroup.id}>\n                  {headerGroup.headers.map((header) => (\n                    <TableHead key={header.id}>\n                      {header.isPlaceholder\n                        ? null\n                        : flexRender(\n                            header.column.columnDef.header,\n                            header.getContext()\n                          )}\n                    </TableHead>\n                  ))}\n                </TableRow>\n              ))}\n            </TableHeader>\n            <TableBody>\n              {table.getRowModel().rows?.length ? (\n                table.getRowModel().rows.map((row) => (\n                  <TableRow key={row.id}>\n                    {row.getVisibleCells().map((cell) => (\n                      <TableCell key={cell.id}>\n                        {flexRender(\n                          cell.column.columnDef.cell,\n                          cell.getContext()\n                        )}\n                      </TableCell>\n                    ))}\n                  </TableRow>\n                ))\n              ) : (\n                <TableRow>\n                  <TableCell colSpan={columns.length} className=\"h-24 text-center\">\n                    No results.\n                  </TableCell>\n                </TableRow>\n              )}\n            </TableBody>\n          </Table>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/data-table-sorting.tsx"
+    }
+  ],
+  "categories": [
+    "data-table",
+    "data-table"
+  ],
+  "registryDependencies": [
+    "button",
+    "table"
+  ],
+  "dependencies": [
+    "lucide-react",
+    "@tanstack/react-table"
+  ]
+}

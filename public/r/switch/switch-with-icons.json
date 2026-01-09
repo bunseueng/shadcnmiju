@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-with-icons",
+  "type": "registry:block",
+  "title": "Switch With Icons",
+  "description": "Switch With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/switch/switch-with-icons.tsx",
+      "content": "\"use client\";\n\nimport { Switch } from \"@/components/ui/switch\";\nimport { Label } from \"@/components/ui/label\";\nimport { Moon, Sun, Bell, BellOff, Wifi, WifiOff } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst SwitchWithIcons = () => {\n  const [darkMode, setDarkMode] = useState(false);\n  const [notifications, setNotifications] = useState(true);\n  const [wifi, setWifi] = useState(true);\n\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"flex items-center justify-between\">\n        <div className=\"flex items-center gap-2\">\n          {darkMode ? (\n            <Moon className=\"h-4 w-4 text-foreground\" />\n          ) : (\n            <Sun className=\"h-4 w-4 text-foreground\" />\n          )}\n          <Label htmlFor=\"dark-mode\">Dark Mode</Label>\n        </div>\n        <Switch\n          id=\"dark-mode\"\n          checked={darkMode}\n          onCheckedChange={setDarkMode}\n        />\n      </div>\n      <div className=\"flex items-center justify-between\">\n        <div className=\"flex items-center gap-2\">\n          {notifications ? (\n            <Bell className=\"h-4 w-4 text-foreground\" />\n          ) : (\n            <BellOff className=\"h-4 w-4 text-muted-foreground\" />\n          )}\n          <Label htmlFor=\"notifications\">Notifications</Label>\n        </div>\n        <Switch\n          id=\"notifications\"\n          checked={notifications}\n          onCheckedChange={setNotifications}\n        />\n      </div>\n      <div className=\"flex items-center justify-between\">\n        <div className=\"flex items-center gap-2\">\n          {wifi ? (\n            <Wifi className=\"h-4 w-4 text-foreground\" />\n          ) : (\n            <WifiOff className=\"h-4 w-4 text-muted-foreground\" />\n          )}\n          <Label htmlFor=\"wifi-toggle\">WiFi</Label>\n        </div>\n        <Switch\n          id=\"wifi-toggle\"\n          checked={wifi}\n          onCheckedChange={setWifi}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport { SwitchWithIcons }",
+      "type": "registry:component",
+      "target": "components/switch-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "switch",
+    "switch"
+  ],
+  "registryDependencies": [
+    "switch",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

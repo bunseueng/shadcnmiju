@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-grouped",
+  "type": "registry:block",
+  "title": "Native Select Grouped",
+  "description": "Native Select Grouped component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/native-select/native-select-grouped.tsx",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOptGroup,\n  NativeSelectOption,\n} from \"@/components/ui/native-select\";\n\nexport function NativeSelectGrouped() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <label htmlFor=\"framework\" className=\"text-sm font-medium\">\n            Framework\n          </label>\n          <NativeSelect id=\"framework\">\n            <NativeSelectOption value=\"\">Select a framework</NativeSelectOption>\n            <NativeSelectOptGroup label=\"Frontend\">\n              <NativeSelectOption value=\"react\">React</NativeSelectOption>\n              <NativeSelectOption value=\"vue\">Vue</NativeSelectOption>\n              <NativeSelectOption value=\"angular\">Angular</NativeSelectOption>\n              <NativeSelectOption value=\"svelte\">Svelte</NativeSelectOption>\n            </NativeSelectOptGroup>\n            <NativeSelectOptGroup label=\"Backend\">\n              <NativeSelectOption value=\"express\">Express</NativeSelectOption>\n              <NativeSelectOption value=\"fastapi\">FastAPI</NativeSelectOption>\n              <NativeSelectOption value=\"django\">Django</NativeSelectOption>\n              <NativeSelectOption value=\"rails\">Rails</NativeSelectOption>\n            </NativeSelectOptGroup>\n          </NativeSelect>\n        </div>\n\n        <div className=\"space-y-2\">\n          <label htmlFor=\"database\" className=\"text-sm font-medium\">\n            Database\n          </label>\n          <NativeSelect id=\"database\">\n            <NativeSelectOption value=\"\">Select a database</NativeSelectOption>\n            <NativeSelectOptGroup label=\"SQL Databases\">\n              <NativeSelectOption value=\"postgresql\">PostgreSQL</NativeSelectOption>\n              <NativeSelectOption value=\"mysql\">MySQL</NativeSelectOption>\n              <NativeSelectOption value=\"sqlite\">SQLite</NativeSelectOption>\n            </NativeSelectOptGroup>\n            <NativeSelectOptGroup label=\"NoSQL Databases\">\n              <NativeSelectOption value=\"mongodb\">MongoDB</NativeSelectOption>\n              <NativeSelectOption value=\"redis\">Redis</NativeSelectOption>\n              <NativeSelectOption value=\"cassandra\">Cassandra</NativeSelectOption>\n            </NativeSelectOptGroup>\n          </NativeSelect>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/native-select-grouped.tsx"
+    }
+  ],
+  "categories": [
+    "native-select",
+    "native-select"
+  ],
+  "registryDependencies": [
+    "native-select"
+  ]
+}

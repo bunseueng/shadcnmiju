@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-holiday-highlight",
+  "type": "registry:block",
+  "title": "Calendar Holiday Highlight",
+  "description": "Calendar Holiday Highlight component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-holiday-highlight.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarHolidayHighlight = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  // Example holidays for 2025\n  const holidays = [\n    { date: new Date(2025, 0, 1), name: \"New Year's Day\" },\n    { date: new Date(2025, 6, 4), name: \"Independence Day\" },\n    { date: new Date(2025, 11, 25), name: \"Christmas Day\" },\n  ];\n\n  const holidayDates = holidays.map((h) => h.date);\n\n  const getHolidayName = (checkDate: Date) => {\n    const holiday = holidays.find(\n      (h) =>\n        h.date.getDate() === checkDate.getDate() &&\n        h.date.getMonth() === checkDate.getMonth() &&\n        h.date.getFullYear() === checkDate.getFullYear()\n    );\n    return holiday?.name;\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-md border\"\n        modifiers={{ holiday: holidayDates }}\n        modifiersClassNames={{\n          holiday: \"bg-red-100 text-red-900 font-bold\",\n        }}\n      />\n      {date && getHolidayName(date) && (\n        <p className=\"text-xs text-slate-400\">\n          🎉{\" \"}\n          <span className=\"text-red-500 font-medium\">\n            {getHolidayName(date)}\n          </span>\n        </p>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarHolidayHighlight }",
+      "type": "registry:component",
+      "target": "components/calendar-holiday-highlight.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

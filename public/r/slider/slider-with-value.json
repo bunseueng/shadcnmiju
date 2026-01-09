@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-with-value",
+  "type": "registry:block",
+  "title": "Slider With Value",
+  "description": "Slider With Value component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/slider/slider-with-value.tsx",
+      "content": "\"use client\";\n\nimport { Slider } from \"@/components/ui/slider\";\nimport { Label } from \"@/components/ui/label\";\nimport { useState } from \"react\";\n\nconst SliderWithValue = () => {\n  const [volume, setVolume] = useState([50]);\n  const [price, setPrice] = useState([250]);\n  const [zoom, setZoom] = useState([100]);\n\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Volume</Label>\n          <span className=\"text-sm text-muted-foreground\">{volume[0]}%</span>\n        </div>\n        <Slider\n          value={volume}\n          onValueChange={setVolume}\n          max={100}\n          step={1}\n        />\n      </div>\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Max Price</Label>\n          <span className=\"text-sm text-muted-foreground\">${price[0]}</span>\n        </div>\n        <Slider\n          value={price}\n          onValueChange={setPrice}\n          max={1000}\n          step={10}\n        />\n      </div>\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Zoom Level</Label>\n          <span className=\"text-sm text-muted-foreground\">{zoom[0]}%</span>\n        </div>\n        <Slider\n          value={zoom}\n          onValueChange={setZoom}\n          min={50}\n          max={200}\n          step={10}\n        />\n      </div>\n    </div>\n  );\n};\n\nexport { SliderWithValue }",
+      "type": "registry:component",
+      "target": "components/slider-with-value.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "slider"
+  ],
+  "registryDependencies": [
+    "slider",
+    "label"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-avatar",
+  "type": "registry:block",
+  "title": "Dropdown Menu Avatar",
+  "description": "Dropdown Menu Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/dropdown-menu-avatar.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuLabel,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from \"@/components/ui/dropdown-menu\";\r\n\r\nimport { LogOut, Settings, User } from \"lucide-react\";\r\n\r\nconst AvatarDropdownMenu = () => {\r\n  return (\r\n    <DropdownMenu>\r\n      <DropdownMenuTrigger asChild className=\"cursor-pointer\">\r\n        <Avatar>\r\n          <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n          <AvatarFallback>CN</AvatarFallback>\r\n        </Avatar>\r\n      </DropdownMenuTrigger>\r\n      <DropdownMenuContent className=\"w-56\" align=\"end\">\r\n        <DropdownMenuLabel>My Account</DropdownMenuLabel>\r\n        <DropdownMenuSeparator />\r\n        <DropdownMenuItem>\r\n          <User className=\"mr-2 h-4 w-4\" />\r\n          Profile\r\n        </DropdownMenuItem>\r\n        <DropdownMenuItem>\r\n          <Settings className=\"mr-2 h-4 w-4\" />\r\n          Settings\r\n        </DropdownMenuItem>\r\n        <DropdownMenuSeparator />\r\n        <DropdownMenuItem>\r\n          <LogOut className=\"mr-2 h-4 w-4\" />\r\n          Log out\r\n        </DropdownMenuItem>\r\n      </DropdownMenuContent>\r\n    </DropdownMenu>\r\n  );\r\n};\r\n\r\nexport { AvatarDropdownMenu }",
+      "type": "registry:component",
+      "target": "components/dropdown-menu-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "dropdown-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

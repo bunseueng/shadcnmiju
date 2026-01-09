@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "line-chart",
+  "type": "registry:block",
+  "title": "Line Chart",
+  "description": "Line Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/line-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  CartesianGrid,\n  Legend,\n  Line,\n  LineChart as RechartsLineChart,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\n\nconst data = [\n  { month: \"Jan\", desktop: 186, mobile: 80 },\n  { month: \"Feb\", desktop: 305, mobile: 200 },\n  { month: \"Mar\", desktop: 237, mobile: 120 },\n  { month: \"Apr\", desktop: 73, mobile: 190 },\n  { month: \"May\", desktop: 209, mobile: 130 },\n  { month: \"Jun\", desktop: 214, mobile: 140 },\n];\n\nconst LineChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Traffic Analytics</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RechartsLineChart data={data}>\n            <CartesianGrid strokeDasharray=\"3 3\" className=\"stroke-muted\" />\n            <XAxis dataKey=\"month\" className=\"text-xs sm:text-sm\" />\n            <YAxis className=\"text-xs sm:text-sm\" />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n            <Line\n              type=\"monotone\"\n              dataKey=\"desktop\"\n              stroke=\"hsl(var(--primary))\"\n              strokeWidth={2}\n              dot={{ fill: \"hsl(var(--primary))\" }}\n            />\n            <Line\n              type=\"monotone\"\n              dataKey=\"mobile\"\n              stroke=\"hsl(var(--chart-2))\"\n              strokeWidth={2}\n              dot={{ fill: \"hsl(var(--chart-2))\" }}\n            />\n          </RechartsLineChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { LineChartComponent }",
+      "type": "registry:component",
+      "target": "components/line-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cart-button-group",
+  "type": "registry:block",
+  "title": "Cart Button Group",
+  "description": "Cart Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/cart-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup, ButtonGroupText } from \"@/components/ui/button-group\";\r\nimport { Minus, Plus, ShoppingCart } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst CartButtonGroup = () => {\r\n  const [quantity, setQuantity] = useState(1);\r\n  const [isAdding, setIsAdding] = useState(false);\r\n\r\n  const decrementQuantity = () => {\r\n    setQuantity(Math.max(1, quantity - 1));\r\n  };\r\n\r\n  const incrementQuantity = () => {\r\n    setQuantity(Math.min(99, quantity + 1));\r\n  };\r\n\r\n  const addToCart = () => {\r\n    setIsAdding(true);\r\n    setTimeout(() => setIsAdding(false), 1000);\r\n  };\r\n\r\n  return (\r\n    <div className=\"flex items-center gap-3\">\r\n      <ButtonGroup>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"sm\"\r\n          onClick={decrementQuantity}\r\n          disabled={quantity <= 1}\r\n        >\r\n          <Minus />\r\n        </Button>\r\n        <ButtonGroupText>{quantity}</ButtonGroupText>\r\n        <Button\r\n          variant=\"outline\"\r\n          size=\"sm\"\r\n          onClick={incrementQuantity}\r\n          disabled={quantity >= 99}\r\n        >\r\n          <Plus />\r\n        </Button>\r\n      </ButtonGroup>\r\n\r\n      <Button\r\n        variant=\"default\"\r\n        size=\"sm\"\r\n        onClick={addToCart}\r\n        disabled={isAdding}\r\n      >\r\n        <ShoppingCart />\r\n        {isAdding ? \"Adding...\" : \"Add to Cart\"}\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CartButtonGroup }",
+      "type": "registry:component",
+      "target": "components/cart-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

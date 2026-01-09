@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-form-3",
+  "type": "registry:block",
+  "title": "Alert Dialog Form 3",
+  "description": "Alert Dialog Form 3 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-form-3.tsx",
+      "content": "import {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Clock, Download, Lock, Mail } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst AlertDialogForm3 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"outline\">\r\n          <Download /> Export Data\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <AlertDialogHeader>\r\n          <AlertDialogTitle className=\"flex items-center gap-2 text-2xl\">\r\n            <Download size={28} className=\"text-blue-400\" />\r\n            Export Your Data\r\n          </AlertDialogTitle>\r\n          <AlertDialogDescription>\r\n            We&apos;ll prepare a download link with all your data. This may take\r\n            a few minutes for large datasets.\r\n          </AlertDialogDescription>\r\n        </AlertDialogHeader>\r\n        <div className=\"flex items-center gap-2 w-full\">\r\n          <Button variant=\"outline\" className=\"flex-1\">\r\n            JSON Format\r\n          </Button>\r\n          <Button variant=\"outline\" className=\"flex-1\">\r\n            CSV Format\r\n          </Button>\r\n        </div>\r\n        <ul className=\"space-y-2\">\r\n          <li className=\"flex gap-2\">\r\n            <Mail /> Download link will be sent to your email\r\n          </li>\r\n          <li className=\"flex gap-2\">\r\n            <Clock /> Link expires in 24 hours\r\n          </li>\r\n          <li className=\"flex gap-2\">\r\n            <Lock /> Data is encrypted and secure\r\n          </li>\r\n        </ul>\r\n        <AlertDialogFooter className=\"mt-5\">\r\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\r\n          <AlertDialogAction>Start Export</AlertDialogAction>\r\n        </AlertDialogFooter>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogForm3 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-form-3.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

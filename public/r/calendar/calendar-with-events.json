@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-events",
+  "type": "registry:block",
+  "title": "Calendar With Events",
+  "description": "Calendar With Events component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-events.tsx",
+      "content": "\"use client\";\n\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\n\nconst CalendarWithEvents = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n\n  // Example event dates\n  const eventDates = [\n    new Date(2025, 0, 15),\n    new Date(2025, 0, 20),\n    new Date(2025, 0, 25),\n  ];\n\n  const hasEvent = (checkDate: Date) => {\n    return eventDates.some(\n      (eventDate) =>\n        eventDate.getDate() === checkDate.getDate() &&\n        eventDate.getMonth() === checkDate.getMonth() &&\n        eventDate.getFullYear() === checkDate.getFullYear()\n    );\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        className=\"rounded-md border\"\n        modifiers={{ event: eventDates }}\n        modifiersClassNames={{\n          event: \"bg-blue-100 text-blue-900 font-bold\",\n        }}\n      />\n      <p className=\"text-xs text-slate-400\">\n        {date && hasEvent(date) ? (\n          <span className=\"text-blue-500 font-medium\">📅 Event on this day</span>\n        ) : (\n          <span className=\"text-slate-200\">No events</span>\n        )}\n      </p>\n    </div>\n  );\n};\n\nexport { CalendarWithEvents }",
+      "type": "registry:component",
+      "target": "components/calendar-with-events.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "calendar"
+  ]
+}

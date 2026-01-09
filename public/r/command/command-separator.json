@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-separator",
+  "type": "registry:block",
+  "title": "Command Separator",
+  "description": "Command Separator component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/command/command-separator.tsx",
+      "content": "\"use client\";\n\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandSeparator,\n} from \"@/components/ui/command\";\nimport {\n  Home,\n  Search,\n  Bell,\n  Mail,\n  LogOut,\n  Settings,\n  User,\n  HelpCircle,\n} from \"lucide-react\";\n\nconst CommandSeparatorDemo = () => {\n  return (\n    <Command className=\"rounded-lg border shadow-md w-full max-w-sm\">\n      <CommandInput placeholder=\"Search...\" />\n      <CommandList>\n        <CommandEmpty>No results found.</CommandEmpty>\n        <CommandGroup heading=\"Navigation\">\n          <CommandItem>\n            <Home className=\"mr-2 h-4 w-4\" />\n            <span>Home</span>\n          </CommandItem>\n          <CommandItem>\n            <Search className=\"mr-2 h-4 w-4\" />\n            <span>Search</span>\n          </CommandItem>\n          <CommandItem>\n            <Bell className=\"mr-2 h-4 w-4\" />\n            <span>Notifications</span>\n          </CommandItem>\n          <CommandItem>\n            <Mail className=\"mr-2 h-4 w-4\" />\n            <span>Messages</span>\n          </CommandItem>\n        </CommandGroup>\n        <CommandSeparator />\n        <CommandGroup heading=\"Account\">\n          <CommandItem>\n            <User className=\"mr-2 h-4 w-4\" />\n            <span>Profile</span>\n          </CommandItem>\n          <CommandItem>\n            <Settings className=\"mr-2 h-4 w-4\" />\n            <span>Settings</span>\n          </CommandItem>\n          <CommandItem>\n            <HelpCircle className=\"mr-2 h-4 w-4\" />\n            <span>Help</span>\n          </CommandItem>\n        </CommandGroup>\n        <CommandSeparator />\n        <CommandGroup>\n          <CommandItem className=\"text-red-500\">\n            <LogOut className=\"mr-2 h-4 w-4\" />\n            <span>Log out</span>\n          </CommandItem>\n        </CommandGroup>\n      </CommandList>\n    </Command>\n  );\n};\n\nexport { CommandSeparatorDemo }",
+      "type": "registry:component",
+      "target": "components/command-separator.tsx"
+    }
+  ],
+  "categories": [
+    "command",
+    "command"
+  ],
+  "registryDependencies": [
+    "command"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

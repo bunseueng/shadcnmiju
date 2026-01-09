@@ -37,7 +37,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${variantInfo.name} Preview - ${variantInfo.componentTitle} | shadcnmiju`,
-    description: `Live preview of ${variantInfo.name} - ${variantInfo.description || "Interactive component preview"}`,
+    description: `Live preview of ${variantInfo.name} - ${
+      variantInfo.description || "Interactive component preview"
+    }`,
     robots: {
       index: false, // Don't index preview pages
       follow: false,
@@ -80,7 +82,7 @@ export default async function PreviewPage({
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[url(/assets/preview-bg.png)]">
+    <div className="min-h-screen flex items-center justify-center bg-black">
       <div className="w-full max-w-4xl mx-auto flex items-center justify-center">
         <Component />
       </div>

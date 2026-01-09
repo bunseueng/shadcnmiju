@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-button-dialog-multi",
+  "type": "registry:block",
+  "title": "Calendar Button Dialog Multi",
+  "description": "Calendar Button Dialog Multi component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-button-dialog-multi.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { CalendarDays } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarButtonDialogMulti = () => {\n  const [dates, setDates] = useState<Date[] | undefined>([]);\n  const [open, setOpen] = useState(false);\n\n  const handleConfirm = () => {\n    setOpen(false);\n  };\n\n  const formatDates = () => {\n    if (!dates || dates.length === 0) return \"No dates selected\";\n    return dates\n      .map((d) =>\n        d.toLocaleDateString(\"en-US\", {\n          month: \"short\",\n          day: \"numeric\",\n        })\n      )\n      .join(\", \");\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\n      <Dialog open={open} onOpenChange={setOpen}>\n        <DialogTrigger asChild>\n          <Button variant=\"default\" size=\"lg\" className=\"gap-2\">\n            <CalendarDays className=\"h-5 w-5\" />\n            Select Multiple Dates\n          </Button>\n        </DialogTrigger>\n        <DialogContent className=\"sm:max-w-[425px]\">\n          <DialogHeader>\n            <DialogTitle>Select Multiple Dates</DialogTitle>\n            <DialogDescription>\n              Click on dates to select or deselect them.\n            </DialogDescription>\n          </DialogHeader>\n          <div className=\"flex justify-center py-4\">\n            <Calendar\n              mode=\"multiple\"\n              selected={dates}\n              onSelect={setDates}\n              className=\"rounded-md border\"\n            />\n          </div>\n          <DialogFooter>\n            <Button\n              variant=\"outline\"\n              onClick={() => setDates([])}\n            >\n              Clear All\n            </Button>\n            <Button variant=\"outline\" onClick={() => setOpen(false)}>\n              Cancel\n            </Button>\n            <Button onClick={handleConfirm}>\n              Confirm ({dates?.length || 0})\n            </Button>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n\n      {dates && dates.length > 0 && (\n        <div className=\"text-center max-w-md\">\n          <p className=\"text-sm text-slate-400 mb-1\">\n            Selected {dates.length} {dates.length === 1 ? \"date\" : \"dates\"}:\n          </p>\n          <p className=\"text-sm text-slate-200 font-medium\">\n            {formatDates()}\n          </p>\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarButtonDialogMulti }",
+      "type": "registry:component",
+      "target": "components/calendar-button-dialog-multi.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "dialog"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

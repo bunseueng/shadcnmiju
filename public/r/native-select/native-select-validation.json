@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-validation",
+  "type": "registry:block",
+  "title": "Native Select Validation",
+  "description": "Native Select Validation component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/native-select/native-select-validation.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { AlertCircle, CheckCircle2 } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  NativeSelect,\n  NativeSelectOption,\n} from \"@/components/ui/native-select\";\n\nexport function NativeSelectValidation() {\n  const [priority, setPriority] = useState(\"\");\n  const [category, setCategory] = useState(\"\");\n  const [errors, setErrors] = useState<Record<string, string>>({});\n\n  const validateForm = () => {\n    const newErrors: Record<string, string> = {};\n\n    if (!priority) {\n      newErrors.priority = \"Please select a priority level\";\n    }\n\n    if (!category) {\n      newErrors.category = \"Please select a category\";\n    }\n\n    setErrors(newErrors);\n    return Object.keys(newErrors).length === 0;\n  };\n\n  const handleSubmit = (e: React.FormEvent) => {\n    e.preventDefault();\n    if (validateForm()) {\n      // Form submitted successfully\n      setErrors({});\n    }\n  };\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md\">\n        <form onSubmit={handleSubmit} className=\"space-y-6\">\n          <div className=\"space-y-2\">\n            <label htmlFor=\"priority\" className=\"text-sm font-medium\">\n              Priority <span className=\"text-destructive\">*</span>\n            </label>\n            <NativeSelect\n              id=\"priority\"\n              value={priority}\n              onChange={(e) => setPriority(e.target.value)}\n              aria-invalid={!!errors.priority}\n            >\n              <NativeSelectOption value=\"\">Select priority</NativeSelectOption>\n              <NativeSelectOption value=\"low\">Low Priority</NativeSelectOption>\n              <NativeSelectOption value=\"medium\">Medium Priority</NativeSelectOption>\n              <NativeSelectOption value=\"high\">High Priority</NativeSelectOption>\n              <NativeSelectOption value=\"urgent\">Urgent</NativeSelectOption>\n            </NativeSelect>\n            {errors.priority ? (\n              <div className=\"flex items-center gap-2 text-sm text-destructive\">\n                <AlertCircle className=\"h-4 w-4\" />\n                <span>{errors.priority}</span>\n              </div>\n            ) : priority ? (\n              <div className=\"flex items-center gap-2 text-sm text-green-600\">\n                <CheckCircle2 className=\"h-4 w-4\" />\n                <span>Priority selected</span>\n              </div>\n            ) : (\n              <p className=\"text-sm text-muted-foreground\">\n                Choose the priority level for this task\n              </p>\n            )}\n          </div>\n\n          <div className=\"space-y-2\">\n            <label htmlFor=\"category\" className=\"text-sm font-medium\">\n              Category <span className=\"text-destructive\">*</span>\n            </label>\n            <NativeSelect\n              id=\"category\"\n              value={category}\n              onChange={(e) => setCategory(e.target.value)}\n              aria-invalid={!!errors.category}\n            >\n              <NativeSelectOption value=\"\">Select category</NativeSelectOption>\n              <NativeSelectOption value=\"bug\">Bug Fix</NativeSelectOption>\n              <NativeSelectOption value=\"feature\">Feature Request</NativeSelectOption>\n              <NativeSelectOption value=\"documentation\">Documentation</NativeSelectOption>\n              <NativeSelectOption value=\"refactor\">Refactoring</NativeSelectOption>\n            </NativeSelect>\n            {errors.category ? (\n              <div className=\"flex items-center gap-2 text-sm text-destructive\">\n                <AlertCircle className=\"h-4 w-4\" />\n                <span>{errors.category}</span>\n              </div>\n            ) : category ? (\n              <div className=\"flex items-center gap-2 text-sm text-green-600\">\n                <CheckCircle2 className=\"h-4 w-4\" />\n                <span>Category selected</span>\n              </div>\n            ) : (\n              <p className=\"text-sm text-muted-foreground\">\n                Choose the task category\n              </p>\n            )}\n          </div>\n\n          <Button type=\"submit\" className=\"w-full\">\n            Submit\n          </Button>\n        </form>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/native-select-validation.tsx"
+    }
+  ],
+  "categories": [
+    "native-select",
+    "native-select"
+  ],
+  "registryDependencies": [
+    "button",
+    "native-select"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

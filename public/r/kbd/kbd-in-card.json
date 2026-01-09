@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-in-card",
+  "type": "registry:block",
+  "title": "Kbd In Card",
+  "description": "Kbd In Card component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/kbd/kbd-in-card.tsx",
+      "content": "\"use client\";\n\nimport { Kbd, KbdGroup } from \"@/components/ui/kbd\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\n\nexport function KbdInCard() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <Card className=\"w-[450px]\">\n        <CardHeader>\n          <CardTitle>Keyboard Shortcuts</CardTitle>\n          <CardDescription>\n            Master these shortcuts to boost your productivity\n          </CardDescription>\n        </CardHeader>\n        <CardContent className=\"space-y-4\">\n          <div className=\"space-y-3\">\n            <div className=\"text-sm font-semibold\">Navigation</div>\n            <div className=\"space-y-2\">\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-sm text-muted-foreground\">\n                  Go to Dashboard\n                </span>\n                <KbdGroup>\n                  <Kbd>G</Kbd>\n                  <span className=\"text-muted-foreground\">then</span>\n                  <Kbd>D</Kbd>\n                </KbdGroup>\n              </div>\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-sm text-muted-foreground\">\n                  Go to Settings\n                </span>\n                <KbdGroup>\n                  <Kbd>G</Kbd>\n                  <span className=\"text-muted-foreground\">then</span>\n                  <Kbd>S</Kbd>\n                </KbdGroup>\n              </div>\n            </div>\n          </div>\n\n          <div className=\"space-y-3\">\n            <div className=\"text-sm font-semibold\">Editing</div>\n            <div className=\"space-y-2\">\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-sm text-muted-foreground\">\n                  Bold Text\n                </span>\n                <KbdGroup>\n                  <Kbd>Ctrl</Kbd>\n                  <span>+</span>\n                  <Kbd>B</Kbd>\n                </KbdGroup>\n              </div>\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-sm text-muted-foreground\">\n                  Italic Text\n                </span>\n                <KbdGroup>\n                  <Kbd>Ctrl</Kbd>\n                  <span>+</span>\n                  <Kbd>I</Kbd>\n                </KbdGroup>\n              </div>\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-sm text-muted-foreground\">\n                  Insert Link\n                </span>\n                <KbdGroup>\n                  <Kbd>Ctrl</Kbd>\n                  <span>+</span>\n                  <Kbd>K</Kbd>\n                </KbdGroup>\n              </div>\n            </div>\n          </div>\n\n          <div className=\"space-y-3\">\n            <div className=\"text-sm font-semibold\">Search</div>\n            <div className=\"space-y-2\">\n              <div className=\"flex items-center justify-between\">\n                <span className=\"text-sm text-muted-foreground\">\n                  Open Search\n                </span>\n                <KbdGroup>\n                  <Kbd>Ctrl</Kbd>\n                  <span>+</span>\n                  <Kbd>/</Kbd>\n                </KbdGroup>\n              </div>\n            </div>\n          </div>\n        </CardContent>\n      </Card>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/kbd-in-card.tsx"
+    }
+  ],
+  "categories": [
+    "kbd",
+    "kbd"
+  ],
+  "registryDependencies": [
+    "kbd",
+    "card"
+  ]
+}

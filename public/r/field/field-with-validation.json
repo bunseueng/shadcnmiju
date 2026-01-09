@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-with-validation",
+  "type": "registry:block",
+  "title": "Field With Validation",
+  "description": "Field With Validation component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/field/field-with-validation.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Input } from \"@/components/ui/input\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Field,\n  FieldDescription,\n  FieldError,\n  FieldLabel,\n} from \"@/components/ui/field\";\n\nexport function FieldWithValidation() {\n  const [email, setEmail] = useState(\"\");\n  const [password, setPassword] = useState(\"\");\n  const [errors, setErrors] = useState<Record<string, string>>({});\n\n  const validateForm = () => {\n    const newErrors: Record<string, string> = {};\n\n    if (!email) {\n      newErrors.email = \"Email is required\";\n    } else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {\n      newErrors.email = \"Please enter a valid email address\";\n    }\n\n    if (!password) {\n      newErrors.password = \"Password is required\";\n    } else if (password.length < 8) {\n      newErrors.password = \"Password must be at least 8 characters\";\n    }\n\n    setErrors(newErrors);\n    return Object.keys(newErrors).length === 0;\n  };\n\n  const handleSubmit = (e: React.FormEvent) => {\n    e.preventDefault();\n    if (validateForm()) {\n      // Form submitted successfully\n    }\n  };\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md\">\n        <form onSubmit={handleSubmit} className=\"space-y-6\">\n          <Field data-invalid={!!errors.email}>\n            <FieldLabel htmlFor=\"email\">Email</FieldLabel>\n            <Input\n              id=\"email\"\n              type=\"email\"\n              placeholder=\"name@example.com\"\n              value={email}\n              onChange={(e) => setEmail(e.target.value)}\n              aria-invalid={!!errors.email}\n              className={errors.email ? \"border-destructive\" : \"\"}\n            />\n            {!errors.email && (\n              <FieldDescription>\n                Enter your email address to sign in.\n              </FieldDescription>\n            )}\n            {errors.email && <FieldError>{errors.email}</FieldError>}\n          </Field>\n\n          <Field data-invalid={!!errors.password}>\n            <FieldLabel htmlFor=\"password\">Password</FieldLabel>\n            <Input\n              id=\"password\"\n              type=\"password\"\n              placeholder=\"••••••••\"\n              value={password}\n              onChange={(e) => setPassword(e.target.value)}\n              aria-invalid={!!errors.password}\n              className={errors.password ? \"border-destructive\" : \"\"}\n            />\n            {!errors.password && (\n              <FieldDescription>\n                Must be at least 8 characters long.\n              </FieldDescription>\n            )}\n            {errors.password && <FieldError>{errors.password}</FieldError>}\n          </Field>\n\n          <Button type=\"submit\" className=\"w-full\">\n            Sign In\n          </Button>\n        </form>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/field-with-validation.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "field"
+  ],
+  "registryDependencies": [
+    "input",
+    "button",
+    "field"
+  ]
+}

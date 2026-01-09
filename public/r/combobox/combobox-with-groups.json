@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-with-groups",
+  "type": "registry:block",
+  "title": "Combobox With Groups",
+  "description": "Combobox With Groups component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/combobox/combobox-with-groups.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport { Check, ChevronsUpDown } from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\n\nconst languages = [\n  {\n    label: \"Frontend\",\n    options: [\n      { value: \"react\", label: \"React\" },\n      { value: \"vue\", label: \"Vue\" },\n      { value: \"angular\", label: \"Angular\" },\n      { value: \"svelte\", label: \"Svelte\" },\n    ],\n  },\n  {\n    label: \"Backend\",\n    options: [\n      { value: \"node\", label: \"Node.js\" },\n      { value: \"python\", label: \"Python\" },\n      { value: \"ruby\", label: \"Ruby\" },\n      { value: \"go\", label: \"Go\" },\n    ],\n  },\n];\n\nexport function ComboboxWithGroups() {\n  const [open, setOpen] = React.useState(false);\n  const [value, setValue] = React.useState(\"\");\n\n  const allOptions = languages.flatMap((group) => group.options);\n  const selectedLabel = allOptions.find((opt) => opt.value === value)?.label;\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <Popover open={open} onOpenChange={setOpen}>\n        <PopoverTrigger asChild>\n          <Button\n            variant=\"outline\"\n            role=\"combobox\"\n            aria-expanded={open}\n            className=\"w-[250px] justify-between\"\n          >\n            {selectedLabel || \"Select language...\"}\n            <ChevronsUpDown className=\"ml-2 h-4 w-4 shrink-0 opacity-50\" />\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent className=\"w-[250px] p-0\">\n          <Command>\n            <CommandInput placeholder=\"Search language...\" />\n            <CommandList>\n              <CommandEmpty>No language found.</CommandEmpty>\n              {languages.map((group) => (\n                <CommandGroup key={group.label} heading={group.label}>\n                  {group.options.map((option) => (\n                    <CommandItem\n                      key={option.value}\n                      value={option.value}\n                      onSelect={(currentValue) => {\n                        setValue(currentValue === value ? \"\" : currentValue);\n                        setOpen(false);\n                      }}\n                    >\n                      <Check\n                        className={cn(\n                          \"mr-2 h-4 w-4\",\n                          value === option.value ? \"opacity-100\" : \"opacity-0\"\n                        )}\n                      />\n                      {option.label}\n                    </CommandItem>\n                  ))}\n                </CommandGroup>\n              ))}\n            </CommandList>\n          </Command>\n        </PopoverContent>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-with-groups.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "combobox"
+  ],
+  "registryDependencies": [
+    "button",
+    "command",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

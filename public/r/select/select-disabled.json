@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-disabled",
+  "type": "registry:block",
+  "title": "Select Disabled",
+  "description": "Select Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/select/select-disabled.tsx",
+      "content": "\"use client\";\n\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { Label } from \"@/components/ui/label\";\n\nconst SelectDisabled = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"grid gap-1.5\">\n        <Label className=\"text-muted-foreground\">Disabled Select</Label>\n        <Select disabled>\n          <SelectTrigger>\n            <SelectValue placeholder=\"Cannot select\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"1\">Option 1</SelectItem>\n            <SelectItem value=\"2\">Option 2</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n      <div className=\"grid gap-1.5\">\n        <Label className=\"text-muted-foreground\">With Disabled Options</Label>\n        <Select>\n          <SelectTrigger>\n            <SelectValue placeholder=\"Select plan\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"free\">Free Plan</SelectItem>\n            <SelectItem value=\"basic\">Basic Plan</SelectItem>\n            <SelectItem value=\"pro\" disabled>Pro Plan (Coming Soon)</SelectItem>\n            <SelectItem value=\"enterprise\" disabled>Enterprise (Contact Us)</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n      <div className=\"grid gap-1.5\">\n        <Label>Enabled Select</Label>\n        <Select>\n          <SelectTrigger>\n            <SelectValue placeholder=\"Select option\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"1\">Option 1</SelectItem>\n            <SelectItem value=\"2\">Option 2</SelectItem>\n            <SelectItem value=\"3\">Option 3</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n    </div>\n  );\n};\n\nexport { SelectDisabled }",
+      "type": "registry:component",
+      "target": "components/select-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "select",
+    "select"
+  ],
+  "registryDependencies": [
+    "select",
+    "label"
+  ]
+}

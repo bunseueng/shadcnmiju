@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-striped",
+  "type": "registry:block",
+  "title": "Table Striped",
+  "description": "Table Striped component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/table/table-striped.tsx",
+      "content": "\"use client\";\n\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/components/ui/table\";\n\nconst products = [\n  { name: \"Widget A\", category: \"Electronics\", price: \"$29.99\", stock: 150 },\n  { name: \"Gadget B\", category: \"Electronics\", price: \"$49.99\", stock: 75 },\n  { name: \"Tool C\", category: \"Hardware\", price: \"$19.99\", stock: 200 },\n  { name: \"Device D\", category: \"Electronics\", price: \"$99.99\", stock: 30 },\n  { name: \"Item E\", category: \"Accessories\", price: \"$9.99\", stock: 500 },\n  { name: \"Product F\", category: \"Hardware\", price: \"$39.99\", stock: 85 },\n];\n\nconst TableStriped = () => {\n  return (\n    <Table>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Product</TableHead>\n          <TableHead>Category</TableHead>\n          <TableHead>Price</TableHead>\n          <TableHead className=\"text-right\">Stock</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {products.map((product, index) => (\n          <TableRow\n            key={product.name}\n            className={index % 2 === 0 ? \"bg-muted/50\" : \"\"}\n          >\n            <TableCell className=\"font-medium\">{product.name}</TableCell>\n            <TableCell>{product.category}</TableCell>\n            <TableCell>{product.price}</TableCell>\n            <TableCell className=\"text-right\">{product.stock}</TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n    </Table>\n  );\n};\n\nexport { TableStriped }",
+      "type": "registry:component",
+      "target": "components/table-striped.tsx"
+    }
+  ],
+  "categories": [
+    "table",
+    "table"
+  ],
+  "registryDependencies": [
+    "table"
+  ]
+}

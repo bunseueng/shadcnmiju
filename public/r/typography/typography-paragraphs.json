@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-paragraphs",
+  "type": "registry:block",
+  "title": "Typography Paragraphs",
+  "description": "Typography Paragraphs component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/typography/typography-paragraphs.tsx",
+      "content": "\"use client\";\n\nexport function TypographyParagraphs() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl space-y-6\">\n        <div className=\"space-y-2\">\n          <h3 className=\"font-semibold\">Regular Paragraph</h3>\n          <p className=\"leading-7\">\n            The king, seeing how much happier his subjects were, realized the\n            error of his ways and repealed the joke tax. The people rejoiced and\n            lived happily ever after.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"font-semibold\">Large Paragraph</h3>\n          <p className=\"text-xl text-muted-foreground\">\n            A modal dialog that interrupts the user with important content and\n            expects a response.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"font-semibold\">Small Paragraph</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            This is a smaller paragraph, often used for secondary information or\n            captions.\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"font-semibold\">Muted Paragraph</h3>\n          <p className=\"text-muted-foreground\">\n            Enter your email address and we'll send you a link to reset your\n            password.\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/typography-paragraphs.tsx"
+    }
+  ],
+  "categories": [
+    "typography",
+    "typography"
+  ]
+}

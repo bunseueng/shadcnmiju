@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-steps",
+  "type": "registry:block",
+  "title": "Progress Steps",
+  "description": "Progress Steps component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/progress/progress-steps.tsx",
+      "content": "\"use client\";\n\nimport { Progress } from \"@/components/ui/progress\";\nimport { Check } from \"lucide-react\";\n\nconst ProgressSteps = () => {\n  const steps = [\n    { label: \"Cart\", completed: true },\n    { label: \"Shipping\", completed: true },\n    { label: \"Payment\", completed: false },\n    { label: \"Confirm\", completed: false },\n  ];\n\n  const completedSteps = steps.filter((s) => s.completed).length;\n  const progress = (completedSteps / steps.length) * 100;\n\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-md\">\n      <Progress value={progress} className=\"h-2\" />\n      <div className=\"flex justify-between\">\n        {steps.map((step, index) => (\n          <div key={step.label} className=\"flex flex-col items-center gap-1\">\n            <div\n              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${\n                step.completed\n                  ? \"bg-primary text-primary-foreground\"\n                  : \"bg-muted text-muted-foreground\"\n              }`}\n            >\n              {step.completed ? (\n                <Check className=\"h-4 w-4\" />\n              ) : (\n                index + 1\n              )}\n            </div>\n            <span\n              className={`text-xs ${\n                step.completed ? \"text-foreground\" : \"text-muted-foreground\"\n              }`}\n            >\n              {step.label}\n            </span>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n};\n\nexport { ProgressSteps }",
+      "type": "registry:component",
+      "target": "components/progress-steps.tsx"
+    }
+  ],
+  "categories": [
+    "progress",
+    "progress"
+  ],
+  "registryDependencies": [
+    "progress"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

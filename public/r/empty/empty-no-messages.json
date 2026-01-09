@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-no-messages",
+  "type": "registry:block",
+  "title": "Empty No Messages",
+  "description": "Empty No Messages component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/empty/empty-no-messages.tsx",
+      "content": "\"use client\";\n\nimport { MessageSquare } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\n\nexport function EmptyNoMessages() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"flex flex-col items-center justify-center text-center space-y-4 max-w-md\">\n        <div className=\"rounded-full bg-primary/10 p-6\">\n          <MessageSquare className=\"h-12 w-12 text-primary\" />\n        </div>\n        <div className=\"space-y-2\">\n          <h3 className=\"text-xl font-semibold\">No messages yet</h3>\n          <p className=\"text-sm text-muted-foreground\">\n            Start a conversation by sending your first message.\n          </p>\n        </div>\n        <Button>Start Conversation</Button>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/empty-no-messages.tsx"
+    }
+  ],
+  "categories": [
+    "empty",
+    "empty"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-button-trigger",
+  "type": "registry:block",
+  "title": "Calendar Button Trigger",
+  "description": "Calendar Button Trigger component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-button-trigger.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger,\n} from \"@/components/ui/dialog\";\nimport { CalendarIcon, Clock } from \"lucide-react\";\nimport { useState } from \"react\";\n\nconst CalendarButtonTrigger = () => {\n  const [date, setDate] = useState<Date | undefined>(new Date());\n  const [open, setOpen] = useState(false);\n\n  const handleConfirm = () => {\n    setOpen(false);\n  };\n\n  const getDaysDifference = () => {\n    if (!date) return 0;\n    const today = new Date();\n    const diffTime = date.getTime() - today.getTime();\n    return Math.ceil(diffTime / (1000 * 60 * 60 * 24));\n  };\n\n  const getRelativeTime = () => {\n    const days = getDaysDifference();\n    if (days === 0) return \"Today\";\n    if (days === 1) return \"Tomorrow\";\n    if (days === -1) return \"Yesterday\";\n    if (days > 0) return `In ${days} days`;\n    return `${Math.abs(days)} days ago`;\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-4\">\n      <Dialog open={open} onOpenChange={setOpen}>\n        <DialogTrigger asChild>\n          <Button variant=\"default\" size=\"lg\" className=\"gap-2\">\n            <CalendarIcon className=\"h-5 w-5\" />\n            Select Date\n          </Button>\n        </DialogTrigger>\n        <DialogContent className=\"sm:max-w-[425px]\">\n          <DialogHeader>\n            <DialogTitle>Choose a Date</DialogTitle>\n            <DialogDescription>\n              Select a date from the calendar below to continue.\n            </DialogDescription>\n          </DialogHeader>\n          <div className=\"flex justify-center py-4\">\n            <Calendar\n              mode=\"single\"\n              selected={date}\n              onSelect={setDate}\n              className=\"rounded-md border\"\n            />\n          </div>\n          <DialogFooter className=\"flex-col sm:flex-row gap-2\">\n            <Button\n              variant=\"outline\"\n              onClick={() => setDate(new Date())}\n              className=\"gap-2\"\n            >\n              <Clock className=\"h-4 w-4\" />\n              Today\n            </Button>\n            <div className=\"flex gap-2 flex-1\">\n              <Button\n                variant=\"outline\"\n                onClick={() => setOpen(false)}\n                className=\"flex-1\"\n              >\n                Cancel\n              </Button>\n              <Button onClick={handleConfirm} className=\"flex-1\">\n                Confirm\n              </Button>\n            </div>\n          </DialogFooter>\n        </DialogContent>\n      </Dialog>\n\n      {date && (\n        <div className=\"flex flex-col items-center gap-2\">\n          <p className=\"text-sm text-slate-400\">\n            Selected Date:{\" \"}\n            <span className=\"text-slate-200 font-medium\">\n              {date.toLocaleDateString(\"en-US\", {\n                weekday: \"long\",\n                month: \"long\",\n                day: \"numeric\",\n                year: \"numeric\",\n              })}\n            </span>\n          </p>\n          <div className=\"flex items-center gap-2 text-xs text-slate-400\">\n            <Clock className=\"h-3 w-3\" />\n            <span className=\"text-slate-300 font-medium\">\n              {getRelativeTime()}\n            </span>\n          </div>\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarButtonTrigger }",
+      "type": "registry:component",
+      "target": "components/calendar-button-trigger.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "dialog"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

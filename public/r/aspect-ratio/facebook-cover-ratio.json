@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "facebook-cover-ratio",
+  "type": "registry:block",
+  "title": "Facebook Cover Ratio",
+  "description": "Facebook Cover Ratio component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/aspect-ratio/facebook-cover-ratio.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst FacebookCoverRatio = () => {\r\n  return (\r\n    <div className=\"w-full max-w-4xl\">\r\n      <AspectRatio ratio={820 / 312} className=\"bg-muted overflow-hidden\">\r\n        <img\r\n          src=\"/assets/placeholder.jpeg\"\r\n          alt=\"Facebook Cover 820:312\"\r\n          className=\"rounded-md object-cover w-full h-full\"\r\n        />\r\n      </AspectRatio>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { FacebookCoverRatio }",
+      "type": "registry:component",
+      "target": "components/facebook-cover-ratio.tsx"
+    }
+  ],
+  "categories": [
+    "aspect-ratio",
+    "aspect-ratio"
+  ],
+  "registryDependencies": [
+    "aspect-ratio"
+  ]
+}

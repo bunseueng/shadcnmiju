@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-lists",
+  "type": "registry:block",
+  "title": "Typography Lists",
+  "description": "Typography Lists component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/typography/typography-lists.tsx",
+      "content": "\"use client\";\n\nexport function TypographyLists() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-3xl space-y-8\">\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Unordered List\n          </h3>\n          <ul className=\"my-6 ml-6 list-disc [&>li]:mt-2\">\n            <li>First item in the list</li>\n            <li>Second item in the list</li>\n            <li>Third item in the list</li>\n            <li>Fourth item in the list</li>\n          </ul>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Ordered List\n          </h3>\n          <ol className=\"my-6 ml-6 list-decimal [&>li]:mt-2\">\n            <li>Download and install the package</li>\n            <li>Configure your environment variables</li>\n            <li>Run the setup command</li>\n            <li>Start the development server</li>\n          </ol>\n        </div>\n\n        <div className=\"space-y-2\">\n          <h3 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">\n            Nested List\n          </h3>\n          <ul className=\"my-6 ml-6 list-disc [&>li]:mt-2\">\n            <li>\n              Frontend Development\n              <ul className=\"ml-6 list-circle [&>li]:mt-1\">\n                <li>React</li>\n                <li>Vue</li>\n                <li>Angular</li>\n              </ul>\n            </li>\n            <li>\n              Backend Development\n              <ul className=\"ml-6 list-circle [&>li]:mt-1\">\n                <li>Node.js</li>\n                <li>Python</li>\n                <li>Ruby</li>\n              </ul>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/typography-lists.tsx"
+    }
+  ],
+  "categories": [
+    "typography",
+    "typography"
+  ]
+}

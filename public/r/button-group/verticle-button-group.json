@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "verticle-button-group",
+  "type": "registry:block",
+  "title": "Verticle Button Group",
+  "description": "Verticle Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/verticle-button-group.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\n\r\nimport { Home, LogOut, Settings, User } from \"lucide-react\";\r\n\r\nconst VerticleButtonGroup = () => {\r\n  return (\r\n    <ButtonGroup orientation=\"vertical\" className=\"items-start! h-fit\">\r\n      <Button variant=\"outline\" className=\"justify-start! w-full\">\r\n        <Home /> Home\r\n      </Button>\r\n      <Button variant=\"outline\" className=\"justify-start! w-full\">\r\n        <User /> Profile\r\n      </Button>\r\n      <Button variant=\"outline\" className=\"justify-start! w-full\">\r\n        <Settings /> Setting\r\n      </Button>\r\n      <Button variant=\"outline\" className=\"justify-start! w-full\">\r\n        <LogOut /> Logout\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { VerticleButtonGroup }",
+      "type": "registry:component",
+      "target": "components/verticle-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

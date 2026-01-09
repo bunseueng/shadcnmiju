@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-with-presets",
+  "type": "registry:block",
+  "title": "Calendar With Presets",
+  "description": "Calendar With Presets component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-with-presets.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { useState } from \"react\";\nimport { DateRange } from \"react-day-picker\";\n\nconst CalendarWithPresets = () => {\n  const [range, setRange] = useState<DateRange | undefined>();\n\n  const setPreset = (days: number) => {\n    const from = new Date();\n    const to = new Date(Date.now() + days * 24 * 60 * 60 * 1000);\n    setRange({ from, to });\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-4\">\n      <div className=\"flex gap-2 flex-wrap justify-center\">\n        <Button variant=\"outline\" size=\"sm\" onClick={() => setPreset(7)}>\n          Next 7 days\n        </Button>\n        <Button variant=\"outline\" size=\"sm\" onClick={() => setPreset(14)}>\n          Next 14 days\n        </Button>\n        <Button variant=\"outline\" size=\"sm\" onClick={() => setPreset(30)}>\n          Next 30 days\n        </Button>\n        <Button\n          variant=\"outline\"\n          size=\"sm\"\n          onClick={() => setRange(undefined)}\n        >\n          Clear\n        </Button>\n      </div>\n      <Calendar\n        mode=\"range\"\n        selected={range}\n        onSelect={setRange}\n        numberOfMonths={2}\n        className=\"rounded-md border\"\n      />\n    </div>\n  );\n};\n\nexport { CalendarWithPresets }",
+      "type": "registry:component",
+      "target": "components/calendar-with-presets.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar"
+  ],
+  "dependencies": [
+    "react-day-picker"
+  ]
+}

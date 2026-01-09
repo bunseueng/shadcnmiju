@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-with-actions",
+  "type": "registry:block",
+  "title": "Table With Actions",
+  "description": "Table With Actions component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/table/table-with-actions.tsx",
+      "content": "\"use client\";\n\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/components/ui/table\";\nimport { Button } from \"@/components/ui/button\";\nimport { MoreHorizontal, Pencil, Trash2, Eye } from \"lucide-react\";\n\nconst users = [\n  { id: 1, name: \"John Doe\", email: \"john@example.com\", role: \"Admin\" },\n  { id: 2, name: \"Jane Smith\", email: \"jane@example.com\", role: \"User\" },\n  { id: 3, name: \"Bob Johnson\", email: \"bob@example.com\", role: \"Editor\" },\n  { id: 4, name: \"Alice Brown\", email: \"alice@example.com\", role: \"User\" },\n];\n\nconst TableWithActions = () => {\n  return (\n    <Table>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Name</TableHead>\n          <TableHead>Email</TableHead>\n          <TableHead>Role</TableHead>\n          <TableHead className=\"text-right\">Actions</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {users.map((user) => (\n          <TableRow key={user.id}>\n            <TableCell className=\"font-medium\">{user.name}</TableCell>\n            <TableCell>{user.email}</TableCell>\n            <TableCell>{user.role}</TableCell>\n            <TableCell className=\"text-right\">\n              <div className=\"flex justify-end gap-2\">\n                <Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\">\n                  <Eye className=\"h-4 w-4\" />\n                </Button>\n                <Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8\">\n                  <Pencil className=\"h-4 w-4\" />\n                </Button>\n                <Button variant=\"ghost\" size=\"icon\" className=\"h-8 w-8 text-destructive\">\n                  <Trash2 className=\"h-4 w-4\" />\n                </Button>\n              </div>\n            </TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n    </Table>\n  );\n};\n\nexport { TableWithActions }",
+      "type": "registry:component",
+      "target": "components/table-with-actions.tsx"
+    }
+  ],
+  "categories": [
+    "table",
+    "table"
+  ],
+  "registryDependencies": [
+    "table",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

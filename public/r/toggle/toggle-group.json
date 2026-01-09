@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "type": "registry:block",
+  "title": "Toggle Group",
+  "description": "Toggle Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle/toggle-group.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Toggle } from \"@/components/ui/toggle\";\nimport { AlignLeft, AlignCenter, AlignRight, AlignJustify } from \"lucide-react\";\n\nconst ToggleGroup = () => {\n  const [alignment, setAlignment] = useState(\"left\");\n\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"flex items-center rounded-lg border border-border p-1 w-fit\">\n        <Toggle\n          pressed={alignment === \"left\"}\n          onPressedChange={() => setAlignment(\"left\")}\n          className=\"rounded-r-none\"\n          aria-label=\"Align left\"\n        >\n          <AlignLeft className=\"h-4 w-4\" />\n        </Toggle>\n        <Toggle\n          pressed={alignment === \"center\"}\n          onPressedChange={() => setAlignment(\"center\")}\n          className=\"rounded-none border-x-0\"\n          aria-label=\"Align center\"\n        >\n          <AlignCenter className=\"h-4 w-4\" />\n        </Toggle>\n        <Toggle\n          pressed={alignment === \"right\"}\n          onPressedChange={() => setAlignment(\"right\")}\n          className=\"rounded-none\"\n          aria-label=\"Align right\"\n        >\n          <AlignRight className=\"h-4 w-4\" />\n        </Toggle>\n        <Toggle\n          pressed={alignment === \"justify\"}\n          onPressedChange={() => setAlignment(\"justify\")}\n          className=\"rounded-l-none\"\n          aria-label=\"Justify\"\n        >\n          <AlignJustify className=\"h-4 w-4\" />\n        </Toggle>\n      </div>\n      <p className=\"text-sm text-muted-foreground\">\n        Selected: <span className=\"font-medium text-foreground capitalize\">{alignment}</span>\n      </p>\n    </div>\n  );\n};\n\nexport { ToggleGroup }",
+      "type": "registry:component",
+      "target": "components/toggle-group.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

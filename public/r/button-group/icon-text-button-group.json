@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-text-button-group",
+  "type": "registry:block",
+  "title": "Icon Text Button Group",
+  "description": "Icon Text Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/icon-text-button-group.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  ButtonGroup,\r\n  ButtonGroupSeparator,\r\n} from \"@/components/ui/button-group\";\r\n\r\nimport { Copy, Delete, Edit } from \"lucide-react\";\r\n\r\nconst IconWithTextButtonGroup = () => {\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"outline\" size=\"sm\">\r\n        <Copy /> Copy\r\n      </Button>\r\n      <ButtonGroupSeparator />\r\n      <Button variant=\"outline\" size=\"sm\">\r\n        <Edit /> Edit\r\n      </Button>\r\n      <ButtonGroupSeparator />\r\n      <Button variant=\"outline\" size=\"sm\">\r\n        <Delete /> Delete\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n};\r\n\r\nexport { IconWithTextButtonGroup }",
+      "type": "registry:component",
+      "target": "components/icon-text-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-nested",
+  "type": "registry:block",
+  "title": "Drawer Nested",
+  "description": "Drawer Nested component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/drawer/drawer-nested.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/components/ui/drawer\";\nimport { Layers, ChevronRight } from \"lucide-react\";\n\nconst DrawerNested = () => {\n  const [open, setOpen] = useState(false);\n  const [nestedOpen, setNestedOpen] = useState(false);\n\n  return (\n    <Drawer open={open} onOpenChange={setOpen}>\n      <DrawerTrigger asChild>\n        <Button className=\"gap-2 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600\">\n          <Layers className=\"h-4 w-4\" />\n          Nested Drawer\n        </Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <div className=\"mx-auto w-full max-w-sm\">\n          <DrawerHeader>\n            <DrawerTitle className=\"text-foreground\">Settings</DrawerTitle>\n            <DrawerDescription>Manage your account settings and preferences.</DrawerDescription>\n          </DrawerHeader>\n          <div className=\"p-4 space-y-2\">\n            {[\"Account\", \"Privacy\", \"Notifications\", \"Advanced\"].map((item, i) => (\n              <Drawer key={i} open={item === \"Advanced\" ? nestedOpen : undefined} onOpenChange={item === \"Advanced\" ? setNestedOpen : undefined}>\n                <DrawerTrigger asChild>\n                  <button className=\"w-full flex items-center justify-between p-3 rounded-lg border border-border hover:bg-accent transition-colors text-foreground\">\n                    <span>{item}</span>\n                    <ChevronRight className=\"h-4 w-4 text-muted-foreground\" />\n                  </button>\n                </DrawerTrigger>\n                {item === \"Advanced\" && (\n                  <DrawerContent>\n                    <div className=\"mx-auto w-full max-w-sm\">\n                      <DrawerHeader>\n                        <DrawerTitle className=\"text-foreground\">Advanced Settings</DrawerTitle>\n                        <DrawerDescription>\n                          Configure advanced options for power users.\n                        </DrawerDescription>\n                      </DrawerHeader>\n                      <div className=\"p-4 space-y-3\">\n                        {[\"Developer Mode\", \"Debug Logs\", \"API Access\", \"Experimental Features\"].map(\n                          (option, j) => (\n                            <div\n                              key={j}\n                              className=\"flex items-center justify-between p-3 rounded-lg bg-muted/50\"\n                            >\n                              <span className=\"text-sm text-foreground\">{option}</span>\n                              <div className=\"h-5 w-9 rounded-full bg-primary/20 relative cursor-pointer\">\n                                <div className=\"absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-muted-foreground transition-transform\" />\n                              </div>\n                            </div>\n                          )\n                        )}\n                      </div>\n                      <DrawerFooter>\n                        <Button onClick={() => setNestedOpen(false)}>Save</Button>\n                        <DrawerClose asChild>\n                          <Button variant=\"outline\">Back</Button>\n                        </DrawerClose>\n                      </DrawerFooter>\n                    </div>\n                  </DrawerContent>\n                )}\n              </Drawer>\n            ))}\n          </div>\n          <DrawerFooter>\n            <DrawerClose asChild>\n              <Button variant=\"outline\">Close</Button>\n            </DrawerClose>\n          </DrawerFooter>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  );\n};\n\nexport { DrawerNested }",
+      "type": "registry:component",
+      "target": "components/drawer-nested.tsx"
+    }
+  ],
+  "categories": [
+    "drawer",
+    "drawer"
+  ],
+  "registryDependencies": [
+    "button",
+    "drawer"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

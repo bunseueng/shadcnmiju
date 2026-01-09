@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-with-shortcuts",
+  "type": "registry:block",
+  "title": "Command With Shortcuts",
+  "description": "Command With Shortcuts component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/command/command-with-shortcuts.tsx",
+      "content": "\"use client\";\n\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n  CommandShortcut,\n} from \"@/components/ui/command\";\nimport {\n  FileText,\n  FolderOpen,\n  Save,\n  Undo,\n  Redo,\n  Copy,\n} from \"lucide-react\";\n\nconst CommandWithShortcuts = () => {\n  return (\n    <Command className=\"rounded-lg border shadow-md w-full max-w-sm\">\n      <CommandInput placeholder=\"Search commands...\" />\n      <CommandList>\n        <CommandEmpty>No results found.</CommandEmpty>\n        <CommandGroup heading=\"File\">\n          <CommandItem>\n            <FileText className=\"mr-2 h-4 w-4\" />\n            <span>New File</span>\n            <CommandShortcut>⌘N</CommandShortcut>\n          </CommandItem>\n          <CommandItem>\n            <FolderOpen className=\"mr-2 h-4 w-4\" />\n            <span>Open</span>\n            <CommandShortcut>⌘O</CommandShortcut>\n          </CommandItem>\n          <CommandItem>\n            <Save className=\"mr-2 h-4 w-4\" />\n            <span>Save</span>\n            <CommandShortcut>⌘S</CommandShortcut>\n          </CommandItem>\n        </CommandGroup>\n        <CommandGroup heading=\"Edit\">\n          <CommandItem>\n            <Undo className=\"mr-2 h-4 w-4\" />\n            <span>Undo</span>\n            <CommandShortcut>⌘Z</CommandShortcut>\n          </CommandItem>\n          <CommandItem>\n            <Redo className=\"mr-2 h-4 w-4\" />\n            <span>Redo</span>\n            <CommandShortcut>⇧⌘Z</CommandShortcut>\n          </CommandItem>\n          <CommandItem>\n            <Copy className=\"mr-2 h-4 w-4\" />\n            <span>Copy</span>\n            <CommandShortcut>⌘C</CommandShortcut>\n          </CommandItem>\n        </CommandGroup>\n      </CommandList>\n    </Command>\n  );\n};\n\nexport { CommandWithShortcuts }",
+      "type": "registry:component",
+      "target": "components/command-with-shortcuts.tsx"
+    }
+  ],
+  "categories": [
+    "command",
+    "command"
+  ],
+  "registryDependencies": [
+    "command"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

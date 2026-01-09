@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-accordion",
+  "type": "registry:block",
+  "title": "Icon Accordion",
+  "description": "Icon Accordion component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/accordion/icon-accordion.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\nimport { Package, Palette, Zap } from \"lucide-react\";\n\nexport function IconAccordion() {\n  return (\n    <Accordion\n      type=\"single\"\n      collapsible\n      className=\"w-full max-w-2xl text-start\"\n    >\n      <AccordionItem value=\"item-1\" className=\"border-b\">\n        <AccordionTrigger className=\"hover:no-underline\">\n          <div className=\"flex items-center gap-3\">\n            <Package className=\"h-5 w-5 text-primary\" />\n            <span>Installation</span>\n          </div>\n        </AccordionTrigger>\n        <AccordionContent className=\"pl-8\">\n          Quick and easy installation with npm, yarn, or pnpm. Get started in\n          minutes.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\" className=\"border-b\">\n        <AccordionTrigger className=\"hover:no-underline\">\n          <div className=\"flex items-center gap-3\">\n            <Palette className=\"h-5 w-5 text-primary\" />\n            <span>Customization</span>\n          </div>\n        </AccordionTrigger>\n        <AccordionContent className=\"pl-8\">\n          Fully customizable with CSS variables and Tailwind CSS classes.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger className=\"hover:no-underline\">\n          <div className=\"flex items-center gap-3\">\n            <Zap className=\"h-5 w-5 text-primary\" />\n            <span>Performance</span>\n          </div>\n        </AccordionTrigger>\n        <AccordionContent className=\"pl-8\">\n          Built for speed with minimal bundle size and optimized rendering.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/icon-accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion",
+    "accordion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

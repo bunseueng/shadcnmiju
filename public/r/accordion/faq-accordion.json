@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "faq-accordion",
+  "type": "registry:block",
+  "title": "Faq Accordion",
+  "description": "Faq Accordion component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/accordion/faq-accordion.tsx",
+      "content": "import {\n  Accordion,\n  AccordionContent,\n  AccordionItem,\n  AccordionTrigger,\n} from \"@/components/ui/accordion\";\n\nexport function FaqAccordion() {\n  return (\n    <Accordion\n      type=\"single\"\n      collapsible\n      className=\"w-full max-w-2xl text-start\"\n    >\n      <AccordionItem value=\"item-1\">\n        <AccordionTrigger>Is it accessible?</AccordionTrigger>\n        <AccordionContent>\n          Yes. It adheres to the WAI-ARIA design pattern and is fully keyboard\n          navigable.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-2\">\n        <AccordionTrigger>Is it free to use?</AccordionTrigger>\n        <AccordionContent>\n          Yes. All components are free and open-source under the MIT license.\n        </AccordionContent>\n      </AccordionItem>\n      <AccordionItem value=\"item-3\">\n        <AccordionTrigger>Can I use it in my project?</AccordionTrigger>\n        <AccordionContent>\n          Absolutely! You can copy and paste any component into your project.\n        </AccordionContent>\n      </AccordionItem>\n    </Accordion>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/faq-accordion.tsx"
+    }
+  ],
+  "categories": [
+    "accordion",
+    "accordion"
+  ],
+  "registryDependencies": [
+    "accordion"
+  ]
+}

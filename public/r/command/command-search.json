@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-search",
+  "type": "registry:block",
+  "title": "Command Search",
+  "description": "Command Search component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/command/command-search.tsx",
+      "content": "\"use client\";\n\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport { useState } from \"react\";\nimport { Check } from \"lucide-react\";\n\nconst frameworks = [\n  { value: \"next.js\", label: \"Next.js\" },\n  { value: \"sveltekit\", label: \"SvelteKit\" },\n  { value: \"nuxt.js\", label: \"Nuxt.js\" },\n  { value: \"remix\", label: \"Remix\" },\n  { value: \"astro\", label: \"Astro\" },\n  { value: \"gatsby\", label: \"Gatsby\" },\n];\n\nconst CommandSearch = () => {\n  const [selected, setSelected] = useState<string>(\"\");\n\n  return (\n    <Command className=\"rounded-lg border shadow-md w-full max-w-sm\">\n      <CommandInput placeholder=\"Search framework...\" />\n      <CommandList>\n        <CommandEmpty>No framework found.</CommandEmpty>\n        <CommandGroup heading=\"Frameworks\">\n          {frameworks.map((framework) => (\n            <CommandItem\n              key={framework.value}\n              value={framework.value}\n              onSelect={(value) => setSelected(value)}\n            >\n              <Check\n                className={`mr-2 h-4 w-4 ${\n                  selected === framework.value ? \"opacity-100\" : \"opacity-0\"\n                }`}\n              />\n              {framework.label}\n            </CommandItem>\n          ))}\n        </CommandGroup>\n      </CommandList>\n    </Command>\n  );\n};\n\nexport { CommandSearch }",
+      "type": "registry:component",
+      "target": "components/command-search.tsx"
+    }
+  ],
+  "categories": [
+    "command",
+    "command"
+  ],
+  "registryDependencies": [
+    "command"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

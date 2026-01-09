@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-destructive-4",
+  "type": "registry:block",
+  "title": "Alert Destructive 4",
+  "description": "Alert Destructive 4 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert/alert-destructive-4.tsx",
+      "content": "import { Alert, AlertDescription, AlertTitle } from \"@/components/ui/alert\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport { Wifi } from \"lucide-react\";\r\n\r\nconst AlertDestructive1 = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl items-start\">\r\n      <Alert variant=\"destructive\">\r\n        <Wifi />\r\n        <AlertTitle>Connection Lost</AlertTitle>\r\n        <AlertDescription>\r\n          Unable to connect to the server. Please check your internet connection\r\n          and try again.\r\n        </AlertDescription>\r\n        <div className=\"flex items-center col-2 w-auto gap-3 mt-3\">\r\n          <Button variant=\"destructive\">Retry Connection</Button>\r\n        </div>\r\n      </Alert>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AlertDestructive1 }",
+      "type": "registry:component",
+      "target": "components/alert-destructive-4.tsx"
+    }
+  ],
+  "categories": [
+    "alert",
+    "alert"
+  ],
+  "registryDependencies": [
+    "alert",
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-form-1",
+  "type": "registry:block",
+  "title": "Alert Dialog Form 1",
+  "description": "Alert Dialog Form 1 component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/alert-dialog/alert-dialog-form-1.tsx",
+      "content": "\"use client\";\r\n\r\nimport {\r\n  AlertDialog,\r\n  AlertDialogAction,\r\n  AlertDialogCancel,\r\n  AlertDialogContent,\r\n  AlertDialogDescription,\r\n  AlertDialogFooter,\r\n  AlertDialogHeader,\r\n  AlertDialogTitle,\r\n  AlertDialogTrigger,\r\n} from \"@/components/ui/alert-dialog\";\r\n\r\nimport { Trash } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { Input } from \"@/components/ui/input\";\r\n\r\nconst AlertDialogForm1 = () => {\r\n  return (\r\n    <AlertDialog>\r\n      <AlertDialogTrigger asChild>\r\n        <Button variant=\"destructive\">\r\n          <Trash /> Delete Project\r\n        </Button>\r\n      </AlertDialogTrigger>\r\n      <AlertDialogContent>\r\n        <form onSubmit={(e) => e.preventDefault()}>\r\n          <AlertDialogHeader>\r\n            <div className=\"flex items-center gap-2\">\r\n              <Trash className=\"h-5 w-5 text-red-400\" />\r\n              <AlertDialogTitle>Delete Project</AlertDialogTitle>\r\n            </div>\r\n            <AlertDialogDescription>\r\n              This action cannot be undone. This will permanently delete the\r\n              project and all associated data.\r\n            </AlertDialogDescription>\r\n          </AlertDialogHeader>\r\n          <div className=\"space-y-2 my-4\">\r\n            <h4 className=\"text-muted-foreground\">\r\n              Type{\" \"}\r\n              <span className=\"font-bold text-muted-foreground\">\r\n                delete project\r\n              </span>{\" \"}\r\n              to confirm\r\n            </h4>\r\n            <Input type=\"text\" placeholder=\"delete project\" />\r\n          </div>\r\n          <AlertDialogFooter className=\"mt-5\">\r\n            <AlertDialogCancel>Cancel</AlertDialogCancel>\r\n            <AlertDialogAction className=\"bg-red-500 hover:bg-red-300 text-white\">\r\n              Delete Project\r\n            </AlertDialogAction>\r\n          </AlertDialogFooter>\r\n        </form>\r\n      </AlertDialogContent>\r\n    </AlertDialog>\r\n  );\r\n};\r\n\r\nexport { AlertDialogForm1 }",
+      "type": "registry:component",
+      "target": "components/alert-dialog-form-1.tsx"
+    }
+  ],
+  "categories": [
+    "alert-dialog",
+    "alert-dialog"
+  ],
+  "registryDependencies": [
+    "alert-dialog",
+    "button",
+    "input"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

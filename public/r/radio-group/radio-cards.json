@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-cards",
+  "type": "registry:block",
+  "title": "Radio Cards",
+  "description": "Radio Cards component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/radio-group/radio-cards.tsx",
+      "content": "\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { RadioGroup, RadioGroupItem } from \"@/components/ui/radio-group\";\nimport { CreditCard, Wallet, Building } from \"lucide-react\";\n\nconst RadioCards = () => {\n  return (\n    <RadioGroup defaultValue=\"card\" className=\"grid grid-cols-3 gap-4 max-w-md\">\n      <div>\n        <RadioGroupItem value=\"card\" id=\"card\" className=\"peer sr-only\" />\n        <Label\n          htmlFor=\"card\"\n          className=\"flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer transition-colors\"\n        >\n          <CreditCard className=\"mb-3 h-6 w-6\" />\n          <span className=\"text-sm font-medium\">Card</span>\n        </Label>\n      </div>\n      <div>\n        <RadioGroupItem value=\"wallet\" id=\"wallet\" className=\"peer sr-only\" />\n        <Label\n          htmlFor=\"wallet\"\n          className=\"flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer transition-colors\"\n        >\n          <Wallet className=\"mb-3 h-6 w-6\" />\n          <span className=\"text-sm font-medium\">Wallet</span>\n        </Label>\n      </div>\n      <div>\n        <RadioGroupItem value=\"bank\" id=\"bank\" className=\"peer sr-only\" />\n        <Label\n          htmlFor=\"bank\"\n          className=\"flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer transition-colors\"\n        >\n          <Building className=\"mb-3 h-6 w-6\" />\n          <span className=\"text-sm font-medium\">Bank</span>\n        </Label>\n      </div>\n    </RadioGroup>\n  );\n};\n\nexport { RadioCards }",
+      "type": "registry:component",
+      "target": "components/radio-cards.tsx"
+    }
+  ],
+  "categories": [
+    "radio-group",
+    "radio-group"
+  ],
+  "registryDependencies": [
+    "label",
+    "radio-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "classic-film-ratio",
+  "type": "registry:block",
+  "title": "Classic Film Ratio",
+  "description": "Classic Film Ratio component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/aspect-ratio/classic-film-ratio.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst ClassicFilmRatio = () => {\r\n  return (\r\n    <div className=\"w-full max-w-xl\">\r\n      <AspectRatio ratio={3 / 2} className=\"bg-muted overflow-hidden\">\r\n        <img\r\n          src=\"/assets/placeholder.jpeg\"\r\n          alt=\"Classic Film 3:2\"\r\n          className=\"rounded-md object-cover w-full h-full\"\r\n        />\r\n      </AspectRatio>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { ClassicFilmRatio }",
+      "type": "registry:component",
+      "target": "components/classic-film-ratio.tsx"
+    }
+  ],
+  "categories": [
+    "aspect-ratio",
+    "aspect-ratio"
+  ],
+  "registryDependencies": [
+    "aspect-ratio"
+  ]
+}

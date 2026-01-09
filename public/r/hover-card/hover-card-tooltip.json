@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card-tooltip",
+  "type": "registry:block",
+  "title": "Hover Card Tooltip",
+  "description": "Hover Card Tooltip component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/hover-card/hover-card-tooltip.tsx",
+      "content": "\"use client\";\n\nimport {\n  HoverCard,\n  HoverCardContent,\n  HoverCardTrigger,\n} from \"@/components/ui/hover-card\";\nimport { Badge } from \"@/components/ui/badge\";\nimport { Info, CheckCircle2, AlertCircle, Clock } from \"lucide-react\";\n\nconst HoverCardTooltip = () => {\n  return (\n    <div className=\"flex items-center gap-2\">\n      <Badge variant=\"outline\" className=\"gap-1\">\n        Pro Plan\n        <HoverCard>\n          <HoverCardTrigger asChild>\n            <Info className=\"h-3 w-3 cursor-help text-muted-foreground hover:text-primary transition-colors\" />\n          </HoverCardTrigger>\n          <HoverCardContent className=\"w-72 animate-in fade-in-0 slide-in-from-top-1 duration-200\" side=\"top\">\n            <div className=\"space-y-3\">\n              <h4 className=\"font-semibold flex items-center gap-2 text-foreground\">\n                <CheckCircle2 className=\"h-4 w-4 text-green-500\" />\n                Pro Plan Features\n              </h4>\n              <ul className=\"space-y-2 text-sm text-muted-foreground\">\n                <li className=\"flex items-center gap-2\">\n                  <CheckCircle2 className=\"h-3 w-3 text-green-500\" />\n                  Unlimited projects\n                </li>\n                <li className=\"flex items-center gap-2\">\n                  <CheckCircle2 className=\"h-3 w-3 text-green-500\" />\n                  Priority support\n                </li>\n                <li className=\"flex items-center gap-2\">\n                  <CheckCircle2 className=\"h-3 w-3 text-green-500\" />\n                  Advanced analytics\n                </li>\n                <li className=\"flex items-center gap-2\">\n                  <Clock className=\"h-3 w-3 text-yellow-500\" />\n                  Coming soon: AI features\n                </li>\n              </ul>\n              <div className=\"pt-2 border-t border-border\">\n                <div className=\"flex items-center gap-1 text-xs text-amber-600\">\n                  <AlertCircle className=\"h-3 w-3\" />\n                  Renews on Jan 15, 2025\n                </div>\n              </div>\n            </div>\n          </HoverCardContent>\n        </HoverCard>\n      </Badge>\n    </div>\n  );\n};\n\nexport { HoverCardTooltip }",
+      "type": "registry:component",
+      "target": "components/hover-card-tooltip.tsx"
+    }
+  ],
+  "categories": [
+    "hover-card",
+    "hover-card"
+  ],
+  "registryDependencies": [
+    "hover-card",
+    "badge"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

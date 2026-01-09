@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "category-badge",
+  "type": "registry:block",
+  "title": "Category Badge",
+  "description": "Category Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/category-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst CategoryBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"uppercase text-xs font-semibold tracking-wider\"\r\n      >\r\n        Technology\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"uppercase text-xs font-semibold tracking-wider\"\r\n      >\r\n        Design\r\n      </Badge>\r\n      <Badge\r\n        variant=\"outline\"\r\n        className=\"uppercase text-xs font-semibold tracking-wider\"\r\n      >\r\n        Business\r\n      </Badge>\r\n      <Badge variant=\"secondary\" className=\"font-mono\">\r\n        v1.0.2\r\n      </Badge>\r\n      <Badge variant=\"secondary\" className=\"font-mono\">\r\n        beta\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"bg-background uppercase\">\r\n        Archived\r\n      </Badge>\r\n      <Badge variant=\"outline\" className=\"bg-background uppercase\">\r\n        Draft\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { CategoryBadge }",
+      "type": "registry:component",
+      "target": "components/category-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

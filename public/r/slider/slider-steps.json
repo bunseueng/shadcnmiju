@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-steps",
+  "type": "registry:block",
+  "title": "Slider Steps",
+  "description": "Slider Steps component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/slider/slider-steps.tsx",
+      "content": "\"use client\";\n\nimport { Slider } from \"@/components/ui/slider\";\nimport { Label } from \"@/components/ui/label\";\nimport { useState } from \"react\";\n\nconst SliderSteps = () => {\n  const [rating, setRating] = useState([3]);\n  const [size, setSize] = useState([2]);\n\n  const sizes = [\"XS\", \"S\", \"M\", \"L\", \"XL\"];\n\n  return (\n    <div className=\"flex flex-col gap-6 w-full max-w-sm\">\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Rating</Label>\n          <span className=\"text-sm text-muted-foreground\">{rating[0]} / 5 stars</span>\n        </div>\n        <Slider\n          value={rating}\n          onValueChange={setRating}\n          min={1}\n          max={5}\n          step={1}\n        />\n        <div className=\"flex justify-between text-xs text-muted-foreground\">\n          <span>1</span>\n          <span>2</span>\n          <span>3</span>\n          <span>4</span>\n          <span>5</span>\n        </div>\n      </div>\n      <div className=\"space-y-2\">\n        <div className=\"flex justify-between\">\n          <Label>Size</Label>\n          <span className=\"text-sm text-muted-foreground\">{sizes[size[0]]}</span>\n        </div>\n        <Slider\n          value={size}\n          onValueChange={setSize}\n          min={0}\n          max={4}\n          step={1}\n        />\n        <div className=\"flex justify-between text-xs text-muted-foreground\">\n          {sizes.map((s) => (\n            <span key={s}>{s}</span>\n          ))}\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport { SliderSteps }",
+      "type": "registry:component",
+      "target": "components/slider-steps.tsx"
+    }
+  ],
+  "categories": [
+    "slider",
+    "slider"
+  ],
+  "registryDependencies": [
+    "slider",
+    "label"
+  ]
+}

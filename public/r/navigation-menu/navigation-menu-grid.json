@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-grid",
+  "type": "registry:block",
+  "title": "Navigation Menu Grid",
+  "description": "Navigation Menu Grid component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/navigation-menu/navigation-menu-grid.tsx",
+      "content": "\"use client\";\n\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n} from \"@/components/ui/navigation-menu\";\n\nconst products = [\n  { title: \"Analytics\", description: \"Track your metrics\" },\n  { title: \"Engagement\", description: \"Boost user activity\" },\n  { title: \"Security\", description: \"Protect your data\" },\n  { title: \"Integrations\", description: \"Connect your tools\" },\n  { title: \"Automation\", description: \"Streamline workflows\" },\n  { title: \"Reports\", description: \"Generate insights\" },\n];\n\nconst NavigationMenuGrid = () => {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Products</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid grid-cols-2 gap-2 p-4 w-[500px]\">\n              {products.map((product) => (\n                <li key={product.title}>\n                  <NavigationMenuLink href=\"#\" asChild>\n                    <div className=\"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                      <div className=\"text-sm font-medium leading-none\">\n                        {product.title}\n                      </div>\n                      <p className=\"text-sm leading-snug text-muted-foreground\">\n                        {product.description}\n                      </p>\n                    </div>\n                  </NavigationMenuLink>\n                </li>\n              ))}\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid grid-cols-2 gap-2 p-4 w-[500px]\">\n              <li className=\"col-span-2\">\n                <NavigationMenuLink href=\"#\" asChild>\n                  <div className=\"flex flex-col justify-end w-full h-full select-none rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md\">\n                    <div className=\"mb-2 text-lg font-medium\">Enterprise</div>\n                    <p className=\"text-sm leading-tight text-muted-foreground\">\n                      Complete solution for large organizations with advanced\n                      features.\n                    </p>\n                  </div>\n                </NavigationMenuLink>\n              </li>\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n};\n\nexport { NavigationMenuGrid }",
+      "type": "registry:component",
+      "target": "components/navigation-menu-grid.tsx"
+    }
+  ],
+  "categories": [
+    "navigation-menu",
+    "navigation-menu"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-with-icons",
+  "type": "registry:block",
+  "title": "Select With Icons",
+  "description": "Select With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/select/select-with-icons.tsx",
+      "content": "\"use client\";\n\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { Moon, Sun, Monitor, Palette, Sparkles } from \"lucide-react\";\n\nconst SelectWithIcons = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <Select defaultValue=\"system\">\n        <SelectTrigger>\n          <SelectValue placeholder=\"Select theme\" />\n        </SelectTrigger>\n        <SelectContent>\n          <SelectItem value=\"light\">\n            <div className=\"flex items-center gap-2\">\n              <Sun className=\"h-4 w-4\" />\n              <span>Light</span>\n            </div>\n          </SelectItem>\n          <SelectItem value=\"dark\">\n            <div className=\"flex items-center gap-2\">\n              <Moon className=\"h-4 w-4\" />\n              <span>Dark</span>\n            </div>\n          </SelectItem>\n          <SelectItem value=\"system\">\n            <div className=\"flex items-center gap-2\">\n              <Monitor className=\"h-4 w-4\" />\n              <span>System</span>\n            </div>\n          </SelectItem>\n          <SelectItem value=\"custom\">\n            <div className=\"flex items-center gap-2\">\n              <Palette className=\"h-4 w-4\" />\n              <span>Custom</span>\n            </div>\n          </SelectItem>\n          <SelectItem value=\"auto\">\n            <div className=\"flex items-center gap-2\">\n              <Sparkles className=\"h-4 w-4\" />\n              <span>Auto</span>\n            </div>\n          </SelectItem>\n        </SelectContent>\n      </Select>\n    </div>\n  );\n};\n\nexport { SelectWithIcons }",
+      "type": "registry:component",
+      "target": "components/select-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "select",
+    "select"
+  ],
+  "registryDependencies": [
+    "select"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

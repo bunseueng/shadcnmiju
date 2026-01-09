@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notification-avatar",
+  "type": "registry:block",
+  "title": "Notification Avatar",
+  "description": "Notification Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/notification-avatar.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nimport { Badge } from \"@/components/ui/badge\";\r\n\r\nconst NotificationAvatar = () => {\r\n  return (\r\n    <div className=\"relative\">\r\n      <Avatar>\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <Badge\r\n        variant=\"destructive\"\r\n        className=\"absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs\"\r\n      >\r\n        3\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { NotificationAvatar }",
+      "type": "registry:component",
+      "target": "components/notification-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar",
+    "badge"
+  ]
+}

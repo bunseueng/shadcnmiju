@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-with-icons",
+  "type": "registry:block",
+  "title": "Navigation Menu With Icons",
+  "description": "Navigation Menu With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/navigation-menu/navigation-menu-with-icons.tsx",
+      "content": "\"use client\";\n\nimport {\n  NavigationMenu,\n  NavigationMenuContent,\n  NavigationMenuItem,\n  NavigationMenuLink,\n  NavigationMenuList,\n  NavigationMenuTrigger,\n} from \"@/components/ui/navigation-menu\";\nimport { Book, Code, Lightbulb, Rocket, Settings, Users } from \"lucide-react\";\n\nconst items = [\n  {\n    icon: Book,\n    title: \"Documentation\",\n    description: \"Learn how to use our products\",\n  },\n  {\n    icon: Code,\n    title: \"API Reference\",\n    description: \"Complete API documentation\",\n  },\n  {\n    icon: Lightbulb,\n    title: \"Examples\",\n    description: \"Code examples and demos\",\n  },\n];\n\nconst resources = [\n  {\n    icon: Rocket,\n    title: \"Quick Start\",\n    description: \"Get up and running in minutes\",\n  },\n  {\n    icon: Settings,\n    title: \"Configuration\",\n    description: \"Customize your setup\",\n  },\n  { icon: Users, title: \"Community\", description: \"Join our community\" },\n];\n\nconst NavigationMenuWithIcons = () => {\n  return (\n    <NavigationMenu>\n      <NavigationMenuList>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Learn</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid gap-2 p-4 w-[400px]\">\n              {items.map((item) => (\n                <li key={item.title}>\n                  <NavigationMenuLink href=\"#\" asChild>\n                    <div className=\"flex items-start gap-3 select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                      <item.icon className=\"h-5 w-5 mt-0.5 text-muted-foreground\" />\n                      <div>\n                        <div className=\"text-sm font-medium leading-none\">\n                          {item.title}\n                        </div>\n                        <p className=\"text-sm leading-snug text-muted-foreground mt-1\">\n                          {item.description}\n                        </p>\n                      </div>\n                    </div>\n                  </NavigationMenuLink>\n                </li>\n              ))}\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n        <NavigationMenuItem>\n          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>\n          <NavigationMenuContent>\n            <ul className=\"grid gap-2 p-4 w-[400px]\">\n              {resources.map((item) => (\n                <li key={item.title}>\n                  <NavigationMenuLink href=\"#\" asChild>\n                    <div className=\"flex items-start gap-3 select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground\">\n                      <item.icon className=\"h-5 w-5 mt-0.5 text-muted-foreground\" />\n                      <div>\n                        <div className=\"text-sm font-medium leading-none\">\n                          {item.title}\n                        </div>\n                        <p className=\"text-sm leading-snug text-muted-foreground mt-1\">\n                          {item.description}\n                        </p>\n                      </div>\n                    </div>\n                  </NavigationMenuLink>\n                </li>\n              ))}\n            </ul>\n          </NavigationMenuContent>\n        </NavigationMenuItem>\n      </NavigationMenuList>\n    </NavigationMenu>\n  );\n};\n\nexport { NavigationMenuWithIcons }",
+      "type": "registry:component",
+      "target": "components/navigation-menu-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "navigation-menu",
+    "navigation-menu"
+  ],
+  "registryDependencies": [
+    "navigation-menu"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

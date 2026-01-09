@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-with-avatar",
+  "type": "registry:block",
+  "title": "Table With Avatar",
+  "description": "Table With Avatar component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/table/table-with-avatar.tsx",
+      "content": "\"use client\";\n\nimport {\n  Table,\n  TableBody,\n  TableCell,\n  TableHead,\n  TableHeader,\n  TableRow,\n} from \"@/components/ui/table\";\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\n\nconst team = [\n  { name: \"John Doe\", email: \"john@example.com\", role: \"CEO\", avatar: \"JD\" },\n  { name: \"Jane Smith\", email: \"jane@example.com\", role: \"CTO\", avatar: \"JS\" },\n  { name: \"Bob Johnson\", email: \"bob@example.com\", role: \"Designer\", avatar: \"BJ\" },\n  { name: \"Alice Brown\", email: \"alice@example.com\", role: \"Developer\", avatar: \"AB\" },\n  { name: \"Charlie Wilson\", email: \"charlie@example.com\", role: \"Marketing\", avatar: \"CW\" },\n];\n\nconst TableWithAvatar = () => {\n  return (\n    <Table>\n      <TableHeader>\n        <TableRow>\n          <TableHead>Member</TableHead>\n          <TableHead>Role</TableHead>\n          <TableHead>Email</TableHead>\n        </TableRow>\n      </TableHeader>\n      <TableBody>\n        {team.map((member) => (\n          <TableRow key={member.email}>\n            <TableCell>\n              <div className=\"flex items-center gap-3\">\n                <Avatar className=\"h-8 w-8\">\n                  <AvatarFallback>{member.avatar}</AvatarFallback>\n                </Avatar>\n                <span className=\"font-medium\">{member.name}</span>\n              </div>\n            </TableCell>\n            <TableCell>{member.role}</TableCell>\n            <TableCell className=\"text-muted-foreground\">{member.email}</TableCell>\n          </TableRow>\n        ))}\n      </TableBody>\n    </Table>\n  );\n};\n\nexport { TableWithAvatar }",
+      "type": "registry:component",
+      "target": "components/table-with-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "table",
+    "table"
+  ],
+  "registryDependencies": [
+    "table",
+    "avatar"
+  ]
+}

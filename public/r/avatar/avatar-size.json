@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-size",
+  "type": "registry:block",
+  "title": "Avatar Size",
+  "description": "Avatar Size component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/avatar/avatar-size.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\n\r\nconst AvatarSize = () => {\r\n  return (\r\n    <div className=\"flex items-center gap-4\">\r\n      <Avatar className=\"w-8 h-8\">\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar className=\"w-10 h-10\">\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar className=\"w-12 h-12\">\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n      <Avatar className=\"w-16 h-16\">\r\n        <AvatarImage src=\"https://github.com/shadcn.png\" alt=\"@shadcn\" />\r\n        <AvatarFallback>CN</AvatarFallback>\r\n      </Avatar>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { AvatarSize }",
+      "type": "registry:component",
+      "target": "components/avatar-size.tsx"
+    }
+  ],
+  "categories": [
+    "avatar",
+    "avatar"
+  ],
+  "registryDependencies": [
+    "avatar"
+  ]
+}

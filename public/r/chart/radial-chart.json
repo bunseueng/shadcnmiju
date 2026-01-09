@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radial-chart",
+  "type": "registry:block",
+  "title": "Radial Chart",
+  "description": "Radial Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/radial-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport { Legend, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip } from \"recharts\";\n\nconst data = [\n  {\n    name: \"18-24\",\n    uv: 31.47,\n    fill: \"hsl(var(--chart-1))\",\n  },\n  {\n    name: \"25-34\",\n    uv: 26.69,\n    fill: \"hsl(var(--chart-2))\",\n  },\n  {\n    name: \"35-44\",\n    uv: 15.69,\n    fill: \"hsl(var(--chart-3))\",\n  },\n  {\n    name: \"45-54\",\n    uv: 8.22,\n    fill: \"hsl(var(--chart-4))\",\n  },\n  {\n    name: \"55+\",\n    uv: 8.63,\n    fill: \"hsl(var(--chart-5))\",\n  },\n];\n\nconst RadialChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Age Demographics</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RadialBarChart\n            cx=\"50%\"\n            cy=\"50%\"\n            innerRadius=\"10%\"\n            outerRadius=\"80%\"\n            barSize={10}\n            data={data}\n          >\n            <RadialBar background dataKey=\"uv\" />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend\n              iconSize={10}\n              layout=\"vertical\"\n              verticalAlign=\"middle\"\n              align=\"right\"\n              wrapperStyle={{ fontSize: \"14px\" }}\n            />\n          </RadialBarChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { RadialChartComponent }",
+      "type": "registry:component",
+      "target": "components/radial-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

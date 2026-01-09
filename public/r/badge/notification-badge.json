@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "notification-badge",
+  "type": "registry:block",
+  "title": "Notification Badge",
+  "description": "Notification Badge component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/badge/notification-badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\n\r\nconst NotificationBadge = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-3\">\r\n      <Badge variant=\"destructive\" className=\"rounded-full px-2\">\r\n        1\r\n      </Badge>\r\n      <Badge variant=\"destructive\" className=\"rounded-full px-2\">\r\n        3\r\n      </Badge>\r\n      <Badge variant=\"destructive\" className=\"rounded-full px-2\">\r\n        12\r\n      </Badge>\r\n      <Badge variant=\"destructive\" className=\"rounded-full px-2\">\r\n        99+\r\n      </Badge>\r\n      <Badge variant=\"destructive\" className=\"h-2 w-2 rounded-full p-0\" />\r\n      <Badge variant=\"secondary\" className=\"rounded-full px-2 font-mono\">\r\n        NEW\r\n      </Badge>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { NotificationBadge }",
+      "type": "registry:component",
+      "target": "components/notification-badge.tsx"
+    }
+  ],
+  "categories": [
+    "badge",
+    "badge"
+  ],
+  "registryDependencies": [
+    "badge"
+  ]
+}

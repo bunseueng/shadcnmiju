@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-with-checkbox",
+  "type": "registry:block",
+  "title": "Menubar With Checkbox",
+  "description": "Menubar With Checkbox component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/menubar/menubar-with-checkbox.tsx",
+      "content": "\"use client\";\n\nimport {\n  Menubar,\n  MenubarCheckboxItem,\n  MenubarContent,\n  MenubarItem,\n  MenubarMenu,\n  MenubarSeparator,\n  MenubarTrigger,\n} from \"@/components/ui/menubar\";\nimport { useState } from \"react\";\n\nconst MenubarWithCheckbox = () => {\n  const [showBookmarks, setShowBookmarks] = useState(true);\n  const [showHistory, setShowHistory] = useState(false);\n  const [showDownloads, setShowDownloads] = useState(true);\n\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>View</MenubarTrigger>\n        <MenubarContent>\n          <MenubarCheckboxItem\n            checked={showBookmarks}\n            onCheckedChange={setShowBookmarks}\n          >\n            Show Bookmarks Bar\n          </MenubarCheckboxItem>\n          <MenubarCheckboxItem\n            checked={showHistory}\n            onCheckedChange={setShowHistory}\n          >\n            Show Full History\n          </MenubarCheckboxItem>\n          <MenubarCheckboxItem\n            checked={showDownloads}\n            onCheckedChange={setShowDownloads}\n          >\n            Show Downloads\n          </MenubarCheckboxItem>\n          <MenubarSeparator />\n          <MenubarItem>Reset to Default</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Tools</MenubarTrigger>\n        <MenubarContent>\n          <MenubarItem>Developer Tools</MenubarItem>\n          <MenubarItem>Task Manager</MenubarItem>\n          <MenubarSeparator />\n          <MenubarItem>Extensions</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n};\n\nexport { MenubarWithCheckbox }",
+      "type": "registry:component",
+      "target": "components/menubar-with-checkbox.tsx"
+    }
+  ],
+  "categories": [
+    "menubar",
+    "menubar"
+  ],
+  "registryDependencies": [
+    "menubar"
+  ]
+}

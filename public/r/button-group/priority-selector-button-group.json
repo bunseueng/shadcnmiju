@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "priority-selector-button-group",
+  "type": "registry:block",
+  "title": "Priority Selector Button Group",
+  "description": "Priority Selector Button Group component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button-group/priority-selector-button-group.tsx",
+      "content": "\"use client\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { AlertTriangle, ArrowDown, ArrowUp, Minus } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\n\r\nconst PrioritySelectorButtonGroup = () => {\r\n  const [priority, setPriority] = useState<\r\n    \"low\" | \"medium\" | \"high\" | \"urgent\"\r\n  >(\"medium\");\r\n\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center w-full gap-3\">\r\n      <ButtonGroup>\r\n        <Button\r\n          variant={priority === \"low\" ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={() => setPriority(\"low\")}\r\n        >\r\n          <ArrowDown className=\"h-4 w-4\" />\r\n          Low\r\n        </Button>\r\n        <Button\r\n          variant={priority === \"medium\" ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={() => setPriority(\"medium\")}\r\n        >\r\n          <Minus className=\"h-4 w-4\" />\r\n          Medium\r\n        </Button>\r\n        <Button\r\n          variant={priority === \"high\" ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={() => setPriority(\"high\")}\r\n        >\r\n          <ArrowUp className=\"h-4 w-4\" />\r\n          High\r\n        </Button>\r\n        <Button\r\n          variant={priority === \"urgent\" ? \"default\" : \"outline\"}\r\n          size=\"sm\"\r\n          onClick={() => setPriority(\"urgent\")}\r\n        >\r\n          <AlertTriangle className=\"h-4 w-4\" />\r\n          Urgent\r\n        </Button>\r\n      </ButtonGroup>\r\n\r\n      <p className=\"text-xs text-slate-400\">\r\n        Priority:{\" \"}\r\n        <span\r\n          className={`font-medium ${\r\n            priority === \"low\"\r\n              ? \"text-green-500\"\r\n              : priority === \"medium\"\r\n                ? \"text-blue-500\"\r\n                : priority === \"high\"\r\n                  ? \"text-orange-500\"\r\n                  : \"text-red-500\"\r\n          }`}\r\n        >\r\n          {priority.charAt(0).toUpperCase() + priority.slice(1)}\r\n        </span>\r\n      </p>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { PrioritySelectorButtonGroup }",
+      "type": "registry:component",
+      "target": "components/priority-selector-button-group.tsx"
+    }
+  ],
+  "categories": [
+    "button-group",
+    "button-group"
+  ],
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

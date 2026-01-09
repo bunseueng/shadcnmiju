@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-with-icons",
+  "type": "registry:block",
+  "title": "Combobox With Icons",
+  "description": "Combobox With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/combobox/combobox-with-icons.tsx",
+      "content": "\"use client\";\n\nimport * as React from \"react\";\nimport {\n  Check,\n  ChevronsUpDown,\n  Chrome,\n  Chromium,\n  Compass,\n  Globe,\n} from \"lucide-react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Command,\n  CommandEmpty,\n  CommandGroup,\n  CommandInput,\n  CommandItem,\n  CommandList,\n} from \"@/components/ui/command\";\nimport {\n  Popover,\n  PopoverContent,\n  PopoverTrigger,\n} from \"@/components/ui/popover\";\n\nconst browsers = [\n  { value: \"chrome\", label: \"Chrome\", icon: Chrome },\n  { value: \"firefox\", label: \"Firefox\", icon: Globe },\n  { value: \"safari\", label: \"Safari\", icon: Compass },\n  { value: \"edge\", label: \"Edge\", icon: Chromium },\n];\n\nexport function ComboboxWithIcons() {\n  const [open, setOpen] = React.useState(false);\n  const [value, setValue] = React.useState(\"\");\n\n  const selected = browsers.find((browser) => browser.value === value);\n\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <Popover open={open} onOpenChange={setOpen}>\n        <PopoverTrigger asChild>\n          <Button\n            variant=\"outline\"\n            role=\"combobox\"\n            aria-expanded={open}\n            className=\"w-[200px] justify-between\"\n          >\n            {selected ? (\n              <div className=\"flex items-center gap-2\">\n                <selected.icon className=\"h-4 w-4\" />\n                {selected.label}\n              </div>\n            ) : (\n              \"Select browser...\"\n            )}\n            <ChevronsUpDown className=\"ml-2 h-4 w-4 shrink-0 opacity-50\" />\n          </Button>\n        </PopoverTrigger>\n        <PopoverContent className=\"w-[200px] p-0\">\n          <Command>\n            <CommandInput placeholder=\"Search browser...\" />\n            <CommandList>\n              <CommandEmpty>No browser found.</CommandEmpty>\n              <CommandGroup>\n                {browsers.map((browser) => (\n                  <CommandItem\n                    key={browser.value}\n                    value={browser.value}\n                    onSelect={(currentValue) => {\n                      setValue(currentValue === value ? \"\" : currentValue);\n                      setOpen(false);\n                    }}\n                  >\n                    <Check\n                      className={cn(\n                        \"mr-2 h-4 w-4\",\n                        value === browser.value ? \"opacity-100\" : \"opacity-0\"\n                      )}\n                    />\n                    <browser.icon className=\"mr-2 h-4 w-4\" />\n                    {browser.label}\n                  </CommandItem>\n                ))}\n              </CommandGroup>\n            </CommandList>\n          </Command>\n        </PopoverContent>\n      </Popover>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/combobox-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "combobox",
+    "combobox"
+  ],
+  "registryDependencies": [
+    "button",
+    "command",
+    "popover"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

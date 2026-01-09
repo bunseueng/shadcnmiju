@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "delete-button",
+  "type": "registry:block",
+  "title": "Delete Button",
+  "description": "Delete Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/delete-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nimport { Trash2 } from \"lucide-react\";\r\n\r\nconst DeleteButton = () => {\r\n  return (\r\n    <Button variant=\"destructive\" className=\"gap-2\">\r\n      <Trash2 className=\"h-4 w-4\" />\r\n      Delete\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { DeleteButton }",
+      "type": "registry:component",
+      "target": "components/delete-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

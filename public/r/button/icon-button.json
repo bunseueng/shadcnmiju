@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-button",
+  "type": "registry:block",
+  "title": "Icon Button",
+  "description": "Icon Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/icon-button.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\n\r\nimport { DownloadCloud } from \"lucide-react\";\r\n\r\nconst IconButton = () => {\r\n  return (\r\n    <Button variant=\"default\" size=\"icon\">\r\n      <DownloadCloud className=\"h-4 w-4\" />\r\n    </Button>\r\n  );\r\n};\r\n\r\nexport { IconButton }",
+      "type": "registry:component",
+      "target": "components/icon-button.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

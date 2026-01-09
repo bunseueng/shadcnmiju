@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "product-carousel",
+  "type": "registry:block",
+  "title": "Product Carousel",
+  "description": "Product Carousel component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/carousel/product-carousel.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\";\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nimport {\r\n  Card,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/components/ui/card\";\r\nimport {\r\n  Carousel,\r\n  CarouselContent,\r\n  CarouselItem,\r\n  CarouselNext,\r\n  CarouselPrevious,\r\n} from \"@/components/ui/carousel\";\r\n\r\nimport { ShoppingCart } from \"lucide-react\";\r\n\r\ninterface CarouselItem {\r\n  id: number;\r\n  name: string;\r\n  price: string;\r\n  image: string;\r\n  category: string;\r\n}\r\n\r\nconst carouselItem: CarouselItem[] = [\r\n  {\r\n    id: 1,\r\n    name: \"Premium Headphones\",\r\n    price: \"$299\",\r\n    image:\r\n      \"https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=400\",\r\n    category: \"Audio\",\r\n  },\r\n  {\r\n    id: 2,\r\n    name: \"Wireless Speaker\",\r\n    price: \"$149\",\r\n    image:\r\n      \"https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400\",\r\n    category: \"Audio\",\r\n  },\r\n  {\r\n    id: 3,\r\n    name: \"Smart Watch\",\r\n    price: \"$399\",\r\n    image:\r\n      \"https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=400\",\r\n    category: \"Wearable\",\r\n  },\r\n  {\r\n    id: 4,\r\n    name: \"Laptop Stand\",\r\n    price: \"$89\",\r\n    image:\r\n      \"https://images.pexels.com/photos/5632379/pexels-photo-5632379.jpeg?auto=compress&cs=tinysrgb&w=400\",\r\n    category: \"Accessories\",\r\n  },\r\n  {\r\n    id: 5,\r\n    name: \"Wireless Keyboard\",\r\n    price: \"$129\",\r\n    image:\r\n      \"https://images.pexels.com/photos/2115217/pexels-photo-2115217.jpeg?auto=compress&cs=tinysrgb&w=400\",\r\n    category: \"Input\",\r\n  },\r\n];\r\n\r\nconst ProductCarousel = () => {\r\n  return (\r\n    <Carousel className=\"w-full max-w-4xl mx-auto\">\r\n      <CarouselContent>\r\n        {carouselItem.map((item) => (\r\n          <CarouselItem\r\n            key={item.id}\r\n            className=\"pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3\"\r\n          >\r\n            <Card className=\"pt-0\">\r\n              <div className=\"relative aspect-square overflow-hidden\">\r\n                <img\r\n                  src={item.image}\r\n                  alt={item.name}\r\n                  className=\"w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 rounded-t-lg\"\r\n                />\r\n                <Badge className=\"absolute top-2 left-2\">{item.category}</Badge>\r\n              </div>\r\n              <CardHeader>\r\n                <CardTitle>{item.name}</CardTitle>\r\n                <CardDescription>{item.price}</CardDescription>\r\n              </CardHeader>\r\n              <CardFooter>\r\n                <Button className=\"w-full\">\r\n                  <ShoppingCart /> Add to Cart\r\n                </Button>\r\n              </CardFooter>\r\n            </Card>\r\n          </CarouselItem>\r\n        ))}\r\n      </CarouselContent>\r\n      <CarouselPrevious />\r\n      <CarouselNext />\r\n    </Carousel>\r\n  );\r\n};\r\n\r\nexport { ProductCarousel }",
+      "type": "registry:component",
+      "target": "components/product-carousel.tsx"
+    }
+  ],
+  "categories": [
+    "carousel",
+    "carousel"
+  ],
+  "registryDependencies": [
+    "badge",
+    "button",
+    "card",
+    "carousel"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

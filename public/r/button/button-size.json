@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-size",
+  "type": "registry:block",
+  "title": "Button Size",
+  "description": "Button Size component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/button/button-size.tsx",
+      "content": "import { ArrowUpRightIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\n\r\nconst ButtonSize = () => {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button size=\"sm\" variant=\"outline\">\r\n        Small\r\n      </Button>\r\n      <Button variant=\"outline\">Default</Button>\r\n      <Button variant=\"outline\" size=\"lg\">\r\n        Large\r\n      </Button>\r\n      <Button size=\"icon\" variant=\"outline\" className=\"h-8 w-8\">\r\n        <ArrowUpRightIcon className=\"h-4 w-4\" />\r\n      </Button>\r\n      <Button size=\"icon\" variant=\"outline\">\r\n        <ArrowUpRightIcon className=\"h-4 w-4\" />\r\n      </Button>\r\n      <Button size=\"icon\" variant=\"outline\" className=\"h-12 w-12\">\r\n        <ArrowUpRightIcon className=\"h-5 w-5\" />\r\n      </Button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { ButtonSize }",
+      "type": "registry:component",
+      "target": "components/button-size.tsx"
+    }
+  ],
+  "categories": [
+    "button",
+    "button"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

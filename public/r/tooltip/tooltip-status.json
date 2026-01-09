@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-status",
+  "type": "registry:block",
+  "title": "Tooltip Status",
+  "description": "Tooltip Status component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tooltip/tooltip-status.tsx",
+      "content": "\"use client\";\n\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipProvider,\n  TooltipTrigger,\n} from \"@/components/ui/tooltip\";\nimport { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\n\nconst users = [\n  { name: \"John Doe\", status: \"online\", avatar: \"JD\", color: \"bg-green-500\" },\n  { name: \"Jane Smith\", status: \"away\", avatar: \"JS\", color: \"bg-yellow-500\" },\n  { name: \"Bob Wilson\", status: \"busy\", avatar: \"BW\", color: \"bg-red-500\" },\n  { name: \"Alice Brown\", status: \"offline\", avatar: \"AB\", color: \"bg-gray-500\" },\n];\n\nconst TooltipStatus = () => {\n  return (\n    <TooltipProvider>\n      <div className=\"flex -space-x-3\">\n        {users.map((user, i) => (\n          <Tooltip key={i}>\n            <TooltipTrigger asChild>\n              <div className=\"relative cursor-pointer\">\n                <Avatar className=\"border-2 border-background h-10 w-10 hover:z-10 hover:scale-110 transition-transform\">\n                  <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${user.avatar}`} />\n                  <AvatarFallback>{user.avatar}</AvatarFallback>\n                </Avatar>\n                <span className={`absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-background ${user.color}`} />\n              </div>\n            </TooltipTrigger>\n            <TooltipContent>\n              <div className=\"flex items-center gap-2\">\n                <span className={`h-2 w-2 rounded-full ${user.color}`} />\n                <span className=\"font-medium\">{user.name}</span>\n                <span className=\"text-muted-foreground capitalize\">• {user.status}</span>\n              </div>\n            </TooltipContent>\n          </Tooltip>\n        ))}\n      </div>\n    </TooltipProvider>\n  );\n};\n\nexport { TooltipStatus }",
+      "type": "registry:component",
+      "target": "components/tooltip-status.tsx"
+    }
+  ],
+  "categories": [
+    "tooltip",
+    "tooltip"
+  ],
+  "registryDependencies": [
+    "tooltip",
+    "avatar"
+  ]
+}

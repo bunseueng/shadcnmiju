@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-basic",
+  "type": "registry:block",
+  "title": "Field Basic",
+  "description": "Field Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/field/field-basic.tsx",
+      "content": "\"use client\";\n\nimport { Input } from \"@/components/ui/input\";\nimport {\n  Field,\n  FieldDescription,\n  FieldLabel,\n} from \"@/components/ui/field\";\n\nexport function FieldBasic() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <Field>\n          <FieldLabel htmlFor=\"email\">Email</FieldLabel>\n          <Input id=\"email\" type=\"email\" placeholder=\"name@example.com\" />\n          <FieldDescription>\n            We'll never share your email with anyone else.\n          </FieldDescription>\n        </Field>\n\n        <Field>\n          <FieldLabel htmlFor=\"username\">Username</FieldLabel>\n          <Input id=\"username\" type=\"text\" placeholder=\"johndoe\" />\n          <FieldDescription>\n            Choose a unique username for your account.\n          </FieldDescription>\n        </Field>\n\n        <Field>\n          <FieldLabel htmlFor=\"bio\">Bio</FieldLabel>\n          <Input id=\"bio\" type=\"text\" placeholder=\"Tell us about yourself\" />\n        </Field>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/field-basic.tsx"
+    }
+  ],
+  "categories": [
+    "field",
+    "field"
+  ],
+  "registryDependencies": [
+    "input",
+    "field"
+  ]
+}

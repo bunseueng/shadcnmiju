@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-basic",
+  "type": "registry:block",
+  "title": "Tabs Basic",
+  "description": "Tabs Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/tabs/tabs-basic.tsx",
+      "content": "\"use client\";\n\nimport { Tabs, TabsContent, TabsList, TabsTrigger } from \"@/components/ui/tabs\";\nimport { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { Button } from \"@/components/ui/button\";\n\nconst TabsBasic = () => {\n  return (\n    <Tabs defaultValue=\"account\" className=\"w-full max-w-md\">\n      <TabsList className=\"grid w-full grid-cols-2\">\n        <TabsTrigger value=\"account\">Account</TabsTrigger>\n        <TabsTrigger value=\"password\">Password</TabsTrigger>\n      </TabsList>\n      <TabsContent value=\"account\">\n        <Card>\n          <CardHeader>\n            <CardTitle className=\"text-foreground\">Account</CardTitle>\n            <CardDescription>\n              Make changes to your account here.\n            </CardDescription>\n          </CardHeader>\n          <CardContent className=\"space-y-2\">\n            <div className=\"space-y-1\">\n              <Label htmlFor=\"name\">Name</Label>\n              <Input id=\"name\" defaultValue=\"John Doe\" />\n            </div>\n            <div className=\"space-y-1\">\n              <Label htmlFor=\"username\">Username</Label>\n              <Input id=\"username\" defaultValue=\"@johndoe\" />\n            </div>\n          </CardContent>\n        </Card>\n      </TabsContent>\n      <TabsContent value=\"password\">\n        <Card>\n          <CardHeader>\n            <CardTitle className=\"text-foreground\">Password</CardTitle>\n            <CardDescription>\n              Change your password here.\n            </CardDescription>\n          </CardHeader>\n          <CardContent className=\"space-y-2\">\n            <div className=\"space-y-1\">\n              <Label htmlFor=\"current\">Current password</Label>\n              <Input id=\"current\" type=\"password\" />\n            </div>\n            <div className=\"space-y-1\">\n              <Label htmlFor=\"new\">New password</Label>\n              <Input id=\"new\" type=\"password\" />\n            </div>\n          </CardContent>\n        </Card>\n      </TabsContent>\n    </Tabs>\n  );\n};\n\nexport { TabsBasic }",
+      "type": "registry:component",
+      "target": "components/tabs-basic.tsx"
+    }
+  ],
+  "categories": [
+    "tabs",
+    "tabs"
+  ],
+  "registryDependencies": [
+    "tabs",
+    "card",
+    "input",
+    "label",
+    "button"
+  ]
+}

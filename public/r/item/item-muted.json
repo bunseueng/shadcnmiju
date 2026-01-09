@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-muted",
+  "type": "registry:block",
+  "title": "Item Muted",
+  "description": "Item Muted component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/item/item-muted.tsx",
+      "content": "\"use client\";\n\nimport { Settings, Bell, Shield, CreditCard } from \"lucide-react\";\nimport { Switch } from \"@/components/ui/switch\";\nimport {\n  Item,\n  ItemActions,\n  ItemContent,\n  ItemDescription,\n  ItemGroup,\n  ItemMedia,\n  ItemSeparator,\n  ItemTitle,\n} from \"@/components/ui/item\";\n\nexport function ItemMuted() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-2xl\">\n        <ItemGroup>\n          <Item variant=\"muted\">\n            <ItemMedia variant=\"icon\">\n              <Settings />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Account Settings</ItemTitle>\n              <ItemDescription>\n                Manage your account preferences and settings\n              </ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Switch defaultChecked />\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"muted\">\n            <ItemMedia variant=\"icon\">\n              <Bell />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Push Notifications</ItemTitle>\n              <ItemDescription>\n                Receive notifications about important updates\n              </ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Switch defaultChecked />\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"muted\">\n            <ItemMedia variant=\"icon\">\n              <Shield />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Two-Factor Authentication</ItemTitle>\n              <ItemDescription>\n                Add an extra layer of security to your account\n              </ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Switch />\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item variant=\"muted\">\n            <ItemMedia variant=\"icon\">\n              <CreditCard />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Billing & Payments</ItemTitle>\n              <ItemDescription>\n                Manage your subscription and payment methods\n              </ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Switch />\n            </ItemActions>\n          </Item>\n        </ItemGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/item-muted.tsx"
+    }
+  ],
+  "categories": [
+    "item",
+    "item"
+  ],
+  "registryDependencies": [
+    "switch",
+    "item"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

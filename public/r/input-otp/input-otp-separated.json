@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-separated",
+  "type": "registry:block",
+  "title": "Input Otp Separated",
+  "description": "Input Otp Separated component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/input-otp/input-otp-separated.tsx",
+      "content": "\"use client\";\n\nimport {\n  InputOTP,\n  InputOTPGroup,\n  InputOTPSeparator,\n  InputOTPSlot,\n} from \"@/components/ui/input-otp\";\n\nconst InputOTPSeparated = () => {\n  return (\n    <InputOTP maxLength={6}>\n      <InputOTPGroup>\n        <InputOTPSlot index={0} />\n        <InputOTPSlot index={1} />\n        <InputOTPSlot index={2} />\n      </InputOTPGroup>\n      <InputOTPSeparator />\n      <InputOTPGroup>\n        <InputOTPSlot index={3} />\n        <InputOTPSlot index={4} />\n        <InputOTPSlot index={5} />\n      </InputOTPGroup>\n    </InputOTP>\n  );\n};\n\nexport { InputOTPSeparated }",
+      "type": "registry:component",
+      "target": "components/input-otp-separated.tsx"
+    }
+  ],
+  "categories": [
+    "input-otp",
+    "input-otp"
+  ],
+  "registryDependencies": [
+    "input-otp"
+  ]
+}

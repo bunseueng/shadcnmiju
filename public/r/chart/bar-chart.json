@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bar-chart",
+  "type": "registry:block",
+  "title": "Bar Chart",
+  "description": "Bar Chart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/chart/bar-chart.tsx",
+      "content": "\"use client\";\n\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/components/ui/card\";\nimport {\n  Bar,\n  BarChart as RechartsBarChart,\n  CartesianGrid,\n  Legend,\n  ResponsiveContainer,\n  Tooltip,\n  XAxis,\n  YAxis,\n} from \"recharts\";\n\nconst data = [\n  { name: \"Jan\", sales: 4000, revenue: 2400 },\n  { name: \"Feb\", sales: 3000, revenue: 1398 },\n  { name: \"Mar\", sales: 2000, revenue: 9800 },\n  { name: \"Apr\", sales: 2780, revenue: 3908 },\n  { name: \"May\", sales: 1890, revenue: 4800 },\n  { name: \"Jun\", sales: 2390, revenue: 3800 },\n];\n\nconst BarChartComponent = () => {\n  return (\n    <Card className=\"w-full max-w-3xl mx-auto\">\n      <CardHeader>\n        <CardTitle className=\"text-lg sm:text-xl\">Monthly Sales Overview</CardTitle>\n      </CardHeader>\n      <CardContent>\n        <ResponsiveContainer width=\"100%\" height={300}>\n          <RechartsBarChart data={data}>\n            <CartesianGrid strokeDasharray=\"3 3\" className=\"stroke-muted\" />\n            <XAxis dataKey=\"name\" className=\"text-xs sm:text-sm\" />\n            <YAxis className=\"text-xs sm:text-sm\" />\n            <Tooltip\n              contentStyle={{\n                backgroundColor: \"hsl(var(--card))\",\n                border: \"1px solid hsl(var(--border))\",\n                borderRadius: \"var(--radius)\",\n              }}\n            />\n            <Legend wrapperStyle={{ fontSize: \"14px\" }} />\n            <Bar dataKey=\"sales\" fill=\"hsl(var(--primary))\" radius={[8, 8, 0, 0]} />\n            <Bar dataKey=\"revenue\" fill=\"hsl(var(--chart-2))\" radius={[8, 8, 0, 0]} />\n          </RechartsBarChart>\n        </ResponsiveContainer>\n      </CardContent>\n    </Card>\n  );\n};\n\nexport { BarChartComponent }",
+      "type": "registry:component",
+      "target": "components/bar-chart.tsx"
+    }
+  ],
+  "categories": [
+    "chart",
+    "chart"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "dependencies": [
+    "recharts"
+  ]
+}

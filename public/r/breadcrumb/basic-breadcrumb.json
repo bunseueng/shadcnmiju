@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "basic-breadcrumb",
+  "type": "registry:block",
+  "title": "Basic Breadcrumb",
+  "description": "Basic Breadcrumb component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/breadcrumb/basic-breadcrumb.tsx",
+      "content": "import {\n  Breadcrumb,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n} from \"@/components/ui/breadcrumb\";\n\nconst BasicBreadcrumb = () => {\n  return (\n    <Breadcrumb>\n      <BreadcrumbList>\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbLink href=\"/components\">Components</BreadcrumbLink>\n        </BreadcrumbItem>\n        <BreadcrumbSeparator />\n        <BreadcrumbItem>\n          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>\n        </BreadcrumbItem>\n      </BreadcrumbList>\n    </Breadcrumb>\n  );\n};\n\nexport { BasicBreadcrumb }",
+      "type": "registry:component",
+      "target": "components/basic-breadcrumb.tsx"
+    }
+  ],
+  "categories": [
+    "breadcrumb",
+    "breadcrumb"
+  ],
+  "registryDependencies": [
+    "breadcrumb"
+  ]
+}

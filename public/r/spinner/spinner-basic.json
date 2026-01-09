@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-basic",
+  "type": "registry:block",
+  "title": "Spinner Basic",
+  "description": "Spinner Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/spinner/spinner-basic.tsx",
+      "content": "\"use client\";\n\nimport { Spinner } from \"@/components/ui/spinner\";\n\nconst SpinnerBasic = () => {\n  return (\n    <div className=\"flex flex-col items-center gap-8 p-8\">\n      <div className=\"flex items-center gap-6\">\n        <div className=\"flex flex-col items-center gap-2\">\n          <Spinner className=\"size-4\" />\n          <span className=\"text-xs text-muted-foreground\">Small</span>\n        </div>\n        <div className=\"flex flex-col items-center gap-2\">\n          <Spinner className=\"size-6\" />\n          <span className=\"text-xs text-muted-foreground\">Medium</span>\n        </div>\n        <div className=\"flex flex-col items-center gap-2\">\n          <Spinner className=\"size-8\" />\n          <span className=\"text-xs text-muted-foreground\">Large</span>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport { SpinnerBasic }",
+      "type": "registry:component",
+      "target": "components/spinner-basic.tsx"
+    }
+  ],
+  "categories": [
+    "spinner",
+    "spinner"
+  ],
+  "registryDependencies": [
+    "spinner"
+  ]
+}

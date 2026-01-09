@@ -18,7 +18,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { applyTheme, themes } from "@/configs/themes";
+import { applyTheme } from "@/configs/themes";
+import themes from "@/configs/themes.json";
 import { useTheme } from "next-themes";
 
 export function SelectTheme() {

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-form",
+  "type": "registry:block",
+  "title": "Select Form",
+  "description": "Select Form component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/select/select-form.tsx",
+      "content": "\"use client\";\n\nimport {\n  Select,\n  SelectContent,\n  SelectItem,\n  SelectTrigger,\n  SelectValue,\n} from \"@/components/ui/select\";\nimport { Label } from \"@/components/ui/label\";\nimport { Button } from \"@/components/ui/button\";\n\nconst SelectForm = () => {\n  return (\n    <div className=\"flex flex-col gap-4 w-full max-w-sm\">\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"country\">Country</Label>\n        <Select>\n          <SelectTrigger id=\"country\">\n            <SelectValue placeholder=\"Select country\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"us\">United States</SelectItem>\n            <SelectItem value=\"uk\">United Kingdom</SelectItem>\n            <SelectItem value=\"ca\">Canada</SelectItem>\n            <SelectItem value=\"au\">Australia</SelectItem>\n            <SelectItem value=\"de\">Germany</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"language\">Language</Label>\n        <Select defaultValue=\"en\">\n          <SelectTrigger id=\"language\">\n            <SelectValue placeholder=\"Select language\" />\n          </SelectTrigger>\n          <SelectContent>\n            <SelectItem value=\"en\">English</SelectItem>\n            <SelectItem value=\"es\">Spanish</SelectItem>\n            <SelectItem value=\"fr\">French</SelectItem>\n            <SelectItem value=\"de\">German</SelectItem>\n            <SelectItem value=\"jp\">Japanese</SelectItem>\n          </SelectContent>\n        </Select>\n      </div>\n      <Button className=\"w-full mt-2\">Save Preferences</Button>\n    </div>\n  );\n};\n\nexport { SelectForm }",
+      "type": "registry:component",
+      "target": "components/select-form.tsx"
+    }
+  ],
+  "categories": [
+    "select",
+    "select"
+  ],
+  "registryDependencies": [
+    "select",
+    "label",
+    "button"
+  ]
+}

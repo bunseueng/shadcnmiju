@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tv-ratio",
+  "type": "registry:block",
+  "title": "Tv Ratio",
+  "description": "Tv Ratio component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/aspect-ratio/tv-ratio.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\";\r\n\r\nconst TvRatio = () => {\r\n  return (\r\n    <div className=\"w-full max-w-md\">\r\n      <AspectRatio ratio={4 / 3} className=\"bg-muted overflow-hidden\">\r\n        <img\r\n          src=\"/assets/placeholder.jpeg\"\r\n          alt=\"TV 4:3\"\r\n          className=\"rounded-md object-cover w-full h-full\"\r\n        />\r\n      </AspectRatio>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport { TvRatio }",
+      "type": "registry:component",
+      "target": "components/tv-ratio.tsx"
+    }
+  ],
+  "categories": [
+    "aspect-ratio",
+    "aspect-ratio"
+  ],
+  "registryDependencies": [
+    "aspect-ratio"
+  ]
+}

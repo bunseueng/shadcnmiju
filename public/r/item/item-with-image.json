@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-with-image",
+  "type": "registry:block",
+  "title": "Item With Image",
+  "description": "Item With Image component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/item/item-with-image.tsx",
+      "content": "\"use client\";\n\nimport { MoreVertical } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Item,\n  ItemActions,\n  ItemContent,\n  ItemDescription,\n  ItemGroup,\n  ItemMedia,\n  ItemSeparator,\n  ItemTitle,\n} from \"@/components/ui/item\";\n\nexport function ItemWithImage() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-2xl\">\n        <ItemGroup>\n          <Item>\n            <ItemMedia variant=\"image\">\n              <div className=\"bg-gradient-to-br from-blue-500 to-purple-500\" />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Sarah Johnson</ItemTitle>\n              <ItemDescription>Product Designer • San Francisco, CA</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"sm\">\n                Follow\n              </Button>\n              <Button variant=\"ghost\" size=\"icon\">\n                <MoreVertical className=\"h-4 w-4\" />\n              </Button>\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item>\n            <ItemMedia variant=\"image\">\n              <div className=\"bg-gradient-to-br from-green-500 to-teal-500\" />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Michael Chen</ItemTitle>\n              <ItemDescription>Software Engineer • New York, NY</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"sm\">\n                Follow\n              </Button>\n              <Button variant=\"ghost\" size=\"icon\">\n                <MoreVertical className=\"h-4 w-4\" />\n              </Button>\n            </ItemActions>\n          </Item>\n\n          <ItemSeparator />\n\n          <Item>\n            <ItemMedia variant=\"image\">\n              <div className=\"bg-gradient-to-br from-orange-500 to-red-500\" />\n            </ItemMedia>\n            <ItemContent>\n              <ItemTitle>Emma Williams</ItemTitle>\n              <ItemDescription>Marketing Manager • Austin, TX</ItemDescription>\n            </ItemContent>\n            <ItemActions>\n              <Button variant=\"outline\" size=\"sm\">\n                Follow\n              </Button>\n              <Button variant=\"ghost\" size=\"icon\">\n                <MoreVertical className=\"h-4 w-4\" />\n              </Button>\n            </ItemActions>\n          </Item>\n        </ItemGroup>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/item-with-image.tsx"
+    }
+  ],
+  "categories": [
+    "item",
+    "item"
+  ],
+  "registryDependencies": [
+    "button",
+    "item"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

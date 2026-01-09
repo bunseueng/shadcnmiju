@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-disabled",
+  "type": "registry:block",
+  "title": "Toggle Disabled",
+  "description": "Toggle Disabled component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/toggle/toggle-disabled.tsx",
+      "content": "\"use client\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\nimport { Lock, Unlock, Shield, ShieldOff } from \"lucide-react\";\n\nconst ToggleDisabled = () => {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <div className=\"flex items-center gap-4\">\n        <Toggle aria-label=\"Toggle lock\">\n          <Lock className=\"h-4 w-4\" />\n        </Toggle>\n        <span className=\"text-sm text-foreground\">Enabled toggle</span>\n      </div>\n      <div className=\"flex items-center gap-4\">\n        <Toggle disabled aria-label=\"Toggle lock disabled\">\n          <Lock className=\"h-4 w-4\" />\n        </Toggle>\n        <span className=\"text-sm text-muted-foreground\">Disabled toggle</span>\n      </div>\n      <div className=\"flex items-center gap-4\">\n        <Toggle defaultPressed disabled aria-label=\"Toggle shield disabled pressed\">\n          <Shield className=\"h-4 w-4\" />\n        </Toggle>\n        <span className=\"text-sm text-muted-foreground\">Disabled pressed</span>\n      </div>\n    </div>\n  );\n};\n\nexport { ToggleDisabled }",
+      "type": "registry:component",
+      "target": "components/toggle-disabled.tsx"
+    }
+  ],
+  "categories": [
+    "toggle",
+    "toggle"
+  ],
+  "registryDependencies": [
+    "toggle"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

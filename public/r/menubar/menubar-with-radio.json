@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-with-radio",
+  "type": "registry:block",
+  "title": "Menubar With Radio",
+  "description": "Menubar With Radio component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/menubar/menubar-with-radio.tsx",
+      "content": "\"use client\";\n\nimport {\n  Menubar,\n  MenubarContent,\n  MenubarItem,\n  MenubarMenu,\n  MenubarRadioGroup,\n  MenubarRadioItem,\n  MenubarSeparator,\n  MenubarTrigger,\n} from \"@/components/ui/menubar\";\nimport { useState } from \"react\";\n\nconst MenubarWithRadio = () => {\n  const [fontSize, setFontSize] = useState(\"medium\");\n  const [theme, setTheme] = useState(\"system\");\n\n  return (\n    <Menubar>\n      <MenubarMenu>\n        <MenubarTrigger>Format</MenubarTrigger>\n        <MenubarContent>\n          <MenubarRadioGroup value={fontSize} onValueChange={setFontSize}>\n            <MenubarRadioItem value=\"small\">Small</MenubarRadioItem>\n            <MenubarRadioItem value=\"medium\">Medium</MenubarRadioItem>\n            <MenubarRadioItem value=\"large\">Large</MenubarRadioItem>\n          </MenubarRadioGroup>\n          <MenubarSeparator />\n          <MenubarItem>Custom Size...</MenubarItem>\n        </MenubarContent>\n      </MenubarMenu>\n      <MenubarMenu>\n        <MenubarTrigger>Appearance</MenubarTrigger>\n        <MenubarContent>\n          <MenubarRadioGroup value={theme} onValueChange={setTheme}>\n            <MenubarRadioItem value=\"light\">Light</MenubarRadioItem>\n            <MenubarRadioItem value=\"dark\">Dark</MenubarRadioItem>\n            <MenubarRadioItem value=\"system\">System</MenubarRadioItem>\n          </MenubarRadioGroup>\n        </MenubarContent>\n      </MenubarMenu>\n    </Menubar>\n  );\n};\n\nexport { MenubarWithRadio }",
+      "type": "registry:component",
+      "target": "components/menubar-with-radio.tsx"
+    }
+  ],
+  "categories": [
+    "menubar",
+    "menubar"
+  ],
+  "registryDependencies": [
+    "menubar"
+  ]
+}

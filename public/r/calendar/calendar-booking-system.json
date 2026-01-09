@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-booking-system",
+  "type": "registry:block",
+  "title": "Calendar Booking System",
+  "description": "Calendar Booking System component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/calendar/calendar-booking-system.tsx",
+      "content": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { Calendar } from \"@/components/ui/calendar\";\nimport { Input } from \"@/components/ui/input\";\nimport { useState } from \"react\";\n\nconst CalendarBookingSystem = () => {\n  const [date, setDate] = useState<Date | undefined>();\n  const [timeSlot, setTimeSlot] = useState(\"\");\n  const [name, setName] = useState(\"\");\n  const [bookings, setBookings] = useState<\n    { date: Date; time: string; name: string }[]\n  >([]);\n\n  const timeSlots = [\"09:00\", \"10:00\", \"11:00\", \"14:00\", \"15:00\", \"16:00\"];\n\n  const handleBooking = () => {\n    if (date && timeSlot && name.trim()) {\n      setBookings([...bookings, { date, time: timeSlot, name }]);\n      setDate(undefined);\n      setTimeSlot(\"\");\n      setName(\"\");\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col items-center justify-center w-full gap-4\">\n      <Calendar\n        mode=\"single\"\n        selected={date}\n        onSelect={setDate}\n        disabled={(date) => date < new Date()}\n        className=\"rounded-md border\"\n      />\n      {date && (\n        <div className=\"flex flex-col gap-2 w-full max-w-sm\">\n          <Input\n            placeholder=\"Your name\"\n            value={name}\n            onChange={(e) => setName(e.target.value)}\n          />\n          <div className=\"grid grid-cols-3 gap-2\">\n            {timeSlots.map((slot) => (\n              <Button\n                key={slot}\n                variant={timeSlot === slot ? \"default\" : \"outline\"}\n                size=\"sm\"\n                onClick={() => setTimeSlot(slot)}\n              >\n                {slot}\n              </Button>\n            ))}\n          </div>\n          <Button\n            onClick={handleBooking}\n            disabled={!date || !timeSlot || !name.trim()}\n          >\n            Book Appointment\n          </Button>\n        </div>\n      )}\n      {bookings.length > 0 && (\n        <div className=\"text-xs text-slate-400 w-full max-w-sm\">\n          <p className=\"font-medium mb-2\">Bookings:</p>\n          {bookings.map((booking, idx) => (\n            <div key={idx} className=\"text-slate-200\">\n              • {booking.name} - {booking.date.toLocaleDateString()} at{\" \"}\n              {booking.time}\n            </div>\n          ))}\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport { CalendarBookingSystem }",
+      "type": "registry:component",
+      "target": "components/calendar-booking-system.tsx"
+    }
+  ],
+  "categories": [
+    "calendar",
+    "calendar"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "input"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-with-icons",
+  "type": "registry:block",
+  "title": "Kbd With Icons",
+  "description": "Kbd With Icons component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/kbd/kbd-with-icons.tsx",
+      "content": "\"use client\";\n\nimport { Kbd, KbdGroup } from \"@/components/ui/kbd\";\nimport { Command, Option, Delete, ArrowUp, ArrowDown } from \"lucide-react\";\n\nexport function KbdWithIcons() {\n  return (\n    <div className=\"flex flex-col items-center justify-center p-8 gap-6\">\n      <div className=\"space-y-4\">\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[140px]\">\n            Command Palette\n          </span>\n          <KbdGroup>\n            <Kbd>\n              <Command className=\"h-3 w-3\" />\n            </Kbd>\n            <span>+</span>\n            <Kbd>K</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[140px]\">\n            Quick Actions\n          </span>\n          <KbdGroup>\n            <Kbd>\n              Shift\n              {/* <Shift className=\"h-3 w-3\" /> */}\n            </Kbd>\n            <span>+</span>\n            <Kbd>\n              <Command className=\"h-3 w-3\" />\n            </Kbd>\n            <span>+</span>\n            <Kbd>P</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[140px]\">\n            Delete Line\n          </span>\n          <KbdGroup>\n            <Kbd>\n              <Command className=\"h-3 w-3\" />\n            </Kbd>\n            <span>+</span>\n            <Kbd>\n              <Delete className=\"h-3 w-3\" />\n            </Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[140px]\">\n            Move Line Up\n          </span>\n          <KbdGroup>\n            <Kbd>\n              <Option className=\"h-3 w-3\" />\n            </Kbd>\n            <span>+</span>\n            <Kbd>\n              <ArrowUp className=\"h-3 w-3\" />\n            </Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[140px]\">\n            Move Line Down\n          </span>\n          <KbdGroup>\n            <Kbd>\n              <Option className=\"h-3 w-3\" />\n            </Kbd>\n            <span>+</span>\n            <Kbd>\n              <ArrowDown className=\"h-3 w-3\" />\n            </Kbd>\n          </KbdGroup>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/kbd-with-icons.tsx"
+    }
+  ],
+  "categories": [
+    "kbd",
+    "kbd"
+  ],
+  "registryDependencies": [
+    "kbd"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-with-button",
+  "type": "registry:block",
+  "title": "Textarea With Button",
+  "description": "Textarea With Button component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/textarea/textarea-with-button.tsx",
+      "content": "\"use client\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { Button } from \"@/components/ui/button\";\nimport { Label } from \"@/components/ui/label\";\nimport { Send } from \"lucide-react\";\n\nconst TextareaWithButton = () => {\n  return (\n    <div className=\"grid w-full max-w-sm gap-4\">\n      <div className=\"grid gap-1.5\">\n        <Label htmlFor=\"feedback\">Feedback</Label>\n        <Textarea\n          placeholder=\"Tell us what you think...\"\n          id=\"feedback\"\n          className=\"min-h-[120px]\"\n        />\n      </div>\n      <Button className=\"w-full\">\n        <Send className=\"mr-2 h-4 w-4\" />\n        Send Feedback\n      </Button>\n    </div>\n  );\n};\n\nexport { TextareaWithButton }",
+      "type": "registry:component",
+      "target": "components/textarea-with-button.tsx"
+    }
+  ],
+  "categories": [
+    "textarea",
+    "textarea"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "button",
+    "label"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

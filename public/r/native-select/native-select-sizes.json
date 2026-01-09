@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-sizes",
+  "type": "registry:block",
+  "title": "Native Select Sizes",
+  "description": "Native Select Sizes component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/native-select/native-select-sizes.tsx",
+      "content": "\"use client\";\n\nimport {\n  NativeSelect,\n  NativeSelectOption,\n} from \"@/components/ui/native-select\";\n\nexport function NativeSelectSizes() {\n  return (\n    <div className=\"flex items-center justify-center p-8\">\n      <div className=\"w-full max-w-md space-y-6\">\n        <div className=\"space-y-2\">\n          <label htmlFor=\"small\" className=\"text-sm font-medium\">\n            Small Size\n          </label>\n          <NativeSelect id=\"small\" size=\"sm\">\n            <NativeSelectOption value=\"\">Select size</NativeSelectOption>\n            <NativeSelectOption value=\"xs\">Extra Small</NativeSelectOption>\n            <NativeSelectOption value=\"s\">Small</NativeSelectOption>\n            <NativeSelectOption value=\"m\">Medium</NativeSelectOption>\n            <NativeSelectOption value=\"l\">Large</NativeSelectOption>\n            <NativeSelectOption value=\"xl\">Extra Large</NativeSelectOption>\n          </NativeSelect>\n          <p className=\"text-sm text-muted-foreground\">\n            Use size=\"sm\" for compact layouts\n          </p>\n        </div>\n\n        <div className=\"space-y-2\">\n          <label htmlFor=\"default\" className=\"text-sm font-medium\">\n            Default Size\n          </label>\n          <NativeSelect id=\"default\" size=\"default\">\n            <NativeSelectOption value=\"\">Select size</NativeSelectOption>\n            <NativeSelectOption value=\"xs\">Extra Small</NativeSelectOption>\n            <NativeSelectOption value=\"s\">Small</NativeSelectOption>\n            <NativeSelectOption value=\"m\">Medium</NativeSelectOption>\n            <NativeSelectOption value=\"l\">Large</NativeSelectOption>\n            <NativeSelectOption value=\"xl\">Extra Large</NativeSelectOption>\n          </NativeSelect>\n          <p className=\"text-sm text-muted-foreground\">\n            Default size for standard forms\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/native-select-sizes.tsx"
+    }
+  ],
+  "categories": [
+    "native-select",
+    "native-select"
+  ],
+  "registryDependencies": [
+    "native-select"
+  ]
+}

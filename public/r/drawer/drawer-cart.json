@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-cart",
+  "type": "registry:block",
+  "title": "Drawer Cart",
+  "description": "Drawer Cart component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/drawer/drawer-cart.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Drawer,\n  DrawerClose,\n  DrawerContent,\n  DrawerDescription,\n  DrawerFooter,\n  DrawerHeader,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/components/ui/drawer\";\nimport { ShoppingCart, Trash2, Plus, Minus } from \"lucide-react\";\nimport { Badge } from \"@/components/ui/badge\";\n\ninterface CartItem {\n  id: number;\n  name: string;\n  price: number;\n  quantity: number;\n  image: string;\n}\n\nconst DrawerCart = () => {\n  const [open, setOpen] = useState(false);\n  const [cart, setCart] = useState<CartItem[]>([\n    { id: 1, name: \"Wireless Headphones\", price: 99.99, quantity: 1, image: \"🎧\" },\n    { id: 2, name: \"Smart Watch\", price: 199.99, quantity: 2, image: \"⌚\" },\n    { id: 3, name: \"Portable Charger\", price: 49.99, quantity: 1, image: \"🔋\" },\n  ]);\n\n  const updateQuantity = (id: number, delta: number) => {\n    setCart((prev) =>\n      prev\n        .map((item) =>\n          item.id === id ? { ...item, quantity: Math.max(0, item.quantity + delta) } : item\n        )\n        .filter((item) => item.quantity > 0)\n    );\n  };\n\n  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);\n  const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);\n\n  return (\n    <Drawer open={open} onOpenChange={setOpen}>\n      <DrawerTrigger asChild>\n        <Button className=\"gap-2 relative\">\n          <ShoppingCart className=\"h-4 w-4\" />\n          Shopping Cart\n          {itemCount > 0 && (\n            <Badge className=\"absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs\">\n              {itemCount}\n            </Badge>\n          )}\n        </Button>\n      </DrawerTrigger>\n      <DrawerContent>\n        <div className=\"mx-auto w-full max-w-md\">\n          <DrawerHeader>\n            <DrawerTitle className=\"text-foreground\">Your Cart</DrawerTitle>\n            <DrawerDescription>{itemCount} items in your cart</DrawerDescription>\n          </DrawerHeader>\n          <div className=\"p-4 space-y-3 max-h-[40vh] overflow-y-auto\">\n            {cart.length === 0 ? (\n              <div className=\"text-center py-8 text-muted-foreground\">Your cart is empty</div>\n            ) : (\n              cart.map((item) => (\n                <div\n                  key={item.id}\n                  className=\"flex items-center gap-3 p-3 rounded-lg bg-muted/50\"\n                >\n                  <div className=\"text-3xl\">{item.image}</div>\n                  <div className=\"flex-1 min-w-0\">\n                    <h4 className=\"font-medium text-sm truncate text-foreground\">{item.name}</h4>\n                    <p className=\"text-sm text-primary font-semibold\">${item.price.toFixed(2)}</p>\n                  </div>\n                  <div className=\"flex items-center gap-2\">\n                    <Button\n                      variant=\"outline\"\n                      size=\"icon\"\n                      className=\"h-7 w-7\"\n                      onClick={() => updateQuantity(item.id, -1)}\n                    >\n                      {item.quantity === 1 ? (\n                        <Trash2 className=\"h-3 w-3 text-destructive\" />\n                      ) : (\n                        <Minus className=\"h-3 w-3\" />\n                      )}\n                    </Button>\n                    <span className=\"w-6 text-center text-sm font-medium text-foreground\">\n                      {item.quantity}\n                    </span>\n                    <Button\n                      variant=\"outline\"\n                      size=\"icon\"\n                      className=\"h-7 w-7\"\n                      onClick={() => updateQuantity(item.id, 1)}\n                    >\n                      <Plus className=\"h-3 w-3\" />\n                    </Button>\n                  </div>\n                </div>\n              ))\n            )}\n          </div>\n          <div className=\"p-4 border-t border-border\">\n            <div className=\"flex items-center justify-between mb-4\">\n              <span className=\"text-muted-foreground\">Total</span>\n              <span className=\"text-xl font-bold text-foreground\">${total.toFixed(2)}</span>\n            </div>\n          </div>\n          <DrawerFooter>\n            <Button onClick={() => setOpen(false)} disabled={cart.length === 0}>\n              Checkout\n            </Button>\n            <DrawerClose asChild>\n              <Button variant=\"outline\">Continue Shopping</Button>\n            </DrawerClose>\n          </DrawerFooter>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  );\n};\n\nexport { DrawerCart }",
+      "type": "registry:component",
+      "target": "components/drawer-cart.tsx"
+    }
+  ],
+  "categories": [
+    "drawer",
+    "drawer"
+  ],
+  "registryDependencies": [
+    "button",
+    "drawer",
+    "badge"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ]
+}

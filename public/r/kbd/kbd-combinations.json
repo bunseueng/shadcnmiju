@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-combinations",
+  "type": "registry:block",
+  "title": "Kbd Combinations",
+  "description": "Kbd Combinations component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/kbd/kbd-combinations.tsx",
+      "content": "\"use client\";\n\nimport { Kbd, KbdGroup } from \"@/components/ui/kbd\";\n\nexport function KbdCombinations() {\n  return (\n    <div className=\"flex flex-col items-center justify-center p-8 gap-6\">\n      <div className=\"space-y-4\">\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Save\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>S</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Copy\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>C</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Paste\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>V</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Undo\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>Z</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Redo\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>Shift</Kbd>\n            <span>+</span>\n            <Kbd>Z</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Find\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>F</Kbd>\n          </KbdGroup>\n        </div>\n\n        <div className=\"flex items-center justify-between gap-8\">\n          <span className=\"text-sm text-muted-foreground min-w-[120px]\">\n            Select All\n          </span>\n          <KbdGroup>\n            <Kbd>Ctrl</Kbd>\n            <span>+</span>\n            <Kbd>A</Kbd>\n          </KbdGroup>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/kbd-combinations.tsx"
+    }
+  ],
+  "categories": [
+    "kbd",
+    "kbd"
+  ],
+  "registryDependencies": [
+    "kbd"
+  ]
+}

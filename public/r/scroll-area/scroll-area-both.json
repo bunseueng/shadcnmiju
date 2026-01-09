@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-both",
+  "type": "registry:block",
+  "title": "Scroll Area Both",
+  "description": "Scroll Area Both component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/scroll-area/scroll-area-both.tsx",
+      "content": "\"use client\";\n\nimport { ScrollArea, ScrollBar } from \"@/components/ui/scroll-area\";\n\nconst ScrollAreaBoth = () => {\n  return (\n    <ScrollArea className=\"h-[200px] w-[300px] rounded-md border\">\n      <div className=\"p-4 min-w-[500px]\">\n        <h4 className=\"mb-4 text-sm font-medium leading-none text-foreground\">\n          Large Content Area\n        </h4>\n        <p className=\"text-sm text-muted-foreground mb-4\">\n          This scroll area demonstrates both horizontal and vertical scrolling.\n          The content is wider and taller than the container.\n        </p>\n        <div className=\"grid grid-cols-4 gap-4\">\n          {Array.from({ length: 24 }).map((_, i) => (\n            <div\n              key={i}\n              className=\"h-20 w-28 rounded-md border flex items-center justify-center text-sm text-foreground\"\n            >\n              Item {i + 1}\n            </div>\n          ))}\n        </div>\n      </div>\n      <ScrollBar orientation=\"horizontal\" />\n      <ScrollBar orientation=\"vertical\" />\n    </ScrollArea>\n  );\n};\n\nexport { ScrollAreaBoth }",
+      "type": "registry:component",
+      "target": "components/scroll-area-both.tsx"
+    }
+  ],
+  "categories": [
+    "scroll-area",
+    "scroll-area"
+  ],
+  "registryDependencies": [
+    "scroll-area"
+  ]
+}

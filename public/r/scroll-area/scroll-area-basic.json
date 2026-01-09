@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-basic",
+  "type": "registry:block",
+  "title": "Scroll Area Basic",
+  "description": "Scroll Area Basic component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/scroll-area/scroll-area-basic.tsx",
+      "content": "\"use client\";\n\nimport { ScrollArea } from \"@/components/ui/scroll-area\";\nimport { Separator } from \"@/components/ui/separator\";\n\nconst tags = Array.from({ length: 50 }).map(\n  (_, i, a) => `v1.2.0-beta.${a.length - i}`\n);\n\nconst ScrollAreaBasic = () => {\n  return (\n    <ScrollArea className=\"h-72 w-48 rounded-md border\">\n      <div className=\"p-4\">\n        <h4 className=\"mb-4 text-sm font-medium leading-none text-foreground\">Tags</h4>\n        {tags.map((tag) => (\n          <div key={tag}>\n            <div className=\"text-sm text-foreground\">{tag}</div>\n            <Separator className=\"my-2\" />\n          </div>\n        ))}\n      </div>\n    </ScrollArea>\n  );\n};\n\nexport { ScrollAreaBasic }",
+      "type": "registry:component",
+      "target": "components/scroll-area-basic.tsx"
+    }
+  ],
+  "categories": [
+    "scroll-area",
+    "scroll-area"
+  ],
+  "registryDependencies": [
+    "scroll-area",
+    "separator"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-with-counter",
+  "type": "registry:block",
+  "title": "Textarea With Counter",
+  "description": "Textarea With Counter component variant",
+  "files": [
+    {
+      "path": "src/components/showcase/textarea/textarea-with-counter.tsx",
+      "content": "\"use client\";\n\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { Label } from \"@/components/ui/label\";\nimport { useState } from \"react\";\n\nconst TextareaWithCounter = () => {\n  const [text, setText] = useState(\"\");\n  const maxLength = 280;\n\n  return (\n    <div className=\"grid w-full max-w-sm gap-1.5\">\n      <Label htmlFor=\"bio\">Bio</Label>\n      <Textarea\n        placeholder=\"Tell us about yourself...\"\n        id=\"bio\"\n        value={text}\n        onChange={(e) => setText(e.target.value.slice(0, maxLength))}\n        className=\"min-h-[100px]\"\n      />\n      <div className=\"flex justify-end\">\n        <span\n          className={`text-sm ${\n            text.length >= maxLength\n              ? \"text-red-500\"\n              : text.length >= maxLength * 0.8\n              ? \"text-yellow-500\"\n              : \"text-muted-foreground\"\n          }`}\n        >\n          {text.length}/{maxLength}\n        </span>\n      </div>\n    </div>\n  );\n};\n\nexport { TextareaWithCounter }",
+      "type": "registry:component",
+      "target": "components/textarea-with-counter.tsx"
+    }
+  ],
+  "categories": [
+    "textarea",
+    "textarea"
+  ],
+  "registryDependencies": [
+    "textarea",
+    "label"
+  ]
+}
